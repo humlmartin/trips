@@ -325,6 +325,15 @@ a { color: inherit; text-decoration: none; }
 .muted-row .info-val,
 .muted-row .info-label { color: var(--ink-mute); font-style: normal; font-weight: 300; }
 
+/* DESKTOP: label a hodnota těsně vedle sebe, ne na opačných stranách */
+@media (min-width: 720px) {
+  .info-row {
+    justify-content: flex-start;
+    gap: 24px;
+  }
+  .info-val { text-align: left; }
+}
+
 .map-btn {
   display: flex;
   align-items: center;
