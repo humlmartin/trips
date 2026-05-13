@@ -632,6 +632,18 @@ a { color: inherit; text-decoration: none; }
   line-height: 1;
 }
 
+.loc-name::after {
+  content: ' ↗';
+  font-size: 0.7em;
+  color: var(--rust);
+  font-weight: 400;
+  opacity: 0.55;
+  margin-left: 4px;
+  letter-spacing: 0;
+  transition: opacity 0.18s;
+}
+.loc-body-link:hover .loc-name::after { opacity: 1; }
+
 .loc-desc {
   font-size: 13px;
   line-height: 1.55;
