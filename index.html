@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ázerbájdžán 2026 — Itinerář</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f1ead9'/%3E%3Cpath d='M16 1 L19 8 L26 7 L22 13 L29 16 L22 19 L26 25 L19 24 L16 31 L13 24 L6 25 L10 19 L3 16 L10 13 L6 7 L13 8 Z' fill='%23b03a0a'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer crossorigin=""></script>
 <style>
 /* ═══════════════════════════════════════════════════════════
    ÁZERBÁJDŽÁN 2026 — Editorial / Persian
@@ -1442,6 +1444,88 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   color: var(--ink-soft);
 }
 
+/* ═══════════════════════════════════════════════════════════
+   TRIP MAP — Leaflet OSM mapa s body trasy
+   ═══════════════════════════════════════════════════════════ */
+#trip-map {
+  height: 520px;
+  width: 100%;
+  margin-top: 14px;
+  border: 1px solid var(--rule);
+  background: var(--paper-3);
+  grid-column: 1 / -1;
+}
+@media (max-width: 720px) {
+  #trip-map { height: 360px; }
+}
+.trip-marker { background: transparent; border: none; }
+.trip-pin {
+  width: 30px; height: 30px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  border: 2px solid var(--paper);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  display: flex; align-items: center; justify-content: center;
+}
+.trip-pin span {
+  transform: rotate(45deg);
+  color: white;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: -0.02em;
+}
+.trip-pin.hotel {
+  border-radius: 50%;
+  transform: none;
+  width: 22px; height: 22px;
+}
+.trip-pin.hotel span { transform: none; font-size: 11px; }
+.leaflet-popup-content-wrapper {
+  border-radius: 2px;
+  background: var(--paper);
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+.leaflet-popup-content {
+  margin: 12px 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.leaflet-popup-content strong { display: block; font-size: 14px; margin-bottom: 4px; }
+.leaflet-popup-content .pop-day {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.leaflet-popup-content a {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--rust);
+  font-weight: 600;
+  border-bottom: 1px solid var(--rust);
+}
+.trip-map-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  grid-column: 1 / -1;
+}
+.trip-map-legend .leg {
+  display: flex; align-items: center; gap: 8px;
+}
+.trip-map-legend .dot {
+  width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0;
+  border: 1.5px solid var(--paper); box-shadow: 0 0 0 1px var(--rule);
+}
+
 </style>
 </head>
 <body>
@@ -1626,6 +1710,25 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
 
     <div class="info-sub">Po Dni 8 — odlet</div>
     <div class="info-row"><span class="info-label">Odlet</span><span class="info-val">So 30. 5. večer → GYD · Ne 31. 5. · 02:35 (bez ubytka)</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════ MAPA TRASY ═══════════════ -->
+<section class="info-section" style="margin-top: 12px; grid-template-columns: 1fr;">
+  <div class="info-block">
+    <div class="info-eyebrow">🗺 Mapa trasy · všechna místa</div>
+    <div id="trip-map"></div>
+    <div class="trip-map-legend">
+      <div class="leg"><span class="dot" style="background:#b03a0a"></span>Den 1 · Baku</div>
+      <div class="leg"><span class="dot" style="background:#1d4d4a"></span>Den 2 · Quba</div>
+      <div class="leg"><span class="dot" style="background:#1d4d4a"></span>Den 3 · Khinaliq</div>
+      <div class="leg"><span class="dot" style="background:#b08a3e"></span>Den 4 · Gobustan</div>
+      <div class="leg"><span class="dot" style="background:#b08a3e"></span>Den 5 · Ganja</div>
+      <div class="leg"><span class="dot" style="background:#b08a3e"></span>Den 6 · Sheki</div>
+      <div class="leg"><span class="dot" style="background:#6b2342"></span>Den 7 · Lahic</div>
+      <div class="leg"><span class="dot" style="background:#7a2806"></span>Den 8 · Baku</div>
+      <div class="leg"><span class="dot" style="background:#444;border-radius:50%"></span>⌂ Ubytování</div>
+    </div>
   </div>
 </section>
 
@@ -3562,6 +3665,115 @@ loadNext(0);
       img.addEventListener('load', mark);
     }
   });
+})();
+</script>
+<script>
+/* ═══════════════════════════════════════════════════════════
+   TRIP MAP — Leaflet inicializace + body z DOM
+   ═══════════════════════════════════════════════════════════ */
+(function() {
+  function initMap() {
+    if (typeof L === 'undefined') { setTimeout(initMap, 100); return; }
+    var mapEl = document.getElementById('trip-map');
+    if (!mapEl) return;
+
+    var DAY_COLORS = {
+      den1: '#b03a0a', den2: '#1d4d4a', den3: '#1d4d4a',
+      den4: '#b08a3e', den5: '#b08a3e', den6: '#b08a3e',
+      den7: '#6b2342', den8: '#7a2806'
+    };
+    var DAY_NAMES = {
+      den1: 'Den 1 · So 23. 5.', den2: 'Den 2 · Ne 24. 5.',
+      den3: 'Den 3 · Po 25. 5.', den4: 'Den 4 · Út 26. 5.',
+      den5: 'Den 5 · St 27. 5.', den6: 'Den 6 · Čt 28. 5.',
+      den7: 'Den 7 · Pá 29. 5.', den8: 'Den 8 · So 30. 5.'
+    };
+
+    // Collect all points: locations + hotels
+    var points = [];
+    document.querySelectorAll('.day-block').forEach(function(day) {
+      var dayId = day.id;
+      var color = DAY_COLORS[dayId] || '#b03a0a';
+      var dayName = DAY_NAMES[dayId] || dayId;
+      var dayNum = (dayId.match(/\d+/) || ['?'])[0];
+
+      day.querySelectorAll('.loc').forEach(function(loc) {
+        var nameEl = loc.querySelector('.loc-name');
+        var coordsEl = loc.querySelector('.loc-coords');
+        if (!nameEl || !coordsEl) return;
+        var m = coordsEl.textContent.match(/(-?[\d.]+)\s*N\s*[·.]\s*(-?[\d.]+)\s*E/);
+        if (!m) return;
+        points.push({
+          lat: parseFloat(m[1]), lon: parseFloat(m[2]),
+          name: nameEl.textContent.trim(),
+          dayId: dayId, dayNum: dayNum, dayName: dayName,
+          color: color, isHotel: false
+        });
+      });
+
+      // Hotel (day-stay) — parse from coords if present, else skip
+      day.querySelectorAll('.day-stay').forEach(function(stay) {
+        var nameEl = stay.querySelector('.day-stay-name');
+        var coordsEl = stay.querySelector('.loc-coords');
+        if (!nameEl || !coordsEl) return;
+        var m = coordsEl.textContent.match(/(-?[\d.]+)\s*N\s*[·.]\s*(-?[\d.]+)\s*E/);
+        if (!m) return;
+        points.push({
+          lat: parseFloat(m[1]), lon: parseFloat(m[2]),
+          name: nameEl.textContent.trim(),
+          dayId: dayId, dayNum: dayNum, dayName: dayName,
+          color: '#444', isHotel: true
+        });
+      });
+    });
+
+    if (points.length === 0) return;
+
+    // Init map
+    var map = L.map('trip-map', {
+      scrollWheelZoom: false,
+      zoomControl: true
+    });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // Add markers
+    var bounds = L.latLngBounds([]);
+    points.forEach(function(p) {
+      var iconHtml = '<div class="trip-pin' + (p.isHotel ? ' hotel' : '') +
+                     '" style="background:' + p.color + '"><span>' +
+                     (p.isHotel ? '⌂' : p.dayNum) + '</span></div>';
+      var icon = L.divIcon({
+        className: 'trip-marker',
+        html: iconHtml,
+        iconSize: p.isHotel ? [22, 22] : [30, 30],
+        iconAnchor: p.isHotel ? [11, 11] : [15, 30],
+        popupAnchor: [0, p.isHotel ? -10 : -28]
+      });
+      var marker = L.marker([p.lat, p.lon], { icon: icon }).addTo(map);
+      var popup =
+        '<div class="pop-day" style="color:' + p.color + '">' + p.dayName + '</div>' +
+        '<strong>' + p.name + '</strong>' +
+        '<a href="#' + p.dayId + '">Otevřít den →</a>';
+      marker.bindPopup(popup);
+      bounds.extend([p.lat, p.lon]);
+    });
+
+    // Fit map to all points
+    map.fitBounds(bounds, { padding: [30, 30] });
+
+    // Enable scrollwheel on click
+    map.on('focus', function() { map.scrollWheelZoom.enable(); });
+    map.on('blur', function() { map.scrollWheelZoom.disable(); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMap);
+  } else {
+    initMap();
+  }
 })();
 </script>
 </body>
