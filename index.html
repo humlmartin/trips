@@ -1212,6 +1212,29 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   opacity: 1;
 }
 
+
+/* ═══════════════════════════════════════════════════════════
+   FORCE PHOTO DISPLAY — img above label, always visible
+   ═══════════════════════════════════════════════════════════ */
+.loc-photo-wrap { position: relative; overflow: hidden; }
+.loc-photo-wrap img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  opacity: 1 !important;
+  z-index: 2 !important;
+  display: block !important;
+}
+.loc-photo-wrap img:not([src]),
+.loc-photo-wrap img[src=""] {
+  display: none !important;
+}
+.loc-photo-label {
+  z-index: 1 !important;
+}
+
 /* ═══════════════════════════════════════════════════════════
    DAY COLORS (per nth-of-type — robust against extra siblings)
    ═══════════════════════════════════════════════════════════ */
