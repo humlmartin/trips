@@ -1201,6 +1201,17 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   .lightbox-next { right: 4px; }
 }
 
+
+/* ═══════════════════════════════════════════════════════════
+   Photo fallback — show img if src exists (mobile fix)
+   ═══════════════════════════════════════════════════════════ */
+.loc-photo-wrap:has(img[src]:not([src=""])) .loc-photo-label {
+  display: none;
+}
+.loc-photo-wrap img[src]:not([src=""]) {
+  opacity: 1;
+}
+
 /* ═══════════════════════════════════════════════════════════
    DAY COLORS (per nth-of-type — robust against extra siblings)
    ═══════════════════════════════════════════════════════════ */
@@ -3386,6 +3397,22 @@ loadNext(0);
         openLb(urls, name, 0);
       }
     });
+  });
+})();
+</script>
+<script>
+(function() {
+  // Mark images that already have src as "loaded" — fixes preloaded data-img
+  document.querySelectorAll('.loc-photo-wrap img[src]').forEach(function(img) {
+    function mark() {
+      img.classList.add('loaded');
+      if (img.parentElement) img.parentElement.classList.add('has-image');
+    }
+    if (img.complete && img.naturalHeight > 0) {
+      mark();
+    } else {
+      img.addEventListener('load', mark);
+    }
   });
 })();
 </script>
