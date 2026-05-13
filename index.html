@@ -3759,9 +3759,9 @@ loadNext(0);
       'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
       { maxZoom: 19, attribution: '© Esri World Imagery' }
     );
-    topoLayer.addTo(map); // default — turistická vrstva blíž mapy.cz
+    osmLayer.addTo(map); // default — základní OSM
     L.control.layers(
-      { 'Turistická': topoLayer, 'Základní': osmLayer, 'Satelit': satelliteLayer },
+      { 'Základní': osmLayer, 'Turistická': topoLayer, 'Satelit': satelliteLayer },
       null,
       { position: 'topright', collapsed: false }
     ).addTo(map);
