@@ -1193,6 +1193,26 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   letter-spacing: 0.12em;
 }
 .lightbox-caption .name { display: block; font-size: 14px; letter-spacing: 0.04em; margin-bottom: 4px; }
+.lightbox-img { transition: opacity 0.18s ease; }
+.lightbox.loading .lightbox-img { opacity: 0.25; }
+.lightbox-spinner {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 52px; height: 52px;
+  margin: -26px 0 0 -26px;
+  border: 3px solid rgba(255,255,255,0.18);
+  border-top-color: rgba(255,255,255,0.92);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+  z-index: 2;
+}
+.lightbox.loading .lightbox-spinner {
+  opacity: 1;
+  animation: lb-spin 0.7s linear infinite;
+}
+@keyframes lb-spin { to { transform: rotate(360deg); } }
 @media (max-width: 720px) {
   .lightbox { padding: 50px 8px 70px; }
   .lightbox-prev, .lightbox-next { width: 40px; height: 40px; font-size: 20px; }
@@ -3353,38 +3373,79 @@ loadNext(0);
     '<button class="lightbox-prev" aria-label="Předchozí">‹</button>' +
     '<button class="lightbox-next" aria-label="Další">›</button>' +
     '<img class="lightbox-img" src="" alt="">' +
+    '<div class="lightbox-spinner"></div>' +
     '<div class="lightbox-caption"><span class="name"></span><span class="count"></span></div>';
   document.body.appendChild(lb);
-  
+
   var imgEl = lb.querySelector('.lightbox-img');
   var nameEl = lb.querySelector('.lightbox-caption .name');
   var countEl = lb.querySelector('.lightbox-caption .count');
   var prevBtn = lb.querySelector('.lightbox-prev');
   var nextBtn = lb.querySelector('.lightbox-next');
-  var state = { urls: [], index: 0, name: '' };
-  
+  var state = { urls: [], index: 0, name: '', seq: 0, cache: {} };
+
+  function preload(url) {
+    if (!url || state.cache[url]) return state.cache[url];
+    var img = new Image();
+    img.src = url;
+    state.cache[url] = img;
+    return img;
+  }
+  function preloadNeighbors(i) {
+    var n = state.urls.length;
+    if (n <= 1) return;
+    // Preload ±1, ±2 around current
+    [1, -1, 2, -2].forEach(function(off) {
+      var j = (i + off + n * 2) % n;
+      preload(state.urls[j]);
+    });
+  }
   function show(i) {
     if (state.urls.length === 0) return;
-    if (i < 0) i = state.urls.length - 1;
-    if (i >= state.urls.length) i = 0;
+    var n = state.urls.length;
+    if (i < 0) i = n - 1;
+    if (i >= n) i = 0;
     state.index = i;
-    imgEl.src = state.urls[i];
+    var url = state.urls[i];
+    var mySeq = ++state.seq;
+
     nameEl.textContent = state.name;
-    countEl.textContent = state.urls.length > 1 ? (i+1) + ' / ' + state.urls.length : '';
-    prevBtn.style.display = state.urls.length > 1 ? 'flex' : 'none';
-    nextBtn.style.display = state.urls.length > 1 ? 'flex' : 'none';
+    countEl.textContent = n > 1 ? (i+1) + ' / ' + n : '';
+    prevBtn.style.display = n > 1 ? 'flex' : 'none';
+    nextBtn.style.display = n > 1 ? 'flex' : 'none';
+
+    var loader = preload(url);
+    var swap = function() {
+      if (mySeq !== state.seq) return; // user moved on
+      imgEl.src = url;
+      lb.classList.remove('loading');
+    };
+
+    if (loader.complete && loader.naturalHeight > 0) {
+      // Already cached — instant swap, no spinner flash
+      swap();
+    } else {
+      lb.classList.add('loading');
+      loader.onload = swap;
+      loader.onerror = function() {
+        if (mySeq !== state.seq) return;
+        lb.classList.remove('loading');
+      };
+    }
+
+    preloadNeighbors(i);
   }
   function openLb(urls, name, index) {
     state.urls = urls;
     state.name = name || '';
-    show(index || 0);
+    state.seq = 0;
     lb.style.display = 'flex';
     document.body.style.overflow = 'hidden';
-    // Preload all gallery images so prev/next is instant
-    urls.forEach(function(u) {
-      var pre = new Image();
-      pre.src = u;
-    });
+    show(index || 0);
+    // Preload everything in background after first frame
+    setTimeout(function() {
+      urls.forEach(preload);
+    }, 50);
   }
   function closeLb() {
     lb.style.display = 'none';
