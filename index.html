@@ -1,0 +1,3387 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ázerbájdžán 2026 — Itinerář</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f1ead9'/%3E%3Cpath d='M16 1 L19 8 L26 7 L22 13 L29 16 L22 19 L26 25 L19 24 L16 31 L13 24 L6 25 L10 19 L3 16 L10 13 L6 7 L13 8 Z' fill='%23b03a0a'/%3E%3C/svg%3E">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   ÁZERBÁJDŽÁN 2026 — Editorial / Persian
+   Cream paper · ink · rust · ornaments
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --paper:    #f1ead9;
+  --paper-2:  #ebe2cc;
+  --paper-3:  #e2d6b8;
+  --ink:      #1a1612;
+  --ink-soft: #4a4036;
+  --ink-mute: #8a7d68;
+  --rule:     #c9bca0;
+  --rule-2:   #d8ccae;
+  --rust:     #b03a0a;
+  --rust-dk:  #7a2806;
+  --teal:     #1d4d4a;
+  --gold:     #b08a3e;
+  --plum:     #6b2342;
+  --night:    #18150f;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { background: var(--paper); overflow-x: clip; }
+body { overflow-x: clip;
+  background:
+    radial-gradient(ellipse 1200px 800px at 50% 0%, rgba(176,58,10,0.04), transparent 60%),
+    radial-gradient(ellipse 900px 600px at 100% 100%, rgba(29,77,74,0.04), transparent 60%),
+    var(--paper);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* subtle paper grain */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(122,40,6,0.04) 0, transparent 2px),
+    radial-gradient(circle at 70% 80%, rgba(26,22,18,0.04) 0, transparent 2px),
+    radial-gradient(circle at 40% 60%, rgba(122,40,6,0.04) 0, transparent 2px);
+  background-size: 7px 7px, 11px 11px, 13px 13px;
+}
+
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 28px 100px;
+  position: relative;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ═══════════════════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════════════════ */
+.hero {
+  padding: 64px 0 28px;
+  position: relative;
+}
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--ink);
+}
+.hero-top .dot { color: var(--rust); }
+
+.hero-title-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 26px 0 18px;
+  border-bottom: 1px solid var(--rule);
+}
+.hero-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: clamp(56px, 9.5vw, 132px);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+}
+.hero-title em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--rust);
+}
+.hero-meta {
+  text-align: right;
+  flex-shrink: 0;
+  padding-bottom: 8px;
+}
+.hero-meta .dates {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.hero-meta .nights {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-top: 4px;
+}
+
+.hero-strap {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 18px 0 8px;
+  flex-wrap: wrap;
+}
+.hero-strap .lede {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  color: var(--ink-soft);
+  line-height: 1.45;
+  flex: 1;
+  min-width: 320px;
+  max-width: 640px;
+}
+
+.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 11px 18px;
+  border-radius: 999px;
+  transition: background 0.18s;
+}
+.pill-btn:hover { background: var(--rust); }
+.pill-btn.ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+.pill-btn.ghost:hover { background: var(--ink); color: var(--paper); }
+
+/* ornament divider */
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 36px 0 32px;
+  color: var(--rust);
+}
+.ornament .line { flex: 1; height: 1px; background: var(--rule); }
+.ornament .glyph {
+  width: 28px; height: 28px; flex-shrink: 0;
+  opacity: 0.85;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   INFO BLOCKS (flights + hotel)
+   ═══════════════════════════════════════════════════════════ */
+.info-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 720px) {
+  .hero-title-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .hero-meta { text-align: left; padding-bottom: 0; }
+  .hero-meta .dates { white-space: normal; font-size: 18px; }
+}
+
+@media (min-width: 820px) {
+  .info-section { grid-template-columns: 1.05fr 1fr; }
+}
+
+.info-block {
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  padding: 22px 26px 22px;
+  position: relative;
+}
+.info-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background:
+    repeating-linear-gradient(90deg,
+      var(--ink) 0 6px,
+      transparent 6px 12px);
+  opacity: 0.55;
+}
+.info-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rust);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.info-h {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+.info-h .ref {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-mute);
+  font-weight: 400;
+  margin-left: 8px;
+  vertical-align: 4px;
+}
+.info-h .addr {
+  display: block;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--ink-mute);
+  letter-spacing: 0;
+  margin-top: 2px;
+}
+
+.info-sub {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 16px 0 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed var(--rule);
+}
+.info-sub:first-of-type { margin-top: 14px; }
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 5px 0;
+  border-bottom: 1px dotted var(--rule-2);
+  font-size: 13px;
+}
+.info-row:last-of-type { border-bottom: none; }
+.info-label {
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 300;
+  min-width: 120px;
+  flex-shrink: 0;
+}
+.info-val {
+  font-weight: 500;
+  text-align: right;
+  line-height: 1.4;
+  font-size: 13px;
+  color: var(--ink);
+}
+.info-val a { color: var(--rust); border-bottom: 1px solid var(--rust); }
+.flight-no {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--teal);
+  letter-spacing: 0.05em;
+  margin-left: 4px;
+}
+.seat {
+  font-family: 'IBM Plex Mono', monospace;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+.muted-row .info-val,
+.muted-row .info-label { color: var(--ink-mute); font-style: normal; font-weight: 300; }
+
+.map-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px 18px;
+  transition: background 0.15s;
+}
+.map-btn:hover { background: var(--rust); }
+.map-btn .arrow {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DAY BLOCK
+   ═══════════════════════════════════════════════════════════ */
+.day-block {
+  margin-top: 28px;
+  padding-top: 28px;
+  position: relative;
+}
+
+.day-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: end;
+  gap: 28px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--ink);
+  margin-bottom: 22px;
+}
+
+.day-num {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 108px;
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+  color: var(--ink);
+  font-feature-settings: "tnum";
+}
+.day-num em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--day-color, var(--rust));
+}
+.day-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 6px;
+}
+.day-kicker {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--day-color, var(--rust));
+}
+.day-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+.day-title em { font-style: normal; font-weight: 400; color: var(--ink-soft); }
+.day-sub {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+.day-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--ink-mute);
+  text-align: right;
+  padding-bottom: 8px;
+  line-height: 1.5;
+}
+.day-stamp .stops { color: var(--day-color, var(--rust)); font-weight: 500; }
+
+@media (max-width: 720px) {
+  .day-header { grid-template-columns: auto 1fr; gap: 18px; }
+  .day-num { font-size: 80px; }
+  .day-title { font-size: 26px; }
+  .day-stamp { display: none; }
+}
+
+.section-note {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  padding: 0 0 22px 18px;
+  max-width: 800px;
+  border-left: 2px solid var(--day-color, var(--rust));
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LOCATIONS GRID + CARDS
+   ═══════════════════════════════════════════════════════════ */
+.locations {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  align-items: start;
+}
+@media (min-width: 720px) {
+  .locations { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1040px) {
+  .locations { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.loc {
+  display: flex;
+  flex-direction: column;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  position: relative;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.loc:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(26,22,18,0.10);
+}
+.loc::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px; right: -1px;
+  height: 3px;
+  background: var(--day-color, var(--rust));
+}
+
+.loc-photo-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+  background: var(--paper-3);
+}
+.loc-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.loc-photo-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.5s, transform 0.4s;
+  filter: saturate(0.92) contrast(1.02);
+}
+.loc-photo-wrap img.loaded { opacity: 1; }
+.loc-photo-link:hover .loc-photo-wrap img.loaded { transform: scale(1.04); }
+
+/* placeholder ornament for missing images */
+.loc-photo-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  padding: 16px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  background:
+    repeating-linear-gradient(45deg,
+      transparent 0 14px,
+      rgba(122,40,6,0.04) 14px 15px),
+    repeating-linear-gradient(-45deg,
+      transparent 0 14px,
+      rgba(29,77,74,0.04) 14px 15px),
+    var(--paper-3);
+}
+.loc-photo-label::before {
+  content: '';
+  display: block;
+  width: 36px; height: 36px;
+  background: var(--day-color, var(--rust));
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5Z M12 18C12 18 8 21 8 22H16C16 22 12 18 12 18Z' fill='black'/></svg>") center/contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5Z' fill='black'/></svg>") center/contain no-repeat;
+  opacity: 0.7;
+}
+.loc-photo-wrap.has-image .loc-photo-label { display: none; }
+.loc-photo-wrap.has-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(26,22,18,0.4) 100%);
+  pointer-events: none;
+}
+
+.photo-magnify {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 9px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+.loc-photo-link:hover .photo-magnify { opacity: 1; }
+
+.loc-body-link {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 16px 18px 16px;
+  color: inherit;
+  position: relative;
+}
+
+.loc-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--ink-mute);
+  margin-bottom: 6px;
+}
+
+.loc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.loc-name {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  flex: 1;
+}
+.loc-body-link:hover .loc-name { color: var(--rust); }
+.nav-arrow {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--day-color, var(--rust));
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.loc-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  font-weight: 400;
+  margin-top: 4px;
+  text-wrap: pretty;
+}
+
+.loc-info {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--ink-mute);
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 8px;
+  text-wrap: pretty;
+}
+.loc-note {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--rust-dk);
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: rgba(176,58,10,0.07);
+  border-left: 2px solid var(--rust);
+  line-height: 1.45;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 12px;
+}
+.tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  background: var(--paper);
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  white-space: nowrap;
+}
+.tag.vstup { color: var(--teal); border-color: var(--teal); }
+.tag.cas { color: var(--ink-soft); }
+.tag.cas::before { content: '◆ '; color: var(--day-color, var(--rust)); }
+
+.loc-coords {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.05em;
+  color: var(--ink-mute);
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--rule);
+}
+
+.loc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+.loc-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--teal);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+.loc-link:hover { border-bottom-color: var(--teal); }
+
+.loc.optional {
+  background: transparent;
+  border-style: dashed;
+}
+.loc.optional .loc-photo-link { opacity: 0.85; }
+.loc.optional .loc-name::after {
+  content: ' · volitelné';
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--ink-mute);
+}
+
+
+.loc.priority::before {
+  background: var(--teal) !important;
+  height: 5px;
+}
+.loc.priority .loc-num::before {
+  content: '★ PRIORITA · ';
+  color: var(--teal);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+.loc.priority.optional::before {
+  background: var(--rule) !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   NAV BAR per card — Google driving + Mapy.com offline
+   ═══════════════════════════════════════════════════════════ */
+.loc-nav {
+  display: flex;
+  border-top: 1px solid var(--rule);
+  background: var(--paper);
+}
+.loc-nav-btn {
+  flex: 1;
+  padding: 10px 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--ink-soft);
+  border-right: 1px solid var(--rule);
+  transition: background 0.15s, color 0.15s;
+}
+.loc-nav-btn:last-child { border-right: none; }
+.loc-nav-btn:hover {
+  background: var(--day-color, var(--rust));
+  color: var(--paper);
+}
+.loc-nav-btn .nav-icon {
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   DAY STAY block — accommodation marker at end of day
+   ═══════════════════════════════════════════════════════════ */
+.day-stay {
+  margin-top: 24px;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--teal);
+  padding: 18px 22px 14px;
+  background: linear-gradient(180deg, rgba(29,77,74,0.04) 0%, var(--paper-2) 100%);
+  position: relative;
+}
+.day-stay-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 6px;
+}
+.day-stay-name {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.day-stay-name a {
+  color: var(--rust);
+  border-bottom: 1px solid var(--rust);
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+.day-stay-meta {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+}
+.day-stay-nav {
+  display: flex;
+  border-top: 1px solid var(--rule);
+  margin: 0 -22px -14px;
+  background: var(--paper);
+}
+.day-stay-nav .loc-nav-btn { padding: 10px 8px; }
+
+
+/* ═══════════════════════════════════════════════════════════
+   BONUS — pokud se stihne (gray filter)
+   ═══════════════════════════════════════════════════════════ */
+.loc.bonus {
+  opacity: 0.62;
+  filter: grayscale(0.55);
+  transition: opacity 0.2s, filter 0.2s;
+}
+.loc.bonus:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+.loc.bonus::before {
+  background: var(--ink-mute) !important;
+}
+.loc.bonus .loc-name::after {
+  content: ' · bonus';
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--ink-mute);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   TRANSIT — drive time between cards
+   ═══════════════════════════════════════════════════════════ */
+.loc-transit {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  padding: 8px 14px;
+  background: var(--paper-3);
+  border-bottom: 1px dashed var(--rule);
+}
+.loc-transit .arr { color: var(--day-color, var(--rust)); margin-right: 6px; font-weight: 600; }
+.day-totals {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 8px 0 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px dashed var(--rule);
+}
+.day-totals strong { color: var(--day-color, var(--rust)); font-weight: 600; margin: 0 4px; }
+
+
+/* ═══════════════════════════════════════════════════════════
+   TIP — bonus body od Ladi (gold accent, separate block)
+   ═══════════════════════════════════════════════════════════ */
+.day-tips {
+  margin-top: 28px;
+  padding: 18px 20px 4px;
+  background: rgba(176,138,62,0.06);
+  border: 1px dashed var(--gold);
+  border-radius: 2px;
+}
+.day-tips-header {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.day-tips-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  align-items: start;
+}
+@media (min-width: 720px) {
+  .day-tips-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1040px) {
+  .day-tips-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+.loc.tip {
+  background: var(--paper);
+  border: 1px solid var(--gold);
+}
+.loc.tip::before {
+  background: var(--gold) !important;
+}
+.loc.tip .loc-num {
+  color: var(--gold);
+  font-weight: 600;
+}
+.loc.tip .loc-photo-link { height: 120px; }
+
+
+/* ═══════════════════════════════════════════════════════════
+   GASTRO — co kde jíst per den (plum accent)
+   ═══════════════════════════════════════════════════════════ */
+.day-gastro {
+  margin: 14px 0 22px;
+  padding: 14px 18px;
+  background: rgba(107, 35, 66, 0.06);
+  border-left: 3px solid var(--plum);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.day-gastro-header {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--plum);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.day-gastro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  color: var(--ink);
+}
+@media (min-width: 720px) {
+  .day-gastro-grid { grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+}
+.day-gastro strong { color: var(--plum); font-weight: 600; }
+
+
+/* ═══════════════════════════════════════════════════════════
+   STICKY DAY NAV — quick jump on mobile
+   ═══════════════════════════════════════════════════════════ */
+.day-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(241,234,217,0.95);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr repeat(8, 1fr);
+  gap: 3px;
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--rule);
+  margin: 0 -28px 18px;
+  overflow: hidden;
+}
+.day-nav a {
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.02em;
+  padding: 5px 2px;
+  border-radius: 3px;
+  color: var(--ink-soft);
+  background: var(--paper-2);
+  transition: background 0.15s, color 0.15s;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1.1;
+  min-width: 0;
+}
+.day-nav a b {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  display: block;
+  margin-bottom: 1px;
+  color: var(--ink);
+}
+.day-nav a:hover, .day-nav a.active {
+  background: var(--rust);
+  color: var(--paper);
+}
+.day-nav a:hover b, .day-nav a.active b { color: var(--paper); }
+.day-nav a.info { font-size: 16px; padding: 12px 4px; }
+@media (min-width: 720px) {
+  .day-nav a { font-size: 10px; padding: 6px 4px; }
+  .day-nav a b { font-size: 15px; }
+}
+section[id^="den"], section#info { scroll-margin-top: 70px; }
+
+
+
+
+/* ═══════════════════════════════════════════════════════════
+   PRE-TRIP CHECKLIST — BETA
+   ═══════════════════════════════════════════════════════════ */
+.pretrip {
+  margin-top: 60px;
+  padding: 26px 28px 22px;
+  background: rgba(29,77,74,0.05);
+  border: 1px solid var(--teal);
+  position: relative;
+}
+.pretrip-beta {
+  position: absolute;
+  top: -10px;
+  right: 18px;
+  background: var(--teal);
+  color: var(--paper);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  font-weight: 600;
+}
+.pretrip-header {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: var(--teal);
+  margin-bottom: 4px;
+}
+.pretrip-sub {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 18px;
+}
+.pretrip-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+@media (min-width: 720px) {
+  .pretrip-grid { grid-template-columns: 1fr 1fr; gap: 8px 26px; }
+}
+.pretrip-grid > div {
+  padding: 6px 0 6px 26px;
+  position: relative;
+  color: var(--ink);
+  border-bottom: 1px dotted var(--rule-2);
+}
+.pretrip-grid > div::before {
+  content: '☐';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  color: var(--teal);
+  font-size: 16px;
+}
+.pretrip-grid strong { color: var(--teal); font-weight: 600; }
+
+
+/* ═══════════════════════════════════════════════════════════
+   COLLAPSIBLE info-blocks — click eyebrow to expand
+   ═══════════════════════════════════════════════════════════ */
+.info-block .info-eyebrow {
+  cursor: pointer;
+  position: relative;
+  padding-right: 24px;
+  user-select: none;
+}
+.info-block .info-eyebrow::after {
+  content: '▼';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 9px;
+  color: var(--rust);
+  transition: transform 0.2s;
+}
+.info-block.collapsed .info-eyebrow::after {
+  transform: rotate(-90deg);
+}
+.info-block.collapsed > *:not(.info-eyebrow) {
+  display: none;
+}
+.info-block.collapsed .info-eyebrow {
+  margin-bottom: 0;
+}
+.info-block.collapsed {
+  padding: 18px 26px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   COLLAPSIBLE day-blocks — click day-header to expand
+   ═══════════════════════════════════════════════════════════ */
+.day-block .day-header {
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+.day-block .day-header::after {
+  content: '▼';
+  position: absolute;
+  right: 4px;
+  top: 14px;
+  font-size: 12px;
+  color: var(--day-color, var(--rust));
+  transition: transform 0.2s;
+}
+.day-block.collapsed .day-header::after {
+  transform: rotate(-90deg);
+}
+.day-block.collapsed > *:not(.day-header):not(.day-stay):not(.stay-options) {
+  display: none !important;
+}
+.day-block.collapsed {
+  padding-bottom: 4px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   COLLAPSIBLE day-stay — click eyebrow to expand
+   ═══════════════════════════════════════════════════════════ */
+.day-stay .day-stay-eyebrow {
+  cursor: pointer;
+  position: relative;
+  padding-right: 24px;
+  user-select: none;
+}
+.day-stay .day-stay-eyebrow::after {
+  content: '▼';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 9px;
+  color: var(--teal);
+  transition: transform 0.2s;
+}
+.day-stay.collapsed .day-stay-eyebrow::after {
+  transform: rotate(-90deg);
+}
+.day-stay.collapsed > *:not(.day-stay-eyebrow):not(.loc-transit) {
+  display: none;
+}
+.day-stay.collapsed {
+  padding: 12px 22px;
+}
+.day-stay.collapsed .loc-transit {
+  margin-bottom: 0;
+  padding-bottom: 0 !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   LIGHTBOX / GALERIE — fullscreen image viewer
+   ═══════════════════════════════════════════════════════════ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px 80px;
+  cursor: zoom-out;
+}
+.lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  cursor: default;
+  box-shadow: 0 10px 60px rgba(0,0,0,0.5);
+}
+.lightbox-close, .lightbox-prev, .lightbox-next {
+  position: absolute;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  font-size: 22px;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'IBM Plex Sans', sans-serif;
+  transition: background 0.15s;
+}
+.lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover {
+  background: rgba(255,255,255,0.25);
+}
+.lightbox-close { top: 16px; right: 16px; font-size: 24px; }
+.lightbox-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 16px; top: 50%; transform: translateY(-50%); }
+.lightbox-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: rgba(255,255,255,0.85);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+.lightbox-caption .name { display: block; font-size: 14px; letter-spacing: 0.04em; margin-bottom: 4px; }
+@media (max-width: 720px) {
+  .lightbox { padding: 50px 8px 70px; }
+  .lightbox-prev, .lightbox-next { width: 40px; height: 40px; font-size: 20px; }
+  .lightbox-close { top: 10px; right: 10px; }
+  .lightbox-prev { left: 4px; }
+  .lightbox-next { right: 4px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DAY COLORS (per nth-of-type — robust against extra siblings)
+   ═══════════════════════════════════════════════════════════ */
+.day-block:nth-of-type(1) { --day-color: var(--rust);    --day-color-2: #d9521f; }
+.day-block:nth-of-type(2) { --day-color: var(--teal);    --day-color-2: #2a6f6b; }
+.day-block:nth-of-type(3) { --day-color: var(--teal);    --day-color-2: #2a6f6b; }
+.day-block:nth-of-type(4) { --day-color: var(--gold);    --day-color-2: #c9a14f; }
+.day-block:nth-of-type(5) { --day-color: var(--gold);    --day-color-2: #c9a14f; }
+.day-block:nth-of-type(6) { --day-color: var(--gold);    --day-color-2: #c9a14f; }
+.day-block:nth-of-type(7) { --day-color: var(--plum);    --day-color-2: #8a3057; }
+.day-block:nth-of-type(8) { --day-color: var(--rust-dk); --day-color-2: var(--rust); }
+
+/* ═══════════════════════════════════════════════════════════
+   REVIEW SECTION
+   ═══════════════════════════════════════════════════════════ */
+.review-section {
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid var(--ink);
+  position: relative;
+}
+.review-section::before {
+  content: '✦';
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--paper);
+  padding: 0 16px;
+  color: var(--rust);
+  font-size: 18px;
+}
+
+.review-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 32px;
+}
+.review-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.review-title em { font-style: normal; font-weight: 700; color: var(--rust); }
+.review-sub {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 540px;
+  padding-bottom: 8px;
+}
+
+@media (max-width: 720px) {
+  .review-head { grid-template-columns: 1fr; }
+  .review-title { font-size: 44px; }
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 820px) {
+  .review-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.review-box {
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  padding: 24px 26px;
+  position: relative;
+}
+.review-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.review-box.review-fixes::before { background: var(--rust); }
+.review-box.review-recs::before  { background: var(--teal); }
+
+.review-box h3 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.review-box .review-kicker {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.review-box.review-fixes .review-kicker { color: var(--rust); }
+.review-box.review-recs  .review-kicker { color: var(--teal); }
+
+.review-box ul {
+  list-style: none;
+  padding: 0;
+  counter-reset: review;
+}
+.review-box li {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink);
+  padding: 10px 0 10px 28px;
+  border-bottom: 1px dotted var(--rule);
+  position: relative;
+  counter-increment: review;
+  text-wrap: pretty;
+}
+.review-box li:last-child { border-bottom: none; }
+.review-box li::before {
+  content: counter(review, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 11px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+.review-box.review-fixes li::before { color: var(--rust); }
+.review-box.review-recs  li::before { color: var(--teal); }
+.review-box li strong { font-weight: 600; color: var(--ink); }
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════ */
+.colophon {
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.colophon em {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="day-nav">
+  <a href="#" class="info" id="nav-top" title="Nahoru">⌂</a>
+  <a href="#" class="info" id="nav-collapse" title="Sbalit vše">⊟</a>
+  <a href="#den1" title="Sobota · Absheron"><b>23</b><br>so</a>
+  <a href="#den2" title="Neděle · Candy + Quba"><b>24</b><br>ne</a>
+  <a href="#den3" title="Pondělí · Khinaliq"><b>25</b><br>po</a>
+  <a href="#den4" title="Úterý · Gobustan → Ganja"><b>26</b><br>út</a>
+  <a href="#den5" title="Středa · Ganja + Mingachevir → Sheki"><b>27</b><br>st</a>
+  <a href="#den6" title="Čtvrtek · Sheki + Kish → Ismayilli"><b>28</b><br>čt</a>
+  <a href="#den7" title="Pátek · Lahic + Shamakhi → Baku"><b>29</b><br>pá</a>
+  <a href="#den8" title="Sobota · Baku centrum"><b>30</b><br>so</a>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="hero">
+  <div class="hero-top">
+    <span><span class="dot">●</span>&nbsp;&nbsp;Itinerář · v2</span>
+    <span>4 cestující · 8 dní</span>
+    <span>Baku ↔ Praha</span>
+  </div>
+
+  <div class="hero-title-row">
+    <h1 class="hero-title">Ázerbájdž<em>án</em></h1>
+    <div class="hero-meta">
+      <div class="dates">23.&thinsp;–&thinsp;30. května 2026</div>
+      <div class="nights">7 nocí · Kavkaz · Kaspik</div>
+    </div>
+  </div>
+
+  <div class="hero-strap">
+    <p class="lede">Země ohně mezi Kaspickým mořem a kavkazskými velehorami — chrámy, kde se modlí plamen, vesnice ve 2&thinsp;350&nbsp;m, paláce skládané ze skla bez lepidla.</p>
+    <div class="hero-actions">
+      <a class="pill-btn" href="https://app.settleup.io" target="_blank">Settle Up ↗</a>
+      <a class="pill-btn ghost" href="#den1">Skočit na den 1 ↓</a>
+    </div>
+  </div>
+
+  <!-- ornament -->
+  <div class="ornament">
+    <span class="line"></span>
+    <svg class="glyph" viewBox="0 0 32 32" fill="currentColor"><path d="M16 1 L19 8 L26 7 L22 13 L29 16 L22 19 L26 25 L19 24 L16 31 L13 24 L6 25 L10 19 L3 16 L10 13 L6 7 L13 8 Z"/></svg>
+    <span class="line"></span>
+  </div>
+</header>
+
+<!-- ═══════════════ INFO ═══════════════ -->
+<section class="info-section" id="info">
+
+  <!-- LETENKY -->
+  <div class="info-block">
+    <div class="info-eyebrow">✈ Letenky · Turkish Airlines · V4EHPM</div>
+    <div class="info-h">Praha &harr; Baku <span class="ref">29 000 Kč / 4 os.</span></div>
+
+    <div class="info-sub">Praha → Baku · Pá 22. 5.</div>
+    <div class="info-row"><span class="info-label">PRG → IST</span><span class="info-val">19:20 → 23:00 <span class="flight-no">TK1770</span></span></div>
+    <div class="info-row"><span class="info-label">IST → GYD</span><span class="info-val">01:20 → 05:10 <span class="flight-no">TK338</span></span></div>
+
+    <div class="info-sub">Baku → Praha · Ne 31. 5.</div>
+    <div class="info-row"><span class="info-label">GYD → IST</span><span class="info-val">02:35 → 04:45 <span class="flight-no">TK337</span></span></div>
+    <div class="info-row"><span class="info-label">IST → PRG</span><span class="info-val">06:45 → 08:20 <span class="flight-no">TK1767</span></span></div>
+
+    <div class="info-sub">Sedadla · IST – GYD a zpět</div>
+    <div class="info-row"><span class="info-label">Láďa Růžička</span><span class="info-val"><span class="seat">13C</span></span></div>
+    <div class="info-row"><span class="info-label">Pavel Jiráček</span><span class="info-val"><span class="seat">13B</span></span></div>
+    <div class="info-row muted-row"><span class="info-label">Martin Huml</span><span class="info-val">nevybráno</span></div>
+    <div class="info-row muted-row"><span class="info-label">Libor Prouza</span><span class="info-val">nevybráno</span></div>
+
+    <div class="info-sub">Zavazadla &amp; ceny</div>
+    <div class="info-row"><span class="info-label">Palubní / zapsané</span><span class="info-val">1×8 kg / 30 kg (každý)</span></div>
+    <div class="info-row"><span class="info-label">Sedadla L+P</span><span class="info-val">3 932 Kč</span></div>
+  </div>
+
+  <!-- HOTEL --></section>
+
+
+<!-- AUTO -->
+<section class="info-section" style="margin-top: 12px; grid-template-columns: 1fr;">
+  <div class="info-block">
+    <div class="info-eyebrow">🚗 Auto · Europcar · #756366784</div>
+    <div class="info-h">Hyundai Santa Fe <span class="ref">7-místné · hybrid · automat</span></div>
+
+    <div class="info-sub">Vyzvednutí</div>
+    <div class="info-row"><span class="info-label">Kdy</span><span class="info-val">So 23. 5. · 5:30</span></div>
+    <div class="info-row"><span class="info-label">Kde</span><span class="info-val">Baku Letiště (GYD) · Meet &amp; Greet</span></div>
+    <div class="info-row"><span class="info-label">Let</span><span class="info-val">TK1770 / TK338 (přistání 05:10)</span></div>
+
+    <div class="info-sub">Vrácení</div>
+    <div class="info-row"><span class="info-label">Kdy</span><span class="info-val">Pá 29. 5. · 19:00</span></div>
+    <div class="info-row"><span class="info-label">Kde</span><span class="info-val">Baku Letiště (GYD)</span></div>
+    <div class="info-row"><span class="info-label">Doba</span><span class="info-val">7 dní</span></div>
+
+    <div class="info-sub">Specifikace</div>
+    <div class="info-row"><span class="info-label">Model</span><span class="info-val">Hyundai Santa Fe</span></div>
+    <div class="info-row"><span class="info-label">Převodovka</span><span class="info-val">Automatická</span></div>
+    <div class="info-row"><span class="info-label">Pohon</span><span class="info-val">Ověřit na pobočce (AWD/FWD)</span></div>
+    <div class="info-row"><span class="info-label">Místa / dveře</span><span class="info-val">7 / 4</span></div>
+    <div class="info-row"><span class="info-label">Hlavní řidič</span><span class="info-val">Martin Huml · +420 731 616 757</span></div>
+
+    <div class="info-sub">Cena · 14 155,73 Kč</div>
+    <div class="info-row"><span class="info-label">Pronájem</span><span class="info-val">14 099,37 Kč</span></div>
+    <div class="info-row"><span class="info-label">Sleva Genius</span><span class="info-val">−1 409,94 Kč</span></div>
+    <div class="info-row"><span class="info-label">Sleva 5 %</span><span class="info-val">−704,97 Kč (booking ubytko)</span></div>
+    <div class="info-row"><span class="info-label">Pojištění</span><span class="info-val">2 171,27 Kč</span></div>
+    <div class="info-row"><span class="info-label"><strong>Celkem</strong></span><span class="info-val"><strong>14 155,73 Kč</strong></span></div>
+
+    <div class="info-sub">Komplexní pojištění · zahrnuto</div>
+    <div class="info-row"><span class="info-label">Nehoda / krádež</span><span class="info-val">Vrácení nákladů</span></div>
+    <div class="info-row"><span class="info-label">Oprava vozidla</span><span class="info-val">Vrácení nákladů</span></div>
+    <div class="info-row"><span class="info-label">Porucha / admin</span><span class="info-val">Vrácení nákladů</span></div>
+
+    <div class="info-sub">Storno</div>
+    <div class="info-row"><span class="info-label">Zdarma do</span><span class="info-val">Čt 21. 5. 2026 · 3:29 Europe/Prague</span></div>
+  </div>
+</section>
+
+<!-- DALŠÍ NOCI -->
+<section class="info-section" style="margin-top: 12px; grid-template-columns: 1fr;">
+  <div class="info-block">
+    <div class="info-eyebrow">⌂ Přehled ubytování · po trase</div>
+    <div class="info-h">8 nocí · Baku → Quba → Ganja → Sheki → Ismayilli → Baku</div>
+
+    <div class="info-sub">Po Dni 1 — Baku · Grand Hotel Europe</div>
+    <div class="info-row"><span class="info-label">Hotel</span><span class="info-val">Grand Hotel Europe · Tbilisi Prospekt 20, Nasimi</span></div>
+    <div class="info-row"><span class="info-label">Pokoje</span><span class="info-val">Deluxe DBL + Rodinný · balkon · výhled na moře</span></div>
+    <div class="info-row"><span class="info-label">Pro</span><span class="info-val">4 dospělé (2+2)</span></div>
+    <div class="info-row"><span class="info-label">Stravování</span><span class="info-val">Snídaně v ceně</span></div>
+    <div class="info-row"><span class="info-label">Rezervace</span><span class="info-val">5326.232.828 / PIN 5142</span></div>
+    <div class="info-row"><span class="info-label">Cena</span><span class="info-val">~3 445 Kč · AZN 284 · na místě</span></div>
+    <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+994555153314" style="color:var(--rust);border-bottom:1px solid var(--rust)">+994 55 515 33 14</a></span></div>
+    <div class="info-row"><span class="info-label">Noc</span><span class="info-val">So 23. 5. → Ne 24. 5.</span></div>
+
+    <div class="info-sub">Po Dni 2 — Quba · TIP</div>
+    <div class="info-row"><span class="info-label">Hotel</span><span class="info-val"><a href="https://www.booking.com/hotel/az/macara-lake-park.cs.html" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">Macara Lake Park ↗</a></span></div>
+    <div class="info-row"><span class="info-label">Pokoje</span><span class="info-val">2× DBL · oddělené postele · výhled na jezero</span></div>
+    <div class="info-row"><span class="info-label">Pro</span><span class="info-val">4 dospělé (2+2)</span></div>
+    <div class="info-row"><span class="info-label">Stravování</span><span class="info-val">Snídaně v ceně</span></div>
+    <div class="info-row"><span class="info-label">Platba</span><span class="info-val">Online předem · storno do 22. 5. 2026</span></div>
+    <div class="info-row"><span class="info-label">Noc</span><span class="info-val">Ne 24. 5. → Po 25. 5.</span></div>
+
+    <div class="info-sub">Po Dni 3 — Baku (Badamdar) · TIP</div>
+    <div class="info-row"><span class="info-label">Hotel</span><span class="info-val"><a href="https://www.booking.com/hotel/az/badamdar-estates.cs.html" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">Badamdar Estates ↗</a></span></div>
+    <div class="info-row"><span class="info-label">Pokoje</span><span class="info-val">2× DBL Superior · oddělené postele</span></div>
+    <div class="info-row"><span class="info-label">Pro</span><span class="info-val">4 dospělé (2+2)</span></div>
+    <div class="info-row"><span class="info-label">Stravování</span><span class="info-val">Snídaně 303 Kč (volitelné)</span></div>
+    <div class="info-row"><span class="info-label">Platba</span><span class="info-val">Online předem · storno do 23. 5. 2026</span></div>
+    <div class="info-row"><span class="info-label">Poloha</span><span class="info-val">Badamdar — směr Gobustan</span></div>
+    <div class="info-row"><span class="info-label">Noc</span><span class="info-val">Po 25. 5. → Út 26. 5.</span></div>
+
+    <div class="info-sub">Po Dni 4 — A · po cestě (Yevlakh) · TIP</div>
+    <div class="info-row"><span class="info-label">Hotel</span><span class="info-val"><a href="https://www.booking.com/hotel/az/yevlakh-city.cs.html" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">Yevlakh City Hotel ↗</a></span></div>
+    <div class="info-row"><span class="info-label">Pokoje</span><span class="info-val">2× DBL · 4 dospělí (2+2)</span></div>
+    <div class="info-row"><span class="info-label">Poloha</span><span class="info-val">Yevlakh ~265 km z Baku · zkrátí Den 4</span></div>
+    <div class="info-row"><span class="info-label">Stravování</span><span class="info-val">Snídaně v ceně</span></div>
+    <div class="info-row"><span class="info-label">Noc</span><span class="info-val">Út 26. 5. → St 27. 5.</span></div>
+
+    <div class="info-sub">Po Dni 4 — B · až v Ganji · TIP</div>
+    <div class="info-row"><span class="info-label">Hotel</span><span class="info-val"><a href="https://www.booking.com/hotel/az/grand-teatro-motel.cs.html" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">Grand Teatro Motel ↗</a></span></div>
+    <div class="info-row"><span class="info-label">Pokoje</span><span class="info-val">2× DBL · 4 dospělí (2+2)</span></div>
+    <div class="info-row"><span class="info-label">Poloha</span><span class="info-val">Ganja Bülbül · plný Den 4</span></div>
+    <div class="info-row"><span class="info-label">Stravování</span><span class="info-val">Snídaně v ceně</span></div>
+    <div class="info-row"><span class="info-label">Noc</span><span class="info-val">Út 26. 5. → St 27. 5.</span></div>
+
+    <div class="info-sub">Po Dni 5 — Sheki · Hotel Arena · TIP</div>
+    <div class="info-row"><span class="info-label">Hotel</span><span class="info-val"><a href="https://www.booking.com/hotel/az/sheki-olimp-villa.cs.html" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">Hotel Arena ↗</a> (4*)</span></div>
+    <div class="info-row"><span class="info-label">Pokoje</span><span class="info-val">2× DBL · 4 dospělí (2+2)</span></div>
+    <div class="info-row"><span class="info-label">Poloha</span><span class="info-val">Z.Aliyeva · ~1,3 km od centra Sheki</span></div>
+    <div class="info-row"><span class="info-label">Stravování</span><span class="info-val">Snídaně v ceně</span></div>
+    <div class="info-row"><span class="info-label">Logika</span><span class="info-val">Spát před prohlídkou Sheki · Day 6 začne klidně</span></div>
+    <div class="info-row"><span class="info-label">Noc</span><span class="info-val">St 27. 5. → Čt 28. 5.</span></div>
+
+    <div class="info-sub">Po Dni 6 — A · Rest House Ismayilli · TIP</div>
+    <div class="info-row"><span class="info-label">Hotel</span><span class="info-val"><a href="https://www.booking.com/hotel/az/rest-house-ismayilli-ismayilli.cs.html" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">Rest House Ismayilli ↗</a></span></div>
+    <div class="info-row"><span class="info-label">Vybavení</span><span class="info-val">Zahrada · klima · free parking + WiFi</span></div>
+
+    <div class="info-sub">Po Dni 6 — B · Mehsul Recreational Center · s restaurací</div>
+    <div class="info-row"><span class="info-label">Hotel</span><span class="info-val"><a href="https://www.booking.com/hotel/az/mehsul-recreational-center.cs.html" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">Mehsul Recreational Center ↗</a></span></div>
+    <div class="info-row"><span class="info-label">Vybavení</span><span class="info-val">Zahrada · terasa · <strong>restaurace + bar</strong> · dětské hřiště</span></div>
+    <div class="info-row"><span class="info-label">Pokoje (oba)</span><span class="info-val">2× DBL · 4 dospělí (2+2)</span></div>
+    <div class="info-row"><span class="info-label">Noc</span><span class="info-val">Čt 28. 5. → Pá 29. 5.</span></div>
+
+    <div class="info-sub">Po Dni 7 + 8 — Baku finále · 5 možností · 2 noci</div>
+    <div class="info-row"><span class="info-label">Pro</span><span class="info-val">2× DBL · 4 dospělí · centrum Baku</span></div>
+    <div class="info-row"><span class="info-label">Datum</span><span class="info-val">Pá 29. 5. → Ne 31. 5. (2 noci, do odletu)</span></div>
+    <div class="info-row"><span class="info-label"><a href="https://www.booking.com/hotel/az/baku-apart-best.cs.html" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">Baku Apart Best ↗</a></span><span class="info-val">Apart hotel · 4 dospělí</span></div>
+    <div class="info-row"><span class="info-label"><a href="https://www.booking.com/hotel/az/apartments-by-novart-gallery.cs.html" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">Apartments by Novart Gallery ↗</a></span><span class="info-val">Apartmány · galerie / boutique</span></div>
+    <div class="info-row"><span class="info-label"><a href="https://www.booking.com/hotel/az/maison-baku-boutique.cs.html" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">Maison Baku Boutique ↗</a></span><span class="info-val">Boutique · centrum</span></div>
+    <div class="info-row"><span class="info-label"><a href="https://www.booking.com/hotel/az/the-nest-baku.cs.html" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">The Nest Baku ↗</a></span><span class="info-val">Stylový boutique</span></div>
+    <div class="info-row"><span class="info-label"><a href="https://www.booking.com/hotel/az/siena-inn-nizami.cs.html" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">Siena Inn Nizami ↗</a></span><span class="info-val">Nizami · pěšky centrum</span></div>
+
+    <div class="info-sub">Po Dni 8 — odlet</div>
+    <div class="info-row"><span class="info-label">Odlet</span><span class="info-val">GYD 02:35 (noc na neděli 31. 5.)</span></div>
+  </div>
+</section>
+
+
+<!-- ═══════════════ DEN 1 ═══════════════ -->
+<section class="day-block" id="den1">
+  <div class="day-header">
+    <div class="day-num">0<em>1</em></div>
+    <div class="day-meta">
+      <div class="day-kicker">Sobota · 23. května</div>
+      <div class="day-title">Příjezd <em>· Absheron</em></div>
+      <div class="day-sub">Cesta z letiště přes ohně a věže poloostrova</div>
+    </div>
+    <div class="day-stamp">Den<br><span class="stops">04 zastávek</span></div>
+  </div>
+  <div class="day-totals">Trasa dne · <strong>~71 km</strong> · <strong>~1 h 05 min</strong> v autě · od letiště GYD</div>
+
+  <div class="locations">
+
+    <!-- Ramana -->
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~8 km · ~7 min od letiště GYD</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Ramana+Qalası+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Ramana Qalası</span>
+          <img data-wiki="Ramana_Tower" data-img="https://upload.wikimedia.org/wikipedia/commons/2/22/Ramana_Castle.jpg" src="https://upload.wikimedia.org/wikipedia/commons/2/22/Ramana_Castle.jpg" data-gallery='["https://upload.wikimedia.org/wikipedia/commons/2/22/Ramana_Castle.jpg","https://commons.wikimedia.org/wiki/Special:FilePath/Ramana_Castle_2018.jpg","https://commons.wikimedia.org/wiki/Special:FilePath/Ramana_qalas%C4%B1.jpg"]' alt="Ramana Qalası">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Ramana%20Qalas%C4%B1/@40.4561592,49.9799044,15z" target="_blank">
+        <div class="loc-num">№ 01 · věž</div>
+        <div class="loc-top"><h3 class="loc-name">Ramana Qalası</h3></div>
+        <p class="loc-desc">Středověká věž z bílého kamene, 15 m vysoká, postavená za vlády Širvánsháhů jako součást signální sítě 30+ pevností na Absheron poloostrově. V noci komunikovaly ohněm, ve dne kouřem.</p>
+        <p class="loc-info">Posloužila jako filmová kulisa — natáčel se zde národní epos „Koroğlu" (1956), „Nasimi" i „Babek". Legenda praví, že pod věží vede podzemní chodba až k Panenské věži v Baku.</p>
+        <div class="tags"><span class="tag cas">40 min</span><span class="tag vstup">zdarma</span><span class="tag cas">Po–Ne 10–16:30</span></div>
+        <div class="loc-coords">40.4561592 N · 49.9799044 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Ramana_Tower" target="_blank">Wikipedia ↗</a>
+          <a class="loc-link" href="https://www.tripadvisor.com/Attraction_Review-g293934-d5504479-Reviews-Ramana_Castle-Baku_Absheron_Region.html" target="_blank">TripAdvisor ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Ramana%20Qalas%C4%B1/@40.4561592,49.9799044,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.9799044,40.4561592&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <!-- Ateshgah -->
+    <article class="loc priority">
+      <div class="loc-transit"><span class="arr">↓</span>~7 km · ~6 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Ateshgah+chrám+ohně+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Ateshgah · chrám ohně</span>
+          <img data-wiki="Ateshgah_of_Baku" data-img="https://upload.wikimedia.org/wikipedia/commons/b/b1/Ateshgah_Zoroastrian_Fire_Temple_%28Baku%29.jpg" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Ateshgah_Zoroastrian_Fire_Temple_%28Baku%29.jpg" alt="Ateshgah">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Ateshgah%20%E2%80%94%20chr%C3%A1m%20ohn%C4%9B/@40.4154308,50.0086022,15z" target="_blank">
+        <div class="loc-num">№ 02 · chrám</div>
+        <div class="loc-top"><h3 class="loc-name">Ateshgah — chrám ohně</h3></div>
+        <p class="loc-desc">Chrám věčného ohně v předměstí Surakhani. Stavěn v 17.–18. stol. na místě, kde přirozeně hořel zemní plyn. Sloužil hinduistům, sikhům i zoroastriánům — sdíleli ho tři různé náboženské komunity.</p>
+        <p class="loc-info">Alexandr Dumas ho v roce 1858 popsal jako „rovinu, ze které šlehají plameny ze stovek otvorů". Car Alexandr III. ho navštívil v roce 1887. Muzeum od roku 1975. Nominován na UNESCO 1998.</p>
+        <p class="loc-info" style="background:rgba(176,58,10,0.07);border-left:2px solid var(--rust);padding:8px 10px;margin-top:10px;color:var(--rust-dk);font-weight:500"><strong>Kombo lístek:</strong> 25 AZN za 2 (Ateshgah + Yanardag) · 35 AZN za 3 (+ Mud Volcanoes), platnost 72 hod</p>
+        <div class="tags"><span class="tag cas">45 min</span><span class="tag vstup">15 AZN solo</span><span class="tag vstup">kombo 25/35 AZN · 72h</span><span class="tag cas">10–20 (léto)</span></div>
+        <div class="loc-coords">40.4154308 N · 50.0086022 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Ateshgah_of_Baku" target="_blank">Wikipedia ↗</a>
+          <a class="loc-link" href="https://www.tripadvisor.com/Attraction_Review-g293934-d311429-Reviews-Ateshgah_Fire_Temple-Baku_Absheron_Region.html" target="_blank">TripAdvisor ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Ateshgah%20%E2%80%94%20chr%C3%A1m%20ohn%C4%9B/@40.4154308,50.0086022,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=50.0086022,40.4154308&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <!-- Yanar Dag -->
+    <article class="loc priority">
+      <div class="loc-transit"><span class="arr">↓</span>~19 km · ~17 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Yanar+Dag+hořící+stěna+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Yanar Dag · hořící stěna</span>
+          <img data-wiki="Yanar_Dag" data-img="https://upload.wikimedia.org/wikipedia/commons/6/64/Far_view_of_the_Yanar_Dagh_or_fire_mountain_%2836450231443%29.jpg" src="https://upload.wikimedia.org/wikipedia/commons/6/64/Far_view_of_the_Yanar_Dagh_or_fire_mountain_%2836450231443%29.jpg" alt="Yanar Dag">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Yanar%20Dag%20%E2%80%94%20ho%C5%99%C3%ADc%C3%AD%20st%C4%9Bna/@40.5017211,49.8910342,15z" target="_blank">
+        <div class="loc-num">№ 03 · oheň</div>
+        <div class="loc-top"><h3 class="loc-name">Yanar Dag — hořící stěna</h3></div>
+        <p class="loc-desc">10 metrů dlouhá přírodní stěna, ze které nepřetržitě šlehají plameny — unikátní výstup zemního plynu ze skály. Hoří bez přestávky, reportovaly ho středověké arabské kroniky i Marco Polo.</p>
+        <p class="loc-info">Ideálně navštívit po setmění — za tmy efekt mnohem dramatičtější. Plameny nelze uhasit vodou; hasily se v 50. letech, ale spontánně se znovu vznítily. 20 km z Baku.</p>
+        <p class="loc-info" style="background:rgba(176,58,10,0.07);border-left:2px solid var(--rust);padding:8px 10px;margin-top:10px;color:var(--rust-dk);font-weight:500"><strong>Kombo lístek:</strong> 25 AZN za 2 (Ateshgah + Yanardag) · 35 AZN za 3 (+ Mud Volcanoes), platnost 72 hod</p>
+        <div class="tags"><span class="tag vstup">15 AZN solo</span><span class="tag cas">30 min</span><span class="tag vstup">kombo 25/35 AZN · 72h</span><span class="tag cas">10–20 (léto)</span></div>
+        <div class="loc-coords">40.5017211 N · 49.8910342 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Yanar_Dag" target="_blank">Wikipedia ↗</a>
+          <a class="loc-link" href="https://www.tripadvisor.com/Attraction_Review-g293934-d1467498-Reviews-Yanar_Dag-Baku_Absheron_Region.html" target="_blank">TripAdvisor ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Yanar%20Dag%20%E2%80%94%20ho%C5%99%C3%ADc%C3%AD%20st%C4%9Bna/@40.5017211,49.8910342,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.8910342,40.5017211&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <!-- Masazır -->
+    <article class="loc optional">
+      <div class="loc-transit"><span class="arr">↓</span>~16 km · ~14 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Masazır+Gölü+červené+jezero+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Masazır · červené jezero</span>
+          <img data-wiki="Masazirgol" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Masaz%C4%B1r%20Lake.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Masaz%C4%B1r%20Lake.jpg" alt="Masazır Gölü">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Masaz%C4%B1r%20G%C3%B6l%C3%BC%20%E2%80%94%20%C4%8Derven%C3%A9%20jezero/@40.5269319,49.7580886,15z" target="_blank">
+        <div class="loc-num">№ 04 · jezero</div>
+        <div class="loc-top"><h3 class="loc-name">Masazır Gölü — červené jezero</h3></div>
+        <p class="loc-desc">Slaná laguna zbarvená do krvavě červena mikroorganismem Dunaliella salina. Efekt nejlepší v létě a na podzim. Jen projet kolem, není co prohlížet zblízka.</p>
+        <div class="loc-coords">40.5269319 N · 49.7580886 E</div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Masaz%C4%B1r%20G%C3%B6l%C3%BC%20%E2%80%94%20%C4%8Derven%C3%A9%20jezero/@40.5269319,49.7580886,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.7580886,40.5269319&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc optional bonus">
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Qala+Archaeological+&+Ethnographic+Museum+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Qala Archaeological & Ethnographic Museum</span>
+        </div>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Qala%20Archaeological%20%26%20Ethnographic%20Museum/@40.4388675,50.1679669,15z" target="_blank">
+        <div class="loc-num">№ 05 · muzeum</div>
+        <div class="loc-top"><h3 class="loc-name">Qala Archaeological & Ethnographic Museum</h3></div>
+        <p class="loc-desc">Open-air muzeum s rekonstrukcemi historických staveb a artefakty od neolitu po středověk. Cestou z letiště.</p>
+        <div class="tags"><span class="tag vstup">15 AZN</span><span class="tag cas">10:00–18:30</span></div>
+        <div class="loc-coords">40.4388675 N · 50.1679669 E</div>
+      </a>
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Qala%20Archaeological%20%26%20Ethnographic%20Museum/@40.4388675,50.1679669,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=50.1679669,40.4388675&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc optional bonus">
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Mardakan+Castle+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Mardakan Castle</span>
+        </div>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Mardakan%20Castle/@40.4957389,50.1471392,15z" target="_blank">
+        <div class="loc-num">№ 06 · hrad</div>
+        <div class="loc-top"><h3 class="loc-name">Mardakan Castle</h3></div>
+        <p class="loc-desc">Středověký hrad ve východní zahradnické čtvrti Baku. 0–4 AZN, otvírací doba nejistá (ověřit).</p>
+        <div class="tags"><span class="tag vstup">0–4 AZN</span></div>
+        <div class="loc-coords">40.4957389 N · 50.1471392 E</div>
+      </a>
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Mardakan%20Castle/@40.4957389,50.1471392,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=50.1471392,40.4957389&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc optional">
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Ropné+vrty+cestou+z+letiště+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Ropné vrty cestou z letiště</span>
+        </div>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Ropn%C3%A9%20vrty%20cestou%20z%20leti%C5%A1t%C4%9B/@40.4396072,50.0106897,15z" target="_blank">
+        <div class="loc-num">№ 07 · drive-by</div>
+        <div class="loc-top"><h3 class="loc-name">Ropné vrty cestou z letiště</h3></div>
+        <p class="loc-desc">Klasický ázerbájdžánský obraz — moře ropných čerpadel podél silnice z letiště. Jen z auta podívat.</p>
+        
+        <div class="loc-coords">40.4396072 N · 50.0106897 E</div>
+      </a>
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Ropn%C3%A9%20vrty%20cestou%20z%20leti%C5%A1t%C4%9B/@40.4396072,50.0106897,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=50.0106897,40.4396072&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+  </div>
+
+
+  <div class="day-stay">
+    <div class="day-stay-eyebrow">⌂ Nocleh · So 23. 5. → Ne 24. 5.</div>
+    <h3 class="day-stay-name">Baku · Grand Hotel Europe <a href="tel:+994555153314">tel ↗</a></h3>
+    <div class="day-stay-meta">Tbilisi Prospekt 20, Nasimi · Baku · Deluxe DBL + Rodinný pokoj, oba s balkonem a výhledem na moře. Snídaně v ceně. Rezervace 5326.232.828 / PIN 5142.</div>
+    <div class="day-stay-nav">
+      <a class="loc-nav-btn" href="https://www.google.com/maps/place/Grand%20Hotel%20Europe%20Baku/@40.39270,49.82255,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+      <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.82255,40.39270&z=15" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DEN 2 ═══════════════ -->
+<section class="day-block" id="den2">
+  <div class="day-header">
+    <div class="day-num">0<em>2</em></div>
+    <div class="day-meta">
+      <div class="day-kicker">Neděle · 24. května</div>
+      <div class="day-title">Candy + Besh Barmag <em>→ Quba</em></div>
+      <div class="day-sub">Pruhované kopce · pět prstů · nocleh u jezera Çənlibel</div>
+    </div>
+    <div class="day-stamp">Den<br><span class="stops">04 zastávek</span></div>
+  </div>
+  <div class="day-totals">Trasa dne · <strong>~206 km</strong> · <strong>~3 h 10 min</strong> v autě · od hotel Grand Hotel Europe</div>
+
+  <div class="locations">
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~102 km · ~95 min od hotel Grand Hotel Europe</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Candy+Cane+Mountains+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Candy Cane Mountains</span>
+          <img data-wiki="Candy_Cane_Mountains" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Candy%20Cane%20Mountains.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Candy%20Cane%20Mountains.jpg" alt="Candy Cane Mountains">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Candy%20Cane%20Mountains/@40.8800475,49.1924175,15z" target="_blank">
+        <div class="loc-num">№ 08 · pruhované kopce</div>
+        <div class="loc-top"><h3 class="loc-name">Candy Cane Mountains</h3></div>
+        <p class="loc-desc">Pahorky ze slínového křídy zbarvené do červena, bíla, oranžova a růžova oxidací železnatých sloučenin. Geologicky unikátní — podobná formace existuje jen v americkém Death Valley. Název vymyslel britský cestovatel Mark Elliott.</p>
+        <p class="loc-info">V horninách lze najít zkameněliny belemnit — pravěkých hlavonožců z křídy, když tato oblast ležela pod mořem. Nejlepší světlo brzy ráno a za soumraku. Lezení na skály zakázáno — slín je nestabilní.</p>
+        <div class="tags"><span class="tag cas">1,5–2 hod</span><span class="tag vstup">zdarma</span><span class="tag cas">~90 km z Baku</span></div>
+        <div class="loc-coords">🅿️ Parkoviště (auto) · 40.8784553 N · 49.1882903 E<br>🚶 Výhled (pěšky) · 40.8800475 N · 49.1924175 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Candy_Cane_Mountains" target="_blank">Wikipedia ↗</a>
+          <a class="loc-link" href="https://www.atlasobscura.com/places/candy-cane-mountains" target="_blank">Atlas Obscura ↗</a>
+        </div>
+      </a>
+
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Candy%20Cane%20Mountains%20parking/@40.8784553,49.1882903,16z" target="_blank"><span class="nav-icon">🅿️</span>Google · parkoviště</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.1924175,40.8800475&z=17" target="_blank"><span class="nav-icon">🚶</span>Mapy.com · výhled</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~13 km · ~12 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Besh+Barmag+mountain+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Besh Barmag</span>
+          <img data-wiki="Beshbarmaq_mountain" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Be%C5%9Fbarmaq%20da%C4%9F%C4%B1%20%284%29.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Be%C5%9Fbarmaq%20da%C4%9F%C4%B1%20%284%29.jpg" alt="Besh Barmag">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Besh%20Barmag%20%E2%80%94%20Hora%20p%C4%9Bti%20prst%C5%AF/@40.9580956,49.2320167,15z" target="_blank">
+        <div class="loc-num">№ 09 · skála</div>
+        <div class="loc-top"><h3 class="loc-name">Besh Barmag — Hora pěti prstů</h3></div>
+        <p class="loc-desc">Bizarní skalní útvar připomínající pět vztyčených prstů vyčnívajících ze svahu nad Kaspickým mořem. Posvátné místo — místní věří, že hora uchovává modlitby. Na vrcholu je malá mešita.</p>
+        <p class="loc-info">Strmý výstup — buď prašnou cestou autem k vrcholu, nebo z vesnice pěšky (30–40 min). Výhled na Kaspické moře je výjimečný. 45 min jízdy od Candy Mountains.</p>
+        <div class="tags"><span class="tag cas">1,5–2 hod</span><span class="tag vstup">zdarma</span></div>
+        <div class="loc-coords">🅿️ Parkoviště (auto) · 40.9546425 N · 49.2290075 E<br>🚶 Vrchol (pěšky) · 40.9580956 N · 49.2320167 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Beshbarmaq_mountain" target="_blank">Wikipedia ↗</a>
+        </div>
+      </a>
+
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Besh%20Barmag%20parking/@40.9546425,49.2290075,16z" target="_blank"><span class="nav-icon">🅿️</span>Google · parkoviště</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.2320167,40.9580956&z=17" target="_blank"><span class="nav-icon">🚶</span>Mapy.com · vrchol</a>
+      </div>
+    </article>
+
+    <article class="loc optional bonus">
+      <div class="loc-transit"><span class="arr">↓</span>~39 km · ~36 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Chirag+Gala+Fortress+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Chirag Gala</span>
+          <img data-wiki="Chirag_Gala" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C4%B1raqqala%20fortress.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ch%C4%B1raqqala%20fortress.jpg" alt="Chirag Gala">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Chirag%20Gala%20Fortress/@41.0875478,48.9319042,15z" target="_blank">
+        <div class="loc-num">№ 10 · pevnost</div>
+        <div class="loc-top"><h3 class="loc-name">Chirag Gala Fortress</h3></div>
+        <p class="loc-desc">Pohraniční pevnost „Světelný hrad" na skalistém ostrohu s výhledem do stepí. Datuje se do 4.–8. stol., střežila Kavkazskou Albánii. Jen za hezkého počasí — jinak zahalena v mlze.</p>
+        <p class="loc-note">⚠ Po Candy Mountains + Besh Barmag a cestě do Quby toho bude den asi dost — zvážit, jestli zařadit. Dvě varianty přístupu:<br>
+<strong>A · trail ze severu</strong> — auto k Galaalti Hotel & Spa (asfaltka, parking), pak ~3,8 km pěšky po Transcaucasian Trail s převýšením (~1,5–2 hod jedním směrem).<br>
+<strong>B · 4×4 z jihu</strong> — od Siyazan ~30 min po prašné horské cestě (běžné auto nezvládne, najmout místního), pak 10 min strmá pěšina přes balvany.</p>
+        <div class="loc-coords">🅿️ Parkoviště Qalaalti Hotel · ~41.105 N · ~48.940 E<br>🚶 Pevnost (cíl ~3,8 km trail) · 41.0875478 N · 48.9319042 E</div>
+      </a>
+
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Qalaalti%20Hotel%20%26%20Spa/@41.105,48.940,14z" target="_blank"><span class="nav-icon">🅿️</span>Google · Qalaalti (parking)</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=48.9319042,41.0875478&z=17" target="_blank"><span class="nav-icon">🚶</span>Mapy.com · pevnost</a>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="day-stay">
+    <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>~52 km · ~48 min od posledního bodu</div>
+    <div class="day-stay-eyebrow">⌂ Nocleh · Ne 24. 5. → Po 25. 5.</div>
+    <h3 class="day-stay-name">Quba · Macara Lake Park <a href="https://www.booking.com/hotel/az/macara-lake-park.cs.html" target="_blank">booking ↗</a></h3>
+    <div class="day-stay-meta">2× dvoulůžkový pokoj s oddělenými postelemi · výhled na jezero · snídaně v ceně · 4 dospělí · ~7 km od centra Quby · jezero Çənlibel</div>
+    <div class="day-stay-nav">
+      <a class="loc-nav-btn" href="https://www.google.com/maps/place/Quba%20%C2%B7%20Macara%20Lake%20Park/@41.30629,48.57307,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+      <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=48.57307,41.30629&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DEN 3 ═══════════════ -->
+<section class="day-block" id="den3">
+  <div class="day-header">
+    <div class="day-num">0<em>3</em></div>
+    <div class="day-meta">
+      <div class="day-kicker">Pondělí · 25. května</div>
+      <div class="day-title">Khinaliq <em>+ Quba → Baku</em></div>
+      <div class="day-sub">Horská vesnice 2 350 m · Krasnaya Sloboda · návrat Baku</div>
+    </div>
+    <div class="day-stamp">Den<br><span class="stops">04 zastávek</span></div>
+  </div>
+  <div class="day-totals">Trasa dne · <strong>~385 km</strong> · <strong>~5 h 55 min</strong> v autě · od Macara Lake Park</div>
+
+  <div class="locations">
+
+    <article class="loc priority">
+      <div class="loc-transit"><span class="arr">↓</span>~54 km · ~50 min od Macara Lake Park</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Khinaliq+village+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Khinaliq</span>
+          <img data-wiki="Khinalug" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/General%20view%20from%20X%C4%B1nal%C4%B1q%20%2880436%29.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/General%20view%20from%20X%C4%B1nal%C4%B1q%20%2880436%29.jpg" alt="Khinaliq">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Khinaliq%20%E2%80%94%20horsk%C3%A1%20vesnice/@41.1762367,48.1299831,15z" target="_blank">
+        <div class="loc-num">№ 11 · vesnice</div>
+        <div class="loc-top"><h3 class="loc-name">Khinaliq — horská vesnice</h3></div>
+        <p class="loc-desc">Jedna z nejvýše položených trvale obydlených vesnic Kavkazu — ve výšce 2 350 m n. m. Zdejší lid hovoří unikátním jazykem Khinalug (Ketid), který je samostatnou větví severovýchodní kavkazské jazykové rodiny. Kulturní krajina Khinalig a pastevecké trasy Köç Yolu jsou na UNESCO od září 2023.</p>
+        <p class="loc-info">Kamenné domy navrstvené na sobě jako amfiteátr. Přes zimu až do nedávna zcela izolovaná sněhem. Místní chov ovcí, tradiční koberce. Výhledy do dramatického kavkazského horského pásma jsou dechberoucí.</p>
+        <p class="loc-note" style="margin-top:8px">⚠ <strong>Cesta do Khinaliq je horská a rizikem počasí.</strong> V březnu 2026 byla dočasně přerušená kvůli sesuvu, později obnovena. Ověřit den předem (Quba hotel / místní). Pokud déšť/mlha → Plán B = Shahdag.</p>
+        <div class="tags"><span class="tag vstup">zdarma</span><span class="tag cas">57 km z Quby · 1,5 hod</span></div>
+        <div class="loc-coords">41.1762367 N · 48.1299831 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Khinalug" target="_blank">Wikipedia ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Khinaliq%20%E2%80%94%20horsk%C3%A1%20vesnice/@41.1762367,48.1299831,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=48.1299831,41.1762367&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~51 km · ~47 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Quba+Six+Domed+Synagogue+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Synagoga šesti kupolí</span>
+          <img data-wiki="Quba,_Azerbaijan" data-img="https://upload.wikimedia.org/wikipedia/commons/1/1e/Six_Dome_Synagogue_in_Krasnaya_Sloboda.jpg" src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Six_Dome_Synagogue_in_Krasnaya_Sloboda.jpg" alt="Synagoga šesti kupolí">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Quba%20%E2%80%94%20Synagoga%20%C5%A1esti%20kupol%C3%AD/@41.3663800,48.5074578,15z" target="_blank">
+        <div class="loc-num">№ 12 · synagoga</div>
+        <div class="loc-top"><h3 class="loc-name">Quba — Synagoga šesti kupolí</h3></div>
+        <p class="loc-desc">Quba je domovem jedné z největších historických židovských komunit na Kavkaze — tzv. Horských Židů. Jejich čtvrť Krasnaya Sloboda (přes řeku) je unikátní — celá vesnice obývaná výhradně Židy.</p>
+        <div class="loc-coords">41.3663800 N · 48.5074578 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Quba,_Azerbaijan" target="_blank">Wikipedia ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Quba%20%E2%80%94%20Synagoga%20%C5%A1esti%20kupol%C3%AD/@41.3663800,48.5074578,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=48.5074578,41.3663800&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~0.7 km · ~1 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Quba+Juma+Mosque+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Juma Mosque · Quba</span>
+          <img data-wiki="Juma_Mosque,_Quba" alt="Juma Mosque Quba">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Quba%20%E2%80%94%20Juma%20Mosque/@41.3631950,48.5121203,15z" target="_blank">
+        <div class="loc-num">№ 13 · mešita</div>
+        <div class="loc-top"><h3 class="loc-name">Quba — Juma Mosque</h3></div>
+        <p class="loc-info">Hlavní mešita v centru města.</p>
+        <div class="loc-coords">41.3631950 N · 48.5121203 E</div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Quba%20%E2%80%94%20Juma%20Mosque/@41.3631950,48.5121203,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=48.5121203,41.3631950&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~2.2 km · ~2 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Quba+Genocide+Memorial+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Genocide Memorial</span>
+          <img data-wiki="Quba_Genocide_Memorial_Complex" alt="Quba Genocide Memorial">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Quba%20Genocide%20Memorial/@41.3621089,48.4930103,15z" target="_blank">
+        <div class="loc-num">№ 14 · památník</div>
+        <div class="loc-top"><h3 class="loc-name">Quba Genocide Memorial</h3></div>
+        <p class="loc-desc">Odkrytý masový hrob z roku 2007 — ostatky stovek obětí masakru z roku 1918. Emotivní místo.</p>
+        <div class="loc-coords">41.3621089 N · 48.4930103 E</div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Quba%20Genocide%20Memorial/@41.3621089,48.4930103,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=48.4930103,41.3621089&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc bonus">
+      <div class="loc-transit"><span class="arr">↓</span>~39 km · ~36 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Shahdag+Mountain+Resort+summer+cable+car&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Shahdag · lanovka</span>
+          <img data-wiki="Shahdag_Mountain_Resort" data-img="https://upload.wikimedia.org/wikipedia/commons/2/22/Shahdag_Ski_Resort.jpg" src="https://upload.wikimedia.org/wikipedia/commons/2/22/Shahdag_Ski_Resort.jpg" alt="Shahdag Mountain Resort">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Shahdag%20Mountain%20Resort/@41.32167,48.14806,15z" target="_blank">
+        <div class="loc-num">№ 15 · Plán B / bonus</div>
+        <div class="loc-top"><h3 class="loc-name">Shahdag Mountain Resort</h3></div>
+        <p class="loc-desc">Největší lyžařský resort Kavkazu, v létě otevřený jako horské středisko. Lanovka na hřeben pod vrcholem Šahdag (4 243 m), restaurace, vyhlídka. Pohled na Kavkaz z výšky bez nutnosti pěší túry.</p>
+        <p class="loc-info">~60 km severně od Quby přes Qusar (1–1,5 h jízdy). Jiný směr než Khinaliq, ale stejné Kavkazské velehory.</p>
+        <p class="loc-info" style="background:rgba(176,138,62,0.1);border-left:2px solid var(--gold);padding:8px 10px;margin-top:8px"><strong>Použití:</strong><br>🅑 <strong>Plán B</strong> · pokud cesta do Khinaliq není sjízdná (počasí, sesuv) → místo Khinaliq jet sem.<br>✦ <strong>Bonus</strong> · pokud Khinaliq svižně a zbyde čas/energie.</p>
+        
+        <div class="tags"><span class="tag cas">2–3 hod</span><span class="tag vstup">lanovka ~15 AZN</span></div>
+        <div class="loc-coords">41.32167 N · 48.14806 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://www.shahdag.az/en" target="_blank">shahdag.az ↗</a>
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Shahdag_Mountain_Resort" target="_blank">Wikipedia ↗</a>
+        </div>
+      </a>
+
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Shahdag%20Mountain%20Resort/@41.32167,48.14806,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=48.14806,41.32167&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="day-stay">
+    <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>~238 km · ~3 h 39 min od posledního bodu</div>
+    <div class="day-stay-eyebrow">⌂ Nocleh · Po 25. 5. → Út 26. 5.</div>
+    <h3 class="day-stay-name">Baku · Badamdar Estates <a href="https://www.booking.com/hotel/az/badamdar-estates.cs.html" target="_blank">booking ↗</a></h3>
+    <div class="day-stay-meta">2× dvoulůžkový Superior · oddělené postele · 4 dospělí · čtvrť Badamdar, jih Baku — výhodné pro start na Gobustan ráno · snídaně 303 Kč (volitelně)</div>
+    <div class="day-stay-nav">
+      <a class="loc-nav-btn" href="https://www.google.com/maps/place/Baku%20%C2%B7%20Badamdar%20Estates/@40.3543,49.8036,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+      <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.8036,40.3543&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DEN 4 ═══════════════ -->
+<section class="day-block" id="den4">
+  <div class="day-header">
+    <div class="day-num">0<em>4</em></div>
+    <div class="day-meta">
+      <div class="day-kicker">Úterý · 26. května</div>
+      <div class="day-title">Gobustan <em>→ Ganja</em></div>
+      <div class="day-sub">Bahenní sopky · petroglyfy · večerní přejezd na západ</div>
+    </div>
+    <div class="day-stamp">Den<br><span class="stops">04 zastávek</span></div>
+  </div>
+  <div class="day-totals">Trasa dne · <strong>~473 km</strong> · <strong>~7 h 17 min</strong> v autě · Badamdar → Gobustan → Ganja (vč. ~390 km přejezdu na západ)</div>
+
+  <div class="locations">
+
+    <article class="loc priority">
+      <div class="loc-transit"><span class="arr">↓</span>~70 km · ~64 min od Badamdar Estates</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=mud+volcanoes+Gobustan+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Bahenní sopky</span>
+          <img data-wiki="Mud_volcanoes_of_Azerbaijan" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Mud%20volcanoes%20near%20Gobustan.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Mud%20volcanoes%20near%20Gobustan.jpg" alt="Bahenní sopky">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Bahenn%C3%AD%20sopky%20%E2%80%94%20hlavn%C3%AD%20m%C3%ADsto/@40.1848206,49.2381436,15z" target="_blank">
+        <div class="loc-num">№ 16 · sopky</div>
+        <div class="loc-top"><h3 class="loc-name">Bahenní sopky — hlavní místo</h3></div>
+        <p class="loc-desc">Ázerbájdžán má přes 300 bahenních sopek — více než polovina všech na světě. Chladné bláto vytlačované zemním plynem z hloubky několika km bulkuje a přetéká — fascinující, surrealistický výjev.</p>
+        <p class="loc-info">Mud Volcanoes Tourism Complex — oficiální areál s asfaltovou cestou. Lístky na místě nebo přes iTicket.</p>
+        <p class="loc-info" style="background:rgba(176,58,10,0.07);border-left:2px solid var(--rust);padding:8px 10px;margin-top:10px;color:var(--rust-dk);font-weight:500"><strong>Kombo lístek:</strong> 25 AZN za 2 (Ateshgah + Yanardag) · 35 AZN za 3 (+ Mud Volcanoes), platnost 72 hod</p>
+        <div class="tags"><span class="tag vstup">15 AZN solo</span><span class="tag cas">2–3 hod</span><span class="tag vstup">kombo 25/35 AZN · 72h</span><span class="tag cas">10–18</span></div>
+        <div class="loc-coords">40.1848206 N · 49.2381436 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Mud_volcanoes_of_Azerbaijan" target="_blank">Wikipedia ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Bahenn%C3%AD%20sopky%20%E2%80%94%20hlavn%C3%AD%20m%C3%ADsto/@40.1848206,49.2381436,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.2381436,40.1848206&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc priority">
+      <div class="loc-transit"><span class="arr">↓</span>~21 km · ~20 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Gobustan+petroglyphs+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Petroglyfy Gobustan</span>
+          <img data-wiki="Gobustan_National_Park" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Petroglyphs%20of%20Qobustan%202.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Petroglyphs%20of%20Qobustan%202.jpg" alt="Gobustan petroglyfy">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Gobustan%20%E2%80%94%20petroglyfy%20P1/@40.0973872,49.3841236,15z" target="_blank">
+        <div class="loc-num">№ 17 · petroglyfy</div>
+        <div class="loc-top"><h3 class="loc-name">Gobustan — petroglyfy P1</h3></div>
+        <p class="loc-desc">Přes 6 000 skalních rytin z doby před 5 000–40 000 lety — lidé, zvířata, lodě, tančící postavy. UNESCO Světové dědictví. Thor Heyerdahl zde našel kresbu lodě totožnou se skandinávskými — inspirovalo ho to k plavbě Ra II.</p>
+        <p class="loc-info">3 km odbočka z cesty na sopky.</p>
+        <div class="tags"><span class="tag cas">1–2 hod</span><span class="tag cas">10–18</span></div>
+        <div class="loc-coords">40.0973872 N · 49.3841236 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Gobustan_National_Park" target="_blank">Wikipedia ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Gobustan%20%E2%80%94%20petroglyfy%20P1/@40.0973872,49.3841236,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.3841236,40.0973872&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~2.2 km · ~2 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Gobustan+petroglyphs+P2+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Petroglyfy P2</span>
+          <img data-wiki="Gobustan_National_Park" data-img="https://upload.wikimedia.org/wikipedia/commons/2/2f/Qobustan_petroglyphs.jpg" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Qobustan_petroglyphs.jpg" alt="Gobustan P2">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Gobustan%20%E2%80%94%20petroglyfy%20P2/@40.1109686,49.3781531,15z" target="_blank">
+        <div class="loc-num">№ 18 · ohnisko 2</div>
+        <div class="loc-top"><h3 class="loc-name">Gobustan — petroglyfy P2</h3></div>
+        <p class="loc-info">Druhé ohnisko kreseb v národním parku.</p>
+        <div class="loc-coords">40.1109686 N · 49.3781531 E</div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Gobustan%20%E2%80%94%20petroglyfy%20P2/@40.1109686,49.3781531,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.3781531,40.1109686&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc optional bonus">
+      <div class="loc-transit"><span class="arr">↓</span>~17 km · ~16 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=secondary+mud+volcanoes+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Sekundární sopky</span>
+          <img data-wiki="Mud_volcanoes_of_Azerbaijan" data-img="https://upload.wikimedia.org/wikipedia/commons/0/0e/Mud_volcanoes_Gobustan.jpg" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Mud_volcanoes_Gobustan.jpg" alt="Sekundární sopky">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Bahenn%C3%AD%20sopky%20%E2%80%94%20sekund%C3%A1rn%C3%AD%20m%C3%ADsto/@39.9963592,49.4023347,15z" target="_blank">
+        <div class="loc-num">№ 19 · 4×4</div>
+        <div class="loc-top"><h3 class="loc-name">Bahenní sopky — sekundární místo</h3></div>
+        <p class="loc-desc">Méně turistické, prý autentičtější. Sopky jsou živější a divočejší. Prašná cesta, nutno 4×4.</p>
+        <p class="loc-note">⚠ Nutno 4×4 — prašná cesta</p>
+        <div class="loc-coords">39.9963592 N · 49.4023347 E</div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Bahenn%C3%AD%20sopky%20%E2%80%94%20sekund%C3%A1rn%C3%AD%20m%C3%ADsto/@39.9963592,49.4023347,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.4023347,39.9963592&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px;" class="stay-options">
+    <div class="day-stay" style="margin-top:0">
+    <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>~274 km · ~4 h 13 min od posledního bodu</div>
+      <div class="day-stay-eyebrow">⌂ Varianta A · po cestě · Út 26. 5. → St 27. 5.</div>
+      <h3 class="day-stay-name">Yevlakh · Yevlakh City Hotel <a href="https://www.booking.com/hotel/az/yevlakh-city.cs.html" target="_blank">booking ↗</a></h3>
+      <div class="day-stay-meta">2× DBL · 4 dospělí · ~265 km z Baku · zkrátí Den 4 (Ganja až ráno Day 5) · snídaně v ceně</div>
+      <div class="day-stay-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Yevlakh%20City%20Hotel/@40.6183,47.1501,14z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=47.1501,40.6183&z=14" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </div>
+    <div style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.22em;color:var(--ink-mute);text-transform:uppercase;padding:4px 0">— nebo —</div>
+    <div class="day-stay" style="margin-top:0">
+    <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>~362 km · ~5 h 34 min od posledního bodu</div>
+      <div class="day-stay-eyebrow">⌂ Varianta B · až v Ganji · Út 26. 5. → St 27. 5.</div>
+      <h3 class="day-stay-name">Ganja · Grand Teatro Motel <a href="https://www.booking.com/hotel/az/grand-teatro-motel.cs.html" target="_blank">booking ↗</a></h3>
+      <div class="day-stay-meta">2× DBL · 4 dospělí · centrum Ganji (Bülbül) · plný přejezd Den 4 · snídaně v ceně</div>
+      <div class="day-stay-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Grand%20Teatro%20Motel/@40.6878581,46.3723313,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=46.3723313,40.6878581&z=15" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DEN 5 ═══════════════ -->
+<section class="day-block" id="den5">
+  <div class="day-header">
+    <div class="day-num">0<em>5</em></div>
+    <div class="day-meta">
+      <div class="day-kicker">Středa · 27. května</div>
+      <div class="day-title">Ganja + Mingachevir <em>→ Sheki</em></div>
+      <div class="day-sub">Goygol bonus · Ganja sights · Mingachevir přestávka · nocleh Sheki</div>
+    </div>
+    <div class="day-stamp">Den<br><span class="stops">05 zastávek</span></div>
+  </div>
+  <div class="day-totals">Trasa dne · <strong>~245 km</strong> · <strong>~3 h 40 min</strong> v autě · Ganja → Mingachevir → Sheki · <em style="color:var(--gold)">+70 km / +1h pokud Goygol bonus</em></div>
+
+  <div class="locations">
+
+    <article class="loc bonus">
+      <div class="loc-transit"><span class="arr">↓</span>~41 km · ~38 min od ubytka v Ganja</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Goygol+lake+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Goygol · jezero</span>
+          <img data-wiki="Lake_Goygol" data-img="https://upload.wikimedia.org/wikipedia/commons/f/f2/Goygol_lake_mirror.jpg" src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Goygol_lake_mirror.jpg" data-gallery='["https://upload.wikimedia.org/wikipedia/commons/f/f2/Goygol_lake_mirror.jpg","https://upload.wikimedia.org/wikipedia/commons/b/be/G%C3%B6yg%C3%B6l_%28The_Blue_Lake%29.jpg","https://commons.wikimedia.org/wiki/Special:FilePath/Lake_G%C3%B6yg%C3%B6l_in_2018.jpg","https://commons.wikimedia.org/wiki/Special:FilePath/Goygol_lake_in_Azerbaijan_2.jpg"]' alt="Goygol jezero">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Goygol%20%E2%80%94%20modr%C3%A9%20jezero%20pod%20Kapaz/@40.4104038,46.325872,15z" target="_blank">
+        <div class="loc-num">№ 20 · jezero · bonus</div>
+        <div class="loc-top"><h3 class="loc-name">Goygol — modré jezero pod Kapaz</h3></div>
+        <p class="loc-desc">Hluboké horské jezero v lesnaté kotlině ve výšce ~1 560 m. Vzniklo po zemětřesení roku 1139, kdy se odlomila část hory Kapaz a zahradila údolí. Národní park, čistá voda, klidné prostředí.</p>
+        <p class="loc-info">~35 km od Ganji jižním směrem. Bonus bod — pokud bude ráno čas. Přidá ~70 km a 1 hodinu k dni, smiřte se s pozdějším příjezdem do Sheki.</p>
+        <div class="tags"><span class="tag cas">2–3 hod</span><span class="tag vstup">~5 AZN</span></div>
+        <div class="loc-coords">40.4104038 N · 46.325872 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Lake_Goygol" target="_blank">Wikipedia ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Goygol%20%E2%80%94%20modr%C3%A9%20jezero%20pod%20Kapaz/@40.4104038,46.325872,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=46.325872,40.4104038&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~41 km · ~38 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Juma+Mosque+Ganja+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Juma Mosque · Ganja</span>
+          <img data-wiki="Ganja,_Azerbaijan" data-img="https://upload.wikimedia.org/wikipedia/commons/b/b6/Ganja_Juma_mosque_2018.jpg" src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Ganja_Juma_mosque_2018.jpg" alt="Ganja">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Juma%20Mosque%20Ganja%20%2B%20centrum/@40.6775181,46.3588689,15z" target="_blank">
+        <div class="loc-num">№ 21 · centrum</div>
+        <div class="loc-top"><h3 class="loc-name">Juma Mosque Ganja + centrum</h3></div>
+        <p class="loc-desc">Ganja je druhé největší město Ázerbájdžánu s historií přes 2 500 let. Rodné město básníka Nizámího Gandžavíja (12. stol.), jehož dílo ovlivnilo celou persko-islámskou literaturu. Krásné centrum s platany.</p>
+        <div class="loc-coords">40.6775181 N · 46.3588689 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Ganja,_Azerbaijan" target="_blank">Wikipedia ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Juma%20Mosque%20Ganja%20%2B%20centrum/@40.6775181,46.3588689,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=46.3588689,40.6775181&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~0.6 km · ~1 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Khan+Bagy+Park+Ganja&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Khan Bagy Park</span>
+          <img data-wiki="Ganja,_Azerbaijan" data-img="https://upload.wikimedia.org/wikipedia/commons/b/b6/Khan_bagi_in_Ganja_Azerbaijan.jpg" src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Khan_bagi_in_Ganja_Azerbaijan.jpg" alt="Khan Bagy Park">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Khan%20Bagy%20Park/@40.6762044,46.3540347,15z" target="_blank">
+        <div class="loc-num">№ 22 · park</div>
+        <div class="loc-top"><h3 class="loc-name">Khan Bagy Park</h3></div>
+        <p class="loc-info">Historický park s moruší a platany ze sultanátního období. Klidné místo na odpočinek.</p>
+        <div class="loc-coords">40.6762044 N · 46.3540347 E</div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Khan%20Bagy%20Park/@40.6762044,46.3540347,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=46.3540347,40.6762044&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~10 km · ~9 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Imamzadeh+Mausoleum+Ganja&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Imamzadeh</span>
+          <img data-wiki="Imamzadeh_Mausoleum,_Ganja" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Imamzadeh%20Complex%20Ganja.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Imamzadeh%20Complex%20Ganja.jpg" alt="Imamzadeh Mausoleum">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Imamzadeh%20Mausoleum/@40.7146572,46.4248122,15z" target="_blank">
+        <div class="loc-num">№ 23 · mauzoleum</div>
+        <div class="loc-top"><h3 class="loc-name">Imamzadeh Mausoleum</h3></div>
+        <p class="loc-desc">Posvátné poutní místo s dvěma hroty minaretů. Pohřebiště vnuka imáma Alího — jedno z nejnavštěvovanějších náboženských míst v Ázerbájdžánu.</p>
+        <div class="tags"><span class="tag cas">9–19 Po–Ne</span></div>
+        <div class="loc-coords">40.7146572 N · 46.4248122 E</div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Imamzadeh%20Mausoleum/@40.7146572,46.4248122,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=46.4248122,40.7146572&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~4.7 km · ~4 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Nizami+Ganjavi+Mausoleum&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Nizami Mausoleum</span>
+          <img data-wiki="Mausoleum_of_Nizami" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Nizami%20Mausoleum.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Nizami%20Mausoleum.jpg" alt="Nizami Mausoleum">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Nizami%20Gandjevi%20Mausoleum/@40.6837194,46.4310181,15z" target="_blank">
+        <div class="loc-num">№ 24 · básník</div>
+        <div class="loc-top"><h3 class="loc-name">Nizami Gandjevi Mausoleum</h3></div>
+        <p class="loc-desc">Hrob slavného básníka Nizámího (1141–1209). Původní prostý náhrobek byl nahrazen honosným mauzoleem v éře SSSR. Jen venku projít.</p>
+        <div class="loc-coords">40.6837194 N · 46.4310181 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Nizami_Ganjavi" target="_blank">Wikipedia ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Nizami%20Gandjevi%20Mausoleum/@40.6837194,46.4310181,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=46.4310181,40.6837194&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc optional">
+      <div class="loc-transit"><span class="arr">↓</span>~94 km · ~1 h 27 min od Nizami Mausoleum</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Mingachevir+reservoir&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Mingachevir</span>
+          <img data-wiki="Mingachevir" alt="Mingachevir">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Mingachevir%20%E2%80%94%20p%C5%99ehrada/@40.7939767,47.0382314,15z" target="_blank">
+        <div class="loc-num">№ 25 · přehrada</div>
+        <div class="loc-top"><h3 class="loc-name">Mingachevir — přehrada</h3></div>
+        <p class="loc-desc">Největší vodní nádrž v Ázerbájdžánu. Sádrové hory v okolí. Pláže u přehrady — prý se dá koupat. 80 km / 1 hod z Ganji.</p>
+        <div class="loc-coords">Oblast · 40.7939767 N · 47.0382314 E<br>Hydroelektrárna · 40.7898997 N · 47.028265 E<br>Pláž · 40.7951745 N · 47.0369926 E</div>
+      </a>
+
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Mingachevir%20%E2%80%94%20p%C5%99ehrada/@40.7939767,47.0382314,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=47.0382314,40.7939767&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Mingechevir%20Hydro%20Power%20Plant/@40.7898997,47.028265,15z" target="_blank" style="background:var(--paper-2)"><span class="nav-icon">⚡</span>Přehrada</a>
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Mingechevir%20beach/@40.7951745,47.0369926,15z" target="_blank" style="background:var(--paper-2)"><span class="nav-icon">🏖</span>Pláž</a>
+      </div>
+    </article>
+
+  </div>
+  <div class="day-tips">
+    <div class="day-tips-header">✦ Tipy navíc od Láďi</div>
+    <div class="day-tips-grid">
+      <article class="loc tip">
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Heydar+Aliyev+Park+·+Ganja+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Heydar Aliyev Park · Ganja</span>
+        </div>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Heydar%20Aliyev%20Park%20%C2%B7%20Ganja/@40.6849150,46.3314194,15z" target="_blank">
+        <div class="loc-num">✦ TIP · park</div>
+        <div class="loc-top"><h3 class="loc-name">Heydar Aliyev Park · Ganja</h3></div>
+        <p class="loc-desc">Větší městský park v Ganji s alejemi a fontánami. Klidná procházka.</p>
+        
+        <div class="loc-coords">40.6849150 N · 46.3314194 E</div>
+      </a>
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Heydar%20Aliyev%20Park%20%C2%B7%20Ganja/@40.6849150,46.3314194,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=46.3314194,40.6849150&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+    </div>
+  </div>
+
+
+  <div class="day-stay">
+    <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>~122 km · ~1 h 52 min od posledního bodu</div>
+    <div class="day-stay-eyebrow">⌂ Nocleh · St 27. 5. → Čt 28. 5.</div>
+    <h3 class="day-stay-name">Sheki · Hotel Arena <a href="https://www.booking.com/hotel/az/sheki-olimp-villa.cs.html" target="_blank">booking ↗</a></h3>
+    <div class="day-stay-meta">Příjezd do Sheki večer (~19:00, později pokud Goygol bonus). Spát před zítřejší prohlídkou města — Day 6 začíná v klidu rovnou v Sheki. 4* villa ~1,3 km od centra, 2× DBL, snídaně v ceně.</div>
+    <div class="day-stay-nav">
+      <a class="loc-nav-btn" href="https://www.google.com/maps/place/Hotel%20Arena%20Sheki/@41.19194,47.17056,14z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+      <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=47.17056,41.19194&z=14" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DEN 6 ═══════════════ -->
+<section class="day-block" id="den6">
+  <div class="day-header">
+    <div class="day-num">0<em>6</em></div>
+    <div class="day-meta">
+      <div class="day-kicker">Čtvrtek · 28. května</div>
+      <div class="day-title">Sheki <em>+ Kish → Ismayilli</em></div>
+      <div class="day-sub">Sheki sights · Kish · večerní přejezd do Ismayilli · nocleh</div>
+    </div>
+    <div class="day-stamp">Den<br><span class="stops">04 zastávek</span></div>
+  </div>
+  <div class="day-totals">Trasa dne · <strong>~155 km</strong> · <strong>~3 h</strong> v autě · Sheki + Kish + (Qabala oblast) → Ismayilli</div>
+
+  <div class="locations">
+
+    
+
+    <article class="loc priority">
+      <div class="loc-transit"><span class="arr">↓</span>~1 km · ~2 min od Hotel Arena · již v Sheki</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Sheki+Khan+Palace+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Palace of Shaki Khans</span>
+          <img data-wiki="Palace_of_Shaki_Khans" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Sheki%20Khan%20Palace%20-%20panoramio.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Sheki%20Khan%20Palace%20-%20panoramio.jpg" alt="Palace of Shaki Khans">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Sheki%20%E2%80%94%20Palace%20of%20Shaki%20Khans/@41.2025844,47.1959417,15z" target="_blank">
+        <div class="loc-num">№ 26 · palác</div>
+        <div class="loc-top"><h3 class="loc-name">Sheki — Palace of Shaki Khans</h3></div>
+        <p class="loc-desc">Nejhezčí město Ázerbájdžánu v horách Velkého Kavkazu. Palác šekiských chánů — letní rezidence z konce 18. století, proslulá vitrážemi <em>šebeke</em>: sklo v dřevěné mřížce bez hřebíků a lepidla. UNESCO od 2019.</p>
+        <p class="loc-info">Karavanseraj byl zastávkou hedvábné stezky. Místní halva a baklava jsou prý nejlepší v zemi. Nespěchat — aspoň 3–4 hodiny na město.</p>
+        <div class="tags"><span class="tag vstup">9 AZN</span><span class="tag cas">3–4 hod</span><span class="tag cas">10–18 · Po zavřeno</span></div>
+        <div class="loc-coords">41.2025844 N · 47.1959417 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Shaki_Khans%27_Palace" target="_blank">Wikipedia ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Sheki%20%E2%80%94%20Palace%20of%20Shaki%20Khans/@41.2025844,47.1959417,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=47.1959417,41.2025844&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc priority">
+      <div class="loc-transit"><span class="arr">↓</span>~0.3 km · ~0 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Sheki+Caravanserai&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Sheki Caravanserai</span>
+          <img data-wiki="Sheki,_Azerbaijan" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Sheki%20Karvansaray.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Sheki%20Karvansaray.jpg" alt="Sheki Caravanserai">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Sheki%20Caravanserai/@41.2009547,47.1940617,15z" target="_blank">
+        <div class="loc-num">№ 27 · karavanseraj</div>
+        <div class="loc-top"><h3 class="loc-name">Sheki Caravanserai</h3></div>
+        <p class="loc-desc">Historická zastávka karavan na hedvábné stezce, dnes luxusní hotel. Obrovský dvůr s klenutými komorami. Dá se volně projít i bez ubytování.</p>
+        <div class="loc-coords">41.2009547 N · 47.1940617 E</div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Sheki%20Caravanserai/@41.2009547,47.1940617,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=47.1940617,41.2009547&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~2.5 km · ~2 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Sheki+bazaar+halva+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Sheki — bazar &amp; halva</span>
+          <img data-wiki="Sheki,_Azerbaijan" data-img="https://upload.wikimedia.org/wikipedia/commons/0/0e/Sheki_traditional_halva.jpg" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Sheki_traditional_halva.jpg" alt="Sheki bazar a halva">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Sheki%20%E2%80%94%20bazar%2C%20centrum%2C%20halva/@41.1996094,47.1716647,15z" target="_blank">
+        <div class="loc-num">№ 28 · halva</div>
+        <div class="loc-top"><h3 class="loc-name">Sheki — bazar, centrum, halva</h3></div>
+        <p class="loc-desc">Místní halva a baklava patří mezi nejlepší v zemi. Bazar a staré uličky kolem řeky, zastavit se v cukrárně. Vychutnat klid mezi paláci.</p>
+        <div class="tags"><span class="tag cas">1–2 hod</span></div>
+        <div class="loc-coords">41.1996094 N · 47.1716647 E</div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Sheki%20%E2%80%94%20bazar%2C%20centrum%2C%20halva/@41.1996094,47.1716647,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=47.1716647,41.1996094&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~7 km · ~6 min od ubytka v Sheki</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Church+of+Kish+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Kostel v Kish</span>
+          <img data-wiki="Kish,_Shaki" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Albanian%20church%20in%20Kish.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Albanian%20church%20in%20Kish.jpg" alt="Kostel v Kish">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Kostel%20v%20Kish/@41.2489811,47.1933208,15z" target="_blank">
+        <div class="loc-num">№ 29 · kostel</div>
+        <div class="loc-top"><h3 class="loc-name">Kostel v Kish</h3></div>
+        <p class="loc-desc">Raně křesťanská lokalita spojená s kavkazsko-albánskou tradicí. Současná stavba má středověké fáze, ale místo stojí na mnohem starších kultovních vrstvách. Thor Heyerdahl zde financoval vykopávky a byl jím fascinován. 10 km z Sheki.</p>
+        <div class="tags"><span class="tag cas">20 min</span></div>
+        <div class="loc-coords">41.2489811 N · 47.1933208 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Church_of_Kish" target="_blank">Wikipedia ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Kostel%20v%20Kish/@41.2489811,47.1933208,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=47.1933208,41.2489811&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc optional">
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Gabala+Radar+Station+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Gabala Radar Station</span>
+        </div>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Gabala%20Radar%20Station/@40.8685475,47.7960050,15z" target="_blank">
+        <div class="loc-num">№ 30 · radar</div>
+        <div class="loc-top"><h3 class="loc-name">Gabala Radar Station</h3></div>
+        <p class="loc-desc">Bývalá sovětská radarová stanice (oko Karibské krize). Viditelná z dálky z cesty — nejlépe od jezera Nohur.</p>
+        
+        <div class="loc-coords">40.8685475 N · 47.7960050 E</div>
+      </a>
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Gabala%20Radar%20Station/@40.8685475,47.7960050,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=47.7960050,40.8685475&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc optional">
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Jezero+Nohur+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Jezero Nohur</span>
+        </div>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Jezero%20Nohur/@40.9542333,47.8807628,15z" target="_blank">
+        <div class="loc-num">№ 31 · jezero</div>
+        <div class="loc-top"><h3 class="loc-name">Jezero Nohur</h3></div>
+        <p class="loc-desc">Klidné jezero u silnice, dobrý odpočinkový bod cestou. Pohled v dálce na Gabala Radar.</p>
+        
+        <div class="loc-coords">40.9542333 N · 47.8807628 E</div>
+      </a>
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Jezero%20Nohur/@40.9542333,47.8807628,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=47.8807628,40.9542333&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc optional bonus">
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Tufandag+Mountain+Resort+·+Qabala+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Tufandag Mountain Resort · Qabala</span>
+        </div>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Tufandag%20Mountain%20Resort%20%C2%B7%20Qabala/@41.0063806,47.8800486,15z" target="_blank">
+        <div class="loc-num">№ 32 · lanovka</div>
+        <div class="loc-top"><h3 class="loc-name">Tufandag Mountain Resort · Qabala</h3></div>
+        <p class="loc-desc">Lyžařský resort, v létě lanovka. Láďa píše spíše vynechat — méně dramatický než Shahdag.</p>
+        
+        <div class="loc-coords">41.0063806 N · 47.8800486 E</div>
+      </a>
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Tufandag%20Mountain%20Resort%20%C2%B7%20Qabala/@41.0063806,47.8800486,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=47.8800486,41.0063806&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="day-tips">
+    <div class="day-tips-header">✦ Tipy navíc od Láďi</div>
+    <div class="day-tips-grid">
+      <article class="loc tip">
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Lower+Caravan-Saray+·+Sheki+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Lower Caravan-Saray · Sheki</span>
+        </div>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Lower%20Caravan-Saray%20%C2%B7%20Sheki/@41.2006531,47.1917536,15z" target="_blank">
+        <div class="loc-num">✦ TIP · zavřený</div>
+        <div class="loc-top"><h3 class="loc-name">Lower Caravan-Saray · Sheki</h3></div>
+        <p class="loc-desc">Druhý karavanseraj v Sheki, momentálně zavřený. Z venku se dá obejít a vyfotit.</p>
+        
+        <div class="loc-coords">41.2006531 N · 47.1917536 E</div>
+      </a>
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Lower%20Caravan-Saray%20%C2%B7%20Sheki/@41.2006531,47.1917536,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=47.1917536,41.2006531&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+    </div>
+  </div>
+
+
+
+  
+
+  <div style="display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px;" class="stay-options">
+    <div class="day-stay" style="margin-top:0">
+    <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>~125 km · ~1 h 55 min od posledního bodu</div>
+      <div class="day-stay-eyebrow">⌂ Varianta A · Čt 28. 5. → Pá 29. 5.</div>
+      <h3 class="day-stay-name">Ismayilli · Rest House Ismayilli <a href="https://www.booking.com/hotel/az/rest-house-ismayilli-ismayilli.cs.html" target="_blank">booking ↗</a></h3>
+      <div class="day-stay-meta">Po cestě Sheki/Kish do Lahic. Zahrada, klima, free parking + WiFi.</div>
+      <div class="day-stay-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Rest%20House%20Ismayilli/@40.79,48.15194,14z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=48.15194,40.79&z=14" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </div>
+    <div style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.22em;color:var(--ink-mute);text-transform:uppercase;padding:4px 0">— nebo —</div>
+    <div class="day-stay" style="margin-top:0">
+    <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>~126 km · ~1 h 56 min od posledního bodu</div>
+      <div class="day-stay-eyebrow">⌂ Varianta B · Čt 28. 5. → Pá 29. 5. · s restaurací</div>
+      <h3 class="day-stay-name">Ismayilli · Mehsul Recreational Center <a href="https://www.booking.com/hotel/az/mehsul-recreational-center.cs.html" target="_blank">booking ↗</a></h3>
+      <div class="day-stay-meta">Vacation cottage feel · zahrada, terasa, <strong>restaurace + bar</strong>, dětské hřiště. ~867 m od centra Ismayilli (Abdul Hasan Alakbarzada 1).</div>
+      <div class="day-stay-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Mehsul%20Recreational%20Center/@40.785,48.155,14z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=48.155,40.785&z=14" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </div>
+  </div></section>
+
+<!-- ═══════════════ DEN 7 ═══════════════ -->
+<section class="day-block" id="den7">
+  <div class="day-header">
+    <div class="day-num">0<em>7</em></div>
+    <div class="day-meta">
+      <div class="day-kicker">Pátek · 29. května</div>
+      <div class="day-title">Lahic + Shamakhi <em>· návrat Baku</em></div>
+      <div class="day-sub">Suspension Bridge → Lahic → Shamakhi → Baku</div>
+    </div>
+    <div class="day-stamp">Den<br><span class="stops">flex zastávek</span></div>
+  </div>
+  <div class="day-totals">Trasa dne · <strong>~210 km</strong> · <strong>~3 h 20 min</strong> v autě · Ismayilli → Lahic → Shamakhi → Baku</div>
+
+  <div class="locations">
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~25 km · ~25 min od Ismayilli</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Lahic+suspension+bridge+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Suspension Bridge</span>
+          <img data-wiki="Lahıc" alt="Suspension Bridge">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Suspension%20Bridge%20%E2%80%94%20cestou%20do%20Lahic/@40.7968661,48.3192294,15z" target="_blank">
+        <div class="loc-num">№ 33 · most</div>
+        <div class="loc-top"><h3 class="loc-name">Suspension Bridge — cestou do Lahic</h3></div>
+        <div class="loc-coords">40.7968661 N · 48.3192294 E</div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Suspension%20Bridge%20%E2%80%94%20cestou%20do%20Lahic/@40.7968661,48.3192294,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=48.3192294,40.7968661&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc priority">
+      <div class="loc-transit"><span class="arr">↓</span>~11 km · ~10 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Lahic+village+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Lahic</span>
+          <img data-wiki="Lahıc" data-img="https://upload.wikimedia.org/wikipedia/commons/6/6a/Lahic_main_street.jpg" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Lahic_main_street.jpg" alt="Lahic">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Lahic%20%E2%80%94%20tradi%C4%8Dn%C3%AD%20vesnice/@40.8486964,48.3872736,15z" target="_blank">
+        <div class="loc-num">№ 34 · měď</div>
+        <div class="loc-top"><h3 class="loc-name">Lahic — tradiční vesnice</h3></div>
+        <p class="loc-desc">Středověká horská vesnice proslulá ručně kovanou mědí — tradice přinesená perskými řemeslníky před staletími. Dlážděná hlavní ulice, kovárny a obchůdky. Vůně ohně a kovu, skřípot nástrojů.</p>
+        <p class="loc-note" style="margin-top:8px">⚠ <strong>Jídlo NE v Lahic centru</strong> — podniky občas přeúčtovávají turisty. Najíst se raději u silnice mezi Ismayilli/Lahic/Shamakhi (Wander-Lush guide).</p>
+        <p class="loc-info">Místní mluví vlastním dialektem íránštiny. Perfektní místo koupit ruční výrobky. 160 km z Kish.</p>
+        <div class="tags"><span class="tag cas">2 hod</span></div>
+        <div class="loc-coords">40.8486964 N · 48.3872736 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Lahij" target="_blank">Wikipedia ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Lahic%20%E2%80%94%20tradi%C4%8Dn%C3%AD%20vesnice/@40.8486964,48.3872736,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=48.3872736,40.8486964&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~44 km · ~41 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Shamakhi+Juma+Mosque&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Shamakhi Juma Mosque</span>
+          <img data-wiki="Juma_Mosque,_Shamakhi" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Juma%20Mosque%20Shamakhi.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Juma%20Mosque%20Shamakhi.jpg" alt="Shamakhi Juma Mosque">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Shamakhi%20%E2%80%94%20Juma%20Mosque/@40.6266978,48.6438422,15z" target="_blank">
+        <div class="loc-num">№ 35 · 10. stol.</div>
+        <div class="loc-top"><h3 class="loc-name">Shamakhi — Juma Mosque</h3></div>
+        <p class="loc-desc">Shamakhi bylo historickým hlavním městem Shirvanského chanátu. Juma mešita pochází z 10. stol., přestavěna po ničivém zemětřesení v roce 1902. Jedno z nejstarších muslimských míst na Kavkaze.</p>
+        <p class="loc-info">1 hod z Lahic.</p>
+        <div class="loc-coords">40.6266978 N · 48.6438422 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Juma_Mosque,_Shamakhi" target="_blank">Wikipedia ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Shamakhi%20%E2%80%94%20Juma%20Mosque/@40.6266978,48.6438422,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=48.6438422,40.6266978&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~1.3 km · ~1 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Yeddi+Gumbez+Mausoleum+Shamakhi&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Yeddi Gumbaz</span>
+          <img data-wiki="Yeddi_Gumbez_Mausoleum" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Yeddi%20G%C3%BCmb%C9%99z%20mausoleum.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Yeddi%20G%C3%BCmb%C9%99z%20mausoleum.jpg" alt="Yeddi Gumbaz">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Shamakhi%20%E2%80%94%20Yeddi%20Gumbaz/@40.6205208,48.6356889,15z" target="_blank">
+        <div class="loc-num">№ 36 · sedm kupolí</div>
+        <div class="loc-top"><h3 class="loc-name">Shamakhi — Yeddi Gumbaz</h3></div>
+        <p class="loc-desc">„Sedm kupolí" — pohřebiště shirvanských chánů z 19. stol. Romantická zřícenina na kopci nad městem.</p>
+        <div class="loc-coords">40.6205208 N · 48.6356889 E</div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Shamakhi%20%E2%80%94%20Yeddi%20Gumbaz/@40.6205208,48.6356889,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=48.6356889,40.6205208&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+  
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+
+  <div class="day-stay">
+    <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>~242 km · ~3 h 44 min od posledního bodu</div>
+    <div class="day-stay-eyebrow">⌂ Nocleh · Pá 29. 5. → So 30. 5.</div>
+    <h3 class="day-stay-name">Baku · finální hotel · k doplnění</h3>
+    <div class="day-stay-meta">Auto vrácené v 19:00 GYD. Hotel v centru Baku — pěšky na Day 8 program. Možnosti: Icherisheher area / Sahil / Badamdar (jako Day 3) / blízko letiště pokud preferujete.</div>
+    <div class="day-stay-nav">
+      <a class="loc-nav-btn" href="https://www.google.com/maps/place/Baku/@40.3667,49.8333,12z" target="_blank"><span class="nav-icon">📍</span>Google Maps · Baku</a>
+      <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.8333,40.3667&z=12" target="_blank"><span class="nav-icon">📍</span>Mapy.com · Baku</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DEN 8 ═══════════════ -->
+<section class="day-block" id="den8">
+  <div class="day-header">
+    <div class="day-num">0<em>8</em></div>
+    <div class="day-meta">
+      <div class="day-kicker">Sobota · 30. května</div>
+      <div class="day-title">Baku <em>· centrum</em></div>
+      <div class="day-sub">Bez auta · pěší prohlídka</div>
+    </div>
+    <div class="day-stamp">Den<br><span class="stops">07 zastávek</span></div>
+  </div>
+
+  
+  <div class="day-totals">Bez auta · <strong>Bolt / taxi / metro / pěšky</strong> · auto vráceno Pá 19:00</div>
+
+  <div class="locations">
+
+    <article class="loc priority">
+      <div class="loc-transit"><span class="arr">↓</span>start: Baku centrum pěšky · Bolt na vzdálenější body</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Icherisheher+Baku+Old+City&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Icheri Sheher</span>
+          <img data-wiki="Palace_of_the_Shirvanshahs" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Palace%20of%20the%20Shirvanshahs.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Palace%20of%20the%20Shirvanshahs.jpg" alt="Shirvanshah Palace">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Icheri%20Sheher%20%E2%80%94%20Star%C3%A9%20m%C4%9Bsto/@40.3661933,49.8331300,15z" target="_blank">
+        <div class="loc-num">№ 37 · UNESCO</div>
+        <div class="loc-top"><h3 class="loc-name">Icheri Sheher — Staré město</h3></div>
+        <p class="loc-desc">Nejstarší část Baku, UNESCO od roku 2000. Středověké uličky, karavanseraje, Palace of the Shirvanshahs (15. stol.) a Panenská věž (Qız Qalası). Příjemné bloudit a ztrácet se.</p>
+        <div class="tags"><span class="tag vstup">10 AZN</span><span class="tag cas">10–18</span></div>
+        <div class="loc-coords">40.3661933 N · 49.8331300 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Icherisheher" target="_blank">Wikipedia ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Icheri%20Sheher%20%E2%80%94%20Star%C3%A9%20m%C4%9Bsto/@40.3661933,49.8331300,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.8331300,40.3661933&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~0.5 km · ~0 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Maiden+Tower+Baku&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Qız Qalası</span>
+          <img data-wiki="Maiden_Tower,_Baku" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Baku%20Maiden%20Tower.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Baku%20Maiden%20Tower.jpg" alt="Maiden Tower">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Q%C4%B1z%20Qalas%C4%B1%20%E2%80%94%20Panensk%C3%A1%20v%C4%9B%C5%BE/@40.3661547,49.8372144,15z" target="_blank">
+        <div class="loc-num">№ 38 · panenská</div>
+        <div class="loc-top"><h3 class="loc-name">Qız Qalası — Panenská věž</h3></div>
+        <p class="loc-desc">Symbol Baku. Válcová věž z 12. stol., 29 m vysoká, neznámého účelu — teorií je mnoho (maják, astronomická věž, obranná stavba). Uvnitř expozice o historii, nahoře výhled na celý Baku.</p>
+        <div class="loc-coords">40.3661547 N · 49.8372144 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Maiden_Tower,_Baku" target="_blank">Wikipedia ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Q%C4%B1z%20Qalas%C4%B1%20%E2%80%94%20Panensk%C3%A1%20v%C4%9B%C5%BE/@40.3661547,49.8372144,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.8372144,40.3661547&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~0.2 km · ~0 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Baku+Boulevard&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Baku Boulevard</span>
+          <img data-wiki="Baku_Boulevard" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Baku%20boulevard%202.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Baku%20boulevard%202.jpg" alt="Baku Boulevard">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Baku%20Boulevard/@40.3652011,49.8385064,15z" target="_blank">
+        <div class="loc-num">№ 39 · promenáda</div>
+        <div class="loc-top"><h3 class="loc-name">Baku Boulevard</h3></div>
+        <p class="loc-desc">3,5 km promenáda podél Kaspického moře, budovaná od roku 1909. Kavárny, fontány, výhledy. Večer oživlá — ideální zakončení dne.</p>
+        <div class="loc-coords">40.3652011 N · 49.8385064 E</div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Baku%20Boulevard/@40.3652011,49.8385064,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.8385064,40.3652011&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~1.5 km · ~1 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Highland+Park+Baku+Flame+Towers&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Highland Park</span>
+          <img data-wiki="Flame_Towers" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Baku%20at%20night.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Baku%20at%20night.jpg" alt="Highland Park">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Highland%20Park%20%2B%20lanovka/@40.3574822,49.8296053,15z" target="_blank">
+        <div class="loc-num">№ 40 · vyhlídka</div>
+        <div class="loc-top"><h3 class="loc-name">Highland Park + lanovka</h3></div>
+        <p class="loc-desc">Vrcholový park s nejlepším výhledem na Baku, Flame Towers a Kaspické moře. Lanovka jede z nábřeží. Zvláště hezké za soumraku.</p>
+        <div class="loc-coords">40.3574822 N · 49.8296053 E</div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Highland%20Park%20%2B%20lanovka/@40.3574822,49.8296053,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.8296053,40.3574822&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~7 km · ~7 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Heydar+Aliyev+Center+Zaha+Hadid&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Heydar Aliyev Center</span>
+          <img data-wiki="Heydar_Aliyev_Center" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Heydar%20Aliyev%20International%20Conference%20Center%20Baku%20Azerbaijan.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Heydar%20Aliyev%20International%20Conference%20Center%20Baku%20Azerbaijan.jpg" alt="Heydar Aliyev Center">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Heydar%20Aliyev%20Cultural%20Center/@40.3967492,49.8677164,15z" target="_blank">
+        <div class="loc-num">№ 41 · Zaha Hadid</div>
+        <div class="loc-top"><h3 class="loc-name">Heydar Aliyev Cultural Center</h3></div>
+        <p class="loc-desc">Ikonická stavba od Zaha Hadid (2012) — tekoucí bílá forma bez jediného ostrého rohu. Cena Designu roku 2014. Interiér prý méně zajímavý než fasáda — navštívit hlavně zvenku a udělat fotky.</p>
+        <div class="tags"><span class="tag cas">So–Ne 10:30–17 · Po zavřeno</span></div>
+        <div class="loc-coords">40.3967492 N · 49.8677164 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="https://en.wikipedia.org/wiki/Heydar_Aliyev_Center" target="_blank">Wikipedia ↗</a>
+        </div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Heydar%20Aliyev%20Cultural%20Center/@40.3967492,49.8677164,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.8677164,40.3967492&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc optional">
+      <div class="loc-transit"><span class="arr">↓</span>~3.1 km · ~3 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Military+Trophy+Park+Baku&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Military Trophy Park</span>
+          <img data-wiki="Military_Trophy_Park_(Baku)" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Military%20trophies%20park%20Baku.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Military%20trophies%20park%20Baku.jpg" alt="Military Trophy Park">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Military%20Trophy%20Park/@40.3766342,49.8742403,15z" target="_blank">
+        <div class="loc-num">№ 42 · kontroverzní</div>
+        <div class="loc-top"><h3 class="loc-name">Military Trophy Park</h3></div>
+        <p class="loc-desc">Kontroverzní park s ukořistěnou arménskou vojenskou technikou z Náhorního Karabachu. Wax museum s vojáky. Poznamenat: jedná se o vítěznou propagandu — vědomě rozhodnout, jestli navštívit.</p>
+        <div class="tags"><span class="tag vstup">10 AZN</span><span class="tag cas">Út–Ne 10–17</span></div>
+        <div class="loc-coords">40.3766342 N · 49.8742403 E</div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Military%20Trophy%20Park/@40.3766342,49.8742403,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.8742403,40.3766342&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc">
+      <div class="loc-transit"><span class="arr">↓</span>~10 km · ~9 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Heydar+Mosque+Baku&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Heydar Mosque</span>
+          <img data-wiki="Heydar_Mosque" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Heydar%20Mosque%20Baku.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Heydar%20Mosque%20Baku.jpg" alt="Heydar Mosque">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Sheher%20Heydar%20Mosque/@40.4291369,49.8242442,15z" target="_blank">
+        <div class="loc-num">№ 43 · 20 000</div>
+        <div class="loc-top"><h3 class="loc-name">Sheher Heydar Mosque</h3></div>
+        <p class="loc-desc">Jedna z největších mešit na Kavkaze — pojme 20 000 věřících. Moderní stavba, výrazná architektura. Na okraji centra.</p>
+        <div class="loc-coords">40.4291369 N · 49.8242442 E</div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Sheher%20Heydar%20Mosque/@40.4291369,49.8242442,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.8242442,40.4291369&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+  
+    <article class="loc optional">
+      <div class="loc-transit"><span class="arr">↓</span>~14 km · ~13 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=oil+tanker+museum+Baku&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Ship Museum</span>
+          <img data-wiki="Surakhani" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Surakhani%20ship%20museum.jpg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Surakhani%20ship%20museum.jpg" alt="Ship Museum SURAXANI">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Ship%20Museum%20SURAXANI/@40.3372267,49.8420242,15z" target="_blank">
+        <div class="loc-num">№ 44 · tanker</div>
+        <div class="loc-top"><h3 class="loc-name">Ship Museum SURAXANI</h3></div>
+        <p class="loc-desc">Ropný tanker přestavěný na plovoucí muzeum. Svého druhu unikát — světově první ropný tanker byl spuštěn právě v Baku v roce 1878. Muzeum mapuje historii ropného průmyslu.</p>
+        <p class="loc-note">⚠ Otevřeno jen St–Ne. Pondělí a úterý zavřeno!</p>
+        <div class="tags"><span class="tag cas">1,5 hod</span><span class="tag vstup">10 AZN</span><span class="tag cas">10–19</span></div>
+        <div class="loc-coords">40.3372267 N · 49.8420242 E</div>
+      </a>
+    
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Ship%20Museum%20SURAXANI/@40.3372267,49.8420242,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.8420242,40.3372267&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc optional">
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Baku+ropné+pole+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Baku ropné pole</span>
+        </div>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Baku%20ropn%C3%A9%20pole/@40.3201475,49.8330658,15z" target="_blank">
+        <div class="loc-num">№ 45 · drive-by</div>
+        <div class="loc-top"><h3 class="loc-name">Baku ropné pole</h3></div>
+        <p class="loc-desc">Historické pole jihozápadně od Baku, vidět z auta cestou na Gobustan.</p>
+        
+        <div class="loc-coords">40.3201475 N · 49.8330658 E</div>
+      </a>
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Baku%20ropn%C3%A9%20pole/@40.3201475,49.8330658,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.8330658,40.3201475&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc optional">
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Mešita+Bibi+Heybat+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Mešita Bibi Heybat</span>
+        </div>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Me%C5%A1ita%20Bibi%20Heybat/@40.3086044,49.8204486,15z" target="_blank">
+        <div class="loc-num">№ 46 · mešita</div>
+        <div class="loc-top"><h3 class="loc-name">Mešita Bibi Heybat</h3></div>
+        <p class="loc-desc">Rekonstruovaná mešita (1998) nad ropnými poli, místo poutě. Asi 30 min zastávka.</p>
+        <div class="tags"><span class="tag cas">30 min</span></div>
+        <div class="loc-coords">40.3086044 N · 49.8204486 E</div>
+      </a>
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Me%C5%A1ita%20Bibi%20Heybat/@40.3086044,49.8204486,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.8204486,40.3086044&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc optional">
+      <a class="loc-photo-link" href="https://www.google.com/search?q=První+ropný+vrt+na+světě+(Bibi+Heybat)+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">První ropný vrt na světě (Bibi Heybat)</span>
+        </div>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Prvn%C3%AD%20ropn%C3%BD%20vrt%20na%20sv%C4%9Bt%C4%9B%20%28Bibi%20Heybat%29/@40.3344931,49.8325531,15z" target="_blank">
+        <div class="loc-num">№ 47 · 1846</div>
+        <div class="loc-top"><h3 class="loc-name">První ropný vrt na světě (Bibi Heybat)</h3></div>
+        <p class="loc-desc">Označená historická lokalita prvního mechanicky vrtaného ropného vrtu (1846).</p>
+        <div class="tags"><span class="tag vstup">zdarma</span><span class="tag cas">30 min</span></div>
+        <div class="loc-coords">40.3344931 N · 49.8325531 E</div>
+      </a>
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Prvn%C3%AD%20ropn%C3%BD%20vrt%20na%20sv%C4%9Bt%C4%9B%20%28Bibi%20Heybat%29/@40.3344931,49.8325531,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.8325531,40.3344931&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc optional">
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Ropný+přístav+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Ropný přístav</span>
+        </div>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Ropn%C3%BD%20p%C5%99%C3%ADstav/@40.3065517,49.7955683,15z" target="_blank">
+        <div class="loc-num">№ 48 · drive-by</div>
+        <div class="loc-top"><h3 class="loc-name">Ropný přístav</h3></div>
+        <p class="loc-desc">Hned u Bibi Heybat — průmyslový pohled, drive-by.</p>
+        
+        <div class="loc-coords">40.3065517 N · 49.7955683 E</div>
+      </a>
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Ropn%C3%BD%20p%C5%99%C3%ADstav/@40.3065517,49.7955683,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.7955683,40.3065517&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+    <article class="loc optional">
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Bulvár+Neftciler+Azerbaijan&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Bulvár Neftciler</span>
+        </div>
+      </a>
+      <a class="loc-body-link" href="https://www.google.com/maps/place/Bulv%C3%A1r%20Neftciler/@40.3680,49.8420,15z" target="_blank">
+        <div class="loc-num">№ 49 · projížďka</div>
+        <div class="loc-top"><h3 class="loc-name">Bulvár Neftciler</h3></div>
+        <p class="loc-desc">Reprezentativní Baku magistrála podél pobřeží Kaspiku. Pokud je k dispozici auto poslední den, dá se projet.</p>
+        
+        <div class="loc-coords">40.3680 N · 49.8420 E</div>
+      </a>
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/place/Bulv%C3%A1r%20Neftciler/@40.3680,49.8420,15z" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=49.8420,40.3680&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+  </div>
+
+</section><!-- ═══════════════ REVIEW ═══════════════ -->
+<section class="review-section">
+  <div class="review-head">
+    <h2 class="review-title">Praktické <em>tipy</em></h2>
+  </div>
+
+  <div class="review-grid">
+    <div class="review-box review-recs" style="grid-column: 1 / -1">
+      <ul>
+        <li><strong>Pasy</strong> — platné min. 6 měsíců po datu vstupu, vzít s sebou.</li>
+        <li><strong>Mezinárodní řidičáky</strong> — IDP (vystavit na pojišťovně / autoklubu před odletem).</li>
+        <li><strong>Cestovní pojištění</strong> — léčebné výdaje, storno, repatriace, doklady při sobě.</li>
+        <li><strong>Auto Europcar</strong> — potvrdit 7 míst · zavazadla · AWD/FWD při převzetí · spoluúčast.</li>
+        <li><strong>eSIM / data</strong> — Airalo 5 GB/15 dní ~490 Kč, nebo Azercell na letišti.</li>
+        <li><strong>Hotovost AZN</strong> — směnit ~5 000 Kč; vstupné se platí obvykle hotově, mimo Baku karty nejistá.</li>
+        <li><strong>Cesta do Khinaliq</strong> — horská, počasím občas neprůjezdná. Ověřit přes Quba hotel den předem. Ráno; pokud mlha/déšť, otočit se.</li>
+        <li><strong>Otvírací doby</strong> — Sheki Palace má v pondělí zavřeno (Den 6 = čtvrtek, OK). Ověřit Gobustan, Ateshgah, Yanar Dag.</li>
+        <li><strong>Sheki Khan Palace</strong> — fotografování uvnitř zakázáno.</li>
+        <li><strong>Nachčičevan</strong> — vypuštěno z plánu, rozbíjelo by trasu (vyžaduje vlastní let).</li>
+        <li><strong>Offline mapy</strong> — Mapy.com + Google Maps celý Az předem stáhnout.</li>
+        <li><strong>Powerbanky + USB-C nabíječka 2-port</strong> — do auta (Plaud, mobily).</li>
+        <li><strong>Pravidla AZ silnic</strong> — 0 promile · rychlost 60/110 · zákaz fotit policii/vojáky.</li>
+        <li><strong>Lokální čísla</strong> — 112 (univerzální) · CZ velvyslanectví Baku +994 12 497 06 80.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ COLOPHON ═══════════════ -->
+<footer class="colophon">
+  <span>Itinerář · Ázerbájdžán 2026</span>
+  <em>Land of fire · Odər yurdu</em>
+  <span>4 cestující · v2 · květen 2026</span>
+</footer>
+
+</div>
+
+<!-- ═══════════════ PHOTO LOADER (Wikipedia + Commons) ═══════════════ -->
+<script>
+var USED_URLS = {};
+function isBadImage(url) {
+  if (!url) return true;
+  var u = url.toLowerCase();
+  var bad = ['location_map','locator','_map.svg','_map.png','flag_of_','coat_of_arms','emblem_of_',
+             'azerbaijan_administrative','azerbaijan_in_','azerbaijan_relief','azerbaijan_(orthographic',
+             'wikimedia_commons','commons-logo'];
+  for (var i = 0; i < bad.length; i++) if (u.indexOf(bad[i]) !== -1) return true;
+  return false;
+}
+function applyImage(img, url) {
+  if (!url || isBadImage(url) || USED_URLS[url]) return false;
+  USED_URLS[url] = true;
+  img.onload = function() { img.classList.add('loaded'); img.parentElement.classList.add('has-image'); };
+  img.onerror = function() { delete USED_URLS[url]; };
+  img.src = url;
+  return true;
+}
+function fetchPageImage(title) {
+  var url = 'https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=pageimages&pithumbsize=700&titles=' + encodeURIComponent(title);
+  return fetch(url).then(function(r){return r.json();}).then(function(data){
+    var pages = data && data.query && data.query.pages; if (!pages) return null;
+    var k = Object.keys(pages)[0];
+    var thumb = pages[k] && pages[k].thumbnail && pages[k].thumbnail.source;
+    return (thumb && !isBadImage(thumb)) ? thumb : null;
+  }).catch(function(){return null;});
+}
+function searchCommons(query) {
+  var url = 'https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrsearch=' + encodeURIComponent(query + ' filemime:image/jpeg') + '&gsrnamespace=6&gsrlimit=15&prop=imageinfo&iiprop=url|mime&iiurlwidth=700';
+  return fetch(url).then(function(r){return r.json();}).then(function(data){
+    var pages = data && data.query && data.query.pages; if (!pages) return [];
+    var urls = [];
+    for (var k in pages) {
+      var info = pages[k].imageinfo && pages[k].imageinfo[0];
+      if (info && info.thumburl && info.thumbwidth >= 300 && !isBadImage(info.thumburl)) urls.push(info.thumburl);
+    }
+    return urls;
+  }).catch(function(){return [];});
+}
+function firstUnused(urls) { for (var i = 0; i < urls.length; i++) if (!USED_URLS[urls[i]]) return urls[i]; return null; }
+var FALLBACKS = {
+  'Ramana_Tower': ['Ramana_Castle', 'Ramana,_Azerbaijan', 'Absheron_Peninsula'],
+  'Yanar_Dag': ['Yanar_Dagh', 'Yanar_Dağ'],
+  'Beshbarmaq_mountain': ['Besh_Barmag', 'Beşbarmaq_dağı', 'Caspian_Sea'],
+  'Khinalug': ['Xınalıq', 'Khinaliq'],
+  'Gobustan_National_Park': ['Gobustan_Rock_Art_Cultural_Landscape', 'Qobustan_State_Reserve'],
+  'Mud_volcanoes_of_Azerbaijan': ['Mud_volcano', 'Gobustan_National_Park'],
+  'Ganja,_Azerbaijan': ['Ganja_(city)', 'Juma_Mosque_of_Ganja'],
+  'Palace_of_Shaki_Khans': ["Shaki_Khans'_Palace", 'Sheki', 'Shaki,_Azerbaijan'],
+  'Lahıc': ['Lahij', 'Lahic', 'Lahij,_Azerbaijan'],
+  'Icherisheher': ['Old_City_(Baku)', 'Baku'],
+  'Maiden_Tower,_Baku': ['Maiden_Tower_(Baku)', 'Baku'],
+  'Heydar_Aliyev_Center': ['Heydar_Aliyev_Cultural_Center'],
+  'Masazirgol': ['Masazır_Lake', 'Lake_Masazir', 'Absheron_Peninsula'],
+  'Chirag_Gala': ['Chirag_Gala_Fortress', 'Chiraggala'],
+  'Quba,_Azerbaijan': ['Quba_(city)', 'Six-Domed_Synagogue', 'Krasnaya_Sloboda,_Quba'],
+  'Juma_Mosque,_Quba': ['Juma_Mosque_of_Quba', 'Quba,_Azerbaijan'],
+  'Quba_Genocide_Memorial_Complex': ['Quba_Genocide_Memorial', 'Quba_mass_grave', 'Quba,_Azerbaijan'],
+  'Imamzadeh_Mausoleum,_Ganja': ['Imamzadeh_complex_(Ganja)', 'Ganja,_Azerbaijan'],
+  'Mausoleum_of_Nizami': ['Nizami_Mausoleum', 'Nizami_Ganjavi', 'Ganja,_Azerbaijan'],
+  'Mingachevir': ['Mingəçevir', 'Mingachevir_Reservoir'],
+  'Sheki,_Azerbaijan': ['Sheki', 'Shaki,_Azerbaijan', 'Sheki_Caravanserai'],
+  'Kish,_Shaki': ['Church_of_Kish', 'Kish_(Azerbaijan)', 'Sheki,_Azerbaijan'],
+  'Juma_Mosque,_Shamakhi': ['Shamakhi_Juma_Mosque', 'Shamakhi'],
+  'Yeddi_Gumbez_Mausoleum': ['Yeddi_Gumbaz', 'Shamakhi'],
+  'Surakhani': ['Suraxanı', 'Surakhany'],
+  'Bibiheybət': ['Bibi-Heybat', 'Bibi-Heybat_Mosque'],
+  'Bibi-Heybat_Mosque': ['Bibi-Heybat', 'Bibiheybət'],
+  'Shahdili': ['Shah_Dili', 'Shahdili_State_Reserve', 'Absheron_Peninsula'],
+  'Alinja_Castle': ['Alinjagala', 'Alıncaqala', 'Nakhchivan_Autonomous_Republic'],
+  'Baku_Boulevard': ['National_Park_(Baku)', 'Baku'],
+  'Flame_Towers': ['Flame_Towers,_Baku', 'Baku'],
+  'Military_Trophy_Park_(Baku)': ['Military_Trophy_Park', 'Baku'],
+  'Heydar_Mosque': ['Heydar_Mosque_(Baku)', 'Baku'],
+  'Candy_Cane_Mountains': ['Khizi_District', 'Khizi'],
+  'Ateshgah_of_Baku': ['Atashgah_of_Baku', 'Fire_temple'],
+  'Palace_of_the_Shirvanshahs': ['Shirvanshahs_Palace', 'Icherisheher', 'Baku']
+};
+function tryFallbacks(img, titles, idx) {
+  if (idx >= titles.length) return;
+  fetchPageImage(titles[idx]).then(function(thumb){
+    if (thumb && !USED_URLS[thumb]) applyImage(img, thumb);
+    else tryFallbacks(img, titles, idx + 1);
+  });
+}
+function loadImage(img) {
+  var override = img.getAttribute('data-img');
+  if (override) { applyImage(img, override); return; }
+  var primary = img.getAttribute('data-wiki');
+  var alt = img.getAttribute('alt') || '';
+  fetchPageImage(primary).then(function(thumb){
+    if (thumb && !USED_URLS[thumb]) { applyImage(img, thumb); return; }
+    searchCommons(alt + ' Azerbaijan').then(function(urls){
+      var u = firstUnused(urls);
+      if (u) { applyImage(img, u); return; }
+      var simpleName = alt.split('—')[0].split('·')[0].trim();
+      searchCommons(simpleName).then(function(urls2){
+        var u2 = firstUnused(urls2);
+        if (u2) { applyImage(img, u2); return; }
+        tryFallbacks(img, FALLBACKS[primary] || [], 0);
+      });
+    });
+  });
+}
+var imgs = Array.prototype.slice.call(document.querySelectorAll('img[data-wiki]'));
+function loadNext(idx) {
+  if (idx >= imgs.length) return;
+  loadImage(imgs[idx]);
+  setTimeout(function(){ loadNext(idx + 1); }, 90);
+}
+loadNext(0);
+</script>
+
+<script>
+(function() {
+  var navLinks = document.querySelectorAll('.day-nav a');
+  var dayMap = {};
+  navLinks.forEach(function(a) {
+    var href = a.getAttribute('href');
+    if (href && href.startsWith('#')) dayMap[href.slice(1)] = a;
+  });
+  
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        navLinks.forEach(function(a) { a.classList.remove('active'); });
+        var id = entry.target.id;
+        if (dayMap[id]) dayMap[id].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+  
+  document.querySelectorAll('section[id]').forEach(function(s) {
+    observer.observe(s);
+  });
+})();
+</script>
+
+<script>
+(function() {
+  // Info-block toggle
+  document.querySelectorAll('.info-block').forEach(function(b) {
+    var eb = b.querySelector('.info-eyebrow');
+    if (!eb) return;
+    eb.addEventListener('click', function() { b.classList.toggle('collapsed'); });
+  });
+  // Day-block toggle
+  document.querySelectorAll('.day-block').forEach(function(b) {
+    var h = b.querySelector('.day-header');
+    if (!h) return;
+    h.addEventListener('click', function() { b.classList.toggle('collapsed'); });
+  });
+  // Day-stay toggle
+  document.querySelectorAll('.day-stay').forEach(function(b) {
+    var eb = b.querySelector('.day-stay-eyebrow');
+    if (!eb) return;
+    eb.addEventListener('click', function() { b.classList.toggle('collapsed'); });
+  });
+  // Auto-collapse on mobile
+  if (window.innerWidth < 720) {
+    document.querySelectorAll('.info-block').forEach(function(b) { b.classList.add('collapsed'); });
+    document.querySelectorAll('.day-block').forEach(function(b) { b.classList.add('collapsed'); });
+    document.querySelectorAll('.day-stay').forEach(function(b) { b.classList.add('collapsed'); });
+  }
+})();
+</script>
+<script>
+(function() {
+  var topBtn = document.getElementById('nav-top');
+  if (topBtn) topBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  var collapseBtn = document.getElementById('nav-collapse');
+  if (collapseBtn) collapseBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    // If any is open, collapse all; otherwise expand all
+    var infoBlocks = document.querySelectorAll('.info-block');
+    var dayBlocks = document.querySelectorAll('.day-block');
+    var dayStays = document.querySelectorAll('.day-stay');
+    var anyOpen = false;
+    [].forEach.call(infoBlocks, function(b) { if (!b.classList.contains('collapsed')) anyOpen = true; });
+    [].forEach.call(dayBlocks, function(b) { if (!b.classList.contains('collapsed')) anyOpen = true; });
+    [].forEach.call(dayStays, function(b) { if (!b.classList.contains('collapsed')) anyOpen = true; });
+    [].forEach.call(infoBlocks, function(b) { b.classList.toggle('collapsed', anyOpen); });
+    [].forEach.call(dayBlocks, function(b) { b.classList.toggle('collapsed', anyOpen); });
+    [].forEach.call(dayStays, function(b) { b.classList.toggle('collapsed', anyOpen); });
+  });
+})();
+</script>
+<script>
+(function() {
+  var lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.style.display = 'none';
+  lb.innerHTML =
+    '<button class="lightbox-close" aria-label="Zavřít">×</button>' +
+    '<button class="lightbox-prev" aria-label="Předchozí">‹</button>' +
+    '<button class="lightbox-next" aria-label="Další">›</button>' +
+    '<img class="lightbox-img" src="" alt="">' +
+    '<div class="lightbox-caption"><span class="name"></span><span class="count"></span></div>';
+  document.body.appendChild(lb);
+  
+  var imgEl = lb.querySelector('.lightbox-img');
+  var nameEl = lb.querySelector('.lightbox-caption .name');
+  var countEl = lb.querySelector('.lightbox-caption .count');
+  var prevBtn = lb.querySelector('.lightbox-prev');
+  var nextBtn = lb.querySelector('.lightbox-next');
+  var state = { urls: [], index: 0, name: '' };
+  
+  function show(i) {
+    if (state.urls.length === 0) return;
+    if (i < 0) i = state.urls.length - 1;
+    if (i >= state.urls.length) i = 0;
+    state.index = i;
+    imgEl.src = state.urls[i];
+    nameEl.textContent = state.name;
+    countEl.textContent = state.urls.length > 1 ? (i+1) + ' / ' + state.urls.length : '';
+    prevBtn.style.display = state.urls.length > 1 ? 'flex' : 'none';
+    nextBtn.style.display = state.urls.length > 1 ? 'flex' : 'none';
+  }
+  function openLb(urls, name, index) {
+    state.urls = urls;
+    state.name = name || '';
+    show(index || 0);
+    lb.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    lb.style.display = 'none';
+    document.body.style.overflow = '';
+    imgEl.src = '';
+  }
+  
+  lb.querySelector('.lightbox-close').addEventListener('click', closeLb);
+  prevBtn.addEventListener('click', function(e) { e.stopPropagation(); show(state.index - 1); });
+  nextBtn.addEventListener('click', function(e) { e.stopPropagation(); show(state.index + 1); });
+  imgEl.addEventListener('click', function(e) { e.stopPropagation(); });
+  lb.addEventListener('click', closeLb);
+  document.addEventListener('keydown', function(e) {
+    if (lb.style.display !== 'flex') return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') show(state.index - 1);
+    if (e.key === 'ArrowRight') show(state.index + 1);
+  });
+  
+  // Touch swipe support on lightbox image
+  var touchX = null;
+  lb.addEventListener('touchstart', function(e) { touchX = e.touches[0].clientX; });
+  lb.addEventListener('touchend', function(e) {
+    if (touchX === null) return;
+    var diff = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) show(state.index - 1);
+      else show(state.index + 1);
+    }
+    touchX = null;
+  });
+  
+  // Hook all loc-photo-link clicks
+  document.querySelectorAll('.loc-photo-link').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var img = link.querySelector('img');
+      if (!img) return;
+      var name = (link.querySelector('.loc-photo-label') ? link.querySelector('.loc-photo-label').textContent : img.alt || '').trim();
+      var galleryAttr = img.getAttribute('data-gallery');
+      var dataImg = img.getAttribute('data-img') || (img.src && !img.src.endsWith('/') ? img.src : '');
+      var urls = [];
+      if (galleryAttr) {
+        try { urls = JSON.parse(galleryAttr); }
+        catch (err) { urls = galleryAttr.split('|'); }
+      } else if (dataImg) {
+        urls = [dataImg];
+      }
+      if (urls.length > 0 && urls[0]) {
+        e.preventDefault();
+        openLb(urls, name, 0);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
