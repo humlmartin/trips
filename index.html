@@ -334,6 +334,22 @@ a { color: inherit; text-decoration: none; }
   .info-val { text-align: left; }
 }
 
+/* DESKTOP: 1-sloupcové info-sekce → uvnitř bloku 2 sloupce řádků, ať se vyplní šířka */
+@media (min-width: 900px) {
+  .info-section[style*="grid-template-columns: 1fr;"] .info-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 48px;
+    row-gap: 0;
+    align-items: start;
+  }
+  .info-section[style*="grid-template-columns: 1fr;"] .info-block > .info-eyebrow,
+  .info-section[style*="grid-template-columns: 1fr;"] .info-block > .info-h,
+  .info-section[style*="grid-template-columns: 1fr;"] .info-block > .info-sub {
+    grid-column: 1 / -1;
+  }
+}
+
 .map-btn {
   display: flex;
   align-items: center;
