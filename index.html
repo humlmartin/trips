@@ -750,6 +750,30 @@ a { color: inherit; text-decoration: none; }
   background: var(--rule) !important;
 }
 
+/* UNVERIFIED — místo s nepřesnou polohou, dej šedě */
+.loc.unverified {
+  filter: grayscale(0.7);
+  opacity: 0.78;
+}
+.loc.unverified::before {
+  background: #8a8a82 !important;
+}
+.loc.unverified .loc-photo-wrap img { filter: grayscale(0.5); }
+.loc-todo-note {
+  background: rgba(0,0,0,0.05);
+  border-left: 2px solid #999;
+  padding: 8px 10px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--ink-mute);
+  font-style: italic;
+  line-height: 1.45;
+}
+.loc-todo-note::before {
+  content: '⚠ ';
+  font-style: normal;
+}
+
 
 /* ═══════════════════════════════════════════════════════════
    NAV BAR per card — Google driving + Mapy.com offline
@@ -1923,7 +1947,7 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
       </div>
     </article>
 
-    <article class="loc optional">
+    <article class="loc optional unverified">
       <a class="loc-photo-link" href="https://www.google.com/search?q=Ropné+vrty+cestou+z+letiště+Azerbaijan&tbm=isch" target="_blank">
         <div class="loc-photo-wrap">
           <span class="loc-photo-label">Ropné vrty cestou z letiště</span>
@@ -1934,8 +1958,8 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
         <div class="loc-num">№ 07 · drive-by</div>
         <div class="loc-top"><h3 class="loc-name">Ropné vrty cestou z letiště</h3></div>
         <p class="loc-desc">Klasický ázerbájdžánský obraz — moře ropných čerpadel podél silnice z letiště. Jen z auta podívat.</p>
-        
-        <div class="loc-coords">40.4396072 N · 50.0106897 E</div>
+        <p class="loc-todo-note">Doplnit přesnou polohu — současné souřadnice jsou pouze přibližné.</p>
+        <div class="loc-coords">40.4396072 N · 50.0106897 E (přibližné)</div>
       </a>
       <div class="loc-nav">
         <a class="loc-nav-btn" href="https://www.google.com/maps/?q=40.4396072,50.0106897&z=17" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
