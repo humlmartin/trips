@@ -1,0 +1,8 @@
+{
+  "name": "azerbajdzan-2026",
+  "version": "1.0.0",
+  "description": "Ázerbájdžán 2026 — itinerář",
+  "scripts": {
+    "start": "npx --yes serve -s . -l tcp://0.0.0.0:${PORT:-8080}"
+  }
+}
