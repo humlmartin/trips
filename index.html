@@ -352,30 +352,6 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
-.map-btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 18px;
-  background: var(--ink);
-  color: var(--paper);
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 14px 18px;
-  transition: background 0.15s;
-}
-.map-btn:hover { background: var(--rust); }
-.map-btn .arrow {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-style: normal;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0;
-  text-transform: none;
-}
-
 /* ═══════════════════════════════════════════════════════════
    DAY BLOCK
    ═══════════════════════════════════════════════════════════ */
@@ -453,18 +429,6 @@ a { color: inherit; text-decoration: none; }
   .day-num { font-size: 80px; }
   .day-title { font-size: 26px; }
   .day-stamp { display: none; }
-}
-
-.section-note {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--ink-soft);
-  padding: 0 0 22px 18px;
-  max-width: 800px;
-  border-left: 2px solid var(--day-color, var(--rust));
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -622,15 +586,6 @@ a { color: inherit; text-decoration: none; }
   flex: 1;
 }
 .loc-body-link:hover .loc-name { color: var(--rust); }
-.nav-arrow {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  color: var(--day-color, var(--rust));
-  flex-shrink: 0;
-  line-height: 1;
-}
 
 .loc-name::after {
   content: ' ↗';
@@ -736,7 +691,6 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink-mute);
 }
 
-
 .loc.priority::before {
   background: var(--teal) !important;
   height: 5px;
@@ -775,7 +729,6 @@ a { color: inherit; text-decoration: none; }
   font-style: normal;
 }
 
-
 /* ═══════════════════════════════════════════════════════════
    NAV BAR per card — Google driving + Mapy.com offline
    ═══════════════════════════════════════════════════════════ */
@@ -805,7 +758,6 @@ a { color: inherit; text-decoration: none; }
   margin-right: 5px;
   font-size: 12px;
 }
-
 
 /* ═══════════════════════════════════════════════════════════
    DAY STAY block — accommodation marker at end of day
@@ -856,7 +808,6 @@ a { color: inherit; text-decoration: none; }
 }
 .day-stay-nav .loc-nav-btn { padding: 10px 8px; }
 
-
 /* ═══════════════════════════════════════════════════════════
    BONUS — pokud se stihne (gray filter)
    ═══════════════════════════════════════════════════════════ */
@@ -880,7 +831,6 @@ a { color: inherit; text-decoration: none; }
   font-weight: 400;
   color: var(--ink-mute);
 }
-
 
 /* ═══════════════════════════════════════════════════════════
    TRANSIT — drive time between cards
@@ -907,7 +857,6 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px dashed var(--rule);
 }
 .day-totals strong { color: var(--day-color, var(--rust)); font-weight: 600; margin: 0 4px; }
-
 
 /* ═══════════════════════════════════════════════════════════
    TIP — bonus body od Ladi (gold accent, separate block)
@@ -953,38 +902,13 @@ a { color: inherit; text-decoration: none; }
 }
 .loc.tip .loc-photo-link { height: 120px; }
 
-
 /* ═══════════════════════════════════════════════════════════
    GASTRO — co kde jíst per den (plum accent)
    ═══════════════════════════════════════════════════════════ */
-.day-gastro {
-  margin: 14px 0 22px;
-  padding: 14px 18px;
-  background: rgba(107, 35, 66, 0.06);
-  border-left: 3px solid var(--plum);
-  font-size: 13px;
-  line-height: 1.6;
-}
-.day-gastro-header {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--plum);
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-.day-gastro-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 6px;
-  color: var(--ink);
-}
-@media (min-width: 720px) {
-  .day-gastro-grid { grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
-}
-.day-gastro strong { color: var(--plum); font-weight: 600; }
 
+@media (min-width: 720px) {
+  
+}
 
 /* ═══════════════════════════════════════════════════════════
    STICKY DAY NAV — quick jump on mobile
@@ -1040,74 +964,13 @@ a { color: inherit; text-decoration: none; }
 }
 section[id^="den"], section#info { scroll-margin-top: 70px; }
 
-
-
-
 /* ═══════════════════════════════════════════════════════════
    PRE-TRIP CHECKLIST — BETA
    ═══════════════════════════════════════════════════════════ */
-.pretrip {
-  margin-top: 60px;
-  padding: 26px 28px 22px;
-  background: rgba(29,77,74,0.05);
-  border: 1px solid var(--teal);
-  position: relative;
-}
-.pretrip-beta {
-  position: absolute;
-  top: -10px;
-  right: 18px;
-  background: var(--teal);
-  color: var(--paper);
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  font-weight: 600;
-}
-.pretrip-header {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 600;
-  font-size: 22px;
-  letter-spacing: -0.02em;
-  color: var(--teal);
-  margin-bottom: 4px;
-}
-.pretrip-sub {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 18px;
-}
-.pretrip-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
-  font-size: 13.5px;
-  line-height: 1.55;
-}
-@media (min-width: 720px) {
-  .pretrip-grid { grid-template-columns: 1fr 1fr; gap: 8px 26px; }
-}
-.pretrip-grid > div {
-  padding: 6px 0 6px 26px;
-  position: relative;
-  color: var(--ink);
-  border-bottom: 1px dotted var(--rule-2);
-}
-.pretrip-grid > div::before {
-  content: '☐';
-  position: absolute;
-  left: 0;
-  top: 5px;
-  color: var(--teal);
-  font-size: 16px;
-}
-.pretrip-grid strong { color: var(--teal); font-weight: 600; }
 
+@media (min-width: 720px) {
+  
+}
 
 /* ═══════════════════════════════════════════════════════════
    COLLAPSIBLE info-blocks — click eyebrow to expand
@@ -1140,7 +1003,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   padding: 18px 26px;
 }
 
-
 /* ═══════════════════════════════════════════════════════════
    COLLAPSIBLE day-blocks — click day-header to expand
    ═══════════════════════════════════════════════════════════ */
@@ -1167,7 +1029,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
 .day-block.collapsed {
   padding-bottom: 4px;
 }
-
 
 /* ═══════════════════════════════════════════════════════════
    COLLAPSIBLE day-stay — click eyebrow to expand
@@ -1200,7 +1061,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   margin-bottom: 0;
   padding-bottom: 0 !important;
 }
-
 
 /* ═══════════════════════════════════════════════════════════
    LIGHTBOX / GALERIE — fullscreen image viewer
@@ -1285,7 +1145,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   .lightbox-next { right: 4px; }
 }
 
-
 /* ═══════════════════════════════════════════════════════════
    Photo fallback — show img if src exists (mobile fix)
    ═══════════════════════════════════════════════════════════ */
@@ -1295,7 +1154,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
 .loc-photo-wrap img[src]:not([src=""]) {
   opacity: 1;
 }
-
 
 /* ═══════════════════════════════════════════════════════════
    FORCE PHOTO DISPLAY — img above label, always visible
@@ -1368,16 +1226,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   color: var(--ink);
 }
 .review-title em { font-style: normal; font-weight: 700; color: var(--rust); }
-.review-sub {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--ink-soft);
-  max-width: 540px;
-  padding-bottom: 8px;
-}
 
 @media (max-width: 720px) {
   .review-head { grid-template-columns: 1fr; }
@@ -1415,15 +1263,9 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   letter-spacing: -0.02em;
   margin-bottom: 4px;
 }
-.review-box .review-kicker {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-.review-box.review-fixes .review-kicker { color: var(--rust); }
-.review-box.review-recs  .review-kicker { color: var(--teal); }
+.review-box 
+.review-box.review-fixes 
+.review-box.review-recs  
 
 .review-box ul {
   list-style: none;
@@ -1769,7 +1611,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   </div>
 </section>
 
-
 <!-- ═══════════════ DEN 1 ═══════════════ -->
 <section class="day-block" id="den1">
   <div class="day-header">
@@ -1964,7 +1805,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     </article>
 
   </div>
-
 
   <div class="day-stay">
     <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>~18 km · ~20 min z Yanar Dag (nebo ~25 km / ~25 min z Masazır) do centra Baku</div>
@@ -2593,7 +2433,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     </div>
   </div>
 
-
   <div class="day-stay">
     <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>~122 km · ~1 h 52 min od posledního bodu</div>
     <div class="day-stay-eyebrow">⌂ Nocleh · St 27. 5. → Čt 28. 5.</div>
@@ -2620,8 +2459,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   <div class="day-totals">Trasa dne · <strong>~155 km</strong> · <strong>~3 h</strong> v autě · Sheki + Kish + (Qabala oblast) → Ismayilli</div>
 
   <div class="locations">
-
-    
 
     <article class="loc priority">
       <div class="loc-transit"><span class="arr">↓</span>~1 km · ~2 min od Hotel Arena · již v Sheki</div>
@@ -2814,33 +2651,7 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
       </div>
     </article>
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
   </div>
-
-
-
-  
 
   <div style="display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px;" class="stay-options">
     <div class="day-stay" style="margin-top:0">
@@ -2986,24 +2797,7 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
       </div>
     </article>
 
-  
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
   </div>
-
 
   <div class="day-stay">
     <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>~125 km · ~1 h 50 min ze Shamakhi (Yeddi Gumbaz) do centra Baku · M-4 dálnice</div>
@@ -3036,7 +2830,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     <div class="day-stamp">Den<br><span class="stops">07 zastávek</span></div>
   </div>
 
-  
   <div class="day-totals">Bez auta · <strong>Bolt / taxi / metro / pěšky</strong> · auto vráceno Pá 19:00</div>
 
   <div class="locations">
@@ -3219,7 +3012,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
       </div>
     </article>
 
-  
     <article class="loc optional">
       <div class="loc-transit"><span class="arr">↓</span>~14 km · ~13 min od předchozího</div>
       <a class="loc-photo-link" href="https://www.google.com/search?q=oil+tanker+museum+Baku&tbm=isch" target="_blank">
