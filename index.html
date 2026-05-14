@@ -1441,6 +1441,34 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   border: 1.5px solid var(--paper); box-shadow: 0 0 0 1px var(--rule);
 }
 
+/* ═══════════════════════════════════════════════════════════
+   DAY WEATHER — Open-Meteo forecast pro každý den
+   ═══════════════════════════════════════════════════════════ */
+.day-weather {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-soft);
+  background: rgba(176,138,62,0.10);
+  border: 1px solid rgba(176,138,62,0.25);
+  padding: 4px 10px;
+  margin-top: 6px;
+  white-space: nowrap;
+  width: fit-content;
+}
+.day-weather .icon { font-size: 14px; line-height: 1; }
+.day-weather .t-max { font-weight: 700; color: var(--ink); }
+.day-weather .t-min { opacity: 0.65; }
+.day-weather .rain { color: var(--teal); font-weight: 500; padding-left: 4px; border-left: 1px solid rgba(0,0,0,0.1); margin-left: 2px; }
+.day-weather .city { color: var(--ink-mute); font-size: 11px; }
+.day-weather.error { background: transparent; border-style: dashed; color: var(--ink-mute); }
+@media (max-width: 720px) {
+  .day-weather { font-size: 11px; padding: 3px 8px; gap: 5px; }
+  .day-weather .city { display: none; }
+}
+
 </style>
 </head>
 <body>
@@ -3736,6 +3764,96 @@ loadNext(0);
     document.addEventListener('DOMContentLoaded', initMap);
   } else {
     initMap();
+  }
+})();
+</script>
+<script>
+/* ═══════════════════════════════════════════════════════════
+   DAY WEATHER — Open-Meteo forecast per day
+   ═══════════════════════════════════════════════════════════ */
+(function() {
+  var DAYS = [
+    {id:'den1', date:'2026-05-23', lat:40.40, lon:49.87, city:'Baku'},
+    {id:'den2', date:'2026-05-24', lat:41.31, lon:48.57, city:'Quba'},
+    {id:'den3', date:'2026-05-25', lat:41.18, lon:48.13, city:'Khinaliq'},
+    {id:'den4', date:'2026-05-26', lat:40.10, lon:49.38, city:'Gobustan'},
+    {id:'den5', date:'2026-05-27', lat:40.69, lon:46.36, city:'Ganja'},
+    {id:'den6', date:'2026-05-28', lat:41.20, lon:47.20, city:'Sheki'},
+    {id:'den7', date:'2026-05-29', lat:40.85, lon:48.39, city:'Lahic'},
+    {id:'den8', date:'2026-05-30', lat:40.37, lon:49.83, city:'Baku'}
+  ];
+
+  function weatherIcon(code) {
+    if (code === 0) return '☀';
+    if (code <= 3) return '⛅';
+    if (code <= 48) return '🌫';
+    if (code <= 57) return '🌦';
+    if (code <= 67) return '🌧';
+    if (code <= 77) return '❄';
+    if (code <= 82) return '🌦';
+    if (code <= 86) return '🌨';
+    return '⛈';
+  }
+
+  function inject(d, opts) {
+    var block = document.getElementById(d.id);
+    if (!block) return;
+    var meta = block.querySelector('.day-meta');
+    if (!meta) return;
+    // Remove existing weather (re-render safe)
+    var prev = meta.querySelector('.day-weather');
+    if (prev) prev.remove();
+    var div = document.createElement('div');
+    div.className = 'day-weather' + (opts.error ? ' error' : '');
+    if (opts.error) {
+      div.innerHTML = '<span class="icon">⛅</span><span>Předpověď nedostupná</span>';
+    } else {
+      var rainTxt = opts.rain > 0.5 ? '<span class="rain">💧 ' + opts.rain.toFixed(1) + ' mm</span>' : '';
+      div.innerHTML =
+        '<span class="icon">' + opts.icon + '</span>' +
+        '<span class="t-max">' + opts.tMax + '°</span>' +
+        '<span class="t-min">/ ' + opts.tMin + '°</span>' +
+        '<span class="city">· ' + d.city + '</span>' +
+        rainTxt;
+    }
+    meta.appendChild(div);
+  }
+
+  function load() {
+    var lats = DAYS.map(function(d) { return d.lat; }).join(',');
+    var lons = DAYS.map(function(d) { return d.lon; }).join(',');
+    var start = DAYS[0].date;
+    var end = DAYS[DAYS.length-1].date;
+    var url = 'https://api.open-meteo.com/v1/forecast' +
+      '?latitude=' + lats +
+      '&longitude=' + lons +
+      '&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weathercode' +
+      '&start_date=' + start +
+      '&end_date=' + end +
+      '&timezone=Asia/Baku';
+    fetch(url).then(function(r) { return r.json(); }).then(function(data) {
+      var locations = Array.isArray(data) ? data : [data];
+      DAYS.forEach(function(d, i) {
+        var loc = locations[i];
+        if (!loc || !loc.daily) { inject(d, {error:true}); return; }
+        var idx = loc.daily.time.indexOf(d.date);
+        if (idx < 0) { inject(d, {error:true}); return; }
+        inject(d, {
+          tMax: Math.round(loc.daily.temperature_2m_max[idx]),
+          tMin: Math.round(loc.daily.temperature_2m_min[idx]),
+          rain: loc.daily.precipitation_sum[idx],
+          icon: weatherIcon(loc.daily.weathercode[idx])
+        });
+      });
+    }).catch(function() {
+      DAYS.forEach(function(d) { inject(d, {error:true}); });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', load);
+  } else {
+    load();
   }
 })();
 </script>
