@@ -1015,39 +1015,44 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
 .day-block .day-header:hover {
   background: rgba(176,58,10,0.05);
 }
-/* Velký explicitní toggle pill */
-.day-block .day-header::after {
-  content: 'SBALIT ▲';
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  color: var(--paper);
+/* Plnošířkový toggle pruh — bez překrytí textu */
+.day-toggle-bar {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 18px;
+  margin-top: 10px;
   background: var(--day-color, var(--rust));
-  padding: 6px 10px;
-  border-radius: 2px;
-  transition: opacity 0.2s;
-  white-space: nowrap;
-  pointer-events: none;
+  color: var(--paper);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: none;
+  transition: filter 0.15s, transform 0.15s;
 }
-.day-block.collapsed .day-header::after {
-  content: 'ROZBALIT ▼';
+.day-toggle-bar:hover { filter: brightness(1.1); }
+.day-toggle-bar .chev {
+  display: inline-block;
+  font-size: 14px;
+  transition: transform 0.2s;
 }
-@media (max-width: 720px) {
-  .day-block .day-header::after {
-    font-size: 9px;
-    padding: 5px 8px;
-    letter-spacing: 0.10em;
-    right: 6px;
-  }
-  /* na mobilu schovat day-stamp aby se nepřekrývalo s pill */
-  .day-block .day-header .day-stamp { display: none; }
+.day-toggle-bar::before {
+  content: 'SBALIT DEN';
 }
-.day-block.collapsed > *:not(.day-header):not(.day-stay):not(.stay-options) {
+.day-block.collapsed .day-toggle-bar::before {
+  content: 'ROZBALIT DEN — místa, fotky, mapy';
+}
+.day-block.collapsed .day-toggle-bar .chev {
+  transform: rotate(0deg);
+}
+.day-toggle-bar .chev { transform: rotate(180deg); }
+.day-block.collapsed > *:not(.day-header):not(.day-stay):not(.stay-options):not(.day-toggle-bar) {
   display: none !important;
 }
 .day-block.collapsed {
@@ -3368,11 +3373,21 @@ loadNext(0);
     if (!eb) return;
     eb.addEventListener('click', function() { b.classList.toggle('collapsed'); });
   });
-  // Day-block toggle
+  // Day-block toggle — header click OR full-width toggle bar
   document.querySelectorAll('.day-block').forEach(function(b) {
     var h = b.querySelector('.day-header');
     if (!h) return;
     h.addEventListener('click', function() { b.classList.toggle('collapsed'); });
+    // Inject visible full-width toggle bar after header
+    var bar = document.createElement('button');
+    bar.className = 'day-toggle-bar';
+    bar.type = 'button';
+    bar.innerHTML = '<span class="chev">▾</span>';
+    bar.addEventListener('click', function(e) {
+      e.stopPropagation();
+      b.classList.toggle('collapsed');
+    });
+    h.after(bar);
   });
   // Day-stay toggle
   document.querySelectorAll('.day-stay').forEach(function(b) {
