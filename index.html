@@ -1010,18 +1010,42 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   cursor: pointer;
   position: relative;
   user-select: none;
+  transition: background 0.15s;
 }
+.day-block .day-header:hover {
+  background: rgba(176,58,10,0.05);
+}
+/* Velký explicitní toggle pill */
 .day-block .day-header::after {
-  content: '▼';
+  content: 'SBALIT ▲';
   position: absolute;
-  right: 4px;
-  top: 14px;
-  font-size: 12px;
-  color: var(--day-color, var(--rust));
-  transition: transform 0.2s;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--paper);
+  background: var(--day-color, var(--rust));
+  padding: 6px 10px;
+  border-radius: 2px;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+  pointer-events: none;
 }
 .day-block.collapsed .day-header::after {
-  transform: rotate(-90deg);
+  content: 'ROZBALIT ▼';
+}
+@media (max-width: 720px) {
+  .day-block .day-header::after {
+    font-size: 9px;
+    padding: 5px 8px;
+    letter-spacing: 0.10em;
+    right: 6px;
+  }
+  /* na mobilu schovat day-stamp aby se nepřekrývalo s pill */
+  .day-block .day-header .day-stamp { display: none; }
 }
 .day-block.collapsed > *:not(.day-header):not(.day-stay):not(.stay-options) {
   display: none !important;
@@ -1610,6 +1634,11 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     </div>
   </div>
 </section>
+
+<!-- TIP BANNER -->
+<div class="expand-hint" style="margin-top:16px;padding:14px 18px;background:rgba(176,58,10,0.08);border-left:3px solid var(--rust);font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.5;color:var(--ink)">
+  💡 <strong>Tip:</strong> Klepni na hlavičku libovolného dne (Den 01–08) a rozbalí se ti všechna místa, fotky a navigace. Pillíček vpravo <span style="background:var(--rust);color:var(--paper);padding:3px 7px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em">ROZBALIT ▼</span> ti to ukazuje. Den 01 níže už je rozbalený.
+</div>
 
 <!-- ═══════════════ DEN 1 ═══════════════ -->
 <section class="day-block" id="den1">
@@ -3351,11 +3380,13 @@ loadNext(0);
     if (!eb) return;
     eb.addEventListener('click', function() { b.classList.toggle('collapsed'); });
   });
-  // Auto-collapse on mobile
+  // Auto-collapse on mobile — kromě Day 1, aby uživatel viděl, jak to funguje
   if (window.innerWidth < 720) {
     document.querySelectorAll('.info-block').forEach(function(b) { b.classList.add('collapsed'); });
-    document.querySelectorAll('.day-block').forEach(function(b) { b.classList.add('collapsed'); });
-    }
+    document.querySelectorAll('.day-block').forEach(function(b) {
+      if (b.id !== 'den1') b.classList.add('collapsed');
+    });
+  }
 })();
 </script>
 <script>
