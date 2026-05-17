@@ -215,6 +215,9 @@ a { color: inherit; text-decoration: none; }
 @media (min-width: 820px) {
   .info-section { grid-template-columns: 1.05fr 1fr; }
 }
+@media (min-width: 1080px) {
+  .info-section:not([style*="1fr;"]) { grid-template-columns: 1.15fr 1fr 0.85fr; }
+}
 
 .info-block {
   background: var(--paper-2);
@@ -1573,6 +1576,29 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
 
     <div class="info-sub">Storno</div>
     <div class="info-row"><span class="info-label">Zdarma do</span><span class="info-val">Čt 21. 5. 2026 · 3:29 Europe/Prague</span></div>
+  </div>
+
+  <!-- PARKOVÁNÍ NA LETIŠTI -->
+  <div class="info-block">
+    <div class="info-eyebrow">🅿 Parkování · GO Parking · #1653564765042</div>
+    <div class="info-h">Letiště Praha · kryté <span class="ref">9 dní · předplaceno</span></div>
+
+    <div class="info-sub">Termín</div>
+    <div class="info-row"><span class="info-label">Od</span><span class="info-val">Pá 22. 5. 2026 (±24 h)</span></div>
+    <div class="info-row"><span class="info-label">Do</span><span class="info-val">Ne 31. 5. 2026</span></div>
+    <div class="info-row"><span class="info-label">PIN vjezd</span><span class="info-val"><span class="seat">114615#</span></span></div>
+
+    <div class="info-sub">Provoz</div>
+    <div class="info-row"><span class="info-label">Příjezd</span><span class="info-val">Zaparkovat v zóně, minibus 2–3 min na letiště</span></div>
+    <div class="info-row"><span class="info-label">Návrat</span><span class="info-val">Nástup mezi Term 1 a Courtyard by Marriott</span></div>
+
+    <div class="info-sub">Změna / storno</div>
+    <div class="info-row"><span class="info-label">Změna do</span><span class="info-val">St 20. 5. 2026 · 23:59</span></div>
+    <div class="info-row"><span class="info-label">Storno do</span><span class="info-val">Čt 21. 5. 2026 · 23:59</span></div>
+
+    <div class="info-sub">Kontakt</div>
+    <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+420226256000" style="color:var(--rust);border-bottom:1px solid var(--rust)">+420 226 256 000</a></span></div>
+    <div class="info-row"><span class="info-label">Návod</span><span class="info-val"><a href="https://www.goparking.cz/navod" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">goparking.cz/navod ↗</a></span></div>
   </div>
 
 </section>
