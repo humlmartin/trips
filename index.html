@@ -1510,6 +1510,9 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
 .day-weather .rain { color: var(--teal); font-weight: 500; padding-left: 4px; border-left: 1px solid rgba(0,0,0,0.1); margin-left: 2px; }
 .day-weather .city { color: var(--ink-mute); font-size: 11px; }
 .day-weather.error { background: transparent; border-style: dashed; color: var(--ink-mute); }
+.day-weather { text-decoration: none; cursor: pointer; transition: background 0.15s, border-color 0.15s; }
+.day-weather:hover { background: rgba(176,138,62,0.20); border-color: rgba(176,138,62,0.45); }
+.day-weather .ext { opacity: 0.5; font-size: 10px; margin-left: 2px; }
 @media (max-width: 720px) {
   .day-weather { font-size: 11px; padding: 3px 8px; gap: 5px; }
   .day-weather .city { display: none; }
@@ -3873,11 +3876,20 @@ loadNext(0);
     // Remove existing weather (re-render safe)
     var prev = meta.querySelector('.day-weather');
     if (prev) prev.remove();
-    var div = document.createElement('div');
+    // Forecast link — Google search opens widget pro CITY + DATE
+    var dParts = d.date.split('-');  // YYYY-MM-DD
+    var prettyDate = dParts[2] + '.' + dParts[1] + '.' + dParts[0];
+    var forecastUrl = 'https://www.google.com/search?q=' +
+      encodeURIComponent('počasí ' + d.city + ' ' + prettyDate);
+    var div = document.createElement('a');
+    div.href = forecastUrl;
+    div.target = '_blank';
+    div.rel = 'noopener';
     div.className = 'day-weather' + (opts.error ? ' error' : '');
+    div.title = 'Otevřít detailní předpověď · ' + d.city + ' ' + prettyDate;
     if (opts.error) {
       var msg = opts.soon ? 'Předpověď bude dostupná blíž k datu' : 'Předpověď nedostupná';
-      div.innerHTML = '<span class="icon">⛅</span><span>' + msg + '</span>';
+      div.innerHTML = '<span class="icon">⛅</span><span>' + msg + '</span><span class="ext">↗</span>';
     } else {
       var rainTxt = opts.rain > 0.5 ? '<span class="rain">💧 ' + opts.rain.toFixed(1) + ' mm</span>' : '';
       div.innerHTML =
@@ -3885,7 +3897,8 @@ loadNext(0);
         '<span class="t-max">' + opts.tMax + '°</span>' +
         '<span class="t-min">/ ' + opts.tMin + '°</span>' +
         '<span class="city">· ' + d.city + '</span>' +
-        rainTxt;
+        rainTxt +
+        '<span class="ext">↗</span>';
     }
     meta.appendChild(div);
   }
