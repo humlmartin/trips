@@ -1518,6 +1518,84 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   .day-weather .city { display: none; }
 }
 
+/* ═══════════════════════════════════════════════════════════
+   WEATHER ALERT BANNER — výrazný pruh s předpovědí/analýzou
+   ═══════════════════════════════════════════════════════════ */
+.wx-banner {
+  margin: 18px 0 4px;
+  border: 2px solid var(--rust);
+  background: linear-gradient(180deg, rgba(176,58,10,0.10), rgba(176,138,62,0.06));
+  position: relative;
+}
+.wx-banner-head {
+  background: var(--rust);
+  color: var(--paper);
+  padding: 12px 18px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.wx-banner-head .when { font-size: 10px; opacity: 0.85; font-weight: 500; letter-spacing: 0.06em; }
+.wx-banner-body { padding: 16px 18px 18px; }
+.wx-keyfind {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.wx-keyfind strong { color: var(--rust-dk, #7a2806); }
+.wx-table-wrap { overflow-x: auto; margin: 14px 0; -webkit-overflow-scrolling: touch; }
+.wx-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 560px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+}
+.wx-table th, .wx-table td {
+  padding: 5px 7px;
+  text-align: center;
+  border: 1px solid var(--rule-2, rgba(0,0,0,0.08));
+  white-space: nowrap;
+}
+.wx-table th { background: rgba(0,0,0,0.05); font-weight: 600; letter-spacing: 0.04em; }
+.wx-table td:first-child, .wx-table th:first-child {
+  text-align: left; font-weight: 600; position: sticky; left: 0;
+  background: var(--paper-2, #f1ead9);
+}
+.wx-table .wet { background: rgba(176,58,10,0.16); color: var(--rust-dk, #7a2806); font-weight: 700; }
+.wx-table .dry { background: rgba(29,77,74,0.10); color: var(--teal, #1d4d4a); }
+.wx-rec {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.wx-rec li { padding: 5px 0 5px 22px; position: relative; }
+.wx-rec li::before { content: '→'; position: absolute; left: 0; color: var(--rust); font-weight: 700; }
+.wx-rec strong { color: var(--ink); }
+.wx-note {
+  margin-top: 14px; padding: 10px 12px;
+  background: rgba(176,138,62,0.12); border-left: 3px solid var(--gold);
+  font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; line-height: 1.5; color: var(--ink-soft);
+}
+.wx-sub { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rust); font-weight: 600; margin: 18px 0 6px; }
+@media (max-width: 720px) {
+  .wx-keyfind { font-size: 14px; }
+  .wx-rec { font-size: 13px; }
+  .wx-banner-head { font-size: 12px; }
+}
+
 </style>
 </head>
 <body>
@@ -1566,6 +1644,56 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     <span class="line"></span>
   </div>
 </header>
+
+<!-- ═══════════════ WEATHER ALERT BANNER ═══════════════ -->
+<div class="wx-banner">
+  <div class="wx-banner-head">
+    <span>⚠ Počasí &amp; doporučení trasy</span>
+    <span class="when">Forecast 18. 5. · recheck čtvrtek 21. 5.</span>
+  </div>
+  <div class="wx-banner-body">
+    <p class="wx-keyfind">
+      <strong>Pondělí 25. 5. prší prakticky všude</strong> — bouřky na západě (Ganja 16 mm, Sheki 17 mm), déšť i na severu (Candy/Besh, Khinaliq) i v horách. Jediné skoro suché místo v pondělí je <strong>Baku (0,8 mm)</strong>. Naopak <strong>neděle 24. 5. je jediné suché okno pro sever</strong> (Candy Cane / Besh Barmag 0 mm) — potom se zavře.
+    </p>
+
+    <div class="wx-sub">Předpověď · max/min °C · 💧 = pravděpodobnost srážek</div>
+    <div class="wx-table-wrap">
+      <table class="wx-table">
+        <thead>
+          <tr><th>Oblast</th><th>So 23</th><th>Ne 24</th><th>Po 25</th><th>Út 26</th><th>St 27</th><th>Čt 28</th><th>Pá 29</th><th>So 30</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Baku</td><td class="dry">23/16 5%</td><td class="dry">22/18 5%</td><td>25/16 52%</td><td>25/15 15%</td><td>25/18 21%</td><td>26/20 14%</td><td class="dry">27/19 6%</td><td>26/20 10%</td></tr>
+          <tr><td>Sever (Candy/Besh)</td><td>21/14 58%</td><td class="dry">24/15 17%</td><td class="wet">22/15 76% 🌩</td><td class="wet">19/14 13 mm</td><td class="dry">27/17 23%</td><td class="dry">23/16 24%</td><td>22/15 12%</td><td>21/15 14%</td></tr>
+          <tr><td>Khinaliq (2350 m)</td><td class="wet">8/4 90%</td><td>12/5 51%</td><td class="wet">11/7 95%</td><td class="wet">11/6 76%</td><td>14/7 82%</td><td>16/5 67%</td><td class="wet">15/8 68%</td><td>15/6 75%</td></tr>
+          <tr><td>Quba</td><td class="wet">21/13 100%</td><td class="wet">20/12 89%</td><td class="wet">17/13 93%</td><td>20/12 50%</td><td>22/12 69%</td><td>22/11 53%</td><td class="wet">20/14 62%</td><td>18/15 47%</td></tr>
+          <tr><td>Gobustan (JZ)</td><td class="dry">25/17 3%</td><td class="dry">23/16 11%</td><td class="wet">24/18 65%</td><td class="dry">24/16 21%</td><td class="dry">28/19 9%</td><td class="dry">30/19 8%</td><td class="dry">26/19 8%</td><td class="dry">27/21 10%</td></tr>
+          <tr><td>Ganja (západ)</td><td class="wet">23/14 6 mm</td><td class="wet">22/16 6 mm</td><td class="wet">20/16 16 mm</td><td>25/15 83%</td><td>25/17 57%</td><td class="dry">26/15 24%</td><td class="wet">25/15 31%</td><td>27/15 25%</td></tr>
+          <tr><td>Sheki</td><td class="wet">20/13 35%</td><td class="wet">19/14 75%</td><td class="wet">17/13 17 mm</td><td>22/13 56%</td><td class="dry">23/13 27%</td><td class="dry">23/14 22%</td><td>22/15 37%</td><td>23/14 37%</td></tr>
+          <tr><td>Lahic / Shamakhi</td><td class="wet">15/8 81%</td><td>16/9 54%</td><td class="wet">15/11 90%</td><td>18/11 59%</td><td class="dry">20/11 34%</td><td class="dry">20/11 41%</td><td>19/12 54%</td><td>19/12 53%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-mute);margin:4px 0 0">🟥 mokro / bouřka · 🟩 sucho · jinak % = pravděpodobnost srážek</p>
+
+    <div class="wx-sub">Doporučená úprava trasy (weather-optimal)</div>
+    <ul class="wx-rec">
+      <li><strong>So 23 — Baku/Absheron</strong> (suché): Ramana, Ateshgah, Yanar Dag. Beze změny.</li>
+      <li><strong>Ne 24 — SEVER hned:</strong> Candy Cane + Besh Barmag → Quba. Jediné suché severní okno (0 mm), neodkládat!</li>
+      <li><strong>Po 25 — Baku den / indoor:</strong> Staré město, muzea, bazar. Baku je v pondělí jediné skoro suché — západ je potopa, nikam nejezdit daleko.</li>
+      <li><strong>Út 26 — Gobustan</strong> (0 mm) → přesun na západ (Yevlakh/Ganja).</li>
+      <li><strong>St 27 — Ganja + Mingachevir → Sheki</strong> (suché okno).</li>
+      <li><strong>Čt 28 — Sheki + Kish → Ismayilli</strong> (nejsušší den).</li>
+      <li><strong>Pá 29 — Lahic + Shamakhi → Baku</strong> (mrholí, snesitelné).</li>
+      <li><strong>So 30 — Baku centrum + odlet.</strong></li>
+    </ul>
+
+    <div class="wx-note">
+      <strong>Khinaliq (2350 m)</strong> je zatažený/mokrý skoro každý den — nejsušší jsou St 27 / Čt 28 (kdy budeme na západě). Ber ho jako bonus: když bude v neděli ráno jasno, jeď; když mlha/déšť, otoč se. Letos je to nejrizikovější bod.<br><br>
+      <strong>Pozn.:</strong> dny St 27 – So 30 mají teď nižší spolehlivost (9-12 dní dopředu). Finální rozhodnutí <strong>ve čtvrtek 21. 5.</strong> podle aktuálního forecastu.
+    </div>
+  </div>
+</div>
 
 <!-- ═══════════════ INFO ═══════════════ -->
 <section class="info-section" id="info">
