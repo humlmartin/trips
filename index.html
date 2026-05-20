@@ -1556,10 +1556,12 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
 .wx-table {
   border-collapse: collapse;
   width: 100%;
-  min-width: 560px;
+  min-width: 720px;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 11px;
+  font-size: 10.5px;
 }
+.wx-table .rv { color: var(--rust); font-weight: 700; }
+.wx-table td { line-height: 1.5; }
 .wx-table th, .wx-table td {
   padding: 5px 7px;
   text-align: center;
@@ -1659,25 +1661,25 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
       Pozn. k číslům: <strong>% = pravděpodobnost srážek, mm = očekávané množství.</strong> U Quby je Ne 24 vysoká pravděpodobnost (89 %), ale stopové množství (0 mm) → počítej s <strong>pošmournem až mrholením</strong>, ne průtrží. Na nocleh + městské památky (mešita, synagoga, memorial) to snese; horší pro fotky. <strong>Khinaliq</strong> (2350 m) je riziko každý den, viz pozn. níže.
     </p>
 
-    <div class="wx-sub">Předpověď · max/min °C · 💧 = pravděpodobnost srážek</div>
+    <div class="wx-sub">Předpověď · R = ráno 9:00 · V = večer 18:00 · °C·% (% = pravděpodobnost srážek)</div>
     <div class="wx-table-wrap">
       <table class="wx-table">
         <thead>
           <tr><th>Oblast</th><th>So 23</th><th>Ne 24</th><th>Po 25</th><th>Út 26</th><th>St 27</th><th>Čt 28</th><th>Pá 29</th><th>So 30</th></tr>
         </thead>
         <tbody>
-          <tr><td>Baku</td><td class="dry">23/16 5%</td><td class="dry">22/18 5%</td><td>25/16 52%</td><td>25/15 15%</td><td>25/18 21%</td><td>26/20 14%</td><td class="dry">27/19 6%</td><td>26/20 10%</td></tr>
-          <tr><td>Sever (Candy/Besh)</td><td>21/14 58%</td><td class="dry">24/15 17%</td><td class="wet">22/15 76% 🌩</td><td class="wet">19/14 13 mm</td><td class="dry">27/17 23%</td><td class="dry">23/16 24%</td><td>22/15 12%</td><td>21/15 14%</td></tr>
-          <tr><td>Khinaliq (2350 m)</td><td class="wet">8/4 90%</td><td>12/5 51%</td><td class="wet">11/7 95%</td><td class="wet">11/6 76%</td><td>14/7 82%</td><td>16/5 67%</td><td class="wet">15/8 68%</td><td>15/6 75%</td></tr>
-          <tr><td>Quba</td><td class="wet">21/13 100%</td><td class="wet">20/12 89%</td><td class="wet">17/13 93%</td><td>20/12 50%</td><td>22/12 69%</td><td>22/11 53%</td><td class="wet">20/14 62%</td><td>18/15 47%</td></tr>
-          <tr><td>Gobustan (JZ)</td><td class="dry">25/17 3%</td><td class="dry">23/16 11%</td><td class="wet">24/18 65%</td><td class="dry">24/16 21%</td><td class="dry">28/19 9%</td><td class="dry">30/19 8%</td><td class="dry">26/19 8%</td><td class="dry">27/21 10%</td></tr>
-          <tr><td>Ganja (západ)</td><td class="wet">23/14 6 mm</td><td class="wet">22/16 6 mm</td><td class="wet">20/16 16 mm</td><td>25/15 83%</td><td>25/17 57%</td><td class="dry">26/15 24%</td><td class="wet">25/15 31%</td><td>27/15 25%</td></tr>
-          <tr><td>Sheki</td><td class="wet">20/13 35%</td><td class="wet">19/14 75%</td><td class="wet">17/13 17 mm</td><td>22/13 56%</td><td class="dry">23/13 27%</td><td class="dry">23/14 22%</td><td>22/15 37%</td><td>23/14 37%</td></tr>
-          <tr><td>Lahic / Shamakhi</td><td class="wet">15/8 81%</td><td>16/9 54%</td><td class="wet">15/11 90%</td><td>18/11 59%</td><td class="dry">20/11 34%</td><td class="dry">20/11 41%</td><td>19/12 54%</td><td>19/12 53%</td></tr>
+          <tr><td>Baku</td><td class="dry"><span class="rv">R</span> 20°·3%<br><span class="rv">V</span> 20°·4%</td><td class="dry"><span class="rv">R</span> 20°·0%<br><span class="rv">V</span> 20°·0%</td><td><span class="rv">R</span> 19°·50%<br><span class="rv">V</span> 22°·45%</td><td class="dry"><span class="rv">R</span> 20°·0%<br><span class="rv">V</span> 22°·0%</td><td class="dry"><span class="rv">R</span> 23°·1%<br><span class="rv">V</span> 22°·18%</td><td class="dry"><span class="rv">R</span> 22°·14%<br><span class="rv">V</span> 24°·7%</td><td class="dry"><span class="rv">R</span> 24°·4%<br><span class="rv">V</span> 25°·5%</td><td class="dry"><span class="rv">R</span> 23°·7%<br><span class="rv">V</span> 25°·2%</td></tr>
+          <tr><td>Sever Candy/Besh</td><td><span class="rv">R</span> 19°·0%<br><span class="rv">V</span> 19°·54%</td><td class="dry"><span class="rv">R</span> 17°·0%<br><span class="rv">V</span> 24°·6%</td><td class="wet"><span class="rv">R</span> 16°·59%<br><span class="rv">V</span> 18°·70%</td><td class="dry"><span class="rv">R</span> 18°·19%<br><span class="rv">V</span> 19°·18%</td><td><span class="rv">R</span> 23°·3%<br><span class="rv">V</span> 23°·22%</td><td><span class="rv">R</span> 21°·10%<br><span class="rv">V</span> 21°·21%</td><td class="dry"><span class="rv">R</span> 21°·10%<br><span class="rv">V</span> 18°·9%</td><td class="dry"><span class="rv">R</span> 20°·6%<br><span class="rv">V</span> 20°·11%</td></tr>
+          <tr><td>Khinaliq</td><td class="wet"><span class="rv">R</span> 7°·0%<br><span class="rv">V</span> 10°·82%</td><td><span class="rv">R</span> 12°·5%<br><span class="rv">V</span> 12°·50%</td><td class="wet"><span class="rv">R</span> 8°·68%<br><span class="rv">V</span> 9°·94%</td><td class="wet"><span class="rv">R</span> 9°·62%<br><span class="rv">V</span> 10°·69%</td><td class="wet"><span class="rv">R</span> 11°·28%<br><span class="rv">V</span> 13°·77%</td><td class="wet"><span class="rv">R</span> 14°·22%<br><span class="rv">V</span> 13°·61%</td><td class="wet"><span class="rv">R</span> 14°·23%<br><span class="rv">V</span> 11°·68%</td><td class="wet"><span class="rv">R</span> 12°·25%<br><span class="rv">V</span> 15°·69%</td></tr>
+          <tr><td>Quba</td><td class="wet"><span class="rv">R</span> 18°·0%<br><span class="rv">V</span> 18°·100%</td><td class="wet"><span class="rv">R</span> 17°·0%<br><span class="rv">V</span> 18°·84%</td><td class="wet"><span class="rv">R</span> 14°·56%<br><span class="rv">V</span> 15°·89%</td><td><span class="rv">R</span> 16°·35%<br><span class="rv">V</span> 18°·44%</td><td class="wet"><span class="rv">R</span> 19°·13%<br><span class="rv">V</span> 19°·65%</td><td><span class="rv">R</span> 19°·23%<br><span class="rv">V</span> 20°·47%</td><td class="wet"><span class="rv">R</span> 19°·19%<br><span class="rv">V</span> 17°·60%</td><td><span class="rv">R</span> 18°·13%<br><span class="rv">V</span> 18°·44%</td></tr>
+          <tr><td>Gobustan</td><td class="dry"><span class="rv">R</span> 21°·3%<br><span class="rv">V</span> 22°·0%</td><td class="dry"><span class="rv">R</span> 22°·0%<br><span class="rv">V</span> 22°·0%</td><td><span class="rv">R</span> 20°·54%<br><span class="rv">V</span> 24°·57%</td><td class="dry"><span class="rv">R</span> 20°·0%<br><span class="rv">V</span> 21°·4%</td><td class="dry"><span class="rv">R</span> 23°·1%<br><span class="rv">V</span> 22°·9%</td><td class="dry"><span class="rv">R</span> 23°·6%<br><span class="rv">V</span> 28°·5%</td><td class="dry"><span class="rv">R</span> 24°·8%<br><span class="rv">V</span> 24°·6%</td><td class="dry"><span class="rv">R</span> 24°·5%<br><span class="rv">V</span> 26°·6%</td></tr>
+          <tr><td>Ganja</td><td><span class="rv">R</span> 17°·4%<br><span class="rv">V</span> 23°·46%</td><td class="wet"><span class="rv">R</span> 18°·7%<br><span class="rv">V</span> 23°·73%</td><td class="wet"><span class="rv">R</span> 18°·72%<br><span class="rv">V</span> 20°·85%</td><td class="wet"><span class="rv">R</span> 19°·54%<br><span class="rv">V</span> 24°·81%</td><td><span class="rv">R</span> 21°·45%<br><span class="rv">V</span> 23°·37%</td><td class="dry"><span class="rv">R</span> 22°·10%<br><span class="rv">V</span> 25°·13%</td><td><span class="rv">R</span> 23°·12%<br><span class="rv">V</span> 22°·23%</td><td class="dry"><span class="rv">R</span> 21°·13%<br><span class="rv">V</span> 26°·11%</td></tr>
+          <tr><td>Sheki</td><td class="dry"><span class="rv">R</span> 16°·1%<br><span class="rv">V</span> 20°·15%</td><td><span class="rv">R</span> 16°·24%<br><span class="rv">V</span> 17°·36%</td><td class="wet"><span class="rv">R</span> 14°·92%<br><span class="rv">V</span> 17°·84%</td><td><span class="rv">R</span> 16°·28%<br><span class="rv">V</span> 21°·19%</td><td><span class="rv">R</span> 18°·17%<br><span class="rv">V</span> 20°·25%</td><td class="dry"><span class="rv">R</span> 20°·8%<br><span class="rv">V</span> 22°·20%</td><td><span class="rv">R</span> 22°·14%<br><span class="rv">V</span> 17°·36%</td><td><span class="rv">R</span> 20°·11%<br><span class="rv">V</span> 22°·29%</td></tr>
+          <tr><td>Lahic/Shamakhi</td><td class="wet"><span class="rv">R</span> 13°·0%<br><span class="rv">V</span> 14°·81%</td><td><span class="rv">R</span> 14°·2%<br><span class="rv">V</span> 15°·40%</td><td class="wet"><span class="rv">R</span> 13°·82%<br><span class="rv">V</span> 14°·86%</td><td><span class="rv">R</span> 14°·32%<br><span class="rv">V</span> 17°·20%</td><td><span class="rv">R</span> 17°·9%<br><span class="rv">V</span> 14°·32%</td><td><span class="rv">R</span> 17°·13%<br><span class="rv">V</span> 19°·35%</td><td><span class="rv">R</span> 18°·13%<br><span class="rv">V</span> 16°·52%</td><td><span class="rv">R</span> 16°·21%<br><span class="rv">V</span> 18°·44%</td></tr>
         </tbody>
       </table>
     </div>
-    <p style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-mute);margin:4px 0 0">🟥 mokro / bouřka · 🟩 sucho · jinak % = pravděpodobnost srážek</p>
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-mute);margin:4px 0 0">🟥 některá část dne ≥60 % srážek · 🟩 celý den ≤20 % · R ráno / V večer</p>
 
     <div class="wx-sub">Vyhodnocení: stávající plán A vychází dobře</div>
     <p class="wx-keyfind" style="font-size:13px;color:var(--ink-soft);margin:0 0 10px">
