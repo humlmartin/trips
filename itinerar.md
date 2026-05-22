@@ -92,7 +92,7 @@
 
 **Co je třeba přebookovat při B**
 - Arena Grand Hotel: přesun z noci 24.→25. na noc 28.→29.
-- Badamdar Estates: přesun z noci 25.→26. na noc 27.→28.
+- Badamdar Hotel and Residences: přesun z noci 25.→26. na noc 27.→28.
 - Yevlakh/Ganja hotel: přesun z noci 26.→27. na noc 23.→24.
 - Hotel Arena (Sheki): přesun z noci 27.→28. na noc 24.→25.
 - Rest House Ismayilli: přesun z noci 28.→29. na noc 25.→26.
@@ -123,15 +123,18 @@
 - Pro: 4 dospělé (2+2)
 - Stravování: Snídaně v ceně (fantastická snídaně)
 - Parkování: Zdarma · soukromé
+- Rezervace: 5722276592 / PIN 6044
 - Noc: Ne 24. 5. → Po 25. 5.
 
-**Po Dni 3 — Baku (Badamdar) · Badamdar Estates · TIP**
-- Hotel: Badamdar Estates ↗
+**Po Dni 3 — Baku (Badamdar) · Badamdar Hotel and Residences · TIP**
+- Hotel: Badamdar Hotel and Residences ↗ (4*)
 - Pokoje: 2× DBL Superior · oddělené postele
 - Pro: 4 dospělé (2+2)
 - Stravování: Snídaně 303 Kč (volitelné)
 - Platba: Online předem · storno do 23. 5. 2026
 - Poloha: Badamdar — směr Gobustan
+- Rezervace: 6894536201 / PIN 7220
+- Cena: 4 449 Kč celkem
 - Noc: Po 25. 5. → Út 26. 5.
 
 **Po Dni 4 — Yevlakh · Yevlakh City Hotel (A) · TIP**
@@ -276,7 +279,7 @@ Info: https://en-wikipedia-org.translate.goog/wiki/Chirag_Gala?_x_tr_sl=en&_x_tr
 
 **⌂ Nocleh · Ne 24. 5. → Po 25. 5.**
 Quba · Arena Grand Hotel booking ↗
-2× dvoulůžkový pokoj s oddělenými postelemi · snídaně v ceně · 4 dospělí · parkování zdarma (soukromé) · Quba Bakı yolu 4-cü km · hodnocení 8,8
+2× dvoulůžkový pokoj s oddělenými postelemi · snídaně v ceně · 4 dospělí · parkování zdarma (soukromé) · Quba Bakı yolu 4-cü km · hodnocení 8,8 · rezervace 5722276592 / PIN 6044
 
 ### DEN3 · Pondělí · 25. května
 **Khinaliq + Quba → Baku**
@@ -324,14 +327,14 @@ TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g4187104-d7695879
 Info: https://en-wikipedia-org.translate.goog/wiki/Shahdag_Mountain_Resort?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
 
 **⌂ Nocleh · Po 25. 5. → Út 26. 5.**
-Baku · Badamdar Estates booking ↗
-2× dvoulůžkový Superior · oddělené postele · 4 dospělí · čtvrť Badamdar, jih Baku — výhodné pro start na Gobustan ráno · snídaně 303 Kč (volitelně)
+Baku · Badamdar Hotel and Residences booking ↗
+2× dvoulůžkový Superior · oddělené postele · 4 dospělí · čtvrť Badamdar, jih Baku — výhodné pro start na Gobustan ráno · snídaně 303 Kč (volitelně) · rezervace 6894536201 / PIN 7220 · 4 449 Kč celkem
 
 ### DEN4 · Úterý · 26. května
 **Gobustan → Yevlakh / Ganja**
 _Bahenní sopky · petroglyfy · večerní přejezd na západ_
 📍 Trasa dne · Badamdar → Gobustan → A) Yevlakh ~385 km / ~5 h 55 min (bezpečnější, kratší den) · B) Ganja ~473 km / ~7 h 17 min (delší večerní přejezd)
-  ↓ ~70 km · ~64 min od Badamdar Estates
+  ↓ ~70 km · ~64 min od Badamdar Hotel and Residences
 
 **№ 16 · sopky · Bahenní sopky — hlavní místo** ★
 Ázerbájdžán má přes 300 bahenních sopek — více než polovina všech na světě. Chladné bláto vytlačované zemním plynem z hloubky několika km bulkuje a přetéká — fascinující, surrealistický výjev.
