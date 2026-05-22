@@ -91,7 +91,7 @@
 - Den 8 So 30.: Baku centrum + odjezd
 
 **Co je třeba přebookovat při B**
-- Macara Lake Park: přesun z noci 24.→25. na noc 28.→29.
+- Arena Grand Hotel: přesun z noci 24.→25. na noc 28.→29.
 - Badamdar Estates: přesun z noci 25.→26. na noc 27.→28.
 - Yevlakh/Ganja hotel: přesun z noci 26.→27. na noc 23.→24.
 - Hotel Arena (Sheki): přesun z noci 27.→28. na noc 24.→25.
@@ -116,12 +116,13 @@
 - Telefon: +994 55 515 33 14
 - Noc: So 23. 5. → Ne 24. 5.
 
-**Po Dni 2 — Quba · Macara Lake Park · TIP**
-- Hotel: Macara Lake Park ↗
-- Pokoje: 2× DBL · oddělené postele · výhled na jezero
+**Po Dni 2 — Quba · Arena Grand Hotel · TIP**
+- Hotel: Arena Grand Hotel ↗ · hodnocení 8,8 · Genius
+- Adresa: Quba Bakı yolu 4-cü km, AZ4000 Quba · skvělá lokalita
+- Pokoje: 2× DBL · oddělené postele
 - Pro: 4 dospělé (2+2)
-- Stravování: Snídaně v ceně
-- Platba: Online předem · storno do 22. 5. 2026
+- Stravování: Snídaně v ceně (fantastická snídaně)
+- Parkování: Zdarma · soukromé
 - Noc: Ne 24. 5. → Po 25. 5.
 
 **Po Dni 3 — Baku (Badamdar) · Badamdar Estates · TIP**
@@ -274,14 +275,14 @@ TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g8596342-d1239653
 Info: https://en-wikipedia-org.translate.goog/wiki/Chirag_Gala?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
 
 **⌂ Nocleh · Ne 24. 5. → Po 25. 5.**
-Quba · Macara Lake Park booking ↗
-2× dvoulůžkový pokoj s oddělenými postelemi · výhled na jezero · snídaně v ceně · 4 dospělí · ~7 km od centra Quby · jezero Çənlibel
+Quba · Arena Grand Hotel booking ↗
+2× dvoulůžkový pokoj s oddělenými postelemi · snídaně v ceně · 4 dospělí · parkování zdarma (soukromé) · Quba Bakı yolu 4-cü km · hodnocení 8,8
 
 ### DEN3 · Pondělí · 25. května
 **Khinaliq + Quba → Baku**
 _Horská vesnice 2 350 m · Krasnaya Sloboda · návrat Baku_
-📍 Trasa dne · ~385 km · ~5 h 55 min v autě · od Macara Lake Park
-  ↓ ~54 km · ~50 min od Macara Lake Park
+📍 Trasa dne · ~385 km · ~5 h 55 min v autě · od Arena Grand Hotel
+  ↓ ~54 km · ~50 min od Arena Grand Hotel
 
 **№ 11 · vesnice · Khinaliq — horská vesnice** ★
 Jedna z nejvýše položených trvale obydlených vesnic Kavkazu — ve výšce 2 350 m n. m. Zdejší lid hovoří unikátním jazykem Khinalug (Ketid), který je samostatnou větví severovýchodní kavkazské jazykové rodiny. Kulturní krajina Khinalig a pastevecké trasy Köç Yolu jsou na UNESCO od září 2023.
