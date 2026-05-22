@@ -3767,17 +3767,16 @@ loadNext(0);
   var collapseBtn = document.getElementById('nav-collapse');
   if (collapseBtn) collapseBtn.addEventListener('click', function(e) {
     e.preventDefault();
-    // If any is open, collapse all; otherwise expand all
-    var infoBlocks = document.querySelectorAll('.info-block');
-    var dayBlocks = document.querySelectorAll('.day-block');
-    var dayStays = document.querySelectorAll('.day-stay');
-    var anyOpen = false;
-    [].forEach.call(infoBlocks, function(b) { if (!b.classList.contains('collapsed')) anyOpen = true; });
-    [].forEach.call(dayBlocks, function(b) { if (!b.classList.contains('collapsed')) anyOpen = true; });
-    [].forEach.call(dayStays, function(b) { if (!b.classList.contains('collapsed')) anyOpen = true; });
-    [].forEach.call(infoBlocks, function(b) { b.classList.toggle('collapsed', anyOpen); });
-    [].forEach.call(dayBlocks, function(b) { b.classList.toggle('collapsed', anyOpen); });
-    [].forEach.call(dayStays, function(b) { b.classList.toggle('collapsed', anyOpen); });
+    // Sesbírej VŠECHNY sbalovací prvky (banner, info-bloky, dny, ubytka)
+    var all = [].concat(
+      [].slice.call(document.querySelectorAll('.wx-banner')),
+      [].slice.call(document.querySelectorAll('.info-block')),
+      [].slice.call(document.querySelectorAll('.day-block')),
+      [].slice.call(document.querySelectorAll('.day-stay'))
+    );
+    // Když je cokoliv otevřené → sbalit vše; jinak rozbalit vše
+    var anyOpen = all.some(function(b) { return !b.classList.contains('collapsed'); });
+    all.forEach(function(b) { b.classList.toggle('collapsed', anyOpen); });
   });
 })();
 </script>
