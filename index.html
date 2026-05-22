@@ -995,13 +995,14 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   content: '▼';
   position: absolute;
   right: 0;
-  top: 2px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 12px;
   color: var(--rust);
   transition: transform 0.2s;
 }
 .info-block.collapsed .info-eyebrow::after {
-  transform: rotate(-90deg);
+  transform: translateY(-50%) rotate(-90deg);
 }
 .info-block.collapsed > *:not(.info-eyebrow) {
   display: none;
@@ -1011,6 +1012,9 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
 }
 .info-block.collapsed {
   padding: 18px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* ═══════════════════════════════════════════════════════════
