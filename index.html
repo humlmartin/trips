@@ -1557,7 +1557,17 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   justify-content: space-between;
   gap: 10px;
   flex-wrap: wrap;
+  cursor: pointer;
+  user-select: none;
 }
+.wx-banner-head .wx-toggle {
+  font-size: 13px;
+  margin-left: auto;
+  padding-left: 12px;
+  transition: transform 0.2s;
+}
+.wx-banner.collapsed .wx-banner-head .wx-toggle { transform: rotate(-90deg); }
+.wx-banner.collapsed .wx-banner-body { display: none; }
 .wx-banner-head .when { font-size: 10px; opacity: 0.85; font-weight: 500; letter-spacing: 0.06em; }
 .wx-banner-body { padding: 16px 18px 18px; }
 .wx-keyfind {
@@ -1668,6 +1678,7 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   <div class="wx-banner-head">
     <span>⚠ Počasí &amp; doporučení trasy</span>
     <span class="when">Forecast 22. 5. (aktualizováno) · živé předpovědi u jednotlivých dnů níže</span>
+    <span class="wx-toggle">▾</span>
   </div>
   <div class="wx-banner-body">
     <p class="wx-keyfind">
@@ -3701,6 +3712,12 @@ loadNext(0);
 
 <script>
 (function() {
+  // Weather banner toggle (klik na hlavičku schová/rozbalí)
+  document.querySelectorAll('.wx-banner').forEach(function(b) {
+    var head = b.querySelector('.wx-banner-head');
+    if (!head) return;
+    head.addEventListener('click', function() { b.classList.toggle('collapsed'); });
+  });
   // Info-block toggle
   document.querySelectorAll('.info-block').forEach(function(b) {
     var eb = b.querySelector('.info-eyebrow');
