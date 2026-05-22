@@ -1335,6 +1335,22 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
 .review-box.review-recs  li::before { color: var(--teal); }
 .review-box li strong { font-weight: 600; color: var(--ink); }
 
+/* O ÁZERBÁJDŽÁNU — fakta */
+.review-box.facts-data::before { background: var(--gold); }
+.fact-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 9px 0;
+  border-bottom: 1px dotted var(--rule);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.fact-row:last-child { border-bottom: none; }
+.fact-row .fk { color: var(--ink-soft); font-weight: 400; flex-shrink: 0; }
+.fact-row .fv { color: var(--ink); font-weight: 600; text-align: right; }
+.facts-data li, .facts-fun li { text-wrap: pretty; }
+
 /* ═══════════════════════════════════════════════════════════
    FOOTER
    ═══════════════════════════════════════════════════════════ */
@@ -3491,6 +3507,44 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
         <li><strong>Powerbanky + USB-C nabíječka 2-port</strong> — do auta (Plaud, mobily).</li>
         <li><strong>Pravidla AZ silnic</strong> — 0 promile · rychlost 60/110 · zákaz fotit policii/vojáky.</li>
         <li><strong>Lokální čísla</strong> — 112 (univerzální) · CZ velvyslanectví Baku +994 12 497 06 80.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ O ÁZERBÁJDŽÁNU ═══════════════ -->
+<section class="review-section">
+  <div class="review-head">
+    <h2 class="review-title">O <em>Ázerbájdžánu</em></h2>
+  </div>
+  <div class="review-grid">
+    <div class="review-box facts-data">
+      <h3>Základní data</h3>
+      <div class="fact-row"><span class="fk">Hlavní město</span><span class="fv">Baku (Bakı) · ~2,3 mil.</span></div>
+      <div class="fact-row"><span class="fk">Rozloha</span><span class="fv">86 600 km² (~jako ČR +9 %)</span></div>
+      <div class="fact-row"><span class="fk">Obyvatelstvo</span><span class="fv">~10,1 mil.</span></div>
+      <div class="fact-row"><span class="fk">Jazyk</span><span class="fv">ázerbájdžánština (turkický)</span></div>
+      <div class="fact-row"><span class="fk">Měna</span><span class="fv">manat AZN · 1 AZN ≈ 13,5 Kč</span></div>
+      <div class="fact-row"><span class="fk">Náboženství</span><span class="fv">islám ~96 % (převážně šíité)</span></div>
+      <div class="fact-row"><span class="fk">Zřízení</span><span class="fv">prezidentská republika</span></div>
+      <div class="fact-row"><span class="fk">Časové pásmo</span><span class="fv">UTC+4 (+2 h vůči ČR v létě)</span></div>
+      <div class="fact-row"><span class="fk">Nejvyšší hora</span><span class="fv">Bazardüzü 4 466 m</span></div>
+      <div class="fact-row"><span class="fk">Předvolba / el.</span><span class="fv">+994 · 220 V, zásuvky C/F (jako ČR)</span></div>
+      <div class="fact-row"><span class="fk">Sousedé</span><span class="fv">Rusko, Gruzie, Arménie, Írán, Turecko</span></div>
+    </div>
+    <div class="review-box review-recs facts-fun">
+      <h3>Zajímavosti</h3>
+      <ul>
+        <li><strong>Země ohně (Odlar Yurdu)</strong> — věčné ohně z unikajícího zemního plynu (Yanar Dag hoří nepřetržitě, chrám Ateshgah). Symbol země i na Plamenných věžích v Baku.</li>
+        <li><strong>Baku leží 28 m POD úrovní moře</strong> — nejníže položené hlavní město světa, u Kaspiku, což je největší jezero planety (ne moře).</li>
+        <li><strong>Kolébka ropného průmyslu</strong> — první vrtaná ropná studna světa (Bibi-Heybat, 1846). Na konci 19. stol. tu těžila polovina světové ropy; zbohatli Nobelové i Rothschildové.</li>
+        <li><strong>Bahenní sopky</strong> — Ázerbájdžán má jejich největší koncentraci na světě (~400 z celkových ~1000 na planetě), hlavně u Gobustanu.</li>
+        <li><strong>Formule 1</strong> — Baku City Circuit, Grand Prix od 2016, závodí se mezi hradbami Starého města kolem Panenské věže.</li>
+        <li><strong>Khinaliq</strong> — jedna z nejvýše (2 350 m) a nejodlehleji obydlených vesnic, vlastní jazyk srozumitelný jen místním.</li>
+        <li><strong>Sheki Khan Palace</strong> — okna „shebeke" skládaná z tisíců kousků barevného skla a dřeva <em>bez jediného hřebíku či lepidla</em>. UNESCO.</li>
+        <li><strong>Kavkazská Albánie</strong> — starověký křesťanský stát (nesouvisí s dnešní Albánií); kostel v Kish patří k nejstarším na Kavkaze.</li>
+        <li><strong>Koberce</strong> — ázerbájdžánské tkaní je na seznamu UNESCO; Muzeum koberců v Baku má tvar srolovaného koberce.</li>
+        <li><strong>Čaj a granátové jablko</strong> — čaj se pije z tradičních sklenic „armudu" (tvar hrušky), granátové jablko (nar) je národní symbol.</li>
       </ul>
     </div>
   </div>
