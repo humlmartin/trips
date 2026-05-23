@@ -72,8 +72,8 @@
 
 **Plán A — aktuálně v plánu**
 - Den 1 So 23.: Baku · Absheron (Ramana, Ateshgah, Yanar Dag)
-- Den 2 Ne 24.: Sever — Candy Cane → Besh Barmag → Quba
-- Den 3 Po 25.: Khinaliq + Quba sights → Baku Badamdar
+- Den 2 Ne 24.: Candy Cane → Khinaliq (rychle, počasí) → Quba
+- Den 3 Po 25.: Quba sights → Besh Barmag → Chirag Gala → Baku Badamdar
 - Den 4 Út 26.: Gobustan → Yevlakh/Ganja
 - Den 5 St 27.: Ganja + Mingachevir → Sheki
 - Den 6 Čt 28.: Sheki + Kish → Ismayilli
@@ -247,9 +247,9 @@ Baku · Grand Hotel Europe tel ↗
 Tbilisi Prospekt 20, Nasimi · Baku · Deluxe DBL + Rodinný pokoj, oba s balkonem a výhledem na moře. Snídaně v ceně. Rezervace 5326.232.828 / PIN 5142.
 
 ### DEN2 · Neděle · 24. května
-**Candy + Besh Barmag → Quba**
-_Pruhované kopce · pět prstů · nocleh u jezera Çənlibel_
-📍 Trasa dne · ~206 km · ~3 h 10 min v autě · od hotel Grand Hotel Europe
+**Candy + Khinaliq → Quba**
+_Pruhované kopce · horská vesnice 2 350 m · nocleh u jezera Çənlibel_
+📍 Trasa dne · ~295 km · ~5 h 30 min v autě · od hotel Grand Hotel Europe
   ↓ ~102 km · ~95 min od hotel Grand Hotel Europe
 
 **№ 08 · pruhované kopce · Candy Cane Mountains**
@@ -259,64 +259,18 @@ GPS: 🅿️ Parkoviště (auto) · 40.8784553 N · 49.1882903 E · 🚶 Výhled
 Atlas Obscura ↗: https://www.atlasobscura.com/places/candy-cane-mountains
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g8596342-d8139680-Reviews-Candy_Cane_Mountain-Siyazan_Guba_Khachmaz_Region.html
 Info: https://en-wikipedia-org.translate.goog/wiki/Candy_Cane_Mountains?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
-  ↓ ~13 km · ~12 min od předchozího
+  ↓ ~135 km · ~2 h 30 min od Candy Cane (přes Quba nahoru)
 
-**№ 09 · skála · Besh Barmag — Hora pěti prstů**
-Bizarní skalní útvar připomínající pět vztyčených prstů vyčnívajících ze svahu nad Kaspickým mořem. Posvátné místo — místní věří, že hora uchovává modlitby. Na vrcholu je malá mešita.
-_Strmý výstup — buď prašnou cestou autem k vrcholu, nebo z vesnice pěšky (30–40 min). Výhled na Kaspické moře je výjimečný. 45 min jízdy od Candy Mountains._
-GPS: 🅿️ Parkoviště (auto) · 40.9546425 N · 49.2290075 E · 🚶 Vrchol (pěšky) · 40.9580956 N · 49.2320167 E
-TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g8596342-d13143849-Reviews-Besh_Barmag_Mountain-Siyazan_Guba_Khachmaz_Region.html
-Info: https://en-wikipedia-org.translate.goog/wiki/Besh_Barmag_Mountain?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
-  ↓ ~39 km · ~36 min od předchozího
-
-**№ 10 · pevnost · Chirag Gala Fortress** (volitelné)
-Pohraniční pevnost „Světelný hrad" na skalistém ostrohu s výhledem do stepí. Datuje se do 4.–8. stol., střežila Kavkazskou Albánii. Jen za hezkého počasí — jinak zahalena v mlze.
-⚠ ⚠ Po Candy Mountains + Besh Barmag a cestě do Quby toho bude den asi dost — zvážit, jestli zařadit. Dvě varianty přístupu: · A · trail ze severu — auto k Galaalti Hotel & Spa (asfaltka, parking), pak ~3,8 km pěšky po Transcaucasian Trail s převýšením (~1,5–2 hod jedním směrem). · B · 4×4 z jihu — od Siyazan ~30 min po prašné horské cestě (běžné auto nezvládne, najmout místního), pak 10 min strmá pěšina přes balvany.
-GPS: 🅿️ Parkoviště Qalaalti Hotel · ~41.105 N · ~48.940 E · 🚶 Pevnost (cíl ~3,8 km trail) · 41.0875478 N · 48.9319042 E
-TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g8596342-d12396530-Reviews-Chirag_Gala_Fortress-Siyazan_Guba_Khachmaz_Region.html
-Info: https://en-wikipedia-org.translate.goog/wiki/Chirag_Gala?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
-
-**⌂ Nocleh · Ne 24. 5. → Po 25. 5.**
-Quba · Arena Grand Hotel booking ↗
-2× dvoulůžkový pokoj s oddělenými postelemi · snídaně v ceně · 4 dospělí · parkování zdarma (soukromé) · Quba Bakı yolu 4-cü km · hodnocení 8,8 · rezervace 5722276592 / PIN 6044
-
-### DEN3 · Pondělí · 25. května
-**Khinaliq + Quba → Baku**
-_Horská vesnice 2 350 m · Krasnaya Sloboda · návrat Baku_
-📍 Trasa dne · ~385 km · ~5 h 55 min v autě · od Arena Grand Hotel
-  ↓ ~54 km · ~50 min od Arena Grand Hotel
-
-**№ 11 · vesnice · Khinaliq — horská vesnice** ★
+**№ 09 · vesnice · Khinaliq — horská vesnice** ★
 Jedna z nejvýše položených trvale obydlených vesnic Kavkazu — ve výšce 2 350 m n. m. Zdejší lid hovoří unikátním jazykem Khinalug (Ketid), který je samostatnou větví severovýchodní kavkazské jazykové rodiny. Kulturní krajina Khinalig a pastevecké trasy Köç Yolu jsou na UNESCO od září 2023.
 _Kamenné domy navrstvené na sobě jako amfiteátr. Přes zimu až do nedávna zcela izolovaná sněhem. Místní chov ovcí, tradiční koberce. Výhledy do dramatického kavkazského horského pásma jsou dechberoucí._
 ⚠ ⚠ Cesta do Khinaliq je horská a rizikem počasí. V březnu 2026 byla dočasně přerušená kvůli sesuvu, později obnovena. Ověřit den předem (Quba hotel / místní). Pokud déšť/mlha → Plán B = Shahdag.
 GPS: 41.1762367 N · 48.1299831 E
 TripAdvisor ↗: https://www.tripadvisor.com/AttractionProductReview-g293934-d26863812-Guba_Khinalig_village_Candy_Cane_tour_Homemade_Lunch_Included-Baku_Absheron_Region.html
 Info: https://en-wikipedia-org.translate.goog/wiki/Khinalug?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
-  ↓ ~51 km · ~47 min od předchozího
+  ↓ Plán B / bonus · ~60 km · ~1–1,5 h z Quby (přes Qusar)
 
-**№ 12 · synagoga · Quba — Synagoga šesti kupolí**
-Quba je domovem jedné z největších historických židovských komunit na Kavkaze — tzv. Horských Židů. Jejich čtvrť Krasnaya Sloboda (přes řeku) je unikátní — celá vesnice obývaná výhradně Židy.
-GPS: 41.3663800 N · 48.5074578 E
-TripAdvisor ↗: https://www.tripadvisor.com/AttractionProductReview-g293934-d17633650-Krasnaya_Sloboda_the_Jerusalem_of_Caucasus-Baku_Absheron_Region.html
-Info: https://en-wikipedia-org.translate.goog/wiki/Quba,_Azerbaijan?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
-  ↓ ~0.7 km · ~1 min od předchozího
-
-**№ 13 · mešita · Quba — Juma Mosque**
-_Hlavní mešita v centru města._
-GPS: 41.3631950 N · 48.5121203 E
-TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g815348-d34168434-Reviews-The_Juma_Mosque_in_Guba-Quba_Guba_Khachmaz_Region.html
-Info: https://en-wikipedia-org.translate.goog/wiki/Quba_Mosque?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
-  ↓ ~2.2 km · ~2 min od předchozího
-
-**№ 14 · památník · Quba Genocide Memorial**
-Odkrytý masový hrob z roku 2007 — ostatky stovek obětí masakru z roku 1918. Emotivní místo.
-GPS: 41.3621089 N · 48.4930103 E
-TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g815348-d12343936-Reviews-The_Guba_Genocide_Memorial_Complex-Quba_Guba_Khachmaz_Region.html
-Info: https://en-wikipedia-org.translate.goog/wiki/Quba_Genocide_Memorial_Complex?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
-  ↓ ~39 km · ~36 min od předchozího
-
-**№ 15 · Plán B / bonus · Shahdag Mountain Resort**
+**№ 10 · Plán B / bonus · Shahdag Mountain Resort**
 Největší lyžařský resort Kavkazu, v létě otevřený jako horské středisko. Lanovka na hřeben pod vrcholem Šahdag (4 243 m), restaurace, vyhlídka. Pohled na Kavkaz z výšky bez nutnosti pěší túry.
 _~60 km severně od Quby přes Qusar (1–1,5 h jízdy). Jiný směr než Khinaliq, ale stejné Kavkazské velehory._
 _Použití: · 🅑 Plán B · pokud cesta do Khinaliq není sjízdná (počasí, sesuv) → místo Khinaliq jet sem. · ✦ Bonus · pokud Khinaliq svižně a zbyde čas/energie._
@@ -325,9 +279,59 @@ shahdag.az ↗: https://www.shahdag.az/en
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g4187104-d7695879-Reviews-Shahdag_Mountain_Resort-Qusar_Guba_Khachmaz_Region.html
 Info: https://en-wikipedia-org.translate.goog/wiki/Shahdag_Mountain_Resort?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
 
+**⌂ Nocleh · Ne 24. 5. → Po 25. 5.**
+Quba · Arena Grand Hotel booking ↗
+2× dvoulůžkový pokoj s oddělenými postelemi · snídaně v ceně · 4 dospělí · parkování zdarma (soukromé) · Quba Bakı yolu 4-cü km · hodnocení 8,8 · rezervace 5722276592 / PIN 6044
+
+
+
+### DEN3 · Pondělí · 25. května
+**Quba + pět prstů → Baku**
+_Krasnaya Sloboda · pět prstů · zřícenina Chirag Gala · návrat Baku_
+📍 Trasa dne · ~285 km · ~4 h 30 min v autě · od Arena Grand Hotel
+  ↓ ~5 km · ~10 min od Arena Grand Hotel
+
+**№ 11 · synagoga · Quba — Synagoga šesti kupolí**
+Quba je domovem jedné z největších historických židovských komunit na Kavkaze — tzv. Horských Židů. Jejich čtvrť Krasnaya Sloboda (přes řeku) je unikátní — celá vesnice obývaná výhradně Židy.
+GPS: 41.3663800 N · 48.5074578 E
+TripAdvisor ↗: https://www.tripadvisor.com/AttractionProductReview-g293934-d17633650-Krasnaya_Sloboda_the_Jerusalem_of_Caucasus-Baku_Absheron_Region.html
+Info: https://en-wikipedia-org.translate.goog/wiki/Quba,_Azerbaijan?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
+  ↓ ~0.7 km · ~1 min od předchozího
+
+**№ 12 · mešita · Quba — Juma Mosque**
+_Hlavní mešita v centru města._
+GPS: 41.3631950 N · 48.5121203 E
+TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g815348-d34168434-Reviews-The_Juma_Mosque_in_Guba-Quba_Guba_Khachmaz_Region.html
+Info: https://en-wikipedia-org.translate.goog/wiki/Quba_Mosque?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
+  ↓ ~2.2 km · ~2 min od předchozího
+
+**№ 13 · památník · Quba Genocide Memorial**
+Odkrytý masový hrob z roku 2007 — ostatky stovek obětí masakru z roku 1918. Emotivní místo.
+GPS: 41.3621089 N · 48.4930103 E
+TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g815348-d12343936-Reviews-The_Guba_Genocide_Memorial_Complex-Quba_Guba_Khachmaz_Region.html
+Info: https://en-wikipedia-org.translate.goog/wiki/Quba_Genocide_Memorial_Complex?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
+  ↓ ~95 km · ~1 h 30 min od předchozího (na jih)
+
+**№ 14 · skála · Besh Barmag — Hora pěti prstů**
+Bizarní skalní útvar připomínající pět vztyčených prstů vyčnívajících ze svahu nad Kaspickým mořem. Posvátné místo — místní věří, že hora uchovává modlitby. Na vrcholu je malá mešita.
+_Strmý výstup — buď prašnou cestou autem k vrcholu, nebo z vesnice pěšky (30–40 min). Výhled na Kaspické moře je výjimečný._
+GPS: 🅿️ Parkoviště (auto) · 40.9546425 N · 49.2290075 E · 🚶 Vrchol (pěšky) · 40.9580956 N · 49.2320167 E
+TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g8596342-d13143849-Reviews-Besh_Barmag_Mountain-Siyazan_Guba_Khachmaz_Region.html
+Info: https://en-wikipedia-org.translate.goog/wiki/Besh_Barmag_Mountain?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
+  ↓ ~39 km · ~36 min od předchozího
+
+**№ 15 · pevnost · Chirag Gala Fortress** (volitelné)
+Pohraniční pevnost „Světelný hrad" na skalistém ostrohu s výhledem do stepí. Datuje se do 4.–8. stol., střežila Kavkazskou Albánii. Jen za hezkého počasí — jinak zahalena v mlze.
+⚠ ⚠ Cestou zpět z Quby do Baku · zvážit podle počasí a času. Dvě varianty přístupu: · A · trail ze severu — auto k Galaalti Hotel & Spa (asfaltka, parking), pak ~3,8 km pěšky po Transcaucasian Trail s převýšením (~1,5–2 hod jedním směrem). · B · 4×4 z jihu — od Siyazan ~30 min po prašné horské cestě (běžné auto nezvládne, najmout místního), pak 10 min strmá pěšina přes balvany.
+GPS: 🅿️ Parkoviště Qalaalti Hotel · ~41.105 N · ~48.940 E · 🚶 Pevnost (cíl ~3,8 km trail) · 41.0875478 N · 48.9319042 E
+TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g8596342-d12396530-Reviews-Chirag_Gala_Fortress-Siyazan_Guba_Khachmaz_Region.html
+Info: https://en-wikipedia-org.translate.goog/wiki/Chirag_Gala?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
+
 **⌂ Nocleh · Po 25. 5. → Út 26. 5.**
 Baku · Badamdar Hotel and Residences booking ↗
 2× dvoulůžkový Superior · oddělené postele · 4 dospělí · čtvrť Badamdar, jih Baku — výhodné pro start na Gobustan ráno · snídaně 303 Kč (volitelně) · rezervace 6894536201 / PIN 7220 · 4 449 Kč celkem
+
+
 
 ### DEN4 · Úterý · 26. května
 **Gobustan → Yevlakh / Ganja**
