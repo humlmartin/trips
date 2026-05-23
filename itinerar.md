@@ -107,13 +107,13 @@
 **7 nocí · Baku → Quba → Baku → Ganja/Yevlakh → Sheki → Ismayilli → Baku**
 
 **Po Dni 1 — Baku · Grand Hotel Europe**
-- Hotel: Grand Hotel Europe · Tbilisi Prospekt 20, Nasimi
+- Hotel: Grand Hotel Europe
+- Adresa: Tbilisi Prospekt 20, Nasimi · Baku
 - Pokoje: Deluxe DBL + Rodinný · balkon · výhled na moře
 - Pro: 4 dospělé (2+2)
 - Stravování: Snídaně v ceně
 - Rezervace: 5326.232.828 / PIN 5142
 - Cena: ~3 445 Kč · AZN 284 · na místě
-- Telefon: +994 55 515 33 14
 - Noc: So 23. 5. → Ne 24. 5.
 
 **Po Dni 2 — Quba · Arena Grand Hotel · TIP**
@@ -122,17 +122,16 @@
 - Pokoje: 2× DBL · oddělené postele
 - Pro: 4 dospělé (2+2)
 - Stravování: Snídaně v ceně (fantastická snídaně)
-- Parkování: Zdarma · soukromé
 - Rezervace: 5722276592 / PIN 6044
+- Cena: —
 - Noc: Ne 24. 5. → Po 25. 5.
 
 **Po Dni 3 — Baku (Badamdar) · Badamdar Hotel and Residences · TIP**
 - Hotel: Badamdar Hotel and Residences ↗ (4*)
+- Adresa: Badamdar, jih Baku · směr Gobustan
 - Pokoje: 2× DBL Superior · oddělené postele
 - Pro: 4 dospělé (2+2)
 - Stravování: Snídaně 303 Kč (volitelné)
-- Platba: Online předem · storno do 23. 5. 2026
-- Poloha: Badamdar — směr Gobustan
 - Rezervace: 6894536201 / PIN 7220
 - Cena: 4 449 Kč celkem
 - Noc: Po 25. 5. → Út 26. 5.
