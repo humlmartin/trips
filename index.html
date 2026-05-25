@@ -1698,7 +1698,7 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
         <thead>
           <tr><th>Oblast</th><th>So 23</th><th>Ne 24</th><th>Po 25</th><th>Út 26</th><th>St 27</th><th>Čt 28</th><th>Pá 29</th><th>So 30</th></tr>
         </thead>
-        <tbody>
+        <tbody id="wxTableBody">
           <tr><td>Baku</td><td class="dry"><span class="rv">R</span> 20°·0%<br><span class="rv">V</span> 20°·0%</td><td class="dry"><span class="rv">R</span> 19°·0%<br><span class="rv">V</span> 20°·0%</td><td><span class="rv">R</span> 19°·33%<br><span class="rv">V</span> 20°·0%</td><td class="dry"><span class="rv">R</span> 22°·0%<br><span class="rv">V</span> 22°·4%</td><td class="dry"><span class="rv">R</span> 23°·3%<br><span class="rv">V</span> 20°·4%</td><td class="dry"><span class="rv">R</span> 21°·7%<br><span class="rv">V</span> 22°·4%</td><td class="dry"><span class="rv">R</span> 20°·1%<br><span class="rv">V</span> 19°·8%</td><td><span class="rv">R</span> 20°·22%<br><span class="rv">V</span> 23°·7%</td></tr>
           <tr><td>Sever Candy/Besh</td><td class="dry"><span class="rv">R</span> 17°·5%<br><span class="rv">V</span> 18°·8%</td><td class="dry"><span class="rv">R</span> 18°·0%<br><span class="rv">V</span> 23°·0%</td><td class="wet"><span class="rv">R</span> 17°·21%<br><span class="rv">V</span> 16°·95%</td><td><span class="rv">R</span> 20°·0%<br><span class="rv">V</span> 18°·59%</td><td class="dry"><span class="rv">R</span> 20°·1%<br><span class="rv">V</span> 16°·6%</td><td class="dry"><span class="rv">R</span> 24°·8%<br><span class="rv">V</span> 27°·5%</td><td><span class="rv">R</span> 17°·8%<br><span class="rv">V</span> 17°·28%</td><td><span class="rv">R</span> 17°·25%<br><span class="rv">V</span> 18°·10%</td></tr>
           <tr><td>Khinaliq</td><td class="dry"><span class="rv">R</span> 8°·10%<br><span class="rv">V</span> 8°·18%</td><td><span class="rv">R</span> 11°·0%<br><span class="rv">V</span> 12°·33%</td><td class="wet"><span class="rv">R</span> 10°·32%<br><span class="rv">V</span> 8°·68%</td><td><span class="rv">R</span> 8°·7%<br><span class="rv">V</span> 9°·59%</td><td class="dry"><span class="rv">R</span> 10°·2%<br><span class="rv">V</span> 12°·14%</td><td class="dry"><span class="rv">R</span> 13°·13%<br><span class="rv">V</span> 15°·9%</td><td class="wet"><span class="rv">R</span> 9°·19%<br><span class="rv">V</span> 8°·95%</td><td class="wet"><span class="rv">R</span> 11°·39%<br><span class="rv">V</span> 12°·72%</td></tr>
@@ -1727,7 +1727,7 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
       <strong>⚠ Dva otazníky:</strong><br>
       <strong>1) Pondělí 25. (Den 3) &amp; Khinaliq</strong> — hory v pondělí mokré (Khinaliq 73 %/6 mm, Quba 12 mm), Baku skoro suché (0 mm). Khinaliq ber jako bonus: v neděli/pondělí ráno jasno → jeď; jinak otoč se a pondělí klidně v Baku (indoor). Pozor: sever má suché ráno, srážky večer → vyrazit brzy.<br><br>
       <strong>2) Pátek 29. (Den 7)</strong> — od 18.5. se zhoršil: Lahic 18 mm, Shamakhi mokro, Khinaliq 21 mm. Lahic je ale částečně indoor (dílny, kovárny) → snesitelné i v dešti. Sleduj, jestli se to do pátku nezmění.<br><br>
-      <strong>Pozn.:</strong> tabulka aktualizována 22. 5. Živé předpovědi u jednotlivých dnů (badge v hlavičce dne) se načítají vždy čerstvě při otevření.
+      <strong>Pozn.:</strong> tabulka výše se načítá živě z Open-Meteo při otevření stránky (R 9:00 / V 18:00). Vyhodnocení a doporučení nad ní je ruční analýza z 22. 5. — čísla ber z živé tabulky, text jako kontext. Badge u jednotlivých dnů se rovněž načítají čerstvě.
     </div>
   </div>
 </div>
@@ -4194,6 +4194,92 @@ loadNext(0);
     document.addEventListener('DOMContentLoaded', load);
   } else {
     load();
+  }
+})();
+</script>
+<script>
+/* ═══════════════════════════════════════════════════════════
+   WX BANNER TABLE — živá předpověď v přehledu (R 9:00 / V 18:00)
+   Přepíše statickou tabulku daty z Open-Meteo. Fallback = ponechá
+   statická čísla, pokud fetch selže nebo dorazí neúplná data.
+   ═══════════════════════════════════════════════════════════ */
+(function() {
+  var WX_LOCS = [
+    {name:'Baku',             lat:40.41, lon:49.87},
+    {name:'Sever Candy/Besh', lat:40.88, lon:49.19},
+    {name:'Khinaliq',         lat:41.18, lon:48.13},
+    {name:'Quba',             lat:41.31, lon:48.57},
+    {name:'Gobustan',         lat:40.10, lon:49.38},
+    {name:'Ganja',            lat:40.69, lon:46.36},
+    {name:'Sheki',            lat:41.20, lon:47.20},
+    {name:'Lahic/Shamakhi',   lat:40.85, lon:48.39}
+  ];
+  var WX_DATES = ['2026-05-23','2026-05-24','2026-05-25','2026-05-26','2026-05-27','2026-05-28','2026-05-29','2026-05-30'];
+
+  function cellClass(maxProb) {
+    if (maxProb >= 60) return 'wet';
+    if (maxProb <= 20) return 'dry';
+    return '';
+  }
+
+  function build(data) {
+    var tbody = document.getElementById('wxTableBody');
+    if (!tbody) return;
+    var locs = Array.isArray(data) ? data : [data];
+    // Bezpečnost: jen pokud máme hourly data pro VŠECHNY lokality
+    for (var k = 0; k < WX_LOCS.length; k++) {
+      if (!locs[k] || !locs[k].hourly || !locs[k].hourly.time) return;
+    }
+    var rows = '';
+    WX_LOCS.forEach(function(L, li) {
+      var h = locs[li].hourly;
+      var cells = '';
+      WX_DATES.forEach(function(dt) {
+        var iR = h.time.indexOf(dt + 'T09:00');
+        var iV = h.time.indexOf(dt + 'T18:00');
+        if (iR < 0 || iV < 0) { cells += '<td>—</td>'; return; }
+        var tR = Math.round(h.temperature_2m[iR]);
+        var tV = Math.round(h.temperature_2m[iV]);
+        var pR = h.precipitation_probability[iR];
+        var pV = h.precipitation_probability[iV];
+        var maxP = 0;
+        for (var j = 0; j < h.time.length; j++) {
+          if (h.time[j].indexOf(dt) === 0) {
+            var pp = h.precipitation_probability[j];
+            if (pp != null && pp > maxP) maxP = pp;
+          }
+        }
+        var cls = cellClass(maxP);
+        cells += '<td' + (cls ? ' class="' + cls + '"' : '') + '>' +
+          '<span class="rv">R</span> ' + tR + '°·' + (pR == null ? '–' : pR) + '%<br>' +
+          '<span class="rv">V</span> ' + tV + '°·' + (pV == null ? '–' : pV) + '%</td>';
+      });
+      rows += '<tr><td>' + L.name + '</td>' + cells + '</tr>';
+    });
+    tbody.innerHTML = rows;
+    var when = document.querySelector('.wx-banner-head .when');
+    if (when) {
+      var now = new Date();
+      when.textContent = 'Forecast ' + now.getDate() + '. ' + (now.getMonth() + 1) +
+        '. (živě z Open-Meteo) · živé předpovědi u jednotlivých dnů níže';
+    }
+  }
+
+  function loadWxTable() {
+    var lats = WX_LOCS.map(function(l) { return l.lat; }).join(',');
+    var lons = WX_LOCS.map(function(l) { return l.lon; }).join(',');
+    var url = 'https://api.open-meteo.com/v1/forecast' +
+      '?latitude=' + lats + '&longitude=' + lons +
+      '&hourly=temperature_2m,precipitation_probability' +
+      '&timezone=Asia%2FBaku' +
+      '&start_date=2026-05-23&end_date=2026-05-30';
+    fetch(url).then(function(r) { return r.json(); }).then(build).catch(function() { /* fallback = statická tabulka */ });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadWxTable);
+  } else {
+    loadWxTable();
   }
 })();
 </script>
