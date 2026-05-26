@@ -1639,7 +1639,7 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   <a href="#den1" title="Sobota · Absheron"><b>23</b><br>so</a>
   <a href="#den2" title="Neděle · Candy + Quba"><b>24</b><br>ne</a>
   <a href="#den3" title="Pondělí · Khinaliq"><b>25</b><br>po</a>
-  <a href="#den4" title="Úterý · Gobustan → Yevlakh / Ganja"><b>26</b><br>út</a>
+  <a href="#den4" title="Úterý · Gobustan → Ganja"><b>26</b><br>út</a>
   <a href="#den5" title="Středa · Ganja + Mingachevir → Sheki"><b>27</b><br>st</a>
   <a href="#den6" title="Čtvrtek · Sheki + Kish → Ismayilli"><b>28</b><br>čt</a>
   <a href="#den7" title="Pátek · Lahic + Shamakhi → Baku"><b>29</b><br>pá</a>
@@ -1698,7 +1698,7 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
         <thead>
           <tr><th>Oblast</th><th>So 23</th><th>Ne 24</th><th>Po 25</th><th>Út 26</th><th>St 27</th><th>Čt 28</th><th>Pá 29</th><th>So 30</th></tr>
         </thead>
-        <tbody>
+        <tbody id="wxTableBody">
           <tr><td>Baku</td><td class="dry"><span class="rv">R</span> 20°·0%<br><span class="rv">V</span> 20°·0%</td><td class="dry"><span class="rv">R</span> 19°·0%<br><span class="rv">V</span> 20°·0%</td><td><span class="rv">R</span> 19°·33%<br><span class="rv">V</span> 20°·0%</td><td class="dry"><span class="rv">R</span> 22°·0%<br><span class="rv">V</span> 22°·4%</td><td class="dry"><span class="rv">R</span> 23°·3%<br><span class="rv">V</span> 20°·4%</td><td class="dry"><span class="rv">R</span> 21°·7%<br><span class="rv">V</span> 22°·4%</td><td class="dry"><span class="rv">R</span> 20°·1%<br><span class="rv">V</span> 19°·8%</td><td><span class="rv">R</span> 20°·22%<br><span class="rv">V</span> 23°·7%</td></tr>
           <tr><td>Sever Candy/Besh</td><td class="dry"><span class="rv">R</span> 17°·5%<br><span class="rv">V</span> 18°·8%</td><td class="dry"><span class="rv">R</span> 18°·0%<br><span class="rv">V</span> 23°·0%</td><td class="wet"><span class="rv">R</span> 17°·21%<br><span class="rv">V</span> 16°·95%</td><td><span class="rv">R</span> 20°·0%<br><span class="rv">V</span> 18°·59%</td><td class="dry"><span class="rv">R</span> 20°·1%<br><span class="rv">V</span> 16°·6%</td><td class="dry"><span class="rv">R</span> 24°·8%<br><span class="rv">V</span> 27°·5%</td><td><span class="rv">R</span> 17°·8%<br><span class="rv">V</span> 17°·28%</td><td><span class="rv">R</span> 17°·25%<br><span class="rv">V</span> 18°·10%</td></tr>
           <tr><td>Khinaliq</td><td class="dry"><span class="rv">R</span> 8°·10%<br><span class="rv">V</span> 8°·18%</td><td><span class="rv">R</span> 11°·0%<br><span class="rv">V</span> 12°·33%</td><td class="wet"><span class="rv">R</span> 10°·32%<br><span class="rv">V</span> 8°·68%</td><td><span class="rv">R</span> 8°·7%<br><span class="rv">V</span> 9°·59%</td><td class="dry"><span class="rv">R</span> 10°·2%<br><span class="rv">V</span> 12°·14%</td><td class="dry"><span class="rv">R</span> 13°·13%<br><span class="rv">V</span> 15°·9%</td><td class="wet"><span class="rv">R</span> 9°·19%<br><span class="rv">V</span> 8°·95%</td><td class="wet"><span class="rv">R</span> 11°·39%<br><span class="rv">V</span> 12°·72%</td></tr>
@@ -1727,7 +1727,7 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
       <strong>⚠ Dva otazníky:</strong><br>
       <strong>1) Pondělí 25. (Den 3) &amp; Khinaliq</strong> — hory v pondělí mokré (Khinaliq 73 %/6 mm, Quba 12 mm), Baku skoro suché (0 mm). Khinaliq ber jako bonus: v neděli/pondělí ráno jasno → jeď; jinak otoč se a pondělí klidně v Baku (indoor). Pozor: sever má suché ráno, srážky večer → vyrazit brzy.<br><br>
       <strong>2) Pátek 29. (Den 7)</strong> — od 18.5. se zhoršil: Lahic 18 mm, Shamakhi mokro, Khinaliq 21 mm. Lahic je ale částečně indoor (dílny, kovárny) → snesitelné i v dešti. Sleduj, jestli se to do pátku nezmění.<br><br>
-      <strong>Pozn.:</strong> tabulka aktualizována 22. 5. Živé předpovědi u jednotlivých dnů (badge v hlavičce dne) se načítají vždy čerstvě při otevření.
+      <strong>Pozn.:</strong> tabulka výše se načítá živě z Open-Meteo při otevření stránky (R 9:00 / V 18:00). Vyhodnocení a doporučení nad ní je ruční analýza z 22. 5. — čísla ber z živé tabulky, text jako kontext. Badge u jednotlivých dnů se rovněž načítají čerstvě.
     </div>
   </div>
 </div>
@@ -1825,7 +1825,7 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     <div class="info-row"><span class="info-label">Den 1 So 23.</span><span class="info-val">Baku · Absheron (Ramana, Ateshgah, Yanar Dag)</span></div>
     <div class="info-row"><span class="info-label">Den 2 Ne 24.</span><span class="info-val">Candy Cane → Khinaliq (rychle, počasí) → Quba</span></div>
     <div class="info-row"><span class="info-label">Den 3 Po 25.</span><span class="info-val">Quba sights → Besh Barmag → Chirag Gala → Baku Badamdar</span></div>
-    <div class="info-row"><span class="info-label">Den 4 Út 26.</span><span class="info-val">Gobustan → Yevlakh/Ganja</span></div>
+    <div class="info-row"><span class="info-label">Den 4 Út 26.</span><span class="info-val">Gobustan → Ganja</span></div>
     <div class="info-row"><span class="info-label">Den 5 St 27.</span><span class="info-val">Ganja + Mingachevir → Sheki</span></div>
     <div class="info-row"><span class="info-label">Den 6 Čt 28.</span><span class="info-val">Sheki + Kish → Ismayilli</span></div>
     <div class="info-row"><span class="info-label">Den 7 Pá 29.</span><span class="info-val">Lahic + Shamakhi → Baku finále</span></div>
@@ -1833,7 +1833,7 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
 
     <div class="info-sub">Plán B (varianta JZ-první) — pokud sever sprcha</div>
     <div class="info-row"><span class="info-label">Den 1 So 23.</span><span class="info-val">Baku · Absheron (beze změny — letiště + okolí)</span></div>
-    <div class="info-row"><span class="info-label">Den 2 Ne 24.</span><span class="info-val">Gobustan → Yevlakh nebo Ganja (přesun na západ)</span></div>
+    <div class="info-row"><span class="info-label">Den 2 Ne 24.</span><span class="info-val">Gobustan → Ganja (přesun na západ)</span></div>
     <div class="info-row"><span class="info-label">Den 3 Po 25.</span><span class="info-val">Ganja + Mingachevir → Sheki</span></div>
     <div class="info-row"><span class="info-label">Den 4 Út 26.</span><span class="info-val">Sheki + Kish → Ismayilli</span></div>
     <div class="info-row"><span class="info-label">Den 5 St 27.</span><span class="info-val">Lahic + Shamakhi → Baku Badamdar</span></div>
@@ -1844,7 +1844,7 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     <div class="info-sub">Co je třeba přebookovat při B</div>
     <div class="info-row"><span class="info-label">Arena Grand Hotel</span><span class="info-val">přesun z noci 24.→25. na noc 28.→29.</span></div>
     <div class="info-row"><span class="info-label">Badamdar Hotel and Residences</span><span class="info-val">přesun z noci 25.→26. na noc 27.→28.</span></div>
-    <div class="info-row"><span class="info-label">Yevlakh/Ganja hotel</span><span class="info-val">přesun z noci 26.→27. na noc 23.→24.</span></div>
+    <div class="info-row"><span class="info-label">Ganja · Ramada Plaza</span><span class="info-val">přesun z noci 26.→27. na noc 23.→24.</span></div>
     <div class="info-row"><span class="info-label">Hotel Arena (Sheki)</span><span class="info-val">přesun z noci 27.→28. na noc 24.→25.</span></div>
     <div class="info-row"><span class="info-label">Rest House Ismayilli</span><span class="info-val">přesun z noci 28.→29. na noc 25.→26.</span></div>
     <div class="info-row"><span class="info-label">Baku finále</span><span class="info-val">beze změny (Pá 29.→So 30.)</span></div>
@@ -1861,7 +1861,7 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
 <section class="info-section" style="margin-top: 12px; grid-template-columns: 1fr;">
   <div class="info-block">
     <div class="info-eyebrow">⌂ Přehled ubytování · po trase</div>
-    <div class="info-h">7 nocí · Baku → Quba → Baku → Ganja/Yevlakh → Sheki → Ismayilli → Baku</div>
+    <div class="info-h">7 nocí · Baku → Quba → Baku → Ganja → Sheki → Ismayilli → Baku</div>
 
     <div class="info-sub">Po Dni 1 — Baku · Grand Hotel Europe</div>
     <div class="info-row"><span class="info-label">Hotel</span><span class="info-val">Grand Hotel Europe</span></div>
@@ -1893,19 +1893,13 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     <div class="info-row"><span class="info-label">Cena</span><span class="info-val">4 449 Kč celkem</span></div>
     <div class="info-row"><span class="info-label">Noc</span><span class="info-val">Po 25. 5. → Út 26. 5.</span></div>
 
-    <div class="info-sub">Po Dni 4 — Yevlakh · Yevlakh City Hotel (A) · TIP</div>
-    <div class="info-row"><span class="info-label">Hotel</span><span class="info-val"><a href="https://www.booking.com/hotel/az/yevlakh-city.cs.html" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">Yevlakh City Hotel ↗</a></span></div>
+    <div class="info-sub">Po Dni 4 — Ganja · Ramada Plaza by Wyndham Gence · TIP</div>
+    <div class="info-row"><span class="info-label">Hotel</span><span class="info-val"><a href="https://www.booking.com/Share-qNOQWc" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">Ramada Plaza by Wyndham Gence ↗</a> · 4* · 9,0</span></div>
+    <div class="info-row"><span class="info-label">Adresa</span><span class="info-val">Avenue Nizami Ganjavi 519, AZ2019 Ganja · skvělá lokalita</span></div>
     <div class="info-row"><span class="info-label">Pokoje</span><span class="info-val">2× DBL · 4 dospělí (2+2)</span></div>
-    <div class="info-row"><span class="info-label">Poloha</span><span class="info-val">Yevlakh ~265 km z Baku · zkrátí Den 4</span></div>
-    <div class="info-row"><span class="info-label">Stravování</span><span class="info-val">Snídaně v ceně</span></div>
-    <div class="info-row"><span class="info-label">Noc</span><span class="info-val">Út 26. 5. → St 27. 5.</span></div>
-
-    <div class="info-sub">Po Dni 4 — Ganja · Grand Teatro Motel (B) · TIP</div>
-    <div class="info-row"><span class="info-label">Hotel</span><span class="info-val"><a href="https://www.booking.com/hotel/az/grand-teatro-motel.cs.html" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">Grand Teatro Motel ↗</a></span></div>
-    <div class="info-row"><span class="info-label">Pokoje</span><span class="info-val">2× DBL · 4 dospělí (2+2)</span></div>
-    <div class="info-row"><span class="info-label">Poloha</span><span class="info-val">Ganja Bülbül · plný Den 4</span></div>
-    <div class="info-row"><span class="info-label">Stravování</span><span class="info-val">Snídaně v ceně</span></div>
-    <div class="info-row"><span class="info-label">Noc</span><span class="info-val">Út 26. 5. → St 27. 5.</span></div>
+    <div class="info-row"><span class="info-label">Stravování</span><span class="info-val">Fantastická snídaně · Wi-Fi + parkování zdarma</span></div>
+    <div class="info-row"><span class="info-label">Rezervace</span><span class="info-val">5057092421 / PIN 1206</span></div>
+    <div class="info-row"><span class="info-label">Noc</span><span class="info-val">Út 26. 5. → St 27. 5. · check-in 14:00 / check-out 12:00</span></div>
 
     <div class="info-sub">Po Dni 5 — Sheki · Hotel Arena · TIP</div>
     <div class="info-row"><span class="info-label">Hotel</span><span class="info-val"><a href="https://www.booking.com/hotel/az/sheki-olimp-villa.cs.html" target="_blank" style="color:var(--rust);border-bottom:1px solid var(--rust)">Hotel Arena ↗</a> (4*)</span></div>
@@ -2445,12 +2439,12 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     <div class="day-num">0<em>4</em></div>
     <div class="day-meta">
       <div class="day-kicker">Úterý · 26. května</div>
-      <div class="day-title">Gobustan <em>→ Yevlakh / Ganja</em></div>
+      <div class="day-title">Gobustan <em>→ Ganja</em></div>
       <div class="day-sub">Bahenní sopky · petroglyfy · večerní přejezd na západ</div>
     </div>
     <div class="day-stamp">Den<br><span class="stops">04 zastávek</span></div>
   </div>
-  <div class="day-totals">Trasa dne · Badamdar → Gobustan → <strong>A) Yevlakh ~385 km / ~5 h 55 min</strong> (bezpečnější, kratší den) · <strong>B) Ganja ~473 km / ~7 h 17 min</strong> (delší večerní přejezd)</div>
+  <div class="day-totals">Trasa dne · ~473 km · ~7 h 17 min v autě · Badamdar → Gobustan → Ganja</div>
 
   <div class="locations">
 
@@ -2556,28 +2550,15 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
 
   </div>
 
-  <div style="display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px;" class="stay-options">
-    <div class="day-stay" style="margin-top:0">
-    <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>~274 km · ~4 h 13 min od posledního bodu</div>
-      <div class="day-stay-eyebrow">⌂ Varianta A · po cestě · Út 26. 5. → St 27. 5.</div>
-      <h3 class="day-stay-name">Yevlakh · Yevlakh City Hotel <a href="https://www.booking.com/hotel/az/yevlakh-city.cs.html" target="_blank">booking ↗</a></h3>
-      <div class="day-stay-meta">2× DBL · 4 dospělí · ~265 km z Baku · zkrátí Den 4 (Ganja až ráno Day 5) · snídaně v ceně</div>
-      <div class="day-stay-nav">
-        <a class="loc-nav-btn" href="https://www.google.com/maps/search/?api=1&query=Yevlakh+City+Hotel" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
-        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=47.1501,40.6183&z=14" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
-      </div>
-    </div>
-    <div style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.22em;color:var(--ink-mute);text-transform:uppercase;padding:4px 0">— nebo —</div>
-    <div class="day-stay" style="margin-top:0">
+  <div class="day-stay" style="margin-top:24px">
     <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>~362 km · ~5 h 34 min od posledního bodu</div>
-      <div class="day-stay-eyebrow">⌂ Varianta B · až v Ganji · Út 26. 5. → St 27. 5.</div>
-      <h3 class="day-stay-name">Ganja · Grand Teatro Motel <a href="https://www.booking.com/hotel/az/grand-teatro-motel.cs.html" target="_blank">booking ↗</a></h3>
-      <div class="day-stay-meta">2× DBL · 4 dospělí · centrum Ganji (Bülbül) · plný přejezd Den 4 · snídaně v ceně</div>
+      <div class="day-stay-eyebrow">⌂ Nocleh · Út 26. 5. → St 27. 5.</div>
+      <h3 class="day-stay-name">Ganja · Ramada Plaza by Wyndham Gence <a href="https://www.booking.com/Share-qNOQWc" target="_blank">booking ↗</a></h3>
+      <div class="day-stay-meta">4* · hodnocení 9,0 · 2× DBL · 4 dospělí · Avenue Nizami Ganjavi 519, Ganja · fantastická snídaně · Wi-Fi + parkování zdarma · rezervace 5057092421 / PIN 1206 · check-in 14:00 / check-out 12:00</div>
       <div class="day-stay-nav">
-        <a class="loc-nav-btn" href="https://www.google.com/maps/search/?api=1&query=Grand+Teatro+Motel+Ganja" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
-        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=46.3723313,40.6878581&z=15" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+        <a class="loc-nav-btn" href="https://www.google.com/maps/search/?api=1&query=Ramada+Plaza+by+Wyndham+Gence" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?q=Ramada%20Plaza%20by%20Wyndham%20Gence" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
       </div>
-    </div>
   </div>
 </section>
 
@@ -4101,8 +4082,8 @@ loadNext(0);
 (function() {
   var DAYS = [
     {id:'den1', date:'2026-05-23', lat:40.40, lon:49.87, city:'Baku'},
-    {id:'den2', date:'2026-05-24', lat:41.31, lon:48.57, city:'Quba'},
-    {id:'den3', date:'2026-05-25', lat:41.18, lon:48.13, city:'Khinaliq'},
+    {id:'den2', date:'2026-05-24', lat:41.18, lon:48.13, city:'Khinaliq'},
+    {id:'den3', date:'2026-05-25', lat:41.31, lon:48.57, city:'Quba'},
     {id:'den4', date:'2026-05-26', lat:40.10, lon:49.38, city:'Gobustan'},
     {id:'den5', date:'2026-05-27', lat:40.69, lon:46.36, city:'Ganja'},
     {id:'den6', date:'2026-05-28', lat:41.20, lon:47.20, city:'Sheki'},
@@ -4194,6 +4175,92 @@ loadNext(0);
     document.addEventListener('DOMContentLoaded', load);
   } else {
     load();
+  }
+})();
+</script>
+<script>
+/* ═══════════════════════════════════════════════════════════
+   WX BANNER TABLE — živá předpověď v přehledu (R 9:00 / V 18:00)
+   Přepíše statickou tabulku daty z Open-Meteo. Fallback = ponechá
+   statická čísla, pokud fetch selže nebo dorazí neúplná data.
+   ═══════════════════════════════════════════════════════════ */
+(function() {
+  var WX_LOCS = [
+    {name:'Baku',             lat:40.41, lon:49.87},
+    {name:'Sever Candy/Besh', lat:40.88, lon:49.19},
+    {name:'Khinaliq',         lat:41.18, lon:48.13},
+    {name:'Quba',             lat:41.31, lon:48.57},
+    {name:'Gobustan',         lat:40.10, lon:49.38},
+    {name:'Ganja',            lat:40.69, lon:46.36},
+    {name:'Sheki',            lat:41.20, lon:47.20},
+    {name:'Lahic/Shamakhi',   lat:40.85, lon:48.39}
+  ];
+  var WX_DATES = ['2026-05-23','2026-05-24','2026-05-25','2026-05-26','2026-05-27','2026-05-28','2026-05-29','2026-05-30'];
+
+  function cellClass(maxProb) {
+    if (maxProb >= 60) return 'wet';
+    if (maxProb <= 20) return 'dry';
+    return '';
+  }
+
+  function build(data) {
+    var tbody = document.getElementById('wxTableBody');
+    if (!tbody) return;
+    var locs = Array.isArray(data) ? data : [data];
+    // Bezpečnost: jen pokud máme hourly data pro VŠECHNY lokality
+    for (var k = 0; k < WX_LOCS.length; k++) {
+      if (!locs[k] || !locs[k].hourly || !locs[k].hourly.time) return;
+    }
+    var rows = '';
+    WX_LOCS.forEach(function(L, li) {
+      var h = locs[li].hourly;
+      var cells = '';
+      WX_DATES.forEach(function(dt) {
+        var iR = h.time.indexOf(dt + 'T09:00');
+        var iV = h.time.indexOf(dt + 'T18:00');
+        if (iR < 0 || iV < 0) { cells += '<td>—</td>'; return; }
+        var tR = Math.round(h.temperature_2m[iR]);
+        var tV = Math.round(h.temperature_2m[iV]);
+        var pR = h.precipitation_probability[iR];
+        var pV = h.precipitation_probability[iV];
+        var maxP = 0;
+        for (var j = 0; j < h.time.length; j++) {
+          if (h.time[j].indexOf(dt) === 0) {
+            var pp = h.precipitation_probability[j];
+            if (pp != null && pp > maxP) maxP = pp;
+          }
+        }
+        var cls = cellClass(maxP);
+        cells += '<td' + (cls ? ' class="' + cls + '"' : '') + '>' +
+          '<span class="rv">R</span> ' + tR + '°·' + (pR == null ? '–' : pR) + '%<br>' +
+          '<span class="rv">V</span> ' + tV + '°·' + (pV == null ? '–' : pV) + '%</td>';
+      });
+      rows += '<tr><td>' + L.name + '</td>' + cells + '</tr>';
+    });
+    tbody.innerHTML = rows;
+    var when = document.querySelector('.wx-banner-head .when');
+    if (when) {
+      var now = new Date();
+      when.textContent = 'Forecast ' + now.getDate() + '. ' + (now.getMonth() + 1) +
+        '. (živě z Open-Meteo) · živé předpovědi u jednotlivých dnů níže';
+    }
+  }
+
+  function loadWxTable() {
+    var lats = WX_LOCS.map(function(l) { return l.lat; }).join(',');
+    var lons = WX_LOCS.map(function(l) { return l.lon; }).join(',');
+    var url = 'https://api.open-meteo.com/v1/forecast' +
+      '?latitude=' + lats + '&longitude=' + lons +
+      '&hourly=temperature_2m,precipitation_probability' +
+      '&timezone=Asia%2FBaku' +
+      '&start_date=2026-05-23&end_date=2026-05-30';
+    fetch(url).then(function(r) { return r.json(); }).then(build).catch(function() { /* fallback = statická tabulka */ });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadWxTable);
+  } else {
+    loadWxTable();
   }
 })();
 </script>
