@@ -141,7 +141,8 @@
 - Adresa: Avenue Nizami Ganjavi 519, AZ2019 Ganja · skvělá lokalita
 - Pokoje: 2× DBL · 4 dospělí (2+2)
 - Stravování: Fantastická snídaně · Wi-Fi + parkování zdarma
-- Noc: Út 26. 5. → St 27. 5.
+- Rezervace: 5057092421 / PIN 1206
+- Noc: Út 26. 5. → St 27. 5. · check-in 14:00 / check-out 12:00
 
 **Po Dni 5 — Sheki · Hotel Arena · TIP**
 - Hotel: Hotel Arena ↗ (4*)
@@ -363,7 +364,7 @@ Info: https://en-wikipedia-org.translate.goog/wiki/Mud_volcano?_x_tr_sl=en&_x_tr
 
 **⌂ Nocleh · Út 26. 5. → St 27. 5.**
 Ganja · Ramada Plaza by Wyndham Gence booking ↗
-4* · hodnocení 9,0 · 2× DBL · 4 dospělí · Avenue Nizami Ganjavi 519, Ganja · fantastická snídaně · Wi-Fi + parkování zdarma
+4* · hodnocení 9,0 · 2× DBL · 4 dospělí · Avenue Nizami Ganjavi 519, Ganja · fantastická snídaně · Wi-Fi + parkování zdarma · rezervace 5057092421 / PIN 1206 · check-in 14:00 / check-out 12:00
 
 ### DEN5 · Středa · 27. května
 **Ganja + Mingachevir → Sheki**
