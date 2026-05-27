@@ -145,11 +145,13 @@
 - Noc: Út 26. 5. → St 27. 5. · check-in 14:00 / check-out 12:00
 
 **Po Dni 5 — Sheki · Hotel Arena · TIP**
-- Hotel: Hotel Arena ↗ (4*)
+- Hotel: Hotel Arena ↗ (4*) · Vila
 - Pokoje: 2× DBL · 4 dospělí (2+2)
 - Poloha: Z.Aliyeva · ~1,3 km od centra Sheki
 - Stravování: Snídaně v ceně
 - Logika: Spát před prohlídkou Sheki · Day 6 začne klidně
+- Rezervace: 5502832257 / PIN 1834
+- Cena: 3 682 Kč celkem
 - Noc: St 27. 5. → Čt 28. 5.
 
 **Po Dni 6 — Ismayilli · Rest House Ismayilli (A) · TIP**
@@ -422,7 +424,7 @@ Info: https://en-wikipedia-org.translate.goog/wiki/Ganja,_Azerbaijan?_x_tr_sl=en
 
 **⌂ Nocleh · St 27. 5. → Čt 28. 5.**
 Sheki · Hotel Arena booking ↗
-Příjezd do Sheki večer (~19:00, později pokud Goygol bonus). Spát před zítřejší prohlídkou města — Day 6 začíná v klidu rovnou v Sheki. 4* villa ~1,3 km od centra, 2× DBL, snídaně v ceně.
+Příjezd do Sheki večer (~19:00, později pokud Goygol bonus). Spát před zítřejší prohlídkou města — Day 6 začíná v klidu rovnou v Sheki. 4* villa ~1,3 km od centra, 2× DBL, snídaně v ceně. Rezervace 5502832257 / PIN 1834 · 3 682 Kč celkem.
 
 ### DEN6 · Čtvrtek · 28. května
 **Sheki + Kish → Ismayilli**
