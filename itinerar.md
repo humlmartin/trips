@@ -75,8 +75,8 @@
 - Den 2 Ne 24.: Candy Cane → Khinaliq (rychle, počasí) → Quba
 - Den 3 Po 25.: Quba sights → Besh Barmag → Chirag Gala → Baku Badamdar
 - Den 4 Út 26.: Gobustan → Ganja
-- Den 5 St 27.: Ganja + Mingachevir → Sheki
-- Den 6 Čt 28.: Sheki + Kish → Ismayilli
+- Den 5 St 27.: Ganja + Mingachevir → Sheki + město
+- Den 6 Čt 28.: Kish → Ismayilli
 - Den 7 Pá 29.: Lahic + Shamakhi → Baku finále
 - Den 8 So 30.: Baku centrum + odjezd
 
@@ -369,8 +369,8 @@ Ganja · Ramada Plaza by Wyndham Gence booking ↗
 4* · hodnocení 9,0 · 2× DBL · 4 dospělí · Avenue Nizami Ganjavi 519, Ganja · fantastická snídaně · Wi-Fi + parkování zdarma · rezervace 5057092421 / PIN 1206 · check-in 14:00 / check-out 12:00
 
 ### DEN5 · Středa · 27. května
-**Ganja + Mingachevir → Sheki**
-_Goygol bonus · Ganja sights · Mingachevir přestávka · nocleh Sheki_
+**Ganja + Mingachevir → Sheki + město**
+_Goygol bonus · Ganja sights · Mingachevir · prohlídka Sheki (palác, karavanseraje, bazar) · nocleh Sheki_
 📍 Trasa dne · ~245 km · ~3 h 40 min v autě · Ganja → Mingachevir → Sheki · +70 km / +1h pokud Goygol bonus
   ↓ ~41 km · ~38 min od ubytka v Ganja
 
@@ -422,15 +422,7 @@ GPS: 40.6849150 N · 46.3314194 E
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g815350-d12644279-Reviews-Ganja_Heydar_Aliyev_Park-Ganja_Ganja_Gazakh_Region.html
 Info: https://en-wikipedia-org.translate.goog/wiki/Ganja,_Azerbaijan?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
 
-**⌂ Nocleh · St 27. 5. → Čt 28. 5.**
-Sheki · Hotel Arena booking ↗
-Příjezd do Sheki večer (~19:00, později pokud Goygol bonus). Spát před zítřejší prohlídkou města — Day 6 začíná v klidu rovnou v Sheki. 4* villa ~1,3 km od centra, 2× DBL, snídaně v ceně. Rezervace 5502832257 / PIN 1834 · 3 682 Kč celkem.
-
-### DEN6 · Čtvrtek · 28. května
-**Sheki + Kish → Ismayilli**
-_Sheki sights · Kish · večerní přejezd do Ismayilli · nocleh_
-📍 Trasa dne · ~155 km · ~3 h v autě · Sheki + Kish + (Qabala oblast) → Ismayilli
-  ↓ ~1 km · ~2 min od Hotel Arena · již v Sheki
+  ↓ ~122 km · ~1 h 52 min — přejezd Ganja → Sheki
 
 **№ 26 · palác · Sheki — Palace of Shaki Khans** ★
 Nejhezčí město Ázerbájdžánu v horách Velkého Kavkazu. Palác šekiských chánů — letní rezidence z konce 18. století, proslulá vitrážemi šebeke : sklo v dřevěné mřížce bez hřebíků a lepidla. UNESCO od 2019.
@@ -457,6 +449,15 @@ Místní halva a baklava patří mezi nejlepší v zemi. Bazar a staré uličky 
 GPS: 41.1996094 N · 47.1716647 E
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g666445-d18454914-Reviews-Teze_Bazar-Sheki_Shaki_Zaqatala_Region.html
 Info: https://cs.wikipedia.org/wiki/%C5%9E%C9%99ki
+
+**⌂ Nocleh · St 27. 5. → Čt 28. 5.**
+Sheki · Hotel Arena booking ↗
+Sheki prohlédnuto dnes (palác, karavanseraje, bazar). Nocleh v Sheki — ráno už jen kostel v Kish a jede se dál. 4* villa ~1,3 km od centra, 2× DBL, snídaně v ceně. Rezervace 5502832257 / PIN 1834 · 3 682 Kč celkem.
+
+### DEN6 · Čtvrtek · 28. května
+**Kish → Ismayilli**
+_Kostel v Kish (ráno) · přejezd do Ismayilli · nocleh_
+📍 Trasa dne · ~150 km · ~3 h v autě · Kish → (Qabala oblast) → Ismayilli
   ↓ ~7 km · ~6 min od ubytka v Sheki
 
 **№ 29 · kostel · Kostel v Kish**
