@@ -499,15 +499,7 @@ Klidné jezero u silnice, dobrý odpočinkový bod cestou. Pohled v dálce na Ga
 GPS: 40.9542333 N · 47.8807628 E
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g666447-d17412956-Reviews-Nokhur_Gel_Lake-Qabala_Shaki_Zaqatala_Region.html
 
-**№ 37 · lanovka · Tufandag Mountain Resort · Qabala** (volitelné)
-Lyžařský resort v pohoří Bočný Kavkaz. V létě jezdí lanovka na vrchol (1920 m → 2750 m) s panoramatickým výhledem do údolí Demiraparanchay. Alternativa k Shahdagu — méně exponovaný, menší dav.
-GPS: 41.0063806 N · 47.8800486 E
-TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g666447-d7805237-Reviews-Tufandag_Mountain_Resort-Qabala_Shaki_Zaqatala_Region.html
-Info: https://en-wikipedia-org.translate.goog/wiki/Tufanda%C4%9F?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
-
-  ↓ ~60 km · od Sheki/Qabala · cestou na Lahic
-
-**№ 38 · most · Zarnava hanging bridge — cestou do Lahic**
+**№ 37 · most · Zarnava hanging bridge — cestou do Lahic**
 Visutý lanový most přes řeku Girdimanchay v údolí pod horou Niyal. Vede k osadě Zərnava (jen pár stavení) v ohbí kaňonu. Pěšky se dá projít, most se viditelně houpe — ne pro slabé nervy. Klasická fotka cestou na Lahic.
 _Parkování je u silnice před mostem (krátký sjezd). V deštivém počasí klouže — boty s gripem. Pohledově nejlepší ve světle pozdního odpoledne._
 GPS: 40.7968661 N · 48.3192294 E
@@ -515,7 +507,7 @@ TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g15517332-d200538
 Info: https://en-wikipedia-org.translate.goog/wiki/Z%C9%99rnava?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
   ↓ ~11 km · ~10 min od předchozího
 
-**№ 39 · měď · Lahic — tradiční vesnice** ★
+**№ 38 · měď · Lahic — tradiční vesnice** ★
 Středověká horská vesnice proslulá ručně kovanou mědí — tradice přinesená perskými řemeslníky před staletími. Dlážděná hlavní ulice, kovárny a obchůdky. Vůně ohně a kovu, skřípot nástrojů.
 _Místní mluví vlastním dialektem íránštiny. Perfektní místo koupit ruční výrobky. 160 km z Kish._
 ⚠ ⚠ Jídlo NE v Lahic centru — podniky občas přeúčtovávají turisty. Najíst se raději u silnice mezi Ismayilli/Lahic/Shamakhi (Wander-Lush guide).
@@ -524,7 +516,7 @@ TripAdvisor ↗: https://www.tripadvisor.com/AttractionProductReview-g293934-d16
 Info: https://en-wikipedia-org.translate.goog/wiki/Lah%C4%B1c,_Ismailli?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
   ↓ ~44 km · ~41 min od předchozího
 
-**№ 40 · 10. stol. · Shamakhi — Juma Mosque**
+**№ 39 · 10. stol. · Shamakhi — Juma Mosque**
 Shamakhi bylo historickým hlavním městem Shirvanského chanátu. Juma mešita pochází z 10. stol., přestavěna po ničivém zemětřesení v roce 1902. Jedno z nejstarších muslimských míst na Kavkaze.
 _1 hod z Lahic._
 GPS: 40.6266978 N · 48.6438422 E
@@ -532,7 +524,7 @@ TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g6368953-d7396367
 Info: https://en-wikipedia-org.translate.goog/wiki/Juma_Mosque,_Shamakhi?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
   ↓ ~1.3 km · ~1 min od předchozího
 
-**№ 41 · sedm kupolí · Shamakhi — Yeddi Gumbaz**
+**№ 40 · sedm kupolí · Shamakhi — Yeddi Gumbaz**
 „Sedm kupolí" — pohřebiště shirvanských chánů z 19. stol. Romantická zřícenina na kopci nad městem.
 GPS: 40.6205208 N · 48.6356889 E
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g6368953-d8365963-Reviews-Yeddi_Gumbaz_Mausoleum-Shamakhi_Daghlig_Shirvan_Region.html
@@ -561,60 +553,60 @@ _Bez auta · pěší prohlídka (Highland Park / mešity hotové už 1. den)_
 📍 Bez auta · Bolt / taxi / metro / pěšky · auto vráceno Pá 19:00
   ↓ start: Baku centrum pěšky · Bolt na vzdálenější body
 
-**№ 42 · UNESCO · Icheri Sheher — Staré město** ★
+**№ 41 · UNESCO · Icheri Sheher — Staré město** ★
 Nejstarší část Baku, UNESCO od roku 2000. Středověké uličky, karavanseraje, Palace of the Shirvanshahs (15. stol.) a Panenská věž (Qız Qalası). Příjemné bloudit a ztrácet se.
 GPS: 40.3661933 N · 49.8331300 E
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g293934-d459848-Reviews-Fortress_Walls_of_Icheri_Sheher-Baku_Absheron_Region.html
 Info: https://cs.wikipedia.org/wiki/Pal%C3%A1c%20%C5%A0irvan%C5%A1%C3%A1h%C5%AF
   ↓ ~0.5 km · ~0 min od předchozího
 
-**№ 43 · panenská · Qız Qalası — Panenská věž**
+**№ 42 · panenská · Qız Qalası — Panenská věž**
 Symbol Baku. Válcová věž z 12. stol., 29 m vysoká, neznámého účelu — teorií je mnoho (maják, astronomická věž, obranná stavba). Uvnitř expozice o historii, nahoře výhled na celý Baku.
 GPS: 40.3661547 N · 49.8372144 E
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g293934-d459849-Reviews-Maiden_Tower-Baku_Absheron_Region.html
 Info: https://en-wikipedia-org.translate.goog/wiki/Maiden_Tower_(Baku)?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
   ↓ ~0.2 km · ~0 min od předchozího
 
-**№ 44 · promenáda · Baku Boulevard**
+**№ 43 · promenáda · Baku Boulevard**
 3,5 km promenáda podél Kaspického moře, budovaná od roku 1909. Kavárny, fontány, výhledy. Večer oživlá — ideální zakončení dne.
 GPS: 40.3652011 N · 49.8385064 E
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g293934-d4738345-Reviews-Baku_Boulevard-Baku_Absheron_Region.html
 Info: https://en-wikipedia-org.translate.goog/wiki/Baku_Boulevard?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
   ↓ ~1.5 km · ~1 min od předchozího
 
-**№ 45 · Zaha Hadid · Heydar Aliyev Cultural Center**
+**№ 44 · Zaha Hadid · Heydar Aliyev Cultural Center**
 Ikonická stavba od Zaha Hadid (2012) — tekoucí bílá forma bez jediného ostrého rohu. Cena Designu roku 2014. Interiér prý méně zajímavý než fasáda — navštívit hlavně zvenku a udělat fotky.
 GPS: 40.3967492 N · 49.8677164 E
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g293934-d4953684-Reviews-Heydar_Aliyev_Cultural_Center-Baku_Absheron_Region.html
 Info: https://cs.wikipedia.org/wiki/Centrum%20Hejdara%20Alijeva
   ↓ ~3.1 km · ~3 min od předchozího
 
-**№ 46 · kontroverzní · Military Trophy Park** (volitelné)
+**№ 45 · kontroverzní · Military Trophy Park** (volitelné)
 Kontroverzní park s ukořistěnou arménskou vojenskou technikou z Náhorního Karabachu. Wax museum s vojáky. Poznamenat: jedná se o vítěznou propagandu — vědomě rozhodnout, jestli navštívit.
 GPS: 40.3766342 N · 49.8742403 E
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g293934-d23717373-Reviews-War_Trophies_Park-Baku_Absheron_Region.html
 Info: https://en-wikipedia-org.translate.goog/wiki/Military_Trophy_Park_(Baku)?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
   ↓ ~10 km · ~9 min od předchozího
 
-**№ 47 · tanker · Ship Museum SURAXANI** (volitelné)
+**№ 46 · tanker · Ship Museum SURAXANI** (volitelné)
 Ropný tanker přestavěný na plovoucí muzeum. Svého druhu unikát — světově první ropný tanker byl spuštěn právě v Baku v roce 1878. Muzeum mapuje historii ropného průmyslu.
 ⚠ ⚠ Otevřeno jen St–Ne. Pondělí a úterý zavřeno!
 GPS: 40.3372267 N · 49.8420242 E
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g293934-d24977486-Reviews-Surakhani_Ship_Museum-Baku_Absheron_Region.html
 Info: https://en-wikipedia-org.translate.goog/wiki/Surakhani?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
 
-**№ 48 · drive-by · Baku ropné pole** (volitelné)
+**№ 47 · drive-by · Baku ropné pole** (volitelné)
 Historické pole jihozápadně od Baku, vidět z auta cestou na Gobustan.
 GPS: 40.3201475 N · 49.8330658 E
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g293934-d459852-Reviews-Boom_Town-Baku_Absheron_Region.html
 Info: https://en-wikipedia-org.translate.goog/wiki/Oil_industry_in_Azerbaijan?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
 
-**№ 49 · drive-by · Ropný přístav** (volitelné)
+**№ 48 · drive-by · Ropný přístav** (volitelné)
 Hned u Bibi Heybat — průmyslový pohled, drive-by.
 GPS: 40.3065517 N · 49.7955683 E
 Info: https://en-wikipedia-org.translate.goog/wiki/Port_of_Baku?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
 
-**№ 50 · pěšky / Bolt · Bulvár Neftciler** (volitelné)
+**№ 49 · pěšky / Bolt · Bulvár Neftciler** (volitelné)
 Reprezentativní Baku magistrála podél pobřeží Kaspiku. Bez auta: pěšky / Bolt / taxi podle energie.
 GPS: 40.3680 N · 49.8420 E
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g293934-d13451721-Reviews-Neftchilar_Avenue-Baku_Absheron_Region.html
