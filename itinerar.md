@@ -76,8 +76,8 @@
 - Den 3 Po 25.: Quba sights → Besh Barmag → Chirag Gala → Baku Badamdar
 - Den 4 Út 26.: Gobustan → Ganja
 - Den 5 St 27.: Ganja + Mingachevir → Sheki + město
-- Den 6 Čt 28.: Galarsan-Gorarsan + Kish → Ismayilli
-- Den 7 Pá 29.: Lahic + Shamakhi → Baku finále
+- Den 6 Čt 28.: Galarsan + Kish + Lahic + Shamakhi → Baku (pozdě)
+- Den 7 Pá 29.: Shah Dili (Absheron NP) → vrácení auta → Baku
 - Den 8 So 30.: Baku centrum + odjezd
 
 **Plán B (varianta JZ-první) — pokud sever sprcha**
@@ -104,7 +104,7 @@
 - Co dělat: Martin přebookuje hotely, zde se přehodí itinerář v aplikaci
 
 ### ⌂ Přehled ubytování · po trase
-**7 nocí · Baku → Quba → Baku → Ganja → Sheki → Ismayilli → Baku**
+**7 nocí · Baku → Quba → Baku → Ganja → Sheki → Baku (2 noci)**
 
 **Po Dni 1 — Baku · Grand Hotel Europe**
 - Hotel: Grand Hotel Europe
@@ -154,19 +154,10 @@
 - Cena: 3 682 Kč celkem
 - Noc: St 27. 5. → Čt 28. 5.
 
-**Po Dni 6 — Ismayilli · Rest House Ismayilli (A) · TIP**
-- Hotel: Rest House Ismayilli ↗
-- Vybavení: Zahrada · klima · free parking + WiFi
-
-**Po Dni 6 — Ismayilli · Mehsul Recreational Center (B) · s restaurací**
-- Hotel: Mehsul Recreational Center ↗
-- Vybavení: Zahrada · terasa · restaurace + bar · dětské hřiště
-- Pokoje (oba): 2× DBL · 4 dospělí (2+2)
-- Noc: Čt 28. 5. → Pá 29. 5.
-
-**Po Dni 7 — Baku · finále · 5 možností · 1 noc**
+**Po Dni 6 a 7 — Baku · finále · 5 možností · 2 noci**
 - Pro: 2× DBL · 4 dospělí · centrum Baku
-- Datum: Pá 29. 5. → So 30. 5. · So den v Baku · Ne 02:35 odlet
+- Datum: Čt 28. 5. → So 30. 5. · 2 noci (pozdní příjezd Čt) · Ne 02:35 odlet
+- Pozn.: Ismayilli vynechán — Den 6 a 7 sloučeny, do Baku už ve čtvrtek večer
 - Baku Apart Best ↗: Apart hotel · 4 dospělí
 - Apartments by Novart Gallery ↗: Apartmány · galerie / boutique
 - Maison Baku Boutique ↗: Boutique · centrum
@@ -455,9 +446,9 @@ Sheki · Hotel Arena booking ↗
 Sheki prohlédnuto dnes (palác, karavanseraje, bazar). Nocleh v Sheki — ráno už jen kostel v Kish a jede se dál. 4* villa ~1,3 km od centra, 2× DBL, snídaně v ceně. Rezervace 5502832257 / PIN 1834 · 3 682 Kč celkem.
 
 ### DEN6 · Čtvrtek · 28. května
-**Galarsan + Kish → Ismayilli**
-_Galarsan-Gorarsan + kostel v Kish (ráno) · přejezd do Ismayilli · nocleh_
-📍 Trasa dne · ~150 km · ~3 h v autě · Galarsan-Gorarsan + Kish → (Qabala oblast) → Ismayilli
+**Galarsan + Kish + Lahic → Baku (pozdě)**
+_Galarsan + Kish + Lahic + Shamakhi · sloučeno se Dnem 7 · pozdní příjezd do Baku_
+📍 Trasa dne · ~360 km · ~6 h v autě · Galarsan + Kish + Lahic + Shamakhi → Baku
   ↓ ~7 km · od ubytka v Sheki · cestou ke Kish · pak pěší výstup
 
 **✦ pevnost · Galarsan-Gorarsan** (Shaki District)
@@ -490,15 +481,7 @@ GPS: 41.0063806 N · 47.8800486 E
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g666447-d7805237-Reviews-Tufandag_Mountain_Resort-Qabala_Shaki_Zaqatala_Region.html
 Info: https://en-wikipedia-org.translate.goog/wiki/Tufanda%C4%9F?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
 
-**⌂ Varianta A · Čt 28. 5. → Pá 29. 5.**
-Ismayilli · Rest House Ismayilli booking ↗
-Po cestě Sheki/Kish do Lahic. Zahrada, klima, free parking + WiFi.
-
-### DEN7 · Pátek · 29. května
-**Lahic + Shamakhi · návrat Baku**
-_Suspension Bridge → Lahic → Shamakhi → Baku_
-📍 Trasa dne · ~210 km · ~3 h 20 min v autě · Ismayilli → Lahic → Shamakhi → Baku
-  ↓ ~25 km · ~25 min od Ismayilli
+  ↓ ~60 km · od Sheki/Qabala · cestou na Lahic
 
 **№ 33 · most · Zarnava hanging bridge — cestou do Lahic**
 Visutý lanový most přes řeku Girdimanchay v údolí pod horou Niyal. Vede k osadě Zərnava (jen pár stavení) v ohbí kaňonu. Pěšky se dá projít, most se viditelně houpe — ne pro slabé nervy. Klasická fotka cestou na Lahic.
@@ -531,9 +514,22 @@ GPS: 40.6205208 N · 48.6356889 E
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g6368953-d8365963-Reviews-Yeddi_Gumbaz_Mausoleum-Shamakhi_Daghlig_Shirvan_Region.html
 Info: https://en-wikipedia-org.translate.goog/wiki/Yeddi_Gumbaz_Mausoleum?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
 
-**⌂ Baku finále · Pá 29. 5. → So 30. 5. · 1 noc · 5 možností**
+**⌂ Baku · příjezd pozdě večer · Čt 28. 5. → So 30. 5. · 2 noci · 5 možností**
 Baku · 5 hotelových možností k vybrání
-Auto vrácené v 19:00 GYD v pátek. 1 noc (Pá→So). V sobotu volný den v Baku, večer odjezd na letiště, odlet Ne 31. 5. · 02:35. 2× DBL pro 4 dospělé. Vyberte si jednoho a rezervujte:
+Den 6 a 7 sloučeny — pozdní příjezd do Baku ve čtvrtek, zůstáváme 2 noci (Čt→Pá→So). Ismayilli vynechán. Auto se vrací až v pátek (letiště GYD). 2× DBL pro 4 dospělé — vyberte a rezervujte na 2 noci.
+
+### DEN7 · Pátek · 29. května
+**Shah Dili · vrácení auta**
+_Baku → Shah Dili (Absheron NP) → vrácení auta na letišti → zpět Baku_
+📍 Trasa dne · ~130 km · ~2–3 h v autě · Baku → Shah Dili (jih Absheronu) → letiště GYD (vrácení auta) → Baku
+  ↓ ~65 km · ~1 h od centra Baku
+
+**✦ příroda · Shah Dili — Absheron National Park**
+Národní park na jihovýchodním cípu Absheronského poloostrova — divoká písečná kosa do Kaspiku. Kaspické gazely (džejran), tuleni, stěhovaví ptáci, pláže a maják. Poslední úsek po terénní cestě. Cestou zpět vrátit auto na letišti GYD (do 19:00), pak Bolt/taxi do Baku.
+Wikipedie ↗: https://en-wikipedia-org.translate.goog/wiki/Absheron_National_Park?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
+
+**⌂ 2. noc v Baku · Pá 29. 5. → So 30. 5.**
+Stejný hotel jako z noci Čt→Pá (výběr viz Den 6). V sobotu volný den v Baku, večer odjezd na letiště — odlet Ne 31. 5. · 02:35.
 
 ### DEN8 · Sobota · 30. května
 **Baku · centrum**
