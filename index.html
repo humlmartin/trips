@@ -1523,13 +1523,15 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   margin-top: 6px;
   white-space: nowrap;
   width: fit-content;
+  max-width: 100%;
 }
 .day-weather .icon { font-size: 14px; line-height: 1; }
 .day-weather .t-max { font-weight: 700; color: var(--ink); }
 .day-weather .t-min { opacity: 0.65; }
 .day-weather .rain { color: var(--teal); font-weight: 500; padding-left: 4px; border-left: 1px solid rgba(0,0,0,0.1); margin-left: 2px; }
 .day-weather .city { color: var(--ink-mute); font-size: 11px; }
-.day-weather.error { background: transparent; border-style: dashed; color: var(--ink-mute); }
+.day-weather.error { background: transparent; border-style: dashed; color: var(--ink-mute); white-space: normal; }
+.day-weather.past { background: rgba(0,0,0,0.04); border-style: solid; border-color: rgba(0,0,0,0.10); color: var(--ink-mute); }
 .day-weather { text-decoration: none; cursor: pointer; transition: background 0.15s, border-color 0.15s; }
 .day-weather:hover { background: rgba(176,138,62,0.20); border-color: rgba(176,138,62,0.45); }
 .day-weather .ext { opacity: 0.5; font-size: 10px; margin-left: 2px; }
@@ -4122,11 +4124,13 @@ loadNext(0);
     div.href = forecastUrl;
     div.target = '_blank';
     div.rel = 'noopener';
-    div.className = 'day-weather' + (opts.error ? ' error' : '');
+    div.className = 'day-weather' + (opts.past ? ' past' : (opts.error ? ' error' : ''));
     div.title = 'Otevřít detailní předpověď · ' + d.city + ' ' + prettyDate;
-    if (opts.error) {
-      var msg = opts.soon ? 'Předpověď bude dostupná blíž k datu' : 'Předpověď nedostupná';
-      div.innerHTML = '<span class="icon">⛅</span><span>' + msg + '</span><span class="ext">↗</span>';
+    if (opts.past) {
+      div.innerHTML = '<span class="icon">✓</span><span>proběhlo</span>';
+    } else if (opts.error) {
+      var msg = opts.soon ? 'předpověď blíž k datu' : 'předpověď nedostupná';
+      div.innerHTML = '<span class="icon">⛅</span><span>' + msg + '</span>';
     } else {
       var rainTxt = opts.rain > 0.5 ? '<span class="rain">💧 ' + opts.rain.toFixed(1) + ' mm</span>' : '';
       div.innerHTML =
@@ -4157,8 +4161,13 @@ loadNext(0);
         if (!loc || !loc.daily) { inject(d, {error:true, soon:false}); return; }
         var idx = loc.daily.time.indexOf(d.date);
         if (idx < 0) {
-          // Datum mimo 16denní okno (typicky Den 8 do té doby než se přiblíží)
-          inject(d, {error:true, soon:true});
+          // Datum není v 16denním okně: buď už proběhlo, nebo je moc daleko v budoucnu
+          var n = new Date();
+          var todayStr = n.getFullYear() + '-' +
+            String(n.getMonth() + 1).padStart(2, '0') + '-' +
+            String(n.getDate()).padStart(2, '0');
+          if (d.date < todayStr) inject(d, {error:true, past:true});
+          else inject(d, {error:true, soon:true});
           return;
         }
         inject(d, {
