@@ -528,6 +528,7 @@ Info: https://en-wikipedia-org.translate.goog/wiki/Lah%C4%B1c,_Ismailli?_x_tr_sl
 **⌂ Nocleh · Čt 28. 5. → Pá 29. 5. · ✓ rezervováno**
 My Way Village & Spa · Çayqovuşan (Ismayilli) · booking ↗: https://www.booking.com/hotel/az/my-way-willage-amp-spa.html
 Rezervace 5923615655 · PIN 7615 · celkem 5 589 Kč · 2 pokoje pro 4 os. · check-in 14:00 / check-out 12:00. Sezónní venkovní bazén, zahrada, terasa, restaurace. Tel: +994 50 309 93 92.
+GPS: 40.9385512 N · 48.0927055 E
 
 ### DEN7 · Pátek · 29. května
 **Shamakhi → Baku**
