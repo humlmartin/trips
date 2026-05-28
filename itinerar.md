@@ -463,6 +463,7 @@ _Galarsan-Gorarsan + kostel v Kish (ráno) · přejezd do Ismayilli · nocleh_
 **✦ pevnost · Galarsan-Gorarsan** (Shaki District)
 Středověká horská pevnost severně od Sheki. Název „Gələrsən-Görərsən" znamená „Přijdeš a uvidíš" — nedobytné útočiště šekiských chánů. Odtud Hadži Čelebi chán vzdoroval perskému Nádiru Šáhovi. K ruinám se jde pěšky do kopce (pevná obuv), výhled na údolí Sheki.
 GPS: 41.2634972 N · 47.2286314 E
+Google ↗: https://maps.app.goo.gl/r2M6acTcXKzLNhwd6
 Mapy.com ↗: https://mapy.com/s/jehacelohe
 Info: https://www.google.com/search?q=Gələrsən-Görərsən+fortress+Sheki
   ↓ ~3 km · od pevnosti Galarsan-Gorarsan
