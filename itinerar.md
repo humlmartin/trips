@@ -76,7 +76,7 @@
 - Den 3 Po 25.: Quba sights → Besh Barmag → Chirag Gala → Baku Badamdar
 - Den 4 Út 26.: Gobustan → Ganja
 - Den 5 St 27.: Ganja + Mingachevir → Sheki + město
-- Den 6 Čt 28.: Kish → Ismayilli
+- Den 6 Čt 28.: Galarsan-Gorarsan + Kish → Ismayilli
 - Den 7 Pá 29.: Lahic + Shamakhi → Baku finále
 - Den 8 So 30.: Baku centrum + odjezd
 
@@ -455,10 +455,17 @@ Sheki · Hotel Arena booking ↗
 Sheki prohlédnuto dnes (palác, karavanseraje, bazar). Nocleh v Sheki — ráno už jen kostel v Kish a jede se dál. 4* villa ~1,3 km od centra, 2× DBL, snídaně v ceně. Rezervace 5502832257 / PIN 1834 · 3 682 Kč celkem.
 
 ### DEN6 · Čtvrtek · 28. května
-**Kish → Ismayilli**
-_Kostel v Kish (ráno) · přejezd do Ismayilli · nocleh_
-📍 Trasa dne · ~150 km · ~3 h v autě · Kish → (Qabala oblast) → Ismayilli
-  ↓ ~7 km · ~6 min od ubytka v Sheki
+**Galarsan + Kish → Ismayilli**
+_Galarsan-Gorarsan + kostel v Kish (ráno) · přejezd do Ismayilli · nocleh_
+📍 Trasa dne · ~150 km · ~3 h v autě · Galarsan-Gorarsan + Kish → (Qabala oblast) → Ismayilli
+  ↓ ~7 km · od ubytka v Sheki · cestou ke Kish · pak pěší výstup
+
+**✦ pevnost · Galarsan-Gorarsan** (Shaki District)
+Středověká horská pevnost severně od Sheki. Název „Gələrsən-Görərsən" znamená „Přijdeš a uvidíš" — nedobytné útočiště šekiských chánů. Odtud Hadži Čelebi chán vzdoroval perskému Nádiru Šáhovi. K ruinám se jde pěšky do kopce (pevná obuv), výhled na údolí Sheki.
+GPS: 41.2634972 N · 47.2286314 E
+Mapy.com ↗: https://mapy.com/s/jehacelohe
+Info: https://www.google.com/search?q=Gələrsən-Görərsən+fortress+Sheki
+  ↓ ~3 km · od pevnosti Galarsan-Gorarsan
 
 **№ 29 · kostel · Kostel v Kish**
 Raně křesťanská lokalita spojená s kavkazsko-albánskou tradicí. Současná stavba má středověké fáze, ale místo stojí na mnohem starších kultovních vrstvách. Thor Heyerdahl zde financoval vykopávky a byl jím fascinován. 10 km z Sheki.
