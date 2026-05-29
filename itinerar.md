@@ -547,11 +547,13 @@ TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g6368953-d8365963
 Info: https://en-wikipedia-org.translate.goog/wiki/Yeddi_Gumbaz_Mausoleum?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
 
 **✦ příroda · Shah Dili — Absheron National Park** (volitelné)
-Volitelné — jen pokud zbyde čas před vrácením auta. Národní park na jihovýchodním cípu Absheronu — divoká písečná kosa do Kaspiku, gazely, tuleni, ptáci, pláže, maják. ~65 km JV od Baku.
+Národní park na jihovýchodním cípu Absheronu — divoká písečná kosa do Kaspiku, gazely (džejran), tuleni, ptáci, pláže, maják. GPS 40.241406 N · 50.366135 E.
+Otevřeno denně ~08–18 (někde uváděno 10–16 — den předem ověřit tel. +994 12 511 46 67) · vstup ~2 AZN/os. Poslední úsek terénka (4×4), zvířata nejlíp dopoledne; pozorování není zaručené.
+Plán Dne 7: v Baku nech batohy v Iris → Shah Dili (~60 km / 1 h 15) → letiště GYD vrátit auto do 19:00 (~50 km / 1 h) → Bolt zpět do Iris (~25 km / 30 min).
 Wikipedie ↗: https://en-wikipedia-org.translate.goog/wiki/Absheron_National_Park?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
 
 **⌂ Baku finále · Iris Hotel Baku · ✓ Potvrzeno**
-Iris Hotel Baku (centrum) · check-in 14:00 / check-out 12:30. Auto vrácené Pá 19:00 GYD, do centra Bolt/taxi.
+Iris Hotel Baku (centrum) · GPS 40.382803 N · 49.848222 E · check-in 14:00 / check-out 12:30 (batohy vezmou na recepci i dřív). Auto vrácené Pá 19:00 GYD, pak Bolt/taxi.
 2 rezervace pro 4 os.: Pokoj 1 = Pá 29 → So 30 (1 noc · 1 322,40 Kč) · Pokoj 2 = Pá 29 → Ne 31 (2 noci · 2 644,79 Kč, zázemí na sobotu před nočním letem). Celkem ~3 967 Kč. V sobotu volný den v Baku, odlet Ne 31. 5. · 02:35.
 
 ### DEN8 · Sobota · 30. května
