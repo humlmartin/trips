@@ -549,7 +549,7 @@ Info: https://en-wikipedia-org.translate.goog/wiki/Yeddi_Gumbaz_Mausoleum?_x_tr_
 **✦ příroda · Shah Dili — Absheron National Park** (volitelné)
 Národní park na jihovýchodním cípu Absheronu — divoká písečná kosa do Kaspiku, gazely (džejran), tuleni, ptáci, pláže, maják. GPS 40.241406 N · 50.366135 E.
 Otevřeno denně ~08–18 (někde uváděno 10–16 — den předem ověřit tel. +994 12 511 46 67) · vstup ~2 AZN/os. Poslední úsek terénka (4×4), zvířata nejlíp dopoledne; pozorování není zaručené.
-Plán Dne 7: v Baku nech batohy v Iris → Shah Dili (~60 km / 1 h 15) → letiště GYD vrátit auto do 19:00 (~50 km / 1 h) → Bolt zpět do Iris (~25 km / 30 min).
+Plán Dne 7: ze Shamakhi přímo sem (~180 km / ~3 h) → pak Iris (batohy, check-in od 14:00; ~60 km / 1 h 15) → letiště GYD vrátit auto do 19:00 (~25 km / 35 min) → Bolt zpět do Iris (~25 km / 30 min). Cennosti/pasy s sebou, auto zamknout.
 Wikipedie ↗: https://en-wikipedia-org.translate.goog/wiki/Absheron_National_Park?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
 
 **⌂ Baku finále · Iris Hotel Baku · ✓ Potvrzeno**
