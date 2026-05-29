@@ -161,14 +161,11 @@
 - Vybavení: Venkovní bazén · zahrada · terasa · restaurace · tel +994 50 309 93 92
 - Noc: Čt 28. 5. → Pá 29. 5.
 
-**Po Dni 7 — Baku · finále · 5 možností · 1 noc**
-- Pro: 2× DBL · 4 dospělí · centrum Baku
-- Datum: Pá 29. 5. → So 30. 5. · So volný den v Baku · Ne 02:35 odlet
-- Baku Apart Best ↗: Apart hotel · 4 dospělí
-- Apartments by Novart Gallery ↗: Apartmány · galerie / boutique
-- Maison Baku Boutique ↗: Boutique · centrum
-- The Nest Baku ↗: Stylový boutique
-- Siena Inn Nizami ↗: Nizami · pěšky centrum
+**Po Dni 7 — Baku · Iris Hotel Baku · ✓ Potvrzeno**
+- Hotel: Iris Hotel Baku · centrum Baku
+- Pokoj 1: Pá 29. 5. → So 30. 5. · 1 noc · 1 322,40 Kč
+- Pokoj 2: Pá 29. 5. → Ne 31. 5. · 2 noci · 2 644,79 Kč (zázemí na So před nočním letem)
+- Celkem: ~3 967 Kč · 4 os. · check-in 14:00 / check-out 12:30
 
 **Po Dni 8 — odlet**
 - Odlet: So 30. 5. večer → GYD · Ne 31. 5. · 02:35 (bez ubytka)
@@ -553,9 +550,9 @@ Info: https://en-wikipedia-org.translate.goog/wiki/Yeddi_Gumbaz_Mausoleum?_x_tr_
 Volitelné — jen pokud zbyde čas před vrácením auta. Národní park na jihovýchodním cípu Absheronu — divoká písečná kosa do Kaspiku, gazely, tuleni, ptáci, pláže, maják. ~65 km JV od Baku.
 Wikipedie ↗: https://en-wikipedia-org.translate.goog/wiki/Absheron_National_Park?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
 
-**⌂ Baku finále · Pá 29. 5. → So 30. 5. · 1 noc · 5 možností**
-Baku · 5 hotelových možností k vybrání
-Auto vrácené Pá 19:00 GYD. 1 noc (Pá→So), v sobotu volný den v Baku, odlet Ne 31. 5. · 02:35. 2× DBL pro 4 dospělé — vyberte a rezervujte.
+**⌂ Baku finále · Iris Hotel Baku · ✓ Potvrzeno**
+Iris Hotel Baku (centrum) · check-in 14:00 / check-out 12:30. Auto vrácené Pá 19:00 GYD, do centra Bolt/taxi.
+2 rezervace pro 4 os.: Pokoj 1 = Pá 29 → So 30 (1 noc · 1 322,40 Kč) · Pokoj 2 = Pá 29 → Ne 31 (2 noci · 2 644,79 Kč, zázemí na sobotu před nočním letem). Celkem ~3 967 Kč. V sobotu volný den v Baku, odlet Ne 31. 5. · 02:35.
 
 ### DEN8 · Sobota · 30. května
 **Baku · centrum**
