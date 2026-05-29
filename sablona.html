@@ -1,0 +1,2273 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Itinerář — šablona</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f1ead9'/%3E%3Cpath d='M16 1 L19 8 L26 7 L22 13 L29 16 L22 19 L26 25 L19 24 L16 31 L13 24 L6 25 L10 19 L3 16 L10 13 L6 7 L13 8 Z' fill='%23b03a0a'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer crossorigin=""></script>
+<style>
+/* ═══════════════════════════════════════════════════════════
+   Itinerář — šablona
+   Cream paper · ink · rust · ornaments
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --paper:    #f1ead9;
+  --paper-2:  #ebe2cc;
+  --paper-3:  #e2d6b8;
+  --ink:      #1a1612;
+  --ink-soft: #4a4036;
+  --ink-mute: #8a7d68;
+  --rule:     #c9bca0;
+  --rule-2:   #d8ccae;
+  --rust:     #b03a0a;
+  --rust-dk:  #7a2806;
+  --teal:     #1d4d4a;
+  --gold:     #b08a3e;
+  --plum:     #6b2342;
+  --night:    #18150f;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { background: var(--paper); overflow-x: clip; }
+body { overflow-x: clip;
+  background:
+    radial-gradient(ellipse 1200px 800px at 50% 0%, rgba(176,58,10,0.04), transparent 60%),
+    radial-gradient(ellipse 900px 600px at 100% 100%, rgba(29,77,74,0.04), transparent 60%),
+    var(--paper);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* subtle paper grain */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(122,40,6,0.04) 0, transparent 2px),
+    radial-gradient(circle at 70% 80%, rgba(26,22,18,0.04) 0, transparent 2px),
+    radial-gradient(circle at 40% 60%, rgba(122,40,6,0.04) 0, transparent 2px);
+  background-size: 7px 7px, 11px 11px, 13px 13px;
+}
+
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 28px 100px;
+  position: relative;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ═══════════════════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════════════════ */
+.hero {
+  padding: 64px 0 28px;
+  position: relative;
+}
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--ink);
+}
+.hero-top .dot { color: var(--rust); }
+
+.hero-title-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 26px 0 18px;
+  border-bottom: 1px solid var(--rule);
+}
+.hero-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: clamp(56px, 9.5vw, 132px);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+}
+.hero-title em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--rust);
+}
+.hero-meta {
+  text-align: right;
+  flex-shrink: 0;
+  padding-bottom: 8px;
+}
+.hero-meta .dates {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.hero-meta .nights {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-top: 4px;
+}
+
+.hero-strap {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 18px 0 8px;
+  flex-wrap: wrap;
+}
+.hero-strap .lede {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  color: var(--ink-soft);
+  line-height: 1.45;
+  flex: 1;
+  min-width: 320px;
+  max-width: 640px;
+}
+
+.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 11px 18px;
+  border-radius: 999px;
+  transition: background 0.18s;
+}
+.pill-btn:hover { background: var(--rust); }
+.pill-btn.ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+.pill-btn.ghost:hover { background: var(--ink); color: var(--paper); }
+
+/* ornament divider */
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 36px 0 32px;
+  color: var(--rust);
+}
+.ornament .line { flex: 1; height: 1px; background: var(--rule); }
+.ornament .glyph {
+  width: 28px; height: 28px; flex-shrink: 0;
+  opacity: 0.85;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   INFO BLOCKS (flights + hotel)
+   ═══════════════════════════════════════════════════════════ */
+.info-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 720px) {
+  .hero-title-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .hero-meta { text-align: left; padding-bottom: 0; }
+  .hero-meta .dates { white-space: normal; font-size: 18px; }
+}
+
+@media (min-width: 820px) {
+  .info-section { grid-template-columns: 1.05fr 1fr; }
+}
+@media (min-width: 1080px) {
+  .info-section:not([style*="1fr;"]) { grid-template-columns: 1.15fr 1fr 0.85fr; }
+}
+
+.info-block {
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  padding: 22px 26px 22px;
+  position: relative;
+}
+.info-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background:
+    repeating-linear-gradient(90deg,
+      var(--ink) 0 6px,
+      transparent 6px 12px);
+  opacity: 0.55;
+}
+.info-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rust);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+@media (max-width: 720px) {
+  .info-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.10em;
+    word-spacing: -0.05em;
+  }
+}
+.info-h {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+.info-h .ref {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-mute);
+  font-weight: 400;
+  margin-left: 8px;
+  vertical-align: 4px;
+}
+.info-h .addr {
+  display: block;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--ink-mute);
+  letter-spacing: 0;
+  margin-top: 2px;
+}
+
+.info-sub {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 16px 0 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed var(--rule);
+}
+.info-sub:first-of-type { margin-top: 14px; }
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 5px 0;
+  border-bottom: 1px dotted var(--rule-2);
+  font-size: 13px;
+}
+.info-row:last-of-type { border-bottom: none; }
+.info-label {
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 300;
+  min-width: 120px;
+  flex-shrink: 0;
+}
+.info-val {
+  font-weight: 500;
+  text-align: right;
+  line-height: 1.4;
+  font-size: 13px;
+  color: var(--ink);
+}
+.info-val a { color: var(--rust); border-bottom: 1px solid var(--rust); }
+.flight-no {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--teal);
+  letter-spacing: 0.05em;
+  margin-left: 4px;
+}
+.seat {
+  font-family: 'IBM Plex Mono', monospace;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+.muted-row .info-val,
+.muted-row .info-label { color: var(--ink-mute); font-style: normal; font-weight: 300; }
+
+/* DESKTOP: label a hodnota těsně vedle sebe, ne na opačných stranách */
+@media (min-width: 720px) {
+  .info-row {
+    justify-content: flex-start;
+    gap: 24px;
+  }
+  .info-val { text-align: left; }
+}
+
+/* DESKTOP: 1-sloupcové info-sekce → uvnitř bloku 2 sloupce řádků, ať se vyplní šířka */
+@media (min-width: 900px) {
+  .info-section[style*="grid-template-columns: 1fr;"] .info-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 48px;
+    row-gap: 0;
+    align-items: start;
+  }
+  .info-section[style*="grid-template-columns: 1fr;"] .info-block > .info-eyebrow,
+  .info-section[style*="grid-template-columns: 1fr;"] .info-block > .info-h,
+  .info-section[style*="grid-template-columns: 1fr;"] .info-block > .info-sub {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DAY BLOCK
+   ═══════════════════════════════════════════════════════════ */
+.day-block {
+  margin-top: 28px;
+  padding-top: 28px;
+  position: relative;
+}
+
+.day-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: end;
+  gap: 28px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--ink);
+  margin-bottom: 22px;
+}
+
+.day-num {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 108px;
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+  color: var(--ink);
+  font-feature-settings: "tnum";
+}
+.day-num em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--day-color, var(--rust));
+}
+.day-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 6px;
+}
+.day-kicker {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--day-color, var(--rust));
+}
+.day-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+.day-title em { font-style: normal; font-weight: 400; color: var(--ink-soft); }
+.day-sub {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+.day-stamp {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--ink-mute);
+  text-align: right;
+  padding-bottom: 8px;
+  line-height: 1.5;
+}
+.day-stamp .stops { color: var(--day-color, var(--rust)); font-weight: 500; }
+
+@media (max-width: 720px) {
+  .day-header { grid-template-columns: auto 1fr; gap: 18px; }
+  .day-num { font-size: 80px; }
+  .day-title { font-size: 26px; }
+  .day-stamp { display: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LOCATIONS GRID + CARDS
+   ═══════════════════════════════════════════════════════════ */
+.locations {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+@media (min-width: 720px) {
+  .locations { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1040px) {
+  .locations { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.loc {
+  display: flex;
+  flex-direction: column;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  position: relative;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.loc:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(26,22,18,0.10);
+}
+.loc::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px; right: -1px;
+  height: 3px;
+  background: var(--day-color, var(--rust));
+}
+
+.loc-photo-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+  background: var(--paper-3);
+}
+.loc-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.loc-photo-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.5s, transform 0.4s;
+  filter: saturate(0.92) contrast(1.02);
+}
+.loc-photo-wrap img.loaded { opacity: 1; }
+.loc-photo-link:hover .loc-photo-wrap img.loaded { transform: scale(1.04); }
+
+/* placeholder ornament for missing images */
+.loc-photo-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  padding: 16px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  background:
+    repeating-linear-gradient(45deg,
+      transparent 0 14px,
+      rgba(122,40,6,0.04) 14px 15px),
+    repeating-linear-gradient(-45deg,
+      transparent 0 14px,
+      rgba(29,77,74,0.04) 14px 15px),
+    var(--paper-3);
+}
+.loc-photo-label::before {
+  content: '';
+  display: block;
+  width: 36px; height: 36px;
+  background: var(--day-color, var(--rust));
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5Z M12 18C12 18 8 21 8 22H16C16 22 12 18 12 18Z' fill='black'/></svg>") center/contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5Z' fill='black'/></svg>") center/contain no-repeat;
+  opacity: 0.7;
+}
+.loc-photo-wrap.has-image .loc-photo-label { display: none; }
+.loc-photo-wrap.has-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(26,22,18,0.4) 100%);
+  pointer-events: none;
+}
+
+.photo-magnify {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 9px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+.loc-photo-link:hover .photo-magnify { opacity: 1; }
+
+.loc-body-link {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 16px 18px 16px;
+  color: inherit;
+  position: relative;
+}
+
+.loc-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--ink-mute);
+  margin-bottom: 6px;
+}
+
+.loc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.loc-name {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  flex: 1;
+}
+.loc-body-link:hover .loc-name { color: var(--rust); }
+
+.loc-name::after {
+  content: ' ↗';
+  font-size: 0.7em;
+  color: var(--rust);
+  font-weight: 400;
+  opacity: 0.55;
+  margin-left: 4px;
+  letter-spacing: 0;
+  transition: opacity 0.18s;
+}
+.loc-body-link:hover .loc-name::after { opacity: 1; }
+.loc-body-link.no-link .loc-name::after { display: none; }
+
+.loc-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  font-weight: 400;
+  margin-top: 4px;
+  text-wrap: pretty;
+}
+
+.loc-info {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--ink-mute);
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 8px;
+  text-wrap: pretty;
+}
+.loc-note {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--rust-dk);
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: rgba(176,58,10,0.07);
+  border-left: 2px solid var(--rust);
+  line-height: 1.45;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 12px;
+}
+.tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  background: var(--paper);
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  white-space: nowrap;
+}
+.tag.vstup { color: var(--teal); border-color: var(--teal); }
+.tag.cas { color: var(--ink-soft); }
+.tag.cas::before { content: '◆ '; color: var(--day-color, var(--rust)); }
+
+.loc-coords {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.05em;
+  color: var(--ink-mute);
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--rule);
+}
+
+.loc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+.loc-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--teal);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+.loc-link:hover { border-bottom-color: var(--teal); }
+
+.loc.optional {
+  background: transparent;
+  border-style: dashed;
+}
+.loc.optional .loc-photo-link { opacity: 0.85; }
+.loc.optional .loc-name::after {
+  content: ' · volitelné';
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--ink-mute);
+}
+
+.loc.priority::before {
+  background: var(--teal) !important;
+  height: 5px;
+}
+.loc.priority .loc-num::before {
+  content: '★ PRIORITA · ';
+  color: var(--teal);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+.loc.priority.optional::before {
+  background: var(--rule) !important;
+}
+
+/* UNVERIFIED — místo s nepřesnou polohou, dej šedě */
+.loc.unverified {
+  filter: grayscale(0.7);
+  opacity: 0.78;
+}
+.loc.unverified::before {
+  background: #8a8a82 !important;
+}
+.loc.unverified .loc-photo-wrap img { filter: grayscale(0.5); }
+.loc-todo-note {
+  background: rgba(0,0,0,0.05);
+  border-left: 2px solid #999;
+  padding: 8px 10px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--ink-mute);
+  font-style: italic;
+  line-height: 1.45;
+}
+.loc-todo-note::before {
+  content: '⚠ ';
+  font-style: normal;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NAV BAR per card — Google driving + Mapy.com offline
+   ═══════════════════════════════════════════════════════════ */
+.loc-nav {
+  display: flex;
+  border-top: 1px solid var(--rule);
+  background: var(--paper);
+}
+.loc-nav-btn {
+  flex: 1;
+  padding: 10px 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--ink-soft);
+  border-right: 1px solid var(--rule);
+  transition: background 0.15s, color 0.15s;
+}
+.loc-nav-btn:last-child { border-right: none; }
+.loc-nav-btn:hover {
+  background: var(--day-color, var(--rust));
+  color: var(--paper);
+}
+.loc-nav-btn .nav-icon {
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DAY STAY block — accommodation marker at end of day
+   ═══════════════════════════════════════════════════════════ */
+.day-stay {
+  margin-top: 24px;
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--teal);
+  padding: 18px 22px 14px;
+  background: linear-gradient(180deg, rgba(29,77,74,0.04) 0%, var(--paper-2) 100%);
+  position: relative;
+}
+.day-stay-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 6px;
+}
+.day-stay-name {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.day-stay-name a {
+  color: var(--rust);
+  border-bottom: 1px solid var(--rust);
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+.day-stay-meta {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+}
+.day-stay-nav {
+  display: flex;
+  border-top: 1px solid var(--rule);
+  margin: 0 -22px -14px;
+  background: var(--paper);
+}
+.day-stay-nav .loc-nav-btn { padding: 10px 8px; }
+
+/* ═══════════════════════════════════════════════════════════
+   BONUS — pokud se stihne (gray filter)
+   ═══════════════════════════════════════════════════════════ */
+.loc.bonus {
+  opacity: 0.62;
+  filter: grayscale(0.55);
+  transition: opacity 0.2s, filter 0.2s;
+}
+.loc.bonus:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+.loc.bonus::before {
+  background: var(--ink-mute) !important;
+}
+.loc.bonus .loc-name::after {
+  content: ' · bonus';
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--ink-mute);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TRANSIT — drive time between cards
+   ═══════════════════════════════════════════════════════════ */
+.loc-transit {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  padding: 8px 14px;
+  background: var(--paper-3);
+  border-bottom: 1px dashed var(--rule);
+}
+.loc-transit .arr { color: var(--day-color, var(--rust)); margin-right: 6px; font-weight: 600; }
+.day-totals {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 8px 0 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px dashed var(--rule);
+}
+.day-totals strong { color: var(--day-color, var(--rust)); font-weight: 600; margin: 0 4px; }
+
+/* ═══════════════════════════════════════════════════════════
+   TIP — bonus body od Ladi (gold accent, separate block)
+   ═══════════════════════════════════════════════════════════ */
+.day-tips {
+  margin-top: 28px;
+  padding: 18px 20px 4px;
+  background: rgba(176,138,62,0.06);
+  border: 1px dashed var(--gold);
+  border-radius: 2px;
+}
+.day-tips-header {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.day-tips-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  align-items: start;
+}
+@media (min-width: 720px) {
+  .day-tips-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1040px) {
+  .day-tips-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+.loc.tip {
+  background: var(--paper);
+  border: 1px solid var(--gold);
+}
+.loc.tip::before {
+  background: var(--gold) !important;
+}
+.loc.tip .loc-num {
+  color: var(--gold);
+  font-weight: 600;
+}
+.loc.tip .loc-photo-link { height: 120px; }
+
+/* ═══════════════════════════════════════════════════════════
+   GASTRO — co kde jíst per den (plum accent)
+   ═══════════════════════════════════════════════════════════ */
+
+@media (min-width: 720px) {
+  
+}
+
+/* ═══════════════════════════════════════════════════════════
+   STICKY DAY NAV — quick jump on mobile
+   ═══════════════════════════════════════════════════════════ */
+.day-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(241,234,217,0.95);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr repeat(8, 1fr);
+  gap: 3px;
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--rule);
+  margin: 0 -28px 18px;
+  overflow: hidden;
+}
+.day-nav a {
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.02em;
+  padding: 5px 2px;
+  border-radius: 3px;
+  color: var(--ink-soft);
+  background: var(--paper-2);
+  transition: background 0.15s, color 0.15s;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1.1;
+  min-width: 0;
+}
+.day-nav a b {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  display: block;
+  margin-bottom: 1px;
+  color: var(--ink);
+}
+.day-nav a:hover, .day-nav a.active {
+  background: var(--rust);
+  color: var(--paper);
+}
+.day-nav a:hover b, .day-nav a.active b { color: var(--paper); }
+.day-nav a.info { font-size: 16px; padding: 12px 4px; }
+@media (min-width: 720px) {
+  .day-nav a { font-size: 10px; padding: 6px 4px; }
+  .day-nav a b { font-size: 15px; }
+}
+section[id^="den"], section#info { scroll-margin-top: 70px; }
+
+/* ═══════════════════════════════════════════════════════════
+   PRE-TRIP CHECKLIST — BETA
+   ═══════════════════════════════════════════════════════════ */
+
+@media (min-width: 720px) {
+  
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COLLAPSIBLE info-blocks — click eyebrow to expand
+   ═══════════════════════════════════════════════════════════ */
+.info-block .info-eyebrow {
+  cursor: pointer;
+  position: relative;
+  padding-right: 24px;
+  user-select: none;
+}
+.info-block .info-eyebrow::after {
+  content: '▼';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: var(--rust);
+  transition: transform 0.2s;
+}
+.info-block.collapsed .info-eyebrow::after {
+  transform: translateY(-50%) rotate(-90deg);
+}
+.info-block.collapsed > *:not(.info-eyebrow) {
+  display: none;
+}
+.info-block.collapsed .info-eyebrow {
+  margin-bottom: 0;
+}
+.info-block.collapsed {
+  padding: 18px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COLLAPSIBLE day-blocks — click day-header to expand
+   ═══════════════════════════════════════════════════════════ */
+.day-block .day-header {
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  transition: background 0.15s;
+}
+.day-block .day-header:hover {
+  background: rgba(176,58,10,0.05);
+}
+/* Plnošířkový toggle pruh — bez překrytí textu */
+.day-toggle-bar {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 18px;
+  margin-top: 10px;
+  background: var(--day-color, var(--rust));
+  color: var(--paper);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: none;
+  transition: filter 0.15s, transform 0.15s;
+}
+.day-toggle-bar:hover { filter: brightness(1.1); }
+.day-toggle-bar .chev {
+  display: inline-block;
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+.day-toggle-bar::before {
+  content: 'SBALIT DEN';
+}
+.day-block.collapsed .day-toggle-bar::before {
+  content: 'ROZBALIT DEN — místa, fotky, mapy';
+}
+.day-block.collapsed .day-toggle-bar .chev {
+  transform: rotate(0deg);
+}
+.day-toggle-bar .chev { transform: rotate(180deg); }
+.day-block.collapsed > *:not(.day-header):not(.day-stay):not(.stay-options):not(.day-toggle-bar) {
+  display: none !important;
+}
+.day-block.collapsed {
+  padding-bottom: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COLLAPSIBLE day-stay — click eyebrow to expand
+   ═══════════════════════════════════════════════════════════ */
+.day-stay .day-stay-eyebrow {
+  cursor: pointer;
+  position: relative;
+  padding-right: 24px;
+  user-select: none;
+}
+.day-stay .day-stay-eyebrow::after {
+  content: '▼';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 9px;
+  color: var(--teal);
+  transition: transform 0.2s;
+}
+.day-stay.collapsed .day-stay-eyebrow::after {
+  transform: rotate(-90deg);
+}
+.day-stay.collapsed > *:not(.day-stay-eyebrow):not(.loc-transit) {
+  display: none;
+}
+.day-stay.collapsed {
+  padding: 12px 22px;
+}
+.day-stay.collapsed .loc-transit {
+  margin-bottom: 0;
+  padding-bottom: 0 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LIGHTBOX / GALERIE — fullscreen image viewer
+   ═══════════════════════════════════════════════════════════ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px 80px;
+  cursor: zoom-out;
+}
+.lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  cursor: default;
+  box-shadow: 0 10px 60px rgba(0,0,0,0.5);
+}
+.lightbox-close, .lightbox-prev, .lightbox-next {
+  position: absolute;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  font-size: 22px;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'IBM Plex Sans', sans-serif;
+  transition: background 0.15s;
+}
+.lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover {
+  background: rgba(255,255,255,0.25);
+}
+.lightbox-close { top: 16px; right: 16px; font-size: 24px; }
+.lightbox-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 16px; top: 50%; transform: translateY(-50%); }
+.lightbox-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: rgba(255,255,255,0.85);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+.lightbox-caption .name { display: block; font-size: 14px; letter-spacing: 0.04em; margin-bottom: 4px; }
+.lightbox-img { transition: opacity 0.18s ease; }
+.lightbox.loading .lightbox-img { opacity: 0.25; }
+.lightbox-spinner {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 52px; height: 52px;
+  margin: -26px 0 0 -26px;
+  border: 3px solid rgba(255,255,255,0.18);
+  border-top-color: rgba(255,255,255,0.92);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+  z-index: 2;
+}
+.lightbox.loading .lightbox-spinner {
+  opacity: 1;
+  animation: lb-spin 0.7s linear infinite;
+}
+@keyframes lb-spin { to { transform: rotate(360deg); } }
+@media (max-width: 720px) {
+  .lightbox { padding: 50px 8px 70px; }
+  .lightbox-prev, .lightbox-next { width: 40px; height: 40px; font-size: 20px; }
+  .lightbox-close { top: 10px; right: 10px; }
+  .lightbox-prev { left: 4px; }
+  .lightbox-next { right: 4px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Photo fallback — show img if src exists (mobile fix)
+   ═══════════════════════════════════════════════════════════ */
+.loc-photo-wrap:has(img[src]:not([src=""])) .loc-photo-label {
+  display: none;
+}
+.loc-photo-wrap img[src]:not([src=""]) {
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FORCE PHOTO DISPLAY — img above label, always visible
+   ═══════════════════════════════════════════════════════════ */
+.loc-photo-wrap { position: relative; overflow: hidden; }
+.loc-photo-wrap img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  opacity: 1 !important;
+  z-index: 2 !important;
+  display: block !important;
+}
+.loc-photo-wrap img:not([src]),
+.loc-photo-wrap img[src=""] {
+  display: none !important;
+}
+.loc-photo-label {
+  z-index: 1 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DAY COLORS (per nth-of-type — robust against extra siblings)
+   ═══════════════════════════════════════════════════════════ */
+.day-block:nth-of-type(1) { --day-color: var(--rust);    --day-color-2: #d9521f; }
+.day-block:nth-of-type(2) { --day-color: var(--teal);    --day-color-2: #2a6f6b; }
+.day-block:nth-of-type(3) { --day-color: var(--teal);    --day-color-2: #2a6f6b; }
+.day-block:nth-of-type(4) { --day-color: var(--gold);    --day-color-2: #c9a14f; }
+.day-block:nth-of-type(5) { --day-color: var(--gold);    --day-color-2: #c9a14f; }
+.day-block:nth-of-type(6) { --day-color: var(--gold);    --day-color-2: #c9a14f; }
+.day-block:nth-of-type(7) { --day-color: var(--plum);    --day-color-2: #8a3057; }
+.day-block:nth-of-type(8) { --day-color: var(--rust-dk); --day-color-2: var(--rust); }
+
+/* ═══════════════════════════════════════════════════════════
+   REVIEW SECTION
+   ═══════════════════════════════════════════════════════════ */
+.review-section {
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid var(--ink);
+  position: relative;
+}
+.review-section::before {
+  content: '✦';
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--paper);
+  padding: 0 16px;
+  color: var(--rust);
+  font-size: 18px;
+}
+
+.review-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 32px;
+}
+.review-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.review-title em { font-style: normal; font-weight: 700; color: var(--rust); }
+
+@media (max-width: 720px) {
+  .review-head { grid-template-columns: 1fr; }
+  .review-title { font-size: 44px; }
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 820px) {
+  .review-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.review-box {
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  padding: 24px 26px;
+  position: relative;
+}
+.review-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.review-box.review-fixes::before { background: var(--rust); }
+.review-box.review-recs::before  { background: var(--teal); }
+
+.review-box h3 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.review-box 
+.review-box.review-fixes 
+.review-box.review-recs  
+
+.review-box ul {
+  list-style: none;
+  padding: 0;
+  counter-reset: review;
+}
+.review-box li {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink);
+  padding: 10px 0 10px 28px;
+  border-bottom: 1px dotted var(--rule);
+  position: relative;
+  counter-increment: review;
+  text-wrap: pretty;
+}
+.review-box li:last-child { border-bottom: none; }
+.review-box li::before {
+  content: counter(review, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 11px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+.review-box.review-fixes li::before { color: var(--rust); }
+.review-box.review-recs  li::before { color: var(--teal); }
+.review-box li strong { font-weight: 600; color: var(--ink); }
+
+/* O ÁZERBÁJDŽÁNU — fakta */
+.review-box.facts-data::before { background: var(--gold); }
+.fact-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 9px 0;
+  border-bottom: 1px dotted var(--rule);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.fact-row:last-child { border-bottom: none; }
+.fact-row .fk { color: var(--ink-soft); font-weight: 400; flex-shrink: 0; }
+.fact-row .fv { color: var(--ink); font-weight: 600; text-align: right; }
+.facts-data li, .facts-fun li { text-wrap: pretty; }
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════ */
+.colophon {
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.colophon em {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TRIP MAP — Leaflet OSM mapa s body trasy
+   ═══════════════════════════════════════════════════════════ */
+#trip-map {
+  height: 520px;
+  width: 100%;
+  margin-top: 14px;
+  border: 1px solid var(--rule);
+  background: var(--paper-3);
+  grid-column: 1 / -1;
+}
+@media (max-width: 720px) {
+  #trip-map { height: 360px; }
+}
+.trip-marker { background: transparent; border: none; }
+.trip-pin {
+  width: 30px; height: 30px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  border: 2px solid var(--paper);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  display: flex; align-items: center; justify-content: center;
+}
+.trip-pin span {
+  transform: rotate(45deg);
+  color: white;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: -0.02em;
+}
+.trip-pin.hotel {
+  border-radius: 50%;
+  transform: none;
+  width: 22px; height: 22px;
+}
+.trip-pin.hotel span { transform: none; font-size: 11px; }
+.leaflet-popup-content-wrapper {
+  border-radius: 2px;
+  background: var(--paper);
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+.leaflet-popup-content {
+  margin: 12px 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.leaflet-popup-content strong { display: block; font-size: 14px; margin-bottom: 4px; }
+.leaflet-popup-content .pop-day {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.leaflet-popup-content a {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--rust);
+  font-weight: 600;
+  border-bottom: 1px solid var(--rust);
+}
+.trip-map-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  grid-column: 1 / -1;
+}
+.trip-map-legend .leg {
+  display: flex; align-items: center; gap: 8px;
+}
+.trip-map-legend .dot {
+  width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0;
+  border: 1.5px solid var(--paper); box-shadow: 0 0 0 1px var(--rule);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FLOATING SCROLL-TO-TOP — vždy přístupný šíp
+   ═══════════════════════════════════════════════════════════ */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background: var(--rust);
+  color: var(--paper);
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(26,22,18,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.22s, transform 0.22s, background 0.15s;
+}
+.scroll-top-btn.visible {
+  opacity: 0.92;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.scroll-top-btn:hover {
+  opacity: 1;
+  background: var(--rust-dk, #7a2806);
+}
+@media (max-width: 720px) {
+  .scroll-top-btn {
+    width: 44px; height: 44px;
+    bottom: 18px; right: 18px;
+    font-size: 20px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DAY WEATHER — Open-Meteo forecast pro každý den
+   ═══════════════════════════════════════════════════════════ */
+.day-weather {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-soft);
+  background: rgba(176,138,62,0.10);
+  border: 1px solid rgba(176,138,62,0.25);
+  padding: 4px 10px;
+  margin-top: 6px;
+  white-space: nowrap;
+  width: fit-content;
+  max-width: 100%;
+}
+.day-weather .icon { font-size: 14px; line-height: 1; }
+.day-weather .t-max { font-weight: 700; color: var(--ink); }
+.day-weather .t-min { opacity: 0.65; }
+.day-weather .rain { color: var(--teal); font-weight: 500; padding-left: 4px; border-left: 1px solid rgba(0,0,0,0.1); margin-left: 2px; }
+.day-weather .city { color: var(--ink-mute); font-size: 11px; }
+.day-weather.error { background: transparent; border-style: dashed; color: var(--ink-mute); white-space: normal; }
+.day-weather.past { background: rgba(0,0,0,0.04); border-style: solid; border-color: rgba(0,0,0,0.10); color: var(--ink-mute); }
+.day-weather { text-decoration: none; cursor: pointer; transition: background 0.15s, border-color 0.15s; }
+.day-weather:hover { background: rgba(176,138,62,0.20); border-color: rgba(176,138,62,0.45); }
+.day-weather .ext { opacity: 0.5; font-size: 10px; margin-left: 2px; }
+@media (max-width: 720px) {
+  .day-weather { font-size: 11px; padding: 3px 8px; gap: 5px; }
+  .day-weather .city { display: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   WEATHER ALERT BANNER — výrazný pruh s předpovědí/analýzou
+   ═══════════════════════════════════════════════════════════ */
+.wx-banner {
+  margin: 18px 0 4px;
+  border: 2px solid var(--rust);
+  background: linear-gradient(180deg, rgba(176,58,10,0.10), rgba(176,138,62,0.06));
+  position: relative;
+}
+.wx-banner-head {
+  background: var(--rust);
+  color: var(--paper);
+  padding: 12px 18px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  cursor: pointer;
+  user-select: none;
+}
+.wx-banner-head .wx-toggle {
+  font-size: 13px;
+  margin-left: auto;
+  padding-left: 12px;
+  transition: transform 0.2s;
+}
+.wx-banner.collapsed .wx-banner-head .wx-toggle { transform: rotate(-90deg); }
+.wx-banner.collapsed .wx-banner-body { display: none; }
+.wx-banner-head .when { font-size: 10px; opacity: 0.85; font-weight: 500; letter-spacing: 0.06em; }
+.wx-banner-body { padding: 16px 18px 18px; }
+.wx-keyfind {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.wx-keyfind strong { color: var(--rust-dk, #7a2806); }
+.wx-table-wrap { overflow-x: auto; margin: 14px 0; -webkit-overflow-scrolling: touch; }
+.wx-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 720px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+}
+.wx-table .rv { color: var(--rust); font-weight: 700; }
+.wx-table td { line-height: 1.5; }
+.wx-table th, .wx-table td {
+  padding: 5px 7px;
+  text-align: center;
+  border: 1px solid var(--rule-2, rgba(0,0,0,0.08));
+  white-space: nowrap;
+}
+.wx-table th { background: rgba(0,0,0,0.05); font-weight: 600; letter-spacing: 0.04em; }
+.wx-table td:first-child, .wx-table th:first-child {
+  text-align: left; font-weight: 600; position: sticky; left: 0;
+  background: var(--paper-2, #f1ead9);
+}
+.wx-table .wet { background: rgba(176,58,10,0.16); color: var(--rust-dk, #7a2806); font-weight: 700; }
+.wx-table .dry { background: rgba(29,77,74,0.10); color: var(--teal, #1d4d4a); }
+.wx-rec {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.wx-rec li { padding: 5px 0 5px 22px; position: relative; }
+.wx-rec li::before { content: '→'; position: absolute; left: 0; color: var(--rust); font-weight: 700; }
+.wx-rec strong { color: var(--ink); }
+.wx-note {
+  margin-top: 14px; padding: 10px 12px;
+  background: rgba(176,138,62,0.12); border-left: 3px solid var(--gold);
+  font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; line-height: 1.5; color: var(--ink-soft);
+}
+.wx-sub { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rust); font-weight: 600; margin: 18px 0 6px; }
+@media (max-width: 720px) {
+  .wx-keyfind { font-size: 14px; }
+  .wx-rec { font-size: 13px; }
+  .wx-banner-head { font-size: 12px; }
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ════════════════════════════════════════════════════════════════
+     ŠABLONA ITINERÁŘE — prázdná kostra
+     • Zachován „motor": CSS, automatické načítání fotek z Wikipedie/
+       Commons, mapa (Leaflet), rozbalovací UI, navigace, scroll-to-top.
+     • Žádné počasí, Plán B, logistika ani konkrétní obsah.
+     • NOVÝ DEN: zkopíruj celou <section class="day-block">, změň
+       id="den1" -> den2 ... a přidej odkaz do <nav> nahoře.
+     • NOVÉ MÍSTO: zkopíruj <article class="loc">. Foto se načte podle
+       data-wiki (název článku na Wikipedii) nebo se dohledá podle alt.
+     • loc-coords (formát "LAT N · LON E") = bod na mapě + funkční navigace.
+     ════════════════════════════════════════════════════════════════ -->
+
+<nav class="day-nav">
+  <a href="#" class="info" id="nav-top" title="Nahoru">⌂</a>
+  <a href="#" class="info" id="nav-collapse" title="Sbalit vše">⊟</a>
+  <a href="#den1" title="Den 1"><b>1</b><br>den</a>
+  <!-- další: <a href="#den2" title="Den 2"><b>2</b><br>den</a> -->
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="hero">
+  <div class="hero-top">
+    <span>0 cestujících · 0 dní</span>
+    <span>odkud ↔ kam</span>
+  </div>
+  <div class="hero-title-row">
+    <h1 class="hero-title">Gruzie</h1>
+    <div class="hero-meta">
+      <div class="dates">?? 20XX</div>
+      <div class="nights">0 nocí</div>
+    </div>
+  </div>
+  <div class="hero-strap">
+    <p class="lede">Krátký úvodní popis cesty — o čem to je.</p>
+    <div class="hero-actions">
+      <a class="pill-btn ghost" href="#den1">Skočit na den 1 ↓</a>
+    </div>
+  </div>
+  <div class="ornament">
+    <span class="line"></span>
+    <svg class="glyph" viewBox="0 0 32 32" fill="currentColor"><path d="M16 1 L19 8 L26 7 L22 13 L29 16 L22 19 L26 25 L19 24 L16 31 L13 24 L6 25 L10 19 L3 16 L10 13 L6 7 L13 8 Z"/></svg>
+    <span class="line"></span>
+  </div>
+</header>
+
+<!-- ═══════════════ MAPA TRASY ═══════════════ -->
+<section class="info-section" style="margin-top: 12px; grid-template-columns: 1fr;">
+  <div class="info-block">
+    <div class="info-eyebrow">🗺 Mapa trasy · všechna místa</div>
+    <div id="trip-map"></div>
+    <div class="trip-map-legend">
+      <div class="leg"><span class="dot" style="background:#b03a0a"></span>Den 1</div>
+      <div class="leg"><span class="dot" style="background:#444;border-radius:50%"></span>⌂ Ubytování</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DEN 1 (ukázka — zkopíruj pro další dny) ═══════════════ -->
+<section class="day-block" id="den1">
+  <div class="day-header">
+    <div class="day-num">0<em>1</em></div>
+    <div class="day-meta">
+      <div class="day-kicker">Den v týdnu · datum</div>
+      <div class="day-title">Název dne <em>· podtitul</em></div>
+      <div class="day-sub">Krátké shrnutí trasy dne</div>
+    </div>
+    <div class="day-stamp">Den<br><span class="stops">00 zastávek</span></div>
+  </div>
+  <div class="day-totals">Trasa dne · <strong>~000 km</strong> · <strong>~0 h</strong> v autě · odkud → kam</div>
+
+  <div class="locations">
+
+    <!-- UKÁZKOVÁ KARTA MÍSTA — zkopíruj celý <article> pro každé místo -->
+    <article class="loc priority">
+      <div class="loc-transit"><span class="arr">↓</span>~0 km · ~0 min od předchozího</div>
+      <a class="loc-photo-link" href="https://www.google.com/search?q=Tbilisi+Old+Town&tbm=isch" target="_blank">
+        <div class="loc-photo-wrap">
+          <span class="loc-photo-label">Název místa</span>
+          <img data-wiki="Old_Tbilisi" alt="Tbilisi Old Town Georgia">
+        </div>
+        <span class="photo-magnify">Fotky ↗</span>
+      </a>
+      <a class="loc-body-link" href="#" target="_blank">
+        <div class="loc-num">№ 01 · kategorie</div>
+        <div class="loc-top"><h3 class="loc-name">Název místa</h3></div>
+        <p class="loc-desc">Popis místa — co to je, proč tam jet, co vidět.</p>
+        <p class="loc-info">Praktická poznámka (parkování, vstupné, čas).</p>
+        <div class="tags"><span class="tag cas">0 hod</span></div>
+        <div class="loc-coords">41.6913 N · 44.8090 E</div>
+        <div class="loc-links">
+          <a class="loc-link" href="#" target="_blank">TripAdvisor ↗</a>
+        </div>
+      </a>
+      <div class="loc-nav">
+        <a class="loc-nav-btn" href="https://www.google.com/maps/?q=41.6913,44.8090&z=17" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+        <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=44.8090,41.6913&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- NOCLEH (volitelné) — loc-coords uvnitř = hotel jako marker na mapě -->
+  <div class="day-stay">
+    <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>~0 km od posledního bodu</div>
+    <div class="day-stay-eyebrow">⌂ Nocleh · datum → datum</div>
+    <h3 class="day-stay-name">Název hotelu <a href="#" target="_blank">booking ↗</a></h3>
+    <div class="day-stay-meta">Rezervace · cena · pokoje · vybavení.</div>
+    <div class="loc-coords">41.7100 N · 44.7900 E</div>
+    <div class="day-stay-nav">
+      <a class="loc-nav-btn" href="https://www.google.com/maps/?q=41.7100,44.7900&z=17" target="_blank"><span class="nav-icon">📍</span>Google Maps</a>
+      <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=44.7900,41.7100&z=17" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ COLOPHON ═══════════════ -->
+<footer class="colophon">
+  <span>Itinerář · šablona</span>
+  <em>—</em>
+  <span>v1</span>
+</footer>
+
+</div>
+
+<!-- ═══════════════ PHOTO LOADER (Wikipedia + Commons) ═══════════════ -->
+<script>
+var USED_URLS = {};
+function isBadImage(url) {
+  if (!url) return true;
+  var u = url.toLowerCase();
+  var bad = ['location_map','locator','_map.svg','_map.png','flag_of_','coat_of_arms','emblem_of_',
+             'azerbaijan_administrative','azerbaijan_in_','azerbaijan_relief','azerbaijan_(orthographic',
+             'wikimedia_commons','commons-logo'];
+  for (var i = 0; i < bad.length; i++) if (u.indexOf(bad[i]) !== -1) return true;
+  return false;
+}
+function applyImage(img, url) {
+  if (!url || isBadImage(url) || USED_URLS[url]) return false;
+  USED_URLS[url] = true;
+  img.onload = function() { img.classList.add('loaded'); img.parentElement.classList.add('has-image'); };
+  img.onerror = function() { delete USED_URLS[url]; };
+  img.src = url;
+  return true;
+}
+function fetchPageImage(title) {
+  var url = 'https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=pageimages&pithumbsize=700&titles=' + encodeURIComponent(title);
+  return fetch(url).then(function(r){return r.json();}).then(function(data){
+    var pages = data && data.query && data.query.pages; if (!pages) return null;
+    var k = Object.keys(pages)[0];
+    var thumb = pages[k] && pages[k].thumbnail && pages[k].thumbnail.source;
+    return (thumb && !isBadImage(thumb)) ? thumb : null;
+  }).catch(function(){return null;});
+}
+function searchCommons(query) {
+  var url = 'https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrsearch=' + encodeURIComponent(query + ' filemime:image/jpeg') + '&gsrnamespace=6&gsrlimit=15&prop=imageinfo&iiprop=url|mime&iiurlwidth=700';
+  return fetch(url).then(function(r){return r.json();}).then(function(data){
+    var pages = data && data.query && data.query.pages; if (!pages) return [];
+    var urls = [];
+    for (var k in pages) {
+      var info = pages[k].imageinfo && pages[k].imageinfo[0];
+      if (info && info.thumburl && info.thumbwidth >= 300 && !isBadImage(info.thumburl)) urls.push(info.thumburl);
+    }
+    return urls;
+  }).catch(function(){return [];});
+}
+function firstUnused(urls) { for (var i = 0; i < urls.length; i++) if (!USED_URLS[urls[i]]) return urls[i]; return null; }
+var FALLBACKS = {};
+function tryFallbacks(img, titles, idx) {
+  if (idx >= titles.length) return;
+  fetchPageImage(titles[idx]).then(function(thumb){
+    if (thumb && !USED_URLS[thumb]) applyImage(img, thumb);
+    else tryFallbacks(img, titles, idx + 1);
+  });
+}
+function loadImage(img) {
+  var override = img.getAttribute('data-img');
+  if (override) { applyImage(img, override); return; }
+  var primary = img.getAttribute('data-wiki');
+  var alt = img.getAttribute('alt') || '';
+  fetchPageImage(primary).then(function(thumb){
+    if (thumb && !USED_URLS[thumb]) { applyImage(img, thumb); return; }
+    searchCommons(alt + ' Azerbaijan').then(function(urls){
+      var u = firstUnused(urls);
+      if (u) { applyImage(img, u); return; }
+      var simpleName = alt.split('—')[0].split('·')[0].trim();
+      searchCommons(simpleName).then(function(urls2){
+        var u2 = firstUnused(urls2);
+        if (u2) { applyImage(img, u2); return; }
+        tryFallbacks(img, FALLBACKS[primary] || [], 0);
+      });
+    });
+  });
+}
+var imgs = Array.prototype.slice.call(document.querySelectorAll('img[data-wiki]'));
+function loadNext(idx) {
+  if (idx >= imgs.length) return;
+  loadImage(imgs[idx]);
+  setTimeout(function(){ loadNext(idx + 1); }, 90);
+}
+loadNext(0);
+</script>
+
+<script>
+(function() {
+  var navLinks = document.querySelectorAll('.day-nav a');
+  var dayMap = {};
+  navLinks.forEach(function(a) {
+    var href = a.getAttribute('href');
+    if (href && href.startsWith('#')) dayMap[href.slice(1)] = a;
+  });
+  
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        navLinks.forEach(function(a) { a.classList.remove('active'); });
+        var id = entry.target.id;
+        if (dayMap[id]) dayMap[id].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+  
+  document.querySelectorAll('section[id]').forEach(function(s) {
+    observer.observe(s);
+  });
+})();
+</script>
+
+<script>
+(function() {
+  // Weather banner toggle (klik na hlavičku schová/rozbalí)
+  document.querySelectorAll('.wx-banner').forEach(function(b) {
+    var head = b.querySelector('.wx-banner-head');
+    if (!head) return;
+    head.addEventListener('click', function() { b.classList.toggle('collapsed'); });
+  });
+  // Info-block toggle
+  document.querySelectorAll('.info-block').forEach(function(b) {
+    var eb = b.querySelector('.info-eyebrow');
+    if (!eb) return;
+    eb.addEventListener('click', function() { b.classList.toggle('collapsed'); });
+  });
+  // Day-block toggle — header click OR full-width toggle bar
+  document.querySelectorAll('.day-block').forEach(function(b) {
+    var h = b.querySelector('.day-header');
+    if (!h) return;
+    h.addEventListener('click', function() { b.classList.toggle('collapsed'); });
+    // Inject visible full-width toggle bar after header
+    var bar = document.createElement('button');
+    bar.className = 'day-toggle-bar';
+    bar.type = 'button';
+    bar.innerHTML = '<span class="chev">▾</span>';
+    bar.addEventListener('click', function(e) {
+      e.stopPropagation();
+      b.classList.toggle('collapsed');
+    });
+    h.after(bar);
+  });
+  // Day-stay toggle
+  document.querySelectorAll('.day-stay').forEach(function(b) {
+    var eb = b.querySelector('.day-stay-eyebrow');
+    if (!eb) return;
+    eb.addEventListener('click', function() { b.classList.toggle('collapsed'); });
+  });
+  // Auto-collapse — všechno sbalené ve výchozím zobrazení (desktop i mobile)
+  document.querySelectorAll('.day-block').forEach(function(b) { b.classList.add('collapsed'); });
+  document.querySelectorAll('.info-block').forEach(function(b) { b.classList.add('collapsed'); });
+  document.querySelectorAll('.day-stay').forEach(function(b) { b.classList.add('collapsed'); });
+  document.querySelectorAll('.wx-banner').forEach(function(b) { b.classList.add('collapsed'); });
+})();
+</script>
+<script>
+(function() {
+  var topBtn = document.getElementById('nav-top');
+  if (topBtn) topBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  var collapseBtn = document.getElementById('nav-collapse');
+  if (collapseBtn) collapseBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    // Sesbírej VŠECHNY sbalovací prvky (banner, info-bloky, dny, ubytka)
+    var all = [].concat(
+      [].slice.call(document.querySelectorAll('.wx-banner')),
+      [].slice.call(document.querySelectorAll('.info-block')),
+      [].slice.call(document.querySelectorAll('.day-block')),
+      [].slice.call(document.querySelectorAll('.day-stay'))
+    );
+    // Když je cokoliv otevřené → sbalit vše; jinak rozbalit vše
+    var anyOpen = all.some(function(b) { return !b.classList.contains('collapsed'); });
+    all.forEach(function(b) { b.classList.toggle('collapsed', anyOpen); });
+  });
+})();
+</script>
+<script>
+(function() {
+  var lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.style.display = 'none';
+  lb.innerHTML =
+    '<button class="lightbox-close" aria-label="Zavřít">×</button>' +
+    '<button class="lightbox-prev" aria-label="Předchozí">‹</button>' +
+    '<button class="lightbox-next" aria-label="Další">›</button>' +
+    '<img class="lightbox-img" src="" alt="">' +
+    '<div class="lightbox-spinner"></div>' +
+    '<div class="lightbox-caption"><span class="name"></span><span class="count"></span></div>';
+  document.body.appendChild(lb);
+
+  var imgEl = lb.querySelector('.lightbox-img');
+  var nameEl = lb.querySelector('.lightbox-caption .name');
+  var countEl = lb.querySelector('.lightbox-caption .count');
+  var prevBtn = lb.querySelector('.lightbox-prev');
+  var nextBtn = lb.querySelector('.lightbox-next');
+  var state = { urls: [], index: 0, name: '', seq: 0, cache: {}, bad: {} };
+  var LOAD_TIMEOUT_MS = 6000;
+
+  function preload(url) {
+    if (!url || state.bad[url]) return null;
+    if (state.cache[url]) return state.cache[url];
+    var img = new Image();
+    state.cache[url] = img;
+    img.onerror = function() { state.bad[url] = true; };
+    img.src = url;
+    return img;
+  }
+  function preloadNeighbors(i) {
+    var n = state.urls.length;
+    if (n <= 1) return;
+    [1, -1, 2, -2].forEach(function(off) {
+      var j = (i + off + n * 2) % n;
+      preload(state.urls[j]);
+    });
+  }
+  function showFailure() {
+    lb.classList.remove('loading');
+    imgEl.removeAttribute('src');
+    nameEl.textContent = (state.name || '') + ' — fotku se nepodařilo načíst';
+  }
+  function show(i, attemptsLeft) {
+    if (state.urls.length === 0) return;
+    if (typeof attemptsLeft !== 'number') attemptsLeft = state.urls.length;
+    if (attemptsLeft <= 0) { showFailure(); return; }
+    var n = state.urls.length;
+    if (i < 0) i = n - 1;
+    if (i >= n) i = 0;
+
+    // Skip URLs already known to be broken
+    if (state.bad[state.urls[i]]) {
+      show(i + 1, attemptsLeft - 1);
+      return;
+    }
+
+    state.index = i;
+    var url = state.urls[i];
+    var mySeq = ++state.seq;
+
+    nameEl.textContent = state.name;
+    countEl.textContent = n > 1 ? (i+1) + ' / ' + n : '';
+    prevBtn.style.display = n > 1 ? 'flex' : 'none';
+    nextBtn.style.display = n > 1 ? 'flex' : 'none';
+
+    var loader = preload(url);
+    var settled = false;
+    var swap = function() {
+      if (settled || mySeq !== state.seq) return;
+      settled = true;
+      imgEl.src = url;
+      lb.classList.remove('loading');
+    };
+    var fail = function() {
+      if (settled || mySeq !== state.seq) return;
+      settled = true;
+      state.bad[url] = true;
+      // Auto-skip to next image in gallery
+      if (n > 1) show(i + 1, attemptsLeft - 1);
+      else showFailure();
+    };
+
+    if (loader.complete && loader.naturalWidth > 0) {
+      swap();
+      preloadNeighbors(i);
+      return;
+    }
+    if (loader.complete && loader.naturalWidth === 0) {
+      // Already errored (cached error)
+      fail();
+      return;
+    }
+
+    lb.classList.add('loading');
+    loader.addEventListener('load', swap);
+    loader.addEventListener('error', fail);
+    // Hard timeout — Wikimedia 404 redirects can hang
+    setTimeout(function() {
+      if (loader.complete && loader.naturalWidth > 0) swap();
+      else fail();
+    }, LOAD_TIMEOUT_MS);
+
+    preloadNeighbors(i);
+  }
+  function openLb(urls, name, index) {
+    state.urls = urls.slice();
+    state.name = name || '';
+    state.seq = 0;
+    lb.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    show(index || 0);
+    setTimeout(function() {
+      state.urls.forEach(preload);
+    }, 50);
+  }
+  function closeLb() {
+    lb.style.display = 'none';
+    document.body.style.overflow = '';
+    imgEl.src = '';
+  }
+  
+  lb.querySelector('.lightbox-close').addEventListener('click', closeLb);
+  prevBtn.addEventListener('click', function(e) { e.stopPropagation(); show(state.index - 1); });
+  nextBtn.addEventListener('click', function(e) { e.stopPropagation(); show(state.index + 1); });
+  imgEl.addEventListener('click', function(e) { e.stopPropagation(); });
+  lb.addEventListener('click', closeLb);
+  document.addEventListener('keydown', function(e) {
+    if (lb.style.display !== 'flex') return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') show(state.index - 1);
+    if (e.key === 'ArrowRight') show(state.index + 1);
+  });
+  
+  // Touch swipe support on lightbox image
+  var touchX = null;
+  lb.addEventListener('touchstart', function(e) { touchX = e.touches[0].clientX; });
+  lb.addEventListener('touchend', function(e) {
+    if (touchX === null) return;
+    var diff = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) show(state.index - 1);
+      else show(state.index + 1);
+    }
+    touchX = null;
+  });
+  
+  // Hook all loc-photo-link clicks
+  document.querySelectorAll('.loc-photo-link').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var img = link.querySelector('img');
+      if (!img) return;
+      var name = (link.querySelector('.loc-photo-label') ? link.querySelector('.loc-photo-label').textContent : img.alt || '').trim();
+      var galleryAttr = img.getAttribute('data-gallery');
+      var dataImg = img.getAttribute('data-img') || (img.src && !img.src.endsWith('/') ? img.src : '');
+      var urls = [];
+      if (galleryAttr) {
+        try { urls = JSON.parse(galleryAttr); }
+        catch (err) { urls = galleryAttr.split('|'); }
+      } else if (dataImg) {
+        urls = [dataImg];
+      }
+      if (urls.length > 0 && urls[0]) {
+        e.preventDefault();
+        openLb(urls, name, 0);
+      }
+    });
+  });
+})();
+</script>
+<script>
+(function() {
+  // Mark images that already have src as "loaded" — fixes preloaded data-img
+  document.querySelectorAll('.loc-photo-wrap img[src]').forEach(function(img) {
+    function mark() {
+      img.classList.add('loaded');
+      if (img.parentElement) img.parentElement.classList.add('has-image');
+    }
+    if (img.complete && img.naturalHeight > 0) {
+      mark();
+    } else {
+      img.addEventListener('load', mark);
+    }
+  });
+})();
+</script>
+<script>
+/* ═══════════════════════════════════════════════════════════
+   TRIP MAP — Leaflet inicializace + body z DOM
+   ═══════════════════════════════════════════════════════════ */
+(function() {
+  function initMap() {
+    if (typeof L === 'undefined') { setTimeout(initMap, 100); return; }
+    var mapEl = document.getElementById('trip-map');
+    if (!mapEl) return;
+
+    var DAY_COLORS = {
+      den1: '#b03a0a', den2: '#1d4d4a', den3: '#1d4d4a',
+      den4: '#b08a3e', den5: '#b08a3e', den6: '#b08a3e',
+      den7: '#6b2342', den8: '#7a2806'
+    };
+    var DAY_NAMES = {
+      den1: 'Den 1 · So 23. 5.', den2: 'Den 2 · Ne 24. 5.',
+      den3: 'Den 3 · Po 25. 5.', den4: 'Den 4 · Út 26. 5.',
+      den5: 'Den 5 · St 27. 5.', den6: 'Den 6 · Čt 28. 5.',
+      den7: 'Den 7 · Pá 29. 5.', den8: 'Den 8 · So 30. 5.'
+    };
+
+    // Collect all points: locations + hotels
+    var points = [];
+    document.querySelectorAll('.day-block').forEach(function(day) {
+      var dayId = day.id;
+      var color = DAY_COLORS[dayId] || '#b03a0a';
+      var dayName = DAY_NAMES[dayId] || dayId;
+      var dayNum = (dayId.match(/\d+/) || ['?'])[0];
+
+      day.querySelectorAll('.loc').forEach(function(loc) {
+        var nameEl = loc.querySelector('.loc-name');
+        var coordsEl = loc.querySelector('.loc-coords');
+        if (!nameEl || !coordsEl) return;
+        var m = coordsEl.textContent.match(/(-?[\d.]+)\s*N\s*[·.]\s*(-?[\d.]+)\s*E/);
+        if (!m) return;
+        points.push({
+          lat: parseFloat(m[1]), lon: parseFloat(m[2]),
+          name: nameEl.textContent.trim(),
+          dayId: dayId, dayNum: dayNum, dayName: dayName,
+          color: color, isHotel: false
+        });
+      });
+
+      // Hotel (day-stay) — parse from coords if present, else skip
+      day.querySelectorAll('.day-stay').forEach(function(stay) {
+        var nameEl = stay.querySelector('.day-stay-name');
+        var coordsEl = stay.querySelector('.loc-coords');
+        if (!nameEl || !coordsEl) return;
+        var m = coordsEl.textContent.match(/(-?[\d.]+)\s*N\s*[·.]\s*(-?[\d.]+)\s*E/);
+        if (!m) return;
+        points.push({
+          lat: parseFloat(m[1]), lon: parseFloat(m[2]),
+          name: nameEl.textContent.trim(),
+          dayId: dayId, dayNum: dayNum, dayName: dayName,
+          color: '#444', isHotel: true
+        });
+      });
+    });
+
+    if (points.length === 0) return;
+
+    // Init map
+    var map = L.map('trip-map', {
+      scrollWheelZoom: false,
+      zoomControl: true
+    });
+    // Layer options
+    var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    });
+    var topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+      maxZoom: 17,
+      attribution: 'Mapová data: © OpenStreetMap · © OpenTopoMap (CC-BY-SA)'
+    });
+    var satelliteLayer = L.tileLayer(
+      'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+      { maxZoom: 19, attribution: '© Esri World Imagery' }
+    );
+    osmLayer.addTo(map); // default — základní OSM
+    L.control.layers(
+      { 'Základní': osmLayer, 'Turistická': topoLayer, 'Satelit': satelliteLayer },
+      null,
+      { position: 'topright', collapsed: false }
+    ).addTo(map);
+
+    // Add markers
+    var bounds = L.latLngBounds([]);
+    points.forEach(function(p) {
+      var iconHtml = '<div class="trip-pin' + (p.isHotel ? ' hotel' : '') +
+                     '" style="background:' + p.color + '"><span>' +
+                     (p.isHotel ? '⌂' : p.dayNum) + '</span></div>';
+      var icon = L.divIcon({
+        className: 'trip-marker',
+        html: iconHtml,
+        iconSize: p.isHotel ? [22, 22] : [30, 30],
+        iconAnchor: p.isHotel ? [11, 11] : [15, 30],
+        popupAnchor: [0, p.isHotel ? -10 : -28]
+      });
+      var marker = L.marker([p.lat, p.lon], { icon: icon }).addTo(map);
+      var popup =
+        '<div class="pop-day" style="color:' + p.color + '">' + p.dayName + '</div>' +
+        '<strong>' + p.name + '</strong>' +
+        '<a href="#' + p.dayId + '">Otevřít den →</a>';
+      marker.bindPopup(popup);
+      bounds.extend([p.lat, p.lon]);
+    });
+
+    // Fit map to all points
+    map.fitBounds(bounds, { padding: [30, 30] });
+
+    // Enable scrollwheel on click
+    map.on('focus', function() { map.scrollWheelZoom.enable(); });
+    map.on('blur', function() { map.scrollWheelZoom.disable(); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMap);
+  } else {
+    initMap();
+  }
+})();
+</script>
+<script>
+/* ═══════════════════════════════════════════════════════════
+   FLOATING SCROLL-TO-TOP — fixed šíp vpravo dole
+   ═══════════════════════════════════════════════════════════ */
+(function() {
+  var btn = document.createElement('button');
+  btn.className = 'scroll-top-btn';
+  btn.setAttribute('aria-label', 'Nahoru');
+  btn.title = 'Nahoru';
+  btn.innerHTML = '↑';
+  document.body.appendChild(btn);
+
+  var ticking = false;
+  function update() {
+    if (window.scrollY > 320) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+    ticking = false;
+  }
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  update();
+})();
+</script>
+</body>
+</html>
