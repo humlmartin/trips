@@ -669,3 +669,51 @@ Info: https://en-wikipedia-org.translate.goog/wiki/Neftchilar_Avenue?_x_tr_sl=en
 - Kavkazská Albánie — starověký křesťanský stát (nesouvisí s dnešní Albánií); kostel v Kish patří k nejstarším na Kavkaze.
 - Koberce — ázerbájdžánské tkaní je na seznamu UNESCO; Muzeum koberců v Baku má tvar srolovaného koberce.
 - Čaj a granátové jablko — čaj se pije z tradičních sklenic „armudu" (tvar hrušky), granátové jablko (nar) je národní symbol.
+
+## ZÁKLADNÍ SLOVÍČKA A FRÁZE
+_CZ → ázerbájdžánsky · [fonetika]_
+
+**Pozdravy & zdvořilost**
+- Ahoj / Zdravím → Salam · [salám]
+- Dobrý den → Salam əleyküm · [salám alejkům]
+- Dobré ráno → Sabahınız xeyir · [sabahənəz chejír]
+- Dobrý večer → Axşamınız xeyir · [achšamənəz chejír]
+- Na shledanou → Sağ olun · [sah olún]
+- Ahoj (při loučení) → Hələlik · [hälälík]
+- Děkuji → Sağ ol / Təşəkkür edirəm · [sah ol / täšäkkür edirém]
+- Prosím (o něco) → Zəhmət olmasa · [zähmät olmasá]
+- Prosím / Tady máte → Buyurun · [bujurún]
+- Není zač → Dəyməz · [däjméz]
+- Promiňte → Bağışlayın · [bahəšlajən]
+- Ano / Ne → Bəli / Hə · Xeyr / Yox · [bäli/hä · chejr/jox]
+- Jak se máte? → Necəsiniz? · [nedžesíniz]
+- Mám se dobře → Yaxşıyam · [jachšəjám]
+
+**Užitečné fráze**
+- Nerozumím → Başa düşmürəm · [baša düšmürém]
+- Mluvíte anglicky? → İngiliscə danışırsınız? · [ingilisdžé danəšərsənəz]
+- Neumím ázerbájdžánsky → Azərbaycanca bilmirəm · [azärbajdžandža bilmirém]
+- Jak se jmenujete? → Adınız nədir? · [adənəz nädír]
+- Jmenuji se… → Mənim adım… · [mänim adəm]
+- Kde je…? → … haradadır? · [haradadər]
+- Kde je záchod? → Tualet haradadır? · [tualét haradadər]
+- Kolik to stojí? → Bu neçəyədir? · [bu nečäjädir]
+- Je to drahé → Bahadır · [bahadər]
+- Pomoc! → Kömək edin! · [kömäk edín]
+
+**Jídlo, nápoje & nákup**
+- Voda → Su · [su]
+- Čaj / Káva → Çay / Qəhvə · [čaj / gähvä]
+- Chléb → Çörək · [čöräk]
+- Účet, prosím → Hesab, zəhmət olmasa · [hesáb, zähmät olmasá]
+- Dobrou chuť → Nuş olsun · [nuš olsún]
+- Je to výborné → Dadlıdır · [dadlədər]
+- Na zdraví! → Sağlığınıza! · [sahləhənəza]
+- Měna → Manat (AZN) · [manát] · 1 AZN = 100 qəpik
+
+**Čísla**
+- 1 bir [bir] · 2 iki [iki] · 3 üç [üč] · 4 dörd [dörd] · 5 beş [beš] · 6 altı [altə] · 7 yeddi [jeddí] · 8 səkkiz [säkkíz] · 9 doqquz [dogguz] · 10 on [on] · 100 yüz [jüz]
+
+**Výslovnost & poznámky**
+- x = ch · q = tvrdé g · c = dž · ç = č · ş = š · ə = otevřené „e" (jako angl. „a" v cat) · ı = temné „y". Přízvuk obvykle na poslední slabice.
+- Ázerbájdžánština je turkický jazyk (blízký turečtině). Rusky se domluvíš skoro všude, mladší umí kousek anglicky.
