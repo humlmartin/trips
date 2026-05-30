@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gruzie — plánování · Cesty Humlových</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f1ead9'/%3E%3Cpath d='M16 1 L19 8 L26 7 L22 13 L29 16 L22 19 L26 25 L19 24 L16 31 L13 24 L6 25 L10 19 L3 16 L10 13 L6 7 L13 8 Z' fill='%23b08a3e'/%3E%3C/svg%3E">
+<style>
+:root {
+  --ink: #2b1d12;
+  --rust: #b03a0a;
+  --paper: #f7f1df;
+  --sand: #f1ead9;
+  --rule: #d6c7a3;
+  --teal: #1d4d4a;
+  --gold: #b08a3e;
+  --plum: #6b2342;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Iowan Old Style', 'Palatino Linotype', 'Palatino', Georgia, serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 820px; margin: 0 auto; padding: 28px 24px 80px; }
+
+.back {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.6;
+  text-decoration: none;
+  margin-bottom: 24px;
+}
+.back:hover { opacity: 1; color: var(--rust); }
+
+.hero { padding: 16px 0 24px; }
+.hero .kicker {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.hero h1 {
+  font-size: clamp(44px, 8vw, 68px);
+  margin: 0 0 10px;
+  font-weight: 400;
+  line-height: 1;
+}
+.hero h1 em { color: var(--rust); font-style: italic; }
+.hero .lede {
+  font-size: 16px;
+  opacity: 0.78;
+  margin: 14px 0 0;
+  max-width: 620px;
+}
+.hero .note {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 6px 12px;
+  border: 1px dashed var(--gold);
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ornament {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  margin: 36px 0;
+}
+.ornament .line { flex: 0 1 90px; height: 1px; background: var(--rule); }
+.ornament .glyph { width: 22px; height: 22px; color: var(--gold); }
+
+h2 {
+  font-size: 24px;
+  margin: 36px 0 14px;
+  font-weight: 400;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+}
+h2 em { color: var(--rust); font-style: italic; }
+h3 { font-size: 17px; margin: 24px 0 8px; font-weight: 600; }
+
+p, li { font-size: 15.5px; }
+ul, ol { padding-left: 22px; }
+li { margin-bottom: 6px; }
+strong { color: var(--ink); }
+em { color: var(--ink); }
+
+.assumptions, .verdict, .qbox {
+  background: var(--sand);
+  border: 1px solid var(--rule);
+  padding: 18px 22px;
+  margin: 18px 0;
+}
+.verdict { border-left: 4px solid var(--rust); }
+.qbox { border-left: 4px solid var(--gold); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 14px;
+}
+th, td {
+  border-bottom: 1px solid var(--rule);
+  padding: 10px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: var(--sand);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+td.day { font-weight: 600; color: var(--rust); white-space: nowrap; }
+td.dow { color: var(--gold); white-space: nowrap; font-size: 13px; }
+
+.toplist {
+  background: var(--sand);
+  border: 1px solid var(--rule);
+  padding: 18px 22px;
+  margin: 18px 0;
+}
+.toplist ol { padding-left: 22px; margin: 8px 0; }
+
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 11px;
+  opacity: 0.5;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="../">← Cesty</a>
+
+  <header class="hero">
+    <div class="kicker">Plánování · Kavkaz · pokračování</div>
+    <h1>Gr<em>uz</em>ie</h1>
+    <p class="lede">Pracovní náčrt itineráře — 8 dní road-trip Tbilisi → Kazbegi → Kakheti → Vardzia. Až schválíme rámec, převedeme do plné podoby (mapa, GPS, fotky, hotely).</p>
+    <span class="note">✎ Náčrt — ne finální plán</span>
+  </header>
+
+  <div class="ornament">
+    <span class="line"></span>
+    <svg class="glyph" viewBox="0 0 32 32" fill="currentColor"><path d="M16 1 L19 8 L26 7 L22 13 L29 16 L22 19 L26 25 L19 24 L16 31 L13 24 L6 25 L10 19 L3 16 L10 13 L6 7 L13 8 Z"/></svg>
+    <span class="line"></span>
+  </div>
+
+  <h2>Předpoklady <em>· k potvrzení</em></h2>
+  <div class="assumptions">
+    <ul>
+      <li><strong>4 cestující</strong>, 8 dní, formát road-trip (jako AZ)</li>
+      <li><strong>Termín:</strong> květen–červen 20XX (Kazbegi průjezdný, vinařství kvete, Tbilisi není ještě peklo)</li>
+      <li><strong>Vízum:</strong> ČR bez víza (90 dní), pas platný 3+ měsíce po vstupu</li>
+      <li><strong>Měna:</strong> lari (GEL), 1 GEL ≈ 8 Kč</li>
+      <li><strong>Letenky:</strong> Praha → Tbilisi (TBS) — Wizz Air, Turkish (přes IST), LOT (přes WAW)</li>
+      <li><strong>Auto</strong> z TBS letiště, 7 nocí, vrácení tamtéž</li>
+      <li><strong>Jazyk:</strong> gruzínština + ruština všude, anglicky mladí; vlastní písmo (მხედრული)</li>
+    </ul>
+  </div>
+
+  <h2>Klíčové rozhodnutí <em>· Svaneti ano/ne?</em></h2>
+  <p>Svaneti (Mestia, <strong>Ushguli</strong> — nejvýše trvale osídlená vesnice Evropy 2 200 m, středověké obranné věže, UNESCO) je vizuálně „big wow", ale daleko: Tbilisi → Mestia ~9 h autem, nebo let Vanilla Sky (~1 h, propeller, často ruší kvůli počasí).</p>
+  <ul>
+    <li><strong>Bez Svanetska</strong> — kompaktních 8 dní: Tbilisi + Kazbegi + Kakheti + Vardzia/Borjomi. Méně auta, víc obsahu.</li>
+    <li><strong>Se Svanetskem</strong> — zabere 3 dny → vypadne Vardzia nebo zkrácená Kakhetie.</li>
+    <li><strong>Se Svanetskem + let</strong> — ušetří den, ale lety jsou rozmarné.</li>
+  </ul>
+  <div class="verdict">
+    <strong>Doporučení:</strong> První návštěva <strong>bez Svanetska</strong> — uvidíte ~80 % toho, co dělá Gruzii Gruzií. Svaneti si zaslouží vlastní 4–5denní trek-orientovaný trip.
+  </div>
+
+  <h2>Návrh 8 dní <em>· bez Svanetska</em></h2>
+  <table>
+    <thead>
+      <tr><th>Den</th><th></th><th>Trasa</th><th>Hlavní body</th><th>Nocleh</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="day">1</td><td class="dow">So</td><td>Příjezd Tbilisi</td>
+        <td>Staré město: Abanotubani (sirné lázně), Narikala (lanovka), Tsminda Sameba, Metekhi, Šardeniho ul., Mírový most</td>
+        <td>Tbilisi</td>
+      </tr>
+      <tr>
+        <td class="day">2</td><td class="dow">Ne</td><td>Tbilisi + Mtskheta</td>
+        <td>Mtskheta — <strong>Jvari + Svetitskhoveli</strong> (UNESCO, soutok Aragvi/Kura, duchovní srdce Gruzie); dokončit Tbilisi (Sololaki, Sioni)</td>
+        <td>Tbilisi</td>
+      </tr>
+      <tr>
+        <td class="day">3</td><td class="dow">Po</td><td>Tbilisi → Kazbegi (~155 km / 3 h)</td>
+        <td><strong>Vojenská gruzínská cesta</strong> · Ananuri (pevnost u jezera Žinvali) · Gudauri (sedlo 2 200 m) · <strong>Gergeti Trinity Church</strong> (2 170 m, pod Kazbekem 5 047 m)</td>
+        <td>Kazbegi (Stepantsminda)</td>
+      </tr>
+      <tr>
+        <td class="day">4</td><td class="dow">Út</td><td>Kazbegi → Telavi (~250 km / 5 h)</td>
+        <td>Návrat Vojenskou cestou, přejezd do Kakhetie</td>
+        <td>Telavi</td>
+      </tr>
+      <tr>
+        <td class="day">5</td><td class="dow">St</td><td>Kakheti (vinařský okruh)</td>
+        <td><strong>Tsinandali</strong> (vinařství + park), <strong>Alaverdi</strong> (katedrála 11. stol.), Ikalto, večer Sighnaghi</td>
+        <td>Sighnaghi</td>
+      </tr>
+      <tr>
+        <td class="day">6</td><td class="dow">Čt</td><td>Sighnaghi → Borjomi (~330 km / 6 h)</td>
+        <td><strong>Bodbe</strong> (klášter sv. Nino) · cestou <strong>Uplistsikhe</strong> (jeskynní město pre-křesťanské) · <strong>Borjomi</strong> (minerální lázně, park)</td>
+        <td>Borjomi / Akhaltsikhe</td>
+      </tr>
+      <tr>
+        <td class="day">7</td><td class="dow">Pá</td><td>Vardzia → Tbilisi (~280 km / 5 h)</td>
+        <td><strong>Vardzia</strong> (jeskynní město 12. stol., královna Tamar) · <strong>Rabati</strong> (pevnost v Akhaltsikhe)</td>
+        <td>Tbilisi</td>
+      </tr>
+      <tr>
+        <td class="day">8</td><td class="dow">So</td><td>Tbilisi finále + odlet</td>
+        <td>David Gareja (jednodenka 5 h, klášter v poušti na hranici s AZ) <strong>nebo</strong> lehký den: Etnografické muzeum, bazar Dezerter, Khinkali House</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><strong>Celkem:</strong> ~1 500 km (méně než AZ), 7 nocí ve 4 různých destinacích.</p>
+
+  <h2>Must-see <em>· priorita</em></h2>
+  <div class="toplist">
+    <h3>Top 5 (vynechat = škoda)</h3>
+    <ol>
+      <li><strong>Gergeti Trinity Church</strong> (Kazbegi) — ikonický kostel pod 5 047m Kazbekem</li>
+      <li><strong>Sighnaghi</strong> — opevněné město lásky na hradbách, výhled na Velký Kavkaz</li>
+      <li><strong>Vardzia</strong> — jeskynní město v útesu, středověký klášter</li>
+      <li><strong>Mtskheta</strong> — Jvari + Svetitskhoveli, duchovní srdce země (UNESCO)</li>
+      <li><strong>Tbilisi staré město</strong> — sirné lázně + Narikala + Metekhi</li>
+    </ol>
+  </div>
+
+  <h3>Vinařství k zastávce</h3>
+  <p>Tsinandali · Khareba qvevri caves · Schuchmann · Pheasant's Tears (Sighnaghi).</p>
+
+  <h3>Jídlo nesmíte minout</h3>
+  <p><strong>khinkali</strong> (taštičky) · <strong>khachapuri</strong> (sýrový chleba — varianta Adjaruli s vejcem a máslem) · churchkhela (oříšky v hroznové šťávě) · <strong>supra</strong> (hostina s tamadou) · víno <strong>saperavi</strong> (červené) a <strong>rkatsiteli</strong> (bílé z qvevri).</p>
+
+  <h2>Praktické <em>· předběžně</em></h2>
+  <ul>
+    <li><strong>Auto:</strong> zatáčkové horské cesty (Kazbegi), zima/sníh v sedle Gudauri ještě v květnu možný. AWD doporučeno pro Kazbegi/Vardzia. Povinný IDP řidičák.</li>
+    <li><strong>Hotovost:</strong> GEL většinou potřeba mimo Tbilisi (rest. + vstupné). Bankomaty hojné.</li>
+    <li><strong>eSIM:</strong> Airalo / místní Geocell.</li>
+    <li><strong>Otevírací doby klášterů:</strong> ženám zahalená ramena + dlouhá sukně (dají k dispozici u vchodu).</li>
+    <li><strong>David Gareja:</strong> část leží na hraně s AZ, občas politicky citlivé / přístup omezen — ověřit před odjezdem.</li>
+  </ul>
+
+  <h2>Otevřené otázky <em>· pro tebe</em></h2>
+  <div class="qbox">
+    <ol>
+      <li><strong>Délka:</strong> 8 dní jako AZ, nebo víc/míň?</li>
+      <li><strong>Termín:</strong> květen–červen, nebo jiný (září = víno, ale tlačenice)?</li>
+      <li><strong>Svaneti:</strong> ano (zkrátit ostatní) nebo ne (kompaktní)?</li>
+      <li><strong>Den 8:</strong> David Gareja jednodenka, nebo lehký Tbilisi-den?</li>
+      <li><strong>Letenky:</strong> Wizz (basic levné) nebo Turkish/LOT (přes hub, pohodlnější)?</li>
+      <li>Stejná <strong>čtyřka cestujících?</strong></li>
+    </ol>
+  </div>
+
+  <p style="margin-top:24px;opacity:0.75;font-style:italic">Až rámec odsouhlasíš, naplním plnou webovou verzi (mapa, fotky, GPS, vinařství s odkazy, hotely, nocleh-blocky) podle stejné šablony jako AZ.</p>
+
+  <div class="footer">Cesty · Humlovi · Gruzie · plánování v1</div>
+</div>
+</body>
+</html>
