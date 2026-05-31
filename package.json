@@ -1,8 +1,8 @@
 {
-  "name": "trips-humlovi",
+  "name": "trips",
   "version": "2.0.0",
-  "description": "Cesty Humlových — rozcestník + itineráře",
+  "description": "Cesty — rozcestník + itineráře",
   "scripts": {
-    "start": "npx --yes serve -s . -l tcp://0.0.0.0:${PORT:-8080}"
+    "start": "npx --yes serve . -l tcp://0.0.0.0:${PORT:-8080}"
   }
 }
