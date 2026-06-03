@@ -93,6 +93,10 @@ body {
 .trip-status { font-weight: 600; opacity: 1; }
 .trip-status.final { color: var(--teal); }
 .trip-status.draft { color: var(--gold); }
+.trip-status.cestopis { color: #6b2342; }
+.trip.cestopis { border-color: rgba(107,35,66,0.25); }
+.trip.cestopis:hover { border-color: #6b2342; }
+.trip.cestopis .trip-go { color: #6b2342; }
 
 .trip-title {
   font-size: clamp(28px, 4.4vw, 36px);
@@ -159,13 +163,24 @@ footer {
 
     <a class="trip draft" href="ge/">
       <div class="trip-top">
-        <span>termín 2027 · 8 dní (předběžně)</span>
+        <span>22.–29. května 2027 · 7 nocí</span>
         <span class="trip-status draft">✎ Plánování</span>
       </div>
       <h2 class="trip-title">Gr<em>uz</em>ie</h2>
       <div class="trip-meta">Tbilisi · Kazbegi · Kakheti · Vardzia · Sighnaghi</div>
       <p class="trip-blurb">Kavkaz pokračování — Vojenská gruzínská cesta pod Kazbekem, vinařská kolébka v Kakhetii, jeskynní město Vardzia a opevněné Sighnaghi nad oblaky.</p>
-      <div class="trip-go">Náčrt itineráře →</div>
+      <div class="trip-go">Otevřít náčrt ↗</div>
+    </a>
+
+    <a class="trip cestopis" href="kz/">
+      <div class="trip-top">
+        <span>14.–23. června 2024 · 9 nocí</span>
+        <span class="trip-status cestopis">📔 Cestopis</span>
+      </div>
+      <h2 class="trip-title">Kazach<em>st</em>án</h2>
+      <div class="trip-meta">Astana · NP Burabay · Charyn kaňon · Altyn Emel · Almaty</div>
+      <p class="trip-blurb">Velký jih — modernistická Astana s jurtami z plexiskla, druhý největší kaňon světa, „zpívající" duna v Altyn Emelu, jezera Kaindy a Kolsay. Z deníku Lády.</p>
+      <div class="trip-go">Otevřít cestopis ↗</div>
     </a>
 
   </div>
