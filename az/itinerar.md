@@ -118,7 +118,7 @@
 
 **Po Dni 2 — Quba · Arena Grand Hotel · TIP**
 - Hotel: Arena Grand Hotel ↗ · hodnocení 8,8 · Genius
-- Adresa: Quba Bakı yolu 4-cü km, AZ4000 Quba · skvělá lokalita
+- Adresa: Quba Baku yolu 4-cü km, AZ4000 Quba · skvělá lokalita
 - Pokoje: 2× DBL · oddělené postele
 - Pro: 4 dospělé (2+2)
 - Stravování: Snídaně v ceně (fantastická snídaně)
@@ -295,7 +295,7 @@ Info: https://en-wikipedia-org.translate.goog/wiki/Shahdag_Mountain_Resort?_x_tr
 
 **⌂ Nocleh · Ne 24. 5. → Po 25. 5.**
 Quba · Arena Grand Hotel booking ↗
-2× dvoulůžkový pokoj s oddělenými postelemi · snídaně v ceně · 4 dospělí · parkování zdarma (soukromé) · Quba Bakı yolu 4-cü km · hodnocení 8,8 · rezervace 5722276592 / PIN 6044
+2× dvoulůžkový pokoj s oddělenými postelemi · snídaně v ceně · 4 dospělí · parkování zdarma (soukromé) · Quba Baku yolu 4-cü km · hodnocení 8,8 · rezervace 5722276592 / PIN 6044
 
 
 
@@ -358,7 +358,7 @@ _Bahenní sopky · petroglyfy · večerní přejezd na západ_
 _Mud Volcanoes Tourism Complex — oficiální areál s asfaltovou cestou. Lístky na místě nebo přes iTicket._
 _Kombo lístek: 25 AZN za 2 (Ateshgah + Yanardag) · 35 AZN za 3 (+ Mud Volcanoes), platnost 72 hod_
 GPS: 40.1848206 N · 49.2381436 E
-TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g1071609-d3988978-Reviews-Mud_Volcanoes-Qobustan_Daghlig_Shirvan_Region.html
+TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g1071609-d3988978-Reviews-Mud_Volcanoes-Gobustan_Daghlig_Shirvan_Region.html
 Info: https://en-wikipedia-org.translate.goog/wiki/Mud_volcano?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
   ↓ ~21 km · ~20 min od předchozího
 
@@ -366,7 +366,7 @@ Info: https://en-wikipedia-org.translate.goog/wiki/Mud_volcano?_x_tr_sl=en&_x_tr
 Přes 6 000 skalních rytin z doby před 5 000–40 000 lety — lidé, zvířata, lodě, tančící postavy. UNESCO Světové dědictví. Thor Heyerdahl zde našel kresbu lodě totožnou se skandinávskými — inspirovalo ho to k plavbě Ra II.
 _3 km odbočka z cesty na sopky._
 GPS: 40.0973872 N · 49.3841236 E
-TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g1071609-d670957-Reviews-Gobustan_Rock_Art-Qobustan_Daghlig_Shirvan_Region.html
+TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g1071609-d670957-Reviews-Gobustan_Rock_Art-Gobustan_Daghlig_Shirvan_Region.html
 Info: https://en-wikipedia-org.translate.goog/wiki/Gobustan_National_Park?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
   ↓ ~2.2 km · ~2 min od předchozího
 
@@ -401,7 +401,7 @@ Info: https://cs.wikipedia.org/wiki/Modr%C3%A9%20jezero%20(%C3%81zerb%C3%A1jd%C5
   ↓ ~41 km · ~38 min od předchozího
 
 **№ 25 · centrum · Juma Mosque Ganja + centrum**
-Ganja je druhé největší město Ázerbájdžánu s historií přes 2 500 let. Rodné město básníka Nizámího Gandžavíja (12. stol.), jehož dílo ovlivnilo celou persko-islámskou literaturu. Krásné centrum s platany.
+Ganja je druhé největší město Ázerbájdžánu s historií přes 2 500 let. Rodné město básníka Nizámího Ganjavíja (12. stol.), jehož dílo ovlivnilo celou persko-islámskou literaturu. Krásné centrum s platany.
 GPS: 40.6775181 N · 46.3588689 E
 TripAdvisor ↗: https://www.tripadvisor.com/Attraction_Review-g815350-d8139689-Reviews-Shah_Abbas_Mosque-Ganja_Ganja_Gazakh_Region.html
 Info: https://en-wikipedia-org.translate.goog/wiki/Ganja,_Azerbaijan?_x_tr_sl=en&_x_tr_tl=cs&_x_tr_hl=cs
@@ -645,7 +645,7 @@ Info: https://en-wikipedia-org.translate.goog/wiki/Neftchilar_Avenue?_x_tr_sl=en
 ## O ÁZERBÁJDŽÁNU
 
 ### Základní data
-- Hlavní město: Baku (Bakı) · ~2,3 mil.
+- Hlavní město: Baku (Baku) · ~2,3 mil.
 - Rozloha: 86 600 km² (~jako ČR +9 %)
 - Obyvatelstvo: ~10,1 mil.
 - Jazyk: ázerbájdžánština (turkický)
