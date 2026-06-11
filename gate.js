@@ -30,7 +30,8 @@
       +     '<input id="gate-pwd" type="password" placeholder="heslo" autocomplete="current-password" autocapitalize="off" autocorrect="off" spellcheck="false" style="width:100%;padding:14px 16px;border:1px solid #d6c7a3;background:#fff;font-size:16px;font-family:inherit;text-align:center;letter-spacing:0.05em;outline:none;box-sizing:border-box;color:#2b1d12">'
       +     '<button type="submit" style="margin-top:12px;width:100%;padding:13px;background:#b03a0a;color:#fff;border:none;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;font-family:inherit;cursor:pointer;font-weight:600">Vstoupit</button>'
       +   '</form>'
-      +   '<div id="gate-err" style="margin-top:16px;font-size:12px;color:#b03a0a;letter-spacing:0.12em;text-transform:uppercase;opacity:0;transition:opacity 0.2s">špatné heslo</div>'
+      +   '<div style="margin-top:14px;font-size:12px;opacity:0.55;font-style:italic;letter-spacing:0.02em">nápověda: poslední klub ve Vladivostoku</div>'
+      +   '<div id="gate-err" style="margin-top:10px;font-size:12px;color:#b03a0a;letter-spacing:0.12em;text-transform:uppercase;opacity:0;transition:opacity 0.2s">špatné heslo</div>'
       + '</div>';
     document.body.appendChild(gate);
 
