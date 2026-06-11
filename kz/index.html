@@ -1631,6 +1631,18 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
 }
 
 </style>
+<style id="diary-styles">
+.day-diary { margin: 28px 4px 12px; background: rgba(176,138,62,0.05); border-left: 3px solid #b08a3e; border-radius: 2px; }
+.day-diary summary { list-style: none; cursor: pointer; padding: 14px 20px; font-size: .78em; letter-spacing: .18em; text-transform: uppercase; color: #8a6a3a; font-weight: 600; user-select: none; }
+.day-diary summary::-webkit-details-marker { display: none; }
+.day-diary summary::before { content: "▸"; display: inline-block; margin-right: 10px; transition: transform .2s; font-size: .8em; color: #b08a3e; }
+.day-diary[open] summary::before { transform: rotate(90deg); }
+.day-diary .diary-content { padding: 0 24px 22px; }
+.day-diary .diary-day-header { font-size: .82em; letter-spacing: .16em; text-transform: uppercase; color: #8a6a3a; margin: 18px 0 8px; font-weight: 600; }
+.day-diary .diary-day-header:first-child { margin-top: 0; }
+.day-diary .diary-day-body { font-style: italic; color: #3a2e22; line-height: 1.75; font-size: 1.05em; white-space: pre-wrap; }
+.day-nav a.info.diary-btn { color: #b08a3e; }
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -1639,6 +1651,7 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
   <a href="../" class="info" title="Cesty">←</a>
   <a href="#" class="info" id="nav-top" title="Nahoru">⌂</a>
   <a href="#" class="info" id="nav-collapse" title="Sbalit vše">⊟</a>
+  <a href="#" class="info diary-btn" id="nav-diary" title="Zápisky · sbalit/rozbalit">📔</a>
   <a href="#den1" title="Pá 14. 6. · Praha → Astana"><b>14</b><br>pá</a>
   <a href="#den2" title="So 15. 6. · Astana"><b>15</b><br>so</a>
   <a href="#den3" title="Ne 16. 6. · NP Burabay"><b>16</b><br>ne</a>
@@ -1839,10 +1852,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     </article>
   </div>
 
-  <div style="margin:20px 4px 8px;padding:16px 20px;background:rgba(176,58,10,0.04);border-left:3px solid #b08a3e;font-style:italic;color:#3a2e22;line-height:1.6;font-family:'EB Garamond',Georgia,serif">
-    <div style="font-size:.78em;font-style:normal;letter-spacing:.18em;text-transform:uppercase;color:#8a6a3a;margin-bottom:8px">Z deníku Lády</div>
-    „Klasická předstartovní horečka… Letadlo do Astany nám letí skoro o půlnoci, a tak máme hoooodně času."
-  </div>
   <div class="day-stay">
     <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>nocleh</div>
     <div class="day-stay-eyebrow">✓ Astana · Pá 14 → Ne 16 · 3 noci</div>
@@ -1854,6 +1863,12 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
       <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=71.43,51.13&z=14" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
     </div>
   </div>
+  <details class="day-diary" open>
+    <summary>📔 Z deníku Lády · 14.6.2024 pátek Broumov</summary>
+    <div class="diary-content">
+        <div class="diary-day-body">Kolem 9 hod vyzvedávám Martina a vyrážíme do Prahy na letiště. Cesta v pohodě, v Praze sraz  v hospodě s Liborem a Pavlem. Po redukci Liborova kempingového vybavení  se nějak  poskládáme všichni do Audiny a vyrážíme na letiště. Na letišti jsme včas a tak všichni jedem na chvíli do salónku za(b/p)íjet čas. Odlétáme s hodinovým zpožděním, ale vzhledem k dlouhému času na přestup v Istanbulu to moc nevadí. Let v pohodě. Letadlo do Astany nám letí sokoro o půlnoci a tak máme hoooodně času. Sice jsem měli původně letět do Turkestánu a až večer vnitrostátní linku do Astany, ale Turkish airlines měli jiný názor a let nám 3 týdny před odletem zrušili, takže letíme rovnou do Astany. Snažím se s Pavlem koupit exit, což se nakonec na 3. pokus až u gate podaří. Jsem za to celkem rád alespoň trochu se snad vyspím. Letíme s Air Astana, popravdě velmi milé překvapení kvalitou  služeb.</div>
+    </div>
+  </details>
 </section>
 
 <section class="day-block" id="den2">
@@ -2008,10 +2023,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     </article>
   </div>
 
-  <div style="margin:20px 4px 8px;padding:16px 20px;background:rgba(176,58,10,0.04);border-left:3px solid #b08a3e;font-style:italic;color:#3a2e22;line-height:1.6;font-family:'EB Garamond',Georgia,serif">
-    <div style="font-size:.78em;font-style:normal;letter-spacing:.18em;text-transform:uppercase;color:#8a6a3a;margin-bottom:8px">Z deníku Lády</div>
-    „Bohužel v kanceláři AVIS na letišti nikdo není. Čekáme asi 20 min, ale nic. Plány na následující dva dny se nám tím začínají poněkud hroutit."
-  </div>
   <div class="day-stay">
     <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>nocleh</div>
     <div class="day-stay-eyebrow">✓ Astana · 2. noc · stejný hotel</div>
@@ -2023,6 +2034,14 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
       <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=71.43,51.13&z=14" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
     </div>
   </div>
+  <details class="day-diary" open>
+    <summary>📔 Z deníku Lády · 15.6. sobota Astana</summary>
+    <div class="diary-content">
+        <div class="diary-day-body">Přistáváme v Astaně s hodinovým zpožděním  cca v 7 hod ráno. Rychlý průchod pasovkou a jdeme pro zamluvené  auto. Bohužel v kanceláři AVIS na letišti nikdo není. Čekáme asi 20 min ale nic. Telefony nikdo nebere, hledáme na Internetu další kontakty. Nakonec se Martin spojuje s kanceláří v Alamtě, ale moc pozitivně to nevypadá.  Po hodině čekání zvažujeme možnosti a na dnešní výlet do NP Burabay rezignujeme. Dnes tedy změna plánu a bude prohlídka Astany. Snad se nám během dne podaří auto sehnat. Martin zkušeně v appce objednává taxi Yandex a jedeme na hotel. Ubytovat se sice ještě nemůžeme, ale baťohy nám  na recepci pohlídají. Bereme taxi do centra. Vystupujeme u obchoďáku ve tvaru jurty
+
+Chan Šatyr a dáváme si tam vydatnou snídani. Poté pěšky procházíme moderní centrum přes dominantu - věž Bayterek s výhledem na celé město až k  prezidentskému parku s pyramidou "míru a harmonie". Je hrozné vedro, musíme prohlídku často prokládat osvěžujícími zastávkami...  Na konci pak  výhled na náměstí nezávislosti, mešitu Hazrat Sultan a Národní muzeum. Poté bereme taxi k designovému mostu Atyrau, krátká procházka a taxi zpět do hotelu. Cestou se s Martinem necháváme vyhodit o pár ulic dříve, kde by měla být otevřená autopůjčovna, ale byla to asi jen "schránková" adresa, nic jsem tam nenašli. Plány na následující dva dny se nám tím začínají poněkud hroutit. Nakonec se nám přes jisté sebezapření podařilo vykomunikovat půjčení auta v původní autopůjčovně s tím, že nám auto přistaví zítra ráno na osmu k hotelu. Moc tomu ale nevěříme. Po krátkém odpočinku v hotelu bereme taxi do  Centrálního  parku, kde je spousta stánků s jídlem a dáváme večeři. Poté se ještě procházíme a hledáme nahodile nějakou normální hospodu k posezení, což se nám nakonec podaří, dáme pár piv a jedeme na hotel.</div>
+    </div>
+  </details>
 </section>
 
 <section class="day-block" id="den3">
@@ -2085,10 +2104,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     </article>
   </div>
 
-  <div style="margin:20px 4px 8px;padding:16px 20px;background:rgba(176,58,10,0.04);border-left:3px solid #b08a3e;font-style:italic;color:#3a2e22;line-height:1.6;font-family:'EB Garamond',Georgia,serif">
-    <div style="font-size:.78em;font-style:normal;letter-spacing:.18em;text-transform:uppercase;color:#8a6a3a;margin-bottom:8px">Z deníku Lády</div>
-    „Cestou nás chytne pořádná bouřka, že skoro není vidět cesta, ale po chvíli je zase pryč. Mělo by se platit mýto, ale všude jen projíždíme — předplacené z půjčovny."
-  </div>
   <div class="day-stay">
     <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>nocleh</div>
     <div class="day-stay-eyebrow">✓ Astana · 3. noc · stejný hotel</div>
@@ -2100,6 +2115,14 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
       <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=71.43,51.13&z=14" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
     </div>
   </div>
+  <details class="day-diary" open>
+    <summary>📔 Z deníku Lády · 16.6. neděle NP Burabay</summary>
+    <div class="diary-content">
+        <div class="diary-day-body">Snídáme v hotelu a na 8 jdeme vyhlížet auto. No přijelo až v 9, ale týpek alespoň komunikoval že je na cestě... Takže auto máme  a vyrážíme na sever do 250 km vzdáleného NP Burabay. Cesta až na jeden pekelný přejezd trati pěkná. Velká část opravdová dálnice. Mělo by se platit mýto, ale vypadá to, že  máme asi předplacené z půjčovny-všude jen projíždíme. Cestou nás chytne pořádná bouřka, že skoro není vidět cesta, ale po chvíli je zase pryč a už mám krásně celý zbytek dne. Parkujeme auto a jdeme na  krátký, ale příkrý výšlap na  vyhlídku. Poté osvěžení
+
+koupačka v jezeře. Cestou kolem jezera ještě párkrát na chvíli zastavujeme a končíme na jídlo v hotelu. U vedlejšího stolu mají nějakou pompézní rodinnou oslavu, tak trošku pozorujeme místní. Pak už cesta zpět do Astany oživená prvním tankováním benzínu v přepočtu za neuvěřitelných 12 Kč. Platí se předem, člověk musí odhadnout kolik benzínu chce, občas po zvednutí pistole vycákne benzín (což se právě stalo mně). Na hotelu sprcha a jdeme se najíst kousek od hotelu do restaurace "ŠašlikoFF".</div>
+    </div>
+  </details>
 </section>
 
 <section class="day-block" id="den4">
@@ -2254,10 +2277,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     </article>
   </div>
 
-  <div style="margin:20px 4px 8px;padding:16px 20px;background:rgba(176,58,10,0.04);border-left:3px solid #b08a3e;font-style:italic;color:#3a2e22;line-height:1.6;font-family:'EB Garamond',Georgia,serif">
-    <div style="font-size:.78em;font-style:normal;letter-spacing:.18em;text-transform:uppercase;color:#8a6a3a;margin-bottom:8px">Z deníku Lády</div>
-    „Temirtau — takové obří Dolní Vítkovice, ale plně funkční. Z místních služeb v Karagandě využíváme jen veřejné WC. Po tomto silném zážitku se s Karagandou loučíme."
-  </div>
   <div class="day-stay">
     <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>nocleh</div>
     <div class="day-stay-eyebrow">✓ Almaty · Po 17 → Út 18 · 1 noc</div>
@@ -2269,6 +2288,14 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
       <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=76.94,43.25&z=14" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
     </div>
   </div>
+  <details class="day-diary" open>
+    <summary>📔 Z deníku Lády · 17.6. pondělí Temirtau a Karaganda</summary>
+    <div class="diary-content">
+        <div class="diary-day-body">Dnešní program  je tak trochu navíc. Původně jsme měli být v Astaně jen 2 dny, což se změnilo kvůli zrušenému letu do Turkestánu. Strávit celý den v Asatně by už asi bylo zbytečné. Takže se zajedeme podívat do průmyslového srdce Kazachstánu. Temirtau "město metalurgů", největší hutě a nejvíce znečištění.  Karaganda průmyslové  město, středisko pracovních táborů Gulag. Cestou se zastavujeme na okraji Astany u maket kosmických raket a Buranu. Poté ještě krátká prohlídka Velké mešity. Tam mne asi pokousala nějaká blecha, která bydlela v půjčovaném hábitu. Do Karagandy celkem dlouhá cesta, tak budovy Expa 2017 jen obdivujeme z auta. Cesta do Temirtau bez problémů, jen časově poněkud delší něž plánovala navigace, takže moc času nemáme. Zastavujeme na okraji města s výhledem na průmyslovou část. Takové obří  Dolní Vítkovice, ale plně funkční. V celém okolí se pak teží uhlí a podle toho krajina i vypadá. Přesouváme se do nedaleké Karagandy. Také takové socialisticko-budovatelské  město. Zastavujeme u mozaiky kosmonauta, chvíli se procházíme přes park vítězství, kolem památníků, ale čas nás tlačí. Takže z místních služeb využíváme jen veřejné  WC. Po tomto silném zážitku se s Karagandou loučíme a nabíráme směr letiště Astana. Na letiště přijíždíme včas, tak nás ani zajetí na špatné parkoviště, ze kterého jsme se nebyli schopni sami vyplatit a dostat rozhodní jen trochu a letadlo stíháme v pohodě. Kolem 22 hod jsme v Alma
+
+Atě nebo vlastně správněji v Almaty. Taxi na hotel s krásným výhledem ze střechy na noční město.</div>
+    </div>
+  </details>
 </section>
 
 <section class="day-block" id="den5">
@@ -2331,10 +2358,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     </article>
   </div>
 
-  <div style="margin:20px 4px 8px;padding:16px 20px;background:rgba(176,58,10,0.04);border-left:3px solid #b08a3e;font-style:italic;color:#3a2e22;line-height:1.6;font-family:'EB Garamond',Georgia,serif">
-    <div style="font-size:.78em;font-style:normal;letter-spacing:.18em;text-transform:uppercase;color:#8a6a3a;margin-bottom:8px">Z deníku Lády</div>
-    „Ano, zastavila nás policie, ano, zjevně chtěli úplatek. Prý jsem porušil zákon, že po požití alkoholu se nesmí 3 dny řídit. Naléhal jsem na dechovku — chtěl vidět titul, pak mě pustil a popřál pěkný pobyt. Bez testování."
-  </div>
   <div class="day-stay">
     <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>nocleh</div>
     <div class="day-stay-eyebrow">✓ Saty · Út 18 → St 19 · 1 noc</div>
@@ -2346,6 +2369,12 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
       <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=78.4778,43.0469&z=14" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
     </div>
   </div>
+  <details class="day-diary" open>
+    <summary>📔 Z deníku Lády · 18.6. úterý Sharyn kaňon</summary>
+    <div class="diary-content">
+        <div class="diary-day-body">Ráno snídaně v hotelu a taxi do půjčovny. Po předchozí zkušenosti a přečtením recenzí na Hertz v Almatě  máme trochu obavy. Vše  ale proběhlo v pořádku vč. školení jak postupovat při stavění policejní hlídkou, což jsem asi o hodinu později ocenil. Ano zastavila nás policie, ano zjevně chtěli úplatek. Prý jsem porušil zákon, že po požití alkoholu se nesmí 3 dny řídit. Opakovaně jsem naléhal na provedení dechové zkoušky s ujištěním, že vím že bude negativní, protože jsem doktor a vím jak rychle se alkohol odbourává. Ano, chtěl vidět v občance titul a pak mne pustil a popřál pěkný pobyt. Bez testování. Po této nepříjemnosti už nekomplikovaný přesun z Almaty  do Sharyn kaňonu. Tam trávíme celý den. Určitě jedno z nejzajímavějších míst. V podvečer odjíždíme do horské vesnice Saty, kam přijíždíme už za tmy. Cesta místy celkem špatná, výmoly, obří hrboly, muselo se jet dost pomalu a opatrně. Ubytováváme se v celkem pěkně předělaných kontejnerech. Rovnou kývneme na nabídku k zítřejšímu odvozu na Kaindy lake. Cesta je prý pro náš Captur 4x4 nereálná. Jdeme se někam najíst a koupit něco k pití. Bohužel v celé vesnici není možné platiti kartou a tak utrácíme postupně veškerý cash a ještě musíme vekslovat USD záložní hotovost.</div>
+    </div>
+  </details>
 </section>
 
 <section class="day-block" id="den6">
@@ -2431,10 +2460,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     </article>
   </div>
 
-  <div style="margin:20px 4px 8px;padding:16px 20px;background:rgba(176,58,10,0.04);border-left:3px solid #b08a3e;font-style:italic;color:#3a2e22;line-height:1.6;font-family:'EB Garamond',Georgia,serif">
-    <div style="font-size:.78em;font-style:normal;letter-spacing:.18em;text-transform:uppercase;color:#8a6a3a;margin-bottom:8px">Z deníku Lády</div>
-    „Cesta je hrozná, asi 10 km, ale to bychom naším autem určitě nedali. Šílené koleje, brody, člověk musí vědět kudy jet, aby neuvízl."
-  </div>
   <div class="day-stay">
     <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>nocleh</div>
     <div class="day-stay-eyebrow">✓ Zharkent · St 19 → Čt 20 · 1 noc</div>
@@ -2446,6 +2471,12 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
       <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=80.0086,44.1664&z=14" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
     </div>
   </div>
+  <details class="day-diary" open>
+    <summary>📔 Z deníku Lády · 19.6. středa jezera Kaindy a Kolsay</summary>
+    <div class="diary-content">
+        <div class="diary-day-body">V 8:00 nás budí paní domácí se skromnou snídaní a zároveň už nás čeká náš odvoz k jezeru Kaindy.   Je to pan domácí s Buchankou. Rychle se sbalíme a nasedáme. Cesta je hrozná,  asi 10 km, ale to bychom naším autem určitě nedali. Jedeme to určitě přes půl hodiny. Šílené koleje, brody, člověk musí vědět kudy jet aby neuvízl. Přijíždíme na parkoviště pod jezerem, pán na nás tam počká cca 2 hodiny a zase nás pak vezme zpět. Ještě domlouváme jednu Buchanku až nahoru k jezeru. Procházíme kolem jezera a pak zpět pěšky na parkoviště. Koncem cesty se celkem rozprší a jsme rádi že dobíháme ne úplně durch. Cesta zpět pak stejně náročná a přesedáme do našeho auta a už sami jedeme na další jezero Kolsay. Tam už na poměry dost turistů. Pavel s Martinem se nechají fotit se sokolem v tradičním obleku. Jdeme k jezeru a kousek obcházíme. Přemýšlíme jak dál. Na nějakou velkou tůru se nám nechce tak padá rozhodnutí odjet z hor  a přiblížit se  k  NP Altyn Emel, kde bude časově náročný program. Přímo v NP se nedá předem zamluvit ubytování a tak neriskujeme  a volíme ubytování někde po cestě. Volba padla na Zharkent. Cestou zastavujeme u několika vyhlídek na kaňon řeky Sharyn. Přijíždíme tam pozdě odpoledne, vybíráme hotovost a hledáme ubytování. První mělo plno, druhé už bereme. Nic moc, ale na přespání OK. Jdeme se do centra najíst a kousek projít.</div>
+    </div>
+  </details>
 </section>
 
 <section class="day-block" id="den7">
@@ -2554,10 +2585,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     </article>
   </div>
 
-  <div style="margin:20px 4px 8px;padding:16px 20px;background:rgba(176,58,10,0.04);border-left:3px solid #b08a3e;font-style:italic;color:#3a2e22;line-height:1.6;font-family:'EB Garamond',Georgia,serif">
-    <div style="font-size:.78em;font-style:normal;letter-spacing:.18em;text-transform:uppercase;color:#8a6a3a;margin-bottom:8px">Z deníku Lády</div>
-    „Máme štěstí a chvílemi skutečně slyšíme hukot duny. Je to jako kdyby kolem letělo letadlo. Jsou u toho cítit i vibrace celé duny. Zvláštní pocit."
-  </div>
   <div class="day-stay">
     <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>nocleh</div>
     <div class="day-stay-eyebrow">✓ Konayev · Čt 20 → Pá 21 · 1 noc</div>
@@ -2569,6 +2596,12 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
       <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=77.0794,43.8589&z=14" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
     </div>
   </div>
+  <details class="day-diary" open>
+    <summary>📔 Z deníku Lády · 20.6. čtvrtek Altyn Emel</summary>
+    <div class="diary-content">
+        <div class="diary-day-body">Budíme se a odjezd do NP Altyn Emel cca 1,5 hodiny, cestou ještě foto mešity v Zharkentu. V parku jsou dvě místa která stojí za to vidět. Je to  "zpívající" písečná duna a hory Aktau. Cesty v parku jsou neasfaltované. K duně  asi 40 km a k Aktau cca 70 km. Jako první vyrážíme k duně. Cesta prašná všude rolety, musí se jet spíše rychleji, jinak to hrozně klepe. Parkujeme kousíček od duny. Vypadá impozantně. Hned vyrážíme na vrchol. Libor po chvíli vzdává a vrací se. V písku se jde strašně těžce a člověk se hodně boří. My 3 pokračujeme až na vrchol, ale je to skutečně náročný výstup obzvlášť v kombinaci s úmorným vedrem. Máme štěstí a chvílemi skutečně slyšíme hukot duny. Je to jako kdyby kolem letělo letadlo. Jsou u toho cítit i vibrace celé duny. Zvláštní pocit. Vracíme se k autu a zpět k odbočce na druhou atrakci-hory Aktau. Jestli cesta k duně byla náročná, tak tento úsek byl na hranici možnosti našeho auta. Všude rolety, hluboké koleje několikrát přejezd minivádí ovšem s takovými okraji, že někdy  raději vystupujeme a ukazujeme Martinovi jak najet a kolik místa je aby auto neuvázlo. Cestou k cíli ještě odbočujeme ke skalní formaci Katutau. Tam před parkovištěm na nás mává zoufalý Polák s ženou. Má píchlé obě zadní gumy. Signál na mobilu 0. K nám se oba nevejdou. Navrhujeme, že jednoho vezmeme sebou, ale nechtějí se rozdělit. Jen ať někoho informujeme. Jedeme dál až k barevným horám Aktau. Cestou nikoho nepotkáváme. Na parkovišti  jedno auto shodou okolností také Polák a ještě k tomu průvodce, ale umí rusky má číslo na správce parku  tak naše informace předává dál. My máme k dispozici cca 1-2 hodiny abychom se včas vrátili ke vstupu do parku. Výšlap nádherný, hodně fotíme, ale také náročné pro vedro-auto ukazuje 42 st. Jedeme zpět do civilizace. U brány pro jistotu ještě informujeme správce o porouchaném autě, ale tváří se že vše ví. Padá rozhodnutí dojet do města Konayev a tam se ubytovat. Po offroad vložce v parku ale nemáme dost benzínu a tak doufáme že benzínka na mapě kousek za vjezdem do parku existuje a bude mít otevřeno. Je tam, sice hodně retro, jeden stojan a v okýnku zvláštní bábuška, ale problém vyřešen. Do Konayeva přijíždíme za tmy. Hotel z bookingu v reálu neexistuje. Bloudíme podle mapy ubytek  městem, někdy dost divnými lokacemi. Jsme všichni dost utahaní. Mapa místy nesedí s realitou. Zkoušíme poslední s tím, že když to nedopadne jedeme do Almaty. Nakonec to vyjde. Sice pokoje  hodně nouzové, ale už nemusíme nikam dál. A paradoxně mají i  bazén. Tak tam s Martinem skáču. Jdeme do města na večeři a pak spát.</div>
+    </div>
+  </details>
 </section>
 
 <section class="day-block" id="den8">
@@ -2677,10 +2710,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     </article>
   </div>
 
-  <div style="margin:20px 4px 8px;padding:16px 20px;background:rgba(176,58,10,0.04);border-left:3px solid #b08a3e;font-style:italic;color:#3a2e22;line-height:1.6;font-family:'EB Garamond',Georgia,serif">
-    <div style="font-size:.78em;font-style:normal;letter-spacing:.18em;text-transform:uppercase;color:#8a6a3a;margin-bottom:8px">Z deníku Lády</div>
-    „Postupně se přes 3 lanovky dostáváme až na nejvyšší bod přes 3 000 m s výhledem na Almaty. Po offroad vložce v Altyn Emelu pořádná automyčka."
-  </div>
   <div class="day-stay">
     <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>nocleh</div>
     <div class="day-stay-eyebrow">✓ Almaty · Pá 21 → So 22 · 1 noc</div>
@@ -2692,6 +2721,12 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
       <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=76.94,43.25&z=14" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
     </div>
   </div>
+  <details class="day-diary" open>
+    <summary>📔 Z deníku Lády · 21.6. pátek Tamgaly Tas a  Shymbulak</summary>
+    <div class="diary-content">
+        <div class="diary-day-body">Vstáváme a vyrážíme k Tamglay Tas, což je skalní formace s vyhlídkou na řeku Ili. Je to kousek od Konayeva, ale posledních pár km zase offroad. Na naší výpravě už poslední. Jsme jediní návštěvníci.  Po chvíli tedy ještě jedno auto dorazilo... Vracíme se zpět do Konayeva na automyčku. Martin asi 15 min vapkuje aby auto odblátil. Po očistě jedeme k městské pláži. Krátká koupačka něco k jídlu a  mizíme pryč směr Almaty. Celá oblast u jezera vypadá jak 90tková Rozkoš v kombinaci s Matějskou ovládaná místními světskými. Prokousáváme se zacpanou Almatou do hor nad městem. Nachází se zde lyžařské středisko a nejvýše položený rychlobruslařský stadion na světe. Kupujeme lístky na lanovky a postupně se přes 3 dostáváme až na nejvyšší bod přes 3000m s výhledem na Amlaty. Dáváme jídlo a vracíme se k autu. Poté už jedeme vrátit auto a taxíkem na hotel. Večer se jdeme projít kousek kolem okolí hotelu, ale prohlídku města necháváme až na zítřek.</div>
+    </div>
+  </details>
 </section>
 
 <section class="day-block" id="den9">
@@ -2846,10 +2881,6 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     </article>
   </div>
 
-  <div style="margin:20px 4px 8px;padding:16px 20px;background:rgba(176,58,10,0.04);border-left:3px solid #b08a3e;font-style:italic;color:#3a2e22;line-height:1.6;font-family:'EB Garamond',Georgia,serif">
-    <div style="font-size:.78em;font-style:normal;letter-spacing:.18em;text-transform:uppercase;color:#8a6a3a;margin-bottom:8px">Z deníku Lády</div>
-    „Pavel kupuje slušivou koženou čapku i s ohonem. Martin trumfuje kůží z lišky poté, co jsem mu rozmluvil kůži z vlka, se kterou by na letišti mohl mít problém."
-  </div>
   <div class="day-stay">
     <div class="loc-transit" style="background:transparent;padding:8px 0 12px;border-bottom:none"><span class="arr">↓</span>nocleh</div>
     <div class="day-stay-eyebrow">✓ Almaty · So 22 → Ne 23 · poslední noc</div>
@@ -2861,6 +2892,14 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
       <a class="loc-nav-btn" href="https://mapy.com/zakladni?source=coor&id=76.94,43.25&z=14" target="_blank"><span class="nav-icon">📍</span>Mapy.com</a>
     </div>
   </div>
+  <details class="day-diary" open>
+    <summary>📔 Z deníku Lády · 22.6. sobota Almaty</summary>
+    <div class="diary-content">
+        <div class="diary-day-body">Na hotelu nám díky chybné informaci od recepční uniká snídaně, ale Martin nakonec každému domluvil alespoň omeletu. Původně jsme se chtěli dnes odhlásit, protože na letiště musíme vyrazit už kolem 2 hod ranní. Nakonec tedy po společné domluvě bereme alespoň jeden pokoj kde necháme bágly a večer dáme sprchu před odletem. Bereme taxi k Chrámu Nanebevstoupení Páně, procházíme parkem k památníku 28 Panfilovců k Zelenému bazaru. Tam se na tržišti prodávají  snad veškeré druhy masa. Jen hygienik z ČR by asi dostal infarkt. V okolí pak prodej všeho možného. Pavel kupuje slušivou koženou čapku i s ohonem. Martin trumfuje kůží z lišky poté co jsem mu rozmluvil  kůži z vlka se kterou by na letišti mohl mít problém. Jdeme k hlavní  mešitě pak taxi k centrálnímu parku  kde dáváme oběd. Taxíkem přesun k lanovce na Kok
+
+Tobe. Z vrcholku pěkné výhledy a opět "Matějská". Občerstvujeme se v restauraci s výhledem na město. Lanovkou zpět a taxi na Náměstí Republiky. Poté jdeme vyzkoušet místní metro: Jedna stanice stačí a už směr hotel. Všichni se trochu zkulturníme a jdeme na večeři do města. Martin je tedy KO, tak zůstává na pokoji.</div>
+    </div>
+  </details>
 </section>
 
 <section class="day-block" id="den10">
@@ -2946,10 +2985,12 @@ section[id^="den"], section#info { scroll-margin-top: 70px; }
     </article>
   </div>
 
-  <div style="margin:20px 4px 8px;padding:16px 20px;background:rgba(176,58,10,0.04);border-left:3px solid #b08a3e;font-style:italic;color:#3a2e22;line-height:1.6;font-family:'EB Garamond',Georgia,serif">
-    <div style="font-size:.78em;font-style:normal;letter-spacing:.18em;text-transform:uppercase;color:#8a6a3a;margin-bottom:8px">Z deníku Lády</div>
-    „Po přistání v Praze už bez komplikací, liška prošla. Ještě přiblížíme Libora s Pavlem z letiště a já s Martinem pokračujeme směr Broumov, kam dorážíme v podvečer."
-  </div>
+  <details class="day-diary" open>
+    <summary>📔 Z deníku Lády · 23.6. neděle odlet domů</summary>
+    <div class="diary-content">
+        <div class="diary-day-body">Já, Libor a Pavel trávíme čas do odjezdu na letiště po restauracích a hospodách. Cca v 1:30 to balíme a přesouváme se pěšky do hotelu. Bereme bágly a Martin objednává naše poslední taxi na letiště. Čekáme na letadlo a pomalu svítá. Startujeme už za světla a na chvíli usínám. Přestup opět  Istanbul, čekáme asi 2,5 hoďky,  dáváme nějaké jídlo. Letadlo do Prahy zase asi hodinu zpoždění, tentokrát nás nechají čekat v letadle. Po přistání v Praze už bez komplikací, liška prošla. Ještě přiblížíme Libora s Pavlem z letiště a já s Martinem pokračujeme směr Broumov kam dorážíme v podvečer.</div>
+    </div>
+  </details>
 </section>
 
 <section class="review-section">
@@ -3527,6 +3568,19 @@ loadNext(0);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
   update();
+})();
+</script>
+<script id="diary-toggle">
+(function(){
+  var btn = document.getElementById('nav-diary');
+  if (!btn) return;
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    var all = document.querySelectorAll('details.day-diary');
+    if (!all.length) return;
+    var anyClosed = Array.prototype.some.call(all, function(d){ return !d.open; });
+    Array.prototype.forEach.call(all, function(d){ d.open = anyClosed; });
+  });
 })();
 </script>
 </body>
