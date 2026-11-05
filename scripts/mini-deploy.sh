@@ -7,7 +7,7 @@ REPO="$BASE/repo"
 mkdir -p "$BASE"
 if [ ! -d "$REPO/.git" ]; then
   [ ! -e "$REPO" ] || exit 1
-  git -c credential.helper='!gh auth git-credential' clone --no-checkout \
+  git -c credential.helper='!gh auth git-credential' clone \
     https://github.com/humlmartin/trips.git "$REPO"
   touch "$REPO/.git/trips-mini"
 fi
