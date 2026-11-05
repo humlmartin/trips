@@ -1,0 +1,7 @@
+name: trips-mini
+services:
+  web:
+    build: .
+    restart: always
+    ports:
+      - "127.0.0.1:8083:8080"
